@@ -1,0 +1,8 @@
+{
+  "label": "SQL",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Gestiona y manipula bases de datos de manera eficiente utilizando SQL, a través de consultas, actualizaciones y análisis de datos."
+  }
+}
