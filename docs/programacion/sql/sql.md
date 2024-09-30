@@ -2,7 +2,7 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Gestiona y manipula bases de datos de manera eficiente utilizando SQL, a través de consultas, actualizaciones y análisis de datos.
+description: Gestiona y manipula bases de datos de manera eficiente utilizando SQL.
 title: SQL
 ---
 

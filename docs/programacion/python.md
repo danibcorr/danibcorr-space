@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
 description: Aprende todo lo necesario sobre el lenguaje de programación Python.

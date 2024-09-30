@@ -2,7 +2,7 @@
 sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
-description: Ejercicios típicos de entrevistas.
+description: Ejercicios típicos de entrevistas de trabajo.
 title: Ejercicios SQL
 ---
 

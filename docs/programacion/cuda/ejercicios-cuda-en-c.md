@@ -664,9 +664,10 @@ int main()
 <summary>Acelerar la multiplicación de matrices 2D.</summary>
 
 <p align="center">
-  <img src="./imagenes/Matrix.jpg"/>
+  <img src={require("./assets/Matrix.jpg").default}/>
   <br />
 </p>
+
 
 ```c
 #include <stdio.h>
@@ -797,7 +798,7 @@ int main()
 <details>
 <summary>Acelerar una aplicación de conductividad térmica.</summary>
 <p align="center">
-  <img src="./imagenes/Thermal_Conductivity.jpg"/>
+  <img src={require("./assets/Thermal_Conductivity.jpg").default}/>
   <br />
 </p>
 

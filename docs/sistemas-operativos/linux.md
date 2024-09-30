@@ -2,7 +2,7 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Conoce un poco más de Linux.
+description: Conoce un poco más del sistema operativo Linux.
 title: Linux
 ---
 

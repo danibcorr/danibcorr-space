@@ -1,16 +1,16 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Controla versiones de tu código con Git, facilitando la gestión de cambios y la colaboración en proyectos.
+description: Controla versiones de tu código con Git.
 title: Git
 ---
 
-#  Bibliografía
+# Bibliografía
 
 * [Git Hooks](https://githooks.com/)
   
-#  Introducción
+# Introducción
 
 <p align="center">
   <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="200"/>
@@ -63,11 +63,11 @@ Git-Bash es una interfaz de línea de comandos que permite la interacción con G
 | **pwd**   | Muestra la ruta completa del directorio actual.     | `pwd` - Este comando muestra la ruta completa, por ejemplo: `/home/usuario/`   |
 | **mkdir** | Crea un nuevo directorio en la ubicación deseada.   | `mkdir nuevo_directorio` - Crea un directorio llamado "nuevo_directorio".      |
 | **cd**    | Cambia al directorio especificado.                  | `cd nuevo_directorio` - Cambia al directorio "nuevo_directorio".               |
-| **ls**    | Lista los archivos y subdirectorios en el directorio actual. | `ls` - Muestra los archivos del directorio actual. `ls -la` muestra detalles adicionales, como permisos y fechas de modificación. |
+| **ls**    | Lista los archivos y subdirectorios en el directorio actual. | `ls` - Muestra los archivos del directorio actual. `ls -la` - Muestra detalles adicionales, como permisos y fechas de modificación. `ls -a`- Muestra todos los archivos del directorio incluso los que están ocultos. |
 | **rm**    | Elimina el archivo o directorio especificado.       | `rm archivo.txt` - Elimina el archivo "archivo.txt". Para eliminar directorios, usar `rm -r directorio/`. |
 | **mv**    | Mueve o renombra un archivo o directorio.           | `mv archivo.txt nueva_ubicacion/` - Mueve "archivo.txt" a la carpeta "nueva_ubicacion". También puede usarse para renombrar archivos, por ejemplo: `mv archivo.txt archivo_nuevo.txt`. |
 
-Para obtener más información sobre Linux, se pueden [visitar los siguientes apuntes](../sistemas-operativos/linux.md).
+Para obtener más información sobre Linux, se pueden [visitar los siguientes apuntes](../../sistemas-operativos/linux.md).
 
 ### 2.2. Comandos para el control de versiones local
 
@@ -77,7 +77,7 @@ A continuación, se presentan algunos de los comandos más utilizados para la ge
 | --- | --- | --- |
 | **git init** | Crea un nuevo repositorio local. | `git init` - Inicializa un repositorio en el directorio actual. |
 | **git clone** | Clona un repositorio existente en una ubicación local. | `git clone https://github.com/usuario/repositorio.git` - Clona el repositorio desde la URL indicada. |
-| **git add** | Prepara archivos para su confirmación (staging). | `git add archivo.txt` - Añade "archivo.txt" al área de preparación (staging). |
+| **git add** | Prepara archivos para su confirmación (*staging*). | `git add archivo.txt` - Añade "archivo.txt" al área de preparación (*staging*). |
 | **git commit** | Confirma los cambios en el repositorio local. | `git commit -m "Mensaje del commit"` - Confirma los cambios con el mensaje "Mensaje del commit". |
 | **git reset HEAD** | Revierte la preparación de archivos que estaban listos para ser confirmados. | `git reset HEAD archivo.txt` - Deshace la preparación de "archivo.txt". |
 | **git commit --amend** | Modifica la última confirmación, permitiendo cambiar el mensaje o añadir archivos adicionales. | `git commit --amend -m "Mensaje corregido"` - Modifica el mensaje del último commit. |
@@ -132,12 +132,11 @@ Tanto **Trunk-Based Development** como **Git Flow** son estrategias populares de
   <em>Esquema de desarrollo Trunk-Based</em>
 </p>
 
-En esta estrategia, los desarrolladores fusionan frecuentemente pequeñas actualizaciones en una única rama principal (a menudo llamada "trunk" o "main").
+En esta estrategia, los desarrolladores fusionan frecuentemente pequeñas actualizaciones en una única rama principal (a menudo llamada *trunk* o *main*).
 
 Las principales ventajas de esta estrategia son:
 
-  - **Simplificación de la fusión e integración**: Al fusionar cambios pequeños y frecuentes, se reducen los conflictos y se facilita la integración continua.
-  - **Facilita la Integración Continua (CI) y el Despliegue Continuo (CD)**: Esta metodología es ideal para entornos donde se practican CI/CD, permitiendo despliegues rápidos y frecuentes.
+  - **Facilita la Integración Continua (CI) y el Despliegue Continuo (CD)**: Esta metodología es ideal para entornos donde se practican CI/CD, permitiendo despliegues rápidos y frecuentes. Esto se debe al fusionar cambios pequeños y frecuentes.
   - **Fomenta la iteración rápida y la colaboración**: Los desarrolladores pueden trabajar en paralelo y fusionar sus cambios rápidamente, lo que acelera el ciclo de desarrollo.
 
 Sin embargo, presenta las siguientes desventajas:
@@ -179,7 +178,7 @@ Los Git Hooks constituyen una funcionalidad integrada en Git que permite automat
 
 Los Git Hooks son scripts que se ejecutan automáticamente en respuesta a eventos específicos dentro de Git, como antes o después de realizar un `commit`, un `push` o un `merge`.
 
-Para utilizar Git Hooks, es necesario crear scripts en el directorio `.githooks` en la raiz del repositorio Git. Estos scripts deben ser ejecutables y llevar el nombre del evento para el que se activan, como `pre-commit`, `pre-push` o `post-merge`. Es fundamental que se otorguen los permisos adecuados al archivo, lo cual puede hacerse con el comando:
+Para utilizar Git Hooks, es necesario crear scripts en el directorio `.git/hooks` en la raiz del repositorio Git. Estos scripts deben ser ejecutables y llevar el nombre del evento para el que se activan, como `pre-commit`, `pre-push` o `post-merge`. Es fundamental que se otorguen los permisos adecuados al archivo, lo cual puede hacerse con el comando:
 
 ```bash
 chmod +x pre-commit

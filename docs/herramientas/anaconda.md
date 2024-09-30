@@ -2,7 +2,7 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Crea y gestiona entornos virtuales de Python con Anaconda, asegurando la separación de dependencias para distintos proyectos.
+description: Crea y gestiona entornos virtuales de Python con Anaconda.
 title: Anaconda
 ---
 
@@ -20,7 +20,7 @@ title: Anaconda
 
 ### 1.1. Actualización de paquetes
 
-Para actualizar todos los paquetes y garantizar el uso de versiones más recientes y seguras, se utiliza:
+Para actualizar todos los paquetes y garantizar el uso de versiones más recientes y seguras, utiliza el siguiente comando:
 
 ```bash
 conda update --all

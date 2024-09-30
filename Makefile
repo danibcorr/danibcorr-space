@@ -1,4 +1,8 @@
+# Permite indicar que los targets que definimos son comandos
 .PHONY: build
+
+# Definimos el target por defecto del Makefile
+.DEFAULT_GOAL := all
 
 run:
 	@echo "Testear la Wiki localmente..."
@@ -11,3 +15,5 @@ build:
 	yarn install
 	@echo "Construyendo la documentación..."
 	yarn build
+
+all: build run

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
-description: Automatización de procesos con Makefile.
+description: Automatiza tus procesos con Makefile.
 title: Makefile
 ---
 
@@ -37,14 +37,14 @@ targets: prerequisites
 - ***prerequisites:*** Son los archivos o dependencias necesarios para generar el *target*, también separados por espacios.
 - **comandos:** Son las instrucciones que se ejecutan para crear el *target*. Cada comando debe comenzar con un carácter de tabulación, no con espacios.
 
-#### 2.1.1. Ejemplo de una regla simple
+Un ejemplo de regla simple podría ser el siguiente:
 
 ```makefile
 install: pyproject.toml
     poetry install
 ```
 
-En este ejemplo:
+En dicho ejemplo:
 
 - **`install`** es el *target*, que representa la tarea o archivo a crear.
 - **`pyproject.toml`** es el prerrequisito necesario, un archivo que debe existir antes de ejecutar la tarea.
@@ -69,7 +69,7 @@ Las variables en Makefiles permiten almacenar y reutilizar valores, facilitando 
 ```makefile
 TEST_FILE ?= ./tests
 
-## Regla para ejecutar tests al código
+# Regla para ejecutar tests al código
 tests: 
     @echo "Testeando el código..."
     poetry run pytest -v $(TEST_FILE)

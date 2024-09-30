@@ -2,7 +2,7 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: CUDA.
+description: Conoce la plataforma de CUDA de NVIDIA para sus GPUs.
 title: CUDA
 ---
 
@@ -24,7 +24,7 @@ title: CUDA
 La plataforma de computación CUDA ofrece un amplio ecosistema. No obstante, en los puntos 1 y 2, se abordará el uso de CUDA en combinación con el lenguaje de programación C. A partir del punto 3, se explorarán otras bibliotecas y aplicaciones de CUDA en Python.
 
 <p align="center">
-  <img src="./imagenes/B0FF9827-9E32-46F2-8365-FA0E686C649D.jpeg"/>
+  <img src={require("./assets/B0FF9827-9E32-46F2-8365-FA0E686C649D.jpeg").default}/>
   <br />
 </p>
 
@@ -54,7 +54,7 @@ Aunque CUDA ofrece ventajas significativas, es crucial equilibrar la carga de tr
 Es fundamental identificar qué partes del código se benefician de la paralelización en la GPU y cuáles deben procesarse secuencialmente en la CPU. 
 
 <p align="center">
-  <img src="./imagenes/EEA7EE5C-1D79-4B88-8DF7-37E17BF0D2FF.jpeg"/>
+  <img src={require("./assets/EEA7EE5C-1D79-4B88-8DF7-37E17BF0D2FF.jpeg").default}/>
   <br />
 </p>
 
@@ -65,28 +65,28 @@ Vemos por tanto que el paralelismo por el que CUDA destaca es en el paralelismo 
 Una GPU está compuesta por _N_ multiprocesadores, cada uno de los cuales contiene _M_ núcleos. Algunas de las familias de GPU de la familia Tesla de NVidia se muestran en la siguiente imagen.
 
 <p align="center">
-  <img src="./imagenes/Untitled (1).png"/>
+  <img src={require("./assets/Untitled (1).png").default}/>
   <br />
 </p>
 
 Cada multiprocesador dispone de su propio banco de registros, memoria compartida, una caché de constantes y una caché de texturas (ambas de sólo lectura). Además, está equipada con una memoria global de tipo GDDR, que es tres veces más rápida que la memoria principal de la CPU, aunque mucho más lenta que la memoria compartida de tipo SRAM. Los bloques de hilos en CUDA pueden ser asignados a cualquier multiprocesador para su ejecución. La imagen siguiente ilustra la estructura de una GPU.
 
 <p align="center">
-  <img src="./imagenes/Untitled 1 (1).png"/>
+  <img src={require("./assets/Untitled 1 (1).png").default}/>
   <br />
 </p>
 
 Para ilustrar, consideremos la generación Volta, específicamente la GPU GV100. Esta GPU cuenta con 84 multiprocesadores (SMs) y 8 controladores de memoria de 512 bits. En la arquitectura Volta, cada multiprocesador tiene 64 núcleos para operaciones de tipo int32, 64 núcleos para float32, 32 núcleos para float64 y 8 unidades tensoriales.
 
 <p align="center">
-  <img src="./imagenes/Untitled 2.png"/>
+  <img src={require("./assets/Untitled 2.png").default}/>
   <br />
 </p>
 
 De la imagen anterior se observa que el diseño de un bloque se utiliza como base para crear diseños más complejos al replicarlo.
 
 <p align="center">
-  <img src="./imagenes/Untitled 3.png"/>
+  <img src={require("./assets/Untitled 3.png").default}/>
   <br />
 </p>
 
@@ -95,7 +95,7 @@ De la imagen anterior se observa que el diseño de un bloque se utiliza como bas
 En la última década, uno de los componentes que mayor protagonismo ha tomado han sido los núcleos tensoriales. Los núcleos tensoriales están diseñados para realizar operaciones matriciales a alta velocidad, lo que resulta crucial en el entrenamiento de modelos de Inteligencia Artificial y en procesos que implican operaciones matriciales extensivas. El siguiente diagrama ilustra el proceso de operación de cada núcleo tensorial por ciclo de reloj.
 
 <p align="center">
-  <img src="./imagenes/Untitled 4 (2).png"/>
+  <img src={require("./assets/Untitled 4 (2).png").default}/>
   <br />
 </p>
 
@@ -104,7 +104,7 @@ En la última década, uno de los componentes que mayor protagonismo ha tomado h
 La precisión de los datos, como pasar de enteros de 32 bits a enteros de 16 bits, impacta en la tasa de transferencia (_Throughput_) del sistema. Reducir la precisión permite realizar un mayor número de operaciones, aunque con una precisión menor en los resultados. Dependiendo de la aplicación, esta reducción de precisión puede ser aceptable. A continuación, se muestra el _Throughput_ para diferentes precisiones de datos en arquitecturas de GPU modernas.
 
 <p align="center">
-  <img src="./imagenes/Untitled 5 (2).png"/>
+  <img src={require("./assets/Untitled 5 (2).png").default}/>
   <br />
 </p>
 
@@ -121,7 +121,7 @@ nvidia-smi
 Durante la programación en CUDA, tanto la CPU como la GPU realizan operaciones simultáneamente, por lo que es necesario sincronizar los tiempos de ejecución entre ambos componentes.
 
 <p align="center">
-  <img src="./imagenes/Untitled 6 (2).png"/>
+  <img src={require("./assets/Untitled 6 (2).png").default}/>
   <br />
 </p>
 
@@ -255,19 +255,21 @@ void main()
 
 En el código anterior, cada hilo realiza una iteración del bucle. La fórmula para mapear cada hilo a un índice del bucle es:
 
-`i_{x} = (blockIdx.x \cdot blockDim.x) + threadIdx.x`
+$$
+i_{x} = (blockIdx.x \cdot blockDim.x) + threadIdx.x
+$$
 
 <p align="center">
-  <img src="./imagenes/Untitled 7 (1).png"/>
+  <img src={require("./assets/Untitled 7 (1).png").default}/>
   <br />
 </p>
 
 Es importante que `blockDim.x` sea mayor o igual a 32, que es el tamaño del *warp*.
 
-En casos donde el número de hilos excede el número de tareas, se debe asegurar que el índice obtenido `i_{x}` sea menor que el número total de datos.
+En casos donde el número de hilos excede el número de tareas, se debe asegurar que el índice obtenido $i_{x}$ sea menor que el número total de datos.
 
 <p align="center">
-  <img src="./imagenes/Untitled 8 (1).png"/>
+  <img src={require("./assets/Untitled 8 (1).png").default}/>
   <br />
 </p>
 
@@ -316,7 +318,7 @@ cudaFree(a);
 Gracias a los avances en hardware, se ha logrado mejorar la tasa de transferencia entre la CPU y la GPU, así como las características de la memoria en ambos componentes. Las versiones recientes de CUDA permiten el uso de **memoria unificada**, que facilita el intercambio de datos entre la CPU y la GPU.
 
 <p align="center">
-  <img src="./imagenes/Untitled 9.png"/>
+  <img src={require("./assets/Untitled 9.png").default}/>
   <br />
 </p>
 
@@ -330,7 +332,7 @@ La memoria unificada ofrece una serie de ventajas:
 Los tipos de memoria en CUDA se pueden observar en la imagen siguiente:
 
 <p align="center">
-  <img src="./imagenes/Untitled 10 (1).png"/>
+  <img src={require("./assets/Untitled 10 (1).png").default}/>
   <br />
 </p>
 
@@ -344,7 +346,7 @@ La memoria unificada presenta algunas consideraciones:
 Podemos resumir el proceso de la memoria unificada con la siguiente imagen:
 
 <p align="center">
-  <img src="./imagenes/AB407146-6A59-4476-A97F-B0D7BF2AA8CC.jpeg"/>
+  <img src={require("./assets/AB407146-6A59-4476-A97F-B0D7BF2AA8CC.jpeg").default}/>
   <br />
 </p>
 
@@ -498,7 +500,7 @@ int main()
 ### 2.6. Ejemplos de Kernels característicos/comunes
 
 <p align="center">
-  <img src="./imagenes/Untitled 12.png"/>
+  <img src={require("./assets/Untitled 12.png").default}/>
   <br />
 </p>
 

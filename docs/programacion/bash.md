@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Creación de scripts con Bash.
+description: Crea tus propios scripts ejecutables con Bash.
 title: Bash
 ---
 
