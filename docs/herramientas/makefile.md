@@ -57,7 +57,7 @@ Cuando se ejecuta el comando `make install`, Make verifica si el archivo `pyproj
 Los comentarios en un Makefile se escriben utilizando el símbolo `#`. Estos comentarios no afectan la ejecución del archivo y sirven para describir el propósito de las reglas o comandos. Un ejemplo de comentario es:
 
 ```makefile
-## Esta regla instala las dependencias de Poetry
+# Esta regla instala las dependencias de Poetry
 install: pyproject.toml
     poetry install
 ```
@@ -152,6 +152,7 @@ $(subst from,to,text)
 - **text:** El texto original donde se buscarán las ocurrencias.
 
 ##### Ejemplo:
+
 ```makefile
 SOURCES = file1.cpp file2.cpp file3.cpp
 OBJECTS = $(subst .cpp,.o,$(SOURCES))
@@ -172,6 +173,7 @@ $(patsubst pattern,replacement,text)
 - **text:** El texto donde se buscará el patrón.
 
 ##### Ejemplo:
+
 ```makefile
 SOURCES = file1.cpp file2.cpp file3.cpp
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
@@ -192,6 +194,7 @@ $(filter-out pattern...,text)
 ```
 
 ##### Ejemplo:
+
 ```makefile
 SOURCES = file1.c file2.cpp file3.h
 C_FILES = $(filter %.c,$(SOURCES))
@@ -212,6 +215,7 @@ $(foreach var,list,text)
 - **text:** El texto que se evaluará para cada valor de la lista.
 
 ##### Ejemplo:
+
 ```makefile
 DIRS = dir1 dir2 dir3
 CLEAN_DIRS = $(foreach dir,$(DIRS),$(dir)/clean)
@@ -241,7 +245,7 @@ En este ejemplo, si la variable `USE_DEBUG` tiene el valor `yes`, se añade la b
 
 ### 3.2. Directivas clave
 
-Las directivas en Makefiles permiten controlar el flujo de ejecución, la inclusión de otros archivos y otras configuraciones avanzadas.
+Las directivas permiten controlar el flujo de ejecución, la inclusión de otros archivos y otras configuraciones avanzadas.
 
 #### 3.2.1. Directiva `include`
 
@@ -286,14 +290,12 @@ La directiva `.DELETE_ON_ERROR` indica a Make que elimine el archivo objetivo si
 Makefiles permiten el uso de estructuras condicionales para adaptar las reglas a diferentes entornos o configuraciones.
 
 ```makefile
-ifeq ($(CC),gcc)
-    CFLAGS += -Wall
+ifeq (condicion)
+    accion
 else
-    CFLAGS += -W3
+    accion
 endif
 ```
-
-En este ejemplo, si el compilador (`CC`) es `gcc`, se añade la bandera `-Wall` a `CFLAGS` (para activar todos los warnings). Si no, se añade `-W3`.
 
 ### 3.4. Macros y funciones
 
@@ -324,17 +326,17 @@ Es recomendable organizar el Makefile de manera que sea fácil de leer y mantene
 
 3. **Modularización:** Dividir los Makefiles grandes en varios archivos pequeños y organizados, utilizando la directiva `include`.
 
-##### Ejemplo de estructura organizada:
+A continuación se muestra un ejemplo de estructura organizada:
 
 ```makefile
-## Variables de configuración
+# Variables de configuración
 CC = gcc
 CFLAGS = -Wall -O2
 
-## Objetivos
+# Objetivos
 all: programa
 
-## Reglas de compilación
+# Reglas de compilación
 programa: main.o utils.o
     $(CC) $(CFLAGS) -o programa main.o utils.o
 
@@ -344,14 +346,14 @@ main.o: main.c
 utils.o: utils.c
     $(CC) $(CFLAGS) -c utils.c
 
-## Limpiar los archivos generados
+# Limpiar los archivos generados
 clean:
     rm -f *.o programa
 ```
 
 ### 4.2. Depuración
 
-La depuración de Makefiles puede ser un desafío si no se siguen ciertas prácticas que faciliten la detección de errores. Algunas técnicas útiles incluyen:
+La depuración de Makefiles puede ser compleja si no se siguen ciertas prácticas. Algunas técnicas útiles incluyen:
 
 1. **Ejecución en seco (`-n`):** Esta opción permite ver qué comandos se ejecutarían sin realmente ejecutarlos, lo cual es útil para verificar el flujo de ejecución.
    ```sh
@@ -388,11 +390,7 @@ Asegurar la portabilidad de los Makefiles es crucial cuando el proyecto se compi
 
 El uso de Makefiles no se limita a proyectos simples, sino que también se extiende a proyectos grandes, integraciones con sistemas de control de versiones, y otras tareas más avanzadas, como la generación de documentación o la creación de paquetes. A continuación se presentan algunos casos de uso avanzados que demuestran la flexibilidad y potencia de Make.
 
-### 5.1. Gestión de proyectos
-
-En proyectos de gran envergadura con múltiples directorios y archivos, es crucial estructurar bien el sistema de construcción. Para esto, se pueden emplear dos enfoques: Makefiles recursivos o un sistema de construcción no recursivo.
-
-#### 5.1.1. Makefiles recursivos
+### 5.1. Makefiles recursivos
 
 Los Makefiles recursivos son útiles para proyectos con una estructura de subdirectorios, donde cada uno tiene su propio Makefile. El Makefile principal se encarga de coordinar las compilaciones en los subdirectorios. Esto es especialmente práctico cuando los diferentes módulos o bibliotecas se gestionan de forma independiente.
 
@@ -410,7 +408,7 @@ En este ejemplo, `SUBDIRS` contiene los subdirectorios `lib` y `src`. La regla `
 
 Este enfoque permite organizar el proyecto de manera modular, facilitando su mantenimiento y la adición de nuevas funcionalidades sin alterar el Makefile principal.
 
-#### 5.1.2. Sistema de construcción no recursivo
+### 5.2. Makefiles no recursivo
 
 Un sistema no recursivo también es una opción para proyectos grandes. A diferencia del enfoque recursivo, se controla todo el proceso de compilación desde un único Makefile, sin necesidad de cambiar de directorio. Esto puede ser más eficiente al evitar la sobrecarga de llamadas recursivas y proporcionar un control centralizado.
 
@@ -428,7 +426,9 @@ all: $(OBJS)
 
 En este ejemplo, se utilizan funciones como `addprefix` y `wildcard` para generar automáticamente las rutas a los archivos fuente dentro de los subdirectorios, y `foreach` para aplicar la regla de compilación a todos los archivos. El resultado es un sistema de construcción más centralizado y eficiente.
 
-### 5.2. Integración con sistemas de control de versiones
+### 5.3. Otros casos de uso
+
+#### 5.3.1. Integración con sistemas de control de versiones
 
 Makefiles pueden integrarse con sistemas de control de versiones, como Git, para automatizar tareas relacionadas con la versión del código. Esto es útil para etiquetar versiones del software o para incrustar la información de la versión en los binarios.
 
@@ -442,7 +442,7 @@ $(TARGET): CFLAGS += -DVERSION=\"$(VERSION)\"
 
 En este ejemplo, la variable `VERSION` toma la versión del código desde Git usando `git describe`, que devuelve la etiqueta más cercana, el número de commits desde esa etiqueta y el estado del repositorio. Esta versión se pasa como una macro de preprocesador a través de `CFLAGS`.
 
-### 5.3. Generación automática de documentación
+#### 5.3.2. Generación automática de documentación
 
 Makefiles pueden automatizar la generación de documentación utilizando herramientas como Doxygen. Esta automatización es especialmente útil en proyectos donde la documentación debe actualizarse regularmente en función de los cambios en el código.
 
@@ -455,7 +455,7 @@ docs: $(SRCS)
 
 En este ejemplo, la regla `docs` utiliza Doxygen para generar la documentación a partir de los archivos fuente listados en `$(SRCS)` y las configuraciones definidas en `Doxyfile`. Al ejecutar `make docs`, se genera automáticamente la documentación en el formato deseado (HTML, PDF, etc.).
 
-### 5.4. Creación y gestión de paquetes
+#### 5.3.3. Creación y gestión de paquetes
 
 Los Makefiles pueden también facilitar la creación de paquetes para distribución, empaquetando los binarios y archivos relacionados en formatos como `.tar.gz`.
 
@@ -468,109 +468,86 @@ package: all
 
 Este ejemplo genera un archivo comprimido `tar.gz` que contiene el binario final `$(TARGET)` y el archivo `README.md`. El nombre del paquete incluye el número de versión, lo cual es útil para identificar diferentes versiones del software.
 
-### 5.5. Implementación de sistemas de construcción personalizados
-
-Para proyectos con necesidades específicas, es posible implementar sistemas de construcción personalizados utilizando Make como base. Estos sistemas pueden incluir reglas complejas, manejo de dependencias, y generación de archivos automáticamente.
-
-Ejemplo de sistema personalizado con dependencias:
-
-```makefile
-include $(wildcard *.d)
-
-%.d: %.c
-    $(CC) -MM $< > $@
-
-%.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
-```
-
-En este ejemplo, se generan archivos de dependencias (`.d`) automáticamente para cada archivo fuente `.c`. La regla `%.d: %.c` utiliza el compilador para generar dependencias, mientras que la regla `%.o: %.c` compila el archivo fuente en un objeto. El archivo `*.d` se incluye al inicio del Makefile para asegurar que las dependencias se carguen correctamente.
-
-## 6. Herramientas y recursos adicionales
-
-En esta sección se describen herramientas y recursos útiles que complementan el uso de Make en la gestión de proyectos, así como funcionalidades adicionales ofrecidas por GNU Make para mejorar el rendimiento y la flexibilidad del sistema de construcción.
-
-### 6.1. GNU Make
+## 6. GNU Make
 
 GNU Make es una de las herramientas más utilizadas para automatizar procesos de compilación y gestión de proyectos de software. Su capacidad de manejar dependencias y automatizar tareas repetitivas la convierte en una opción popular en diversos entornos de desarrollo. A continuación, se detallan algunas características avanzadas que pueden mejorar el rendimiento y la gestión de proyectos a través de GNU Make.
 
-#### 6.1.1. Opciones de línea de comandos y su aplicación
+### 6.1. Opciones de línea de comandos
 
 GNU Make ofrece diversas opciones que permiten modificar su comportamiento desde la línea de comandos. Estas opciones facilitan la depuración, la mejora del rendimiento en compilaciones paralelas y la gestión de diferentes Makefiles.
 
-- `-j [N]`: Ejecuta N tareas en paralelo, aprovechando sistemas con múltiples núcleos. Esta opción es especialmente útil en compilaciones grandes, ya que reduce el tiempo de construcción al ejecutar tareas simultáneamente.
+- `-j [N]`: Ejecuta N tareas en paralelo, aprovechando sistemas con múltiples núcleos. Esta opción es especialmente útil en compilaciones grandes, ya que reduce el tiempo de construcción al ejecutar tareas simultáneamente. Por ejemplo:
   
-  **Ejemplo:**
   ```sh
   make -j4
   ```
+
   En este caso, se ejecutan cuatro tareas en paralelo.
 
-- `-n` o `--dry-run`: Muestra los comandos que se ejecutarían, pero sin ejecutarlos realmente. Es una excelente herramienta para verificar que las reglas y dependencias estén correctamente configuradas antes de hacer cambios efectivos.
-  
-  **Ejemplo:**
+- `-n` o `--dry-run`: Muestra los comandos que se ejecutarían, pero sin ejecutarlos realmente. Es una excelente herramienta para verificar que las reglas y dependencias estén correctamente configuradas antes de hacer cambios efectivos. Por ejemplo:
+
   ```sh
   make -n install
   ```
+
   Muestra los comandos que se ejecutarían para la regla `install` sin ejecutarlos.
 
-- `-B` o `--always-make`: Fuerza la reconstrucción de todos los objetivos, independientemente de si los archivos están actualizados o no.
-  
-  **Ejemplo:**
+- `-B` o `--always-make`: Fuerza la reconstrucción de todos los objetivos, independientemente de si los archivos están actualizados o no. Por ejemplo:
+
   ```sh
   make -B
   ```
+
   Vuelve a compilar todo el proyecto sin considerar si los archivos objetivo ya están actualizados.
 
-- `-d`: Proporciona información detallada de depuración, mostrando cómo Make decide qué archivos necesitan ser reconstruidos y cómo se evalúan las reglas.
-  
-  **Ejemplo:**
+- `-d`: Proporciona información detallada de depuración, mostrando cómo Make decide qué archivos necesitan ser reconstruidos y cómo se evalúan las reglas. Por ejemplo:
+
   ```sh
   make -d
   ```
+
   Ejecuta Make con información de depuración detallada, útil para diagnosticar problemas complejos en Makefiles.
 
-- `-f [archivo]`: Permite especificar un archivo Makefile alternativo. Esto es útil cuando se tiene más de un Makefile en el proyecto o cuando se quiere probar un archivo temporal.
-  
-  **Ejemplo:**
+- `-f [archivo]`: Permite especificar un archivo Makefile alternativo. Esto es útil cuando se tiene más de un Makefile en el proyecto o cuando se quiere probar un archivo temporal. Por ejemplo:
+
   ```sh
   make -f Makefile.alt
   ```
+
   Ejecuta Make usando el archivo `Makefile.alt` en lugar del `Makefile` predeterminado.
 
-#### 6.1.2. Variables de entorno útiles
+#### 6.2. Variables de entorno
 
 GNU Make utiliza varias variables de entorno para ajustar su comportamiento. Estas variables pueden ser utilizadas para personalizar el proceso de construcción sin modificar directamente el Makefile.
 
-- `MAKEFILES`: Es una lista de Makefiles que se incluyen automáticamente antes de procesar el Makefile principal. Esta variable es útil cuando se desea forzar la inclusión de ciertos archivos en todas las invocaciones de Make sin tener que modificar cada Makefile individual.
+- `MAKEFILES`: Es una lista de Makefiles que se incluyen automáticamente antes de procesar el Makefile principal. Esta variable es útil cuando se desea forzar la inclusión de ciertos archivos en todas las invocaciones de Make sin tener que modificar cada Makefile individual. Por ejemplo:
 
-  **Ejemplo:**
   ```sh
   export MAKEFILES=common.mk
   ```
+
   Hace que `common.mk` se incluya automáticamente en todos los Makefiles.
 
-- `MAKELEVEL`: Indica el nivel de recursión actual en una construcción de Make. Este valor es útil para evitar comportamientos indeseados en construcciones recursivas o para imprimir mensajes específicos solo en el nivel más alto de la recursión.
+- `MAKELEVEL`: Indica el nivel de recursión actual en una construcción de Make. Este valor es útil para evitar comportamientos indeseados en construcciones recursivas o para imprimir mensajes específicos solo en el nivel más alto de la recursión. Por ejemplo:
 
-  **Ejemplo:**
   ```makefile
   ifeq ($(MAKELEVEL),0)
       @echo "Ejecutando nivel superior de Make"
   endif
   ```
 
-- `MAKEFLAGS`: Almacena las opciones de línea de comandos que se pasaron a Make. Es útil para mantener las mismas opciones de compilación en todo un proyecto, especialmente en construcciones recursivas.
+- `MAKEFLAGS`: Almacena las opciones de línea de comandos que se pasaron a Make. Es útil para mantener las mismas opciones de compilación en todo un proyecto, especialmente en construcciones recursivas. Por ejemplo:
 
-  **Ejemplo:**
-  ```sh
+  ```bash
   make -j4
   ```
+
   Después de ejecutar este comando, `MAKEFLAGS` almacenará `-j4`, garantizando que las llamadas recursivas a Make también utilicen esta opción.
 
-- `MAKEFILE_LIST`: Contiene la lista de todos los Makefiles que Make ha procesado. Esta variable es útil para depurar o generar informes que muestren todos los archivos Makefile que se están utilizando en un proyecto.
+- `MAKEFILE_LIST`: Contiene la lista de todos los Makefiles que Make ha procesado. Esta variable es útil para depurar o generar informes que muestren todos los archivos Makefile que se están utilizando en un proyecto. Por ejemplo:
 
-  **Ejemplo:**
   ```makefile
   @echo "Archivos Makefile procesados: $(MAKEFILE_LIST)"
   ```
+
   Imprime todos los Makefiles que han sido procesados durante la ejecución.

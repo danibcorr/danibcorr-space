@@ -2,10 +2,8 @@
 sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
-description: GitHub
+description: Utiliza Git con GitHub
 title: GitHub
-toc_min_heading_level: 2
-toc_max_heading_level: 5
 ---
 
 # Bibliografía
@@ -14,7 +12,11 @@ toc_max_heading_level: 5
 
 # Introducción
 
-![Logo de GitHub](https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png)
+<p align="center">
+  <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png" height="300"/>
+  <br />
+  <em>Logo de GitHub</em>
+</p>
 
 **GitHub** es una plataforma de desarrollo colaborativo que se utiliza para gestionar proyectos de software. Proporciona herramientas que permiten la integración continua (CI), la entrega continua (CD) y el control de versiones a través de **Git**. 
 

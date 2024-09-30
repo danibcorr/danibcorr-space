@@ -8,8 +8,14 @@ title: Ejercicios de CUDA en C
 
 ## Ejercicios básicos
 
+### Orden de ejecución
+
 <details>
-<summary>Orden ejecución, primero GPU luego CPU.</summary>
+<summary>
+Ejemplo
+</summary>
+
+En este código mostraremos como ejecutar la función primero en la GPU, y luego en la CPU.
 
 ```c
 #include <stdio.h>
@@ -39,11 +45,7 @@ int main()
 }
 ```
 
-</details>
-
-
-<details>
-<summary>Orden ejecución, primero GPU, luego CPU y de nuevo la GPU.</summary>
+En este otro caso, primero se ejecutará en la CPU y posteriormente en la GPU.
 
 ```c
 #include <stdio.h>
@@ -80,8 +82,14 @@ int main()
 </details>
 
 
+### Ejecución de hilos y bloques en un Kernel
+
 <details>
-<summary>Ejecutar 5 hilos en un único bloque para un Kernel.</summary>
+<summary>
+Ejemplo
+</summary>
+
+En este primer ejemplo, vamos a ejecutar 5 hilos en un único bloque para un Kernel.
 
 ```c
 #include <stdio.h>
@@ -107,11 +115,7 @@ int main()
 }
 ```
 
-</details>
-
-
-<details>
-<summary>Ejecutar 5 hilos en 5 bloques diferentes de un Kernel.</summary>
+En este otro ejemplo, vamos a ejecutar 5 hilos en 5 bloques diferentes de un mismo Kernel.
 
 ```c
 #include <stdio.h>
@@ -139,9 +143,12 @@ int main()
 
 </details>
 
+### Utilizar índices específicos de hilos y bloques en un Kernel
 
 <details>
-<summary>Utilizar índices específicos de hilos y bloques.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -167,12 +174,14 @@ int main()
     return 0;
 }
 ```
-
 </details>
 
+### Aceleración de un bucle con un único bloque de subprocesos
 
 <details>
-<summary>Aceleración de un bucle con un único bloque de subprocesos.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -204,9 +213,12 @@ int main()
 
 </details>
 
+### Aceleración de un bucle con varios bloques de subprocesos
 
 <details>
-<summary>Aceleración de un bucle con varios bloques de subprocesos.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -237,9 +249,12 @@ int main()
 ```
 </details>
 
+### Manipulación de arrays en el *host* y *device*
 
 <details>
-<summary>Manipulación de arrays en el host y device.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -316,9 +331,12 @@ int main()
 ```
 </details>
 
+### Aceleración de un bucle con una configuración de ejecución no coincidente
 
 <details>
-<summary>Aceleración de un bucle con una configuración de ejecución no coincidente.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -390,9 +408,12 @@ int main()
 ```
 </details>
 
+### Utilizar un bucle *Grid-Stride* para manipular un array mayor que la cuadrícula de los bloques
 
 <details>
-<summary>Utilizar un bucle Grid-Stride para manipular un array mayor que la cuadrícula de los bloques.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -470,9 +491,12 @@ int main()
 ```
 </details>
 
+### Manejo de errores
 
 <details>
-<summary>Manejo de errores.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -570,9 +594,12 @@ size_t threads_per_block = 1024;
 
 </details>
 
+### Acelerar la suma de vectores
 
 <details>
-<summary>Acelerar la suma de vectores.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -659,15 +686,17 @@ int main()
 ```
 </details>
 
+### Acelerar la multiplicación de matrices 2D
 
 <details>
-<summary>Acelerar la multiplicación de matrices 2D.</summary>
+<summary>
+Ejemplo
+</summary>
 
 <p align="center">
   <img src={require("./assets/Matrix.jpg").default}/>
   <br />
 </p>
-
 
 ```c
 #include <stdio.h>
@@ -794,9 +823,13 @@ int main()
 ```
 </details>
 
+### Acelerar una aplicación de conductividad térmica
 
 <details>
-<summary>Acelerar una aplicación de conductividad térmica.</summary>
+<summary>
+Ejemplo
+</summary>
+
 <p align="center">
   <img src={require("./assets/Thermal_Conductivity.jpg").default}/>
   <br />
@@ -822,7 +855,7 @@ inline cudaError_t checkCuda(cudaError_t result)
 #define I2D(num, c, r) ((r)*(num)+(c))
 
 /*
-* `step_kernel_mod` es actualmente una copia directa de la solución de referencia de la CPU
+* `step_kernel_mod` es actualmente una copia directa de la Ejemplo de referencia de la CPU
 * `step_kernel_ref` a continuación. Aceléralo para que se ejecute como un kernel CUDA.
 */
 
@@ -967,22 +1000,22 @@ int main()
 ```
 </details>
 
-
-
 ## Ejercicios avanzados
 
-Los ejercicios se han realizado con una **Tesla T4.**
-
-#### Perfilar una aplicación con nsys
+### Perfilar una aplicación con nsys
 
 Podemos utilizar el comando `!nsys profile --stats=true ./kernel` para obtener información sobre dicho kernel. Entre la información proporcionada, se encuentra el tiempo medio de ejecución del kernel po lo que sería muy útil para hacer evaluaciones del mejor reparto de bloques y hebras para el problema concreto.
 
-#### Optimización
+### Optimización
 
 Por ejemplo, si tenemos datos con tamaños de $$2^{24} = 2^{25} = 2^{10} \cdot 2^{10} \cdot 2^{5}$$, podemos tener como máximo 1024 hebras por bloque, quedando $$2^{15}$$ hebras que las repartiremos conformando $$2^{25}/1024 = 32768$$ bloques. En total tendríamos $$1024 \cdot 32768 = 33554432$$ hebras totales.
 
+#### Consultar especificaciones de la GPU
+
 <details>
-<summary>Consultar especificaciones de la GPU.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -1006,9 +1039,12 @@ int main()
 ```
 </details>
 
+#### Optimizar la suma de vectores con cuadrículas del tamaño del número de SMs de la GPU
 
 <details>
-<summary>Optimizar la suma de vectores con cuadrículas del tamaño del número de SMs de la GPU.</summary>
+<summary>
+Ejemplo
+</summary>
 
 ```c
 #include <stdio.h>
@@ -1122,9 +1158,12 @@ int main()
 ```
 </details>
 
+#### Prefetch/precarga de memoria
 
 <details>
-<summary>Prefetch/precarga de memoria.</summary>
+<summary>
+Ejemplo
+</summary>
 
 Al utilizar precarga de memoria, obtenemos menos transferencias de memoria pero con mayor contenido además de una reducción en el tiempo de ejecución del Kernel.
 
