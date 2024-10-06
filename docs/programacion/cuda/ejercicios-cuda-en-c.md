@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Ejercicios de CUDA en C.
 title: Ejercicios de CUDA en C
+toc_max_heading_level: 4
 ---
 
 ## Ejercicios básicos

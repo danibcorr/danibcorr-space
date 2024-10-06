@@ -3,7 +3,8 @@ sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
 description: Estructuras de datos y algoritmos de programación.
-title: Estructuras de datos y algoritmos.
+title: Estructuras de datos y algoritmos
+toc_max_heading_level: 4
 ---
 
 # Bibliografía
@@ -20,17 +21,17 @@ La notación Big O se utiliza para evaluar la eficiencia de los algoritmos en t�
 
 ### 1.1. Ejemplos de Notación Big O
 
-- **O(1)**: El tiempo de ejecución es constante, independientemente del tamaño de la entrada. Es típico en algoritmos que acceden a un número fijo de elementos, como devolver el primer elemento de una lista.
+- $O(1)$: El tiempo de ejecución es constante, independientemente del tamaño de la entrada. Es típico en algoritmos que acceden a un número fijo de elementos, como devolver el primer elemento de una lista.
 
-- **O(logN)**: El tiempo de ejecución crece logarítmicamente con el tamaño de la entrada. Común en algoritmos que dividen el problema a la mitad en cada paso, como la búsqueda binaria.
+- $O(\log N)$: El tiempo de ejecución crece logarítmicamente con el tamaño de la entrada. Común en algoritmos que dividen el problema a la mitad en cada paso, como la búsqueda binaria.
 
-- **O(N)**: El tiempo de ejecución crece linealmente con el tamaño de la entrada. Típico de algoritmos que realizan una operación en cada elemento de la entrada, como sumar todos los elementos de una lista.
+- $O(N)$: El tiempo de ejecución crece linealmente con el tamaño de la entrada. Típico de algoritmos que realizan una operación en cada elemento de la entrada, como sumar todos los elementos de una lista.
 
-- **O(NlogN)**: Representa una combinación de comportamiento lineal y logarítmico. Es común en algoritmos de ordenación eficientes, como el algoritmo de ordenación rápida (*quicksort*).
+- $O(N\log N)$: Representa una combinación de comportamiento lineal y logarítmico. Es común en algoritmos de ordenación eficientes, como el algoritmo de ordenación rápida (*quicksort*).
 
-- **O(N^2)**: El tiempo de ejecución crece cuadráticamente con el tamaño de la entrada. Se presenta en algoritmos que realizan operaciones sobre cada par de elementos, como el algoritmo de ordenación por burbuja.
+- $O(N^2)$: El tiempo de ejecución crece cuadráticamente con el tamaño de la entrada. Se presenta en algoritmos que realizan operaciones sobre cada par de elementos, como el algoritmo de ordenación por burbuja.
 
-- **O(2^N)**: El tiempo de ejecución crece exponencialmente con el tamaño de la entrada. Es típico de algoritmos que generan todas las combinaciones posibles de elementos, como el "problema del viajante".
+- $O(2^N)$: El tiempo de ejecución crece exponencialmente con el tamaño de la entrada. Es típico de algoritmos que generan todas las combinaciones posibles de elementos, como el "problema del viajante".
 
 En casos donde se realizan múltiples operaciones con diferentes costes temporales, la notación Big O se utiliza para representar el peor caso.
 
@@ -46,7 +47,7 @@ def funcion():
         ...
 ```
 
-En este ejemplo, cada bucle tiene una complejidad de **O(N)**, pero como los bucles operan en arrays diferentes, la complejidad total es **O(A + B)**, donde **A** y **B** son los tamaños de los arrays `arrayA` y `arrayB`, respectivamente.
+En este ejemplo, cada bucle tiene una complejidad de $O(N)$, pero como los bucles operan en arrays diferentes, la complejidad total es $O(A + B)$, donde $A$ y $B$ son los tamaños de los arrays `arrayA` y `arrayB`, respectivamente.
 
 ```python
 def funcion():
@@ -55,9 +56,9 @@ def funcion():
             ...
 ```
 
-En este caso, la complejidad es **O(A \* B)**, ya que los bucles anidados operan sobre arrays diferentes. Es un error asumir **O(N^2)** sin considerar los tamaños de los arrays involucrados.
+En este caso, la complejidad es $O(A \times B)$, ya que los bucles anidados operan sobre arrays diferentes. Es un error asumir $O(N^2)$ sin considerar los tamaños de los arrays involucrados.
 
-Es importante señalar que la notación Big O no está limitada a la letra **N**; cualquier letra puede ser utilizada para representar el tamaño de la entrada en función del contexto del problema.
+Es importante señalar que la notación Big O no está limitada a la letra $N$; cualquier letra puede ser utilizada para representar el tamaño de la entrada en función del contexto del problema.
 
 ## 2. Métodos de ordenación
 
@@ -75,23 +76,23 @@ La ordenación de burbuja es un algoritmo de ordenación sencillo que compara pa
 ```python
 def ordenacion_burbuja(lista: list[int]) -> list[int]:
 
-    ## Bucle externo que recorre toda la lista
+    # Bucle externo que recorre toda la lista
     for i in range(len(lista)):
 
-        ## Bucle interno que compara elementos adyacentes
+        # Bucle interno que compara elementos adyacentes
         for j in range(len(lista) - 1):
 
-            ## Compara si el elemento actual es mayor que el siguiente
+            # Compara si el elemento actual es mayor que el siguiente
             if lista[j] > lista[j + 1]:
 
-                ## Almacena temporalmente el valor del elemento actual
+                # Almacena temporalmente el valor del elemento actual
                 temp = lista[j]
 
-                ## Intercambia los elementos
+                # Intercambia los elementos
                 lista[j] = lista[j + 1]
                 lista[j + 1] = temp
 
-    ## Devuelve la lista ordenada
+    # Devuelve la lista ordenada
     return lista
 ```
 
@@ -107,25 +108,25 @@ La ordenación por selección selecciona el elemento más pequeño de la lista y
 ```python
 def ordenacion_seleccion(lista: list[int]) -> list[int]:
 
-    ## Bucle externo que recorre toda la lista
+    # Bucle externo que recorre toda la lista
     for i in range(len(lista)):
 
-        ## Inicializa el índice del valor mínimo como el índice actual
+        # Inicializa el índice del valor mínimo como el índice actual
         idx_min_value = i
 
-        ## Bucle interno que busca el elemento más pequeño en la sublista no ordenada
+        # Bucle interno que busca el elemento más pequeño en la sublista no ordenada
         for j in range(i + 1, len(lista)): 
 
-            ## Compara si el elemento actual es menor que el mínimo encontrado hasta ahora
+            # Compara si el elemento actual es menor que el mínimo encontrado hasta ahora
             if lista[idx_min_value] > lista[j]:
                 idx_min_value = j
 
-        ## Intercambia el elemento mínimo encontrado con el primer elemento de la sublista no ordenada
+        # Intercambia el elemento mínimo encontrado con el primer elemento de la sublista no ordenada
         temp = lista[i]
         lista[i] = lista[idx_min_value]
         lista[idx_min_value] = temp
 
-    ## Devuelve la lista ordenada
+    # Devuelve la lista ordenada
     return lista
 ```
 
@@ -141,24 +142,24 @@ La ordenación por inserción funciona dividiendo la lista en una parte ordenada
 ```python
 def ordenacion_insercion(lista: list[int]) -> list[int]:
 
-    ## Bucle que recorre la lista desde el segundo elemento hasta el final
+    # Bucle que recorre la lista desde el segundo elemento hasta el final
     for i in range(1, len(lista)):
 
-        ## Inicializa j como el índice del elemento actual
+        # Inicializa j como el índice del elemento actual
         j = i
 
-        ## Compara y desplaza elementos mientras sea necesario
+        # Compara y desplaza elementos mientras sea necesario
         while j > 0 and lista[j - 1] > lista[j]:
 
-            ## Intercambia elementos adyacentes
+            # Intercambia elementos adyacentes
             temp = lista[j - 1]
             lista[j - 1] = lista[j]
             lista[j] = temp
 
-            ## Decrementa j para continuar comparando con elementos anteriores
+            # Decrementa j para continuar comparando con elementos anteriores
             j -= 1
 
-    ## Devuelve la lista ordenada
+    # Devuelve la lista ordenada
     return lista
 ```
 
@@ -180,15 +181,15 @@ La búsqueda lineal es un método de búsqueda sencillo que recorre cada element
 ```python
 def busqueda_lineal(lista: list[int], valor_buscar: int) -> int:
 
-    ## Recorre la lista utilizando enumerate para obtener índice y valor
+    # Recorre la lista utilizando enumerate para obtener índice y valor
     for idx, valor in enumerate(lista):
 
-        ## Compara el valor actual con el valor buscado
+        # Compara el valor actual con el valor buscado
         if valor_buscar == valor:
-            ## Si encuentra el valor, devuelve su índice
+            # Si encuentra el valor, devuelve su índice
             return idx
 
-    ## Si no encuentra el valor, devuelve None
+    # Si no encuentra el valor, devuelve None
     return None
 ```
 
@@ -204,31 +205,31 @@ La búsqueda binaria es un método de búsqueda eficiente que divide repetidamen
 ```python
 def busqueda_binaria(lista: list[int], valor_buscar: int) -> int:
 
-    ## Ordena la lista de manera ascendente
+    # Ordena la lista de manera ascendente
     lista.sort()
 
-    ## Inicializa los índices de los extremos de la lista
+    # Inicializa los índices de los extremos de la lista
     izquierda = 0
     derecha = len(lista) - 1
 
-    ## Bucle principal de la búsqueda binaria
+    # Bucle principal de la búsqueda binaria
     while izquierda <= derecha:
 
-        ## Calcula el índice del punto medio
+        # Calcula el índice del punto medio
         punto_medio = (izquierda + derecha) // 2
 
-        ## Compara el valor buscado con el elemento del punto medio
+        # Compara el valor buscado con el elemento del punto medio
         if valor_buscar == lista[punto_medio]:
-            ## Si encuentra el valor, devuelve su índice
+            # Si encuentra el valor, devuelve su índice
             return punto_medio
         elif valor_buscar > lista[punto_medio]:
-            ## Si el valor es mayor, ajusta el límite izquierdo
+            # Si el valor es mayor, ajusta el límite izquierdo
             izquierda = punto_medio + 1
         else:
-            ## Si el valor es menor, ajusta el límite derecho
+            # Si el valor es menor, ajusta el límite derecho
             derecha = punto_medio - 1
 
-    ## Si no encuentra el valor, devuelve None
+    # Si no encuentra el valor, devuelve None
     return None
 ```
 
@@ -850,26 +851,26 @@ class Nodo():
     
     def __init__(self, valor: int = None, padre: int = None, es_raiz: bool = False, es_izquierdo: bool = False, es_derecho: bool = False):
         
-        ## Valor del nodo
+        # Valor del nodo
         self.valor = valor   
-        ## Nodo hijo izquierdo          
+        # Nodo hijo izquierdo          
         self.izquierdo = None   
-        ## Nodo hijo derecho            
+        # Nodo hijo derecho            
         self.derecho = None            
-        ## Nodo padre     
+        # Nodo padre     
         self.padre = padre                  
-        ## Indica si el nodo es la raíz
+        # Indica si el nodo es la raíz
         self.es_raiz = es_raiz              
-        ## Indica si el nodo es un hijo derecho
+        # Indica si el nodo es un hijo derecho
         self.es_derecho = es_derecho        
-        ## Indica si el nodo es un hijo izquierdo
+        # Indica si el nodo es un hijo izquierdo
         self.es_izquierdo = es_izquierdo    
 
 class ArbolBinario():
 
     def __init__(self):
 
-        ## Nodo raíz del árbol
+        # Nodo raíz del árbol
         self.nodo_raiz = None              
 
     def esta_vacio(self):
@@ -912,7 +913,7 @@ class ArbolBinario():
 
         return temp
 
-    ## Método para mostrar el árbol en orden (izquierda, raíz, derecha)
+    # Método para mostrar el árbol en orden (izquierda, raíz, derecha)
     def mostrar_en_orden(self, nodo):
 
         if nodo:
@@ -921,7 +922,7 @@ class ArbolBinario():
             print(nodo.valor)
             self.mostrar_en_orden(nodo.derecho)
 
-    ## Método para mostrar el árbol en postorden (izquierda, derecha, raíz)
+    # Método para mostrar el árbol en postorden (izquierda, derecha, raíz)
     def mostrar_en_postorden(self, nodo):
 
         if nodo:
@@ -930,7 +931,7 @@ class ArbolBinario():
             self.mostrar_en_postorden(nodo.derecho)
             print(nodo.valor)
 
-    ## Método para mostrar el árbol en preorden (raíz, izquierda, derecha)
+    # Método para mostrar el árbol en preorden (raíz, izquierda, derecha)
     def mostrar_en_preorden(self, nodo):
 
         if nodo:

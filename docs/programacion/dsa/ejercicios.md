@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Ejercicios típicos de entrevistas de trabajo.
 title: Ejercicios Leetcode
+toc_max_heading_level: 4
 ---
 
 # Bibliografía

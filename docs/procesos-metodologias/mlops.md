@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Herramientas necesarias para MLOps.
 title: MLOps
+toc_max_heading_level: 4
 ---
 
 # Bibliografía
@@ -345,7 +346,7 @@ Pydantic se utiliza para validar y gestionar los parámetros de configuración d
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import DirectoryPath, FilePath
 
-## Clase de configuración base
+# Clase de configuración base
 class Settings(BaseSettings):
    model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
 
@@ -383,7 +384,7 @@ El siguiente código muestra cómo crear un log de tipo `INFO`:
 ```python
 from loguru import logger
 
-logger.info("Hola!, esto es un mensaje de información")
+logger.info("¡Hola!, esto es un mensaje de información")
 ```
 
 Este código genera un log que incluye información sobre la fecha, hora de ejecución, tipo de log (`INFO`), función, módulo y la línea de código correspondiente.
@@ -415,10 +416,10 @@ Es posible establecer rotaciones para los archivos de log:
 ```python
 from loguru import logger
 
-## Rotación cuando el archivo alcance 1 MB
+# Rotación cuando el archivo alcance 1 MB
 logger.add("programa.log", rotation="1 MB")
 
-## Rotación diaria a una hora específica
+# Rotación diaria a una hora específica
 logger.add("programa.log", rotation="13:15")
 ```
 
@@ -450,7 +451,7 @@ def funcion(a, b):
 
 Este decorador facilita la captura y el registro automático de errores en las funciones.
 
-### 3.5. Automatización de Procesos mediante Bash y Makefiles
+### 3.5. Automatización de procesos mediante Bash y Makefiles
 
 El dominio de Bash es fundamental para la automatización de procesos. Para profundizar en su uso, se recomienda consultar los [apuntes sobre Bash](../programacion/bash.md) disponibles en esta Wiki. Asimismo, los [apuntes sobre Makefiles](../herramientas/makefile.md) ofrecen información relevante sobre la implementación y gestión de estos archivos para facilitar la automatización de tareas.
 
@@ -458,7 +459,7 @@ El dominio de Bash es fundamental para la automatización de procesos. Para prof
 
 GitHub es una plataforma que utiliza la herramienta Git y que incluye otras herramientas específicas de su plataforma que facilitan la gestión y despliegue de proyectos. Para profundizar en su uso, se recomienda consultar los [apuntes sobre GitHub](../herramientas/git/github.md) disponibles en esta Wiki.
 
-### 3.X. Publicación de un paquete de Python en PyPI
+### 3.7. Publicación de un paquete de Python en PyPI
 
 Para publicar un paquete de Python en PyPI, es necesario que el proyecto tenga una estructura organizada. Es recomendable alojar el paquete en un repositorio para facilitar el control de versiones, la implementación de pipelines CI/CD y otras prácticas de desarrollo.
 

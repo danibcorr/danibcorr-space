@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Gestiona y manipula bases de datos de manera eficiente utilizando SQL.
 title: SQL
+toc_max_heading_level: 4
 ---
 
 # Bibliografía

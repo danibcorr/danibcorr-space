@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Crea tus propios scripts ejecutables con Bash.
 title: Bash
+toc_max_heading_level: 4
 ---
 
 # Bibliografía

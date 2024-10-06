@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Crea y gestiona entornos virtuales de Python con Anaconda.
 title: Anaconda
+toc_max_heading_level: 4
 ---
 
 # Introducción

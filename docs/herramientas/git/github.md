@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Utiliza Git con GitHub
 title: GitHub
+toc_max_heading_level: 4
 ---
 
 # Bibliografía
@@ -18,13 +19,13 @@ title: GitHub
   <em>Logo de GitHub</em>
 </p>
 
-**GitHub** es una plataforma de desarrollo colaborativo que se utiliza para gestionar proyectos de software. Proporciona herramientas que permiten la integración continua (CI), la entrega continua (CD) y el control de versiones a través de **Git**. 
+**GitHub** es una plataforma de desarrollo colaborativo que se utiliza para gestionar proyectos de software. Proporciona herramientas que permiten la integración continua (*Continuous Integration*, CI), la entrega continua (*Continuous Deployment*, CD) y el control de versiones a través de **Git**. 
 
 GitHub se ha convertido en una herramienta esencial, ofreciendo funcionalidades avanzadas como **GitHub Actions** para la automatización de flujos de trabajo y **GitHub Pages** para la publicación de sitios web directamente desde repositorios.
 
 ## 1. CI/CD con GitHub Actions
 
-El término **CI (Continuous Integration)** se refiere a la automatización de los pasos necesarios para integrar nuevo código en un repositorio compartido, garantizando que los cambios se validen continuamente mediante pruebas y compilaciones. **CD (Continuous Deployment)** implica la automatización de los pasos necesarios para llevar el código del repositorio compartido a producción, facilitando la creación y entrega continua de nuevas versiones de un producto.
+El término **CI (*Continuous Integration*)** se refiere a la automatización de los pasos necesarios para integrar nuevo código en un repositorio compartido, garantizando que los cambios se validen continuamente mediante pruebas y compilaciones. **CD (*Continuous Deployment*)** implica la automatización de los pasos necesarios para llevar el código del repositorio compartido a producción, facilitando la creación y entrega continua de nuevas versiones de un producto.
 
 ### 1.1. GitHub Actions y su funcionamiento
 
@@ -32,7 +33,7 @@ GitHub Actions es una plataforma que permite automatizar flujos de trabajo media
 
 ### 1.2. Estructura del workflow
 
-El archivo de configuración del workflow (por ejemplo, `workflow.yml`) contiene **jobs**, que representan unidades de trabajo como la compilación del proyecto, la ejecución de pruebas o el despliegue de la aplicación. Cada job está compuesto por pasos secuenciales que describen tareas específicas, y requiere un sistema operativo para ejecutarse. Los **triggers** o eventos, como un `push`, un `pull request` o eventos programados, determinan cuándo se debe iniciar el workflow. Además, es posible definir **permisos** que limitan el acceso del workflow a los recursos del repositorio.
+El archivo de configuración del workflow (por ejemplo, `workflow.yml`) contiene ***jobs***, que representan unidades de trabajo como la compilación del proyecto, la ejecución de pruebas o el despliegue de la aplicación. Cada job está compuesto por pasos secuenciales que describen tareas específicas, y requiere un sistema operativo para ejecutarse. Los ***triggers*** o eventos, como un `push`, un `pull request` o eventos programados, determinan cuándo se debe iniciar el workflow. Además, es posible definir **permisos** que limitan el acceso del workflow a los recursos del repositorio.
 
 GitHub Actions permite utilizar acciones definidas por terceros, disponibles en [github.com/actions](https://github.com/actions) y en el [Marketplace de GitHub](https://github.com/marketplace).
 

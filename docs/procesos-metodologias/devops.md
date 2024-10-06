@@ -4,6 +4,7 @@ authors:
   - name: Daniel Bazo Correa
 description: Herramientas necesarias para DevOps.
 title: DevOps
+toc_max_heading_level: 4
 ---
 
 # Bibliografía
@@ -215,19 +216,19 @@ Un `Dockerfile` es un archivo de texto con instrucciones para construir una imag
 Ejemplo de un `Dockerfile`:
 
 ```dockerfile
-## Imagen base
+# Imagen base
 FROM node:18  
 
-## Crear carpeta para el código
+# Crear carpeta para el código
 RUN mkdir -p /home/app
 
- ## Copiar archivos del host al contenedor  
+# Copiar archivos del host al contenedor  
 COPY . /home/app
 
-## Exponer puerto 
+# Exponer puerto 
 EXPOSE 3000  
 
-## Ejecutar aplicación
+# Ejecutar aplicación
 CMD ["node", "/home/app/index.js"]  
 ```
 
@@ -262,43 +263,43 @@ Docker Compose permite definir y gestionar múltiples contenedores como un conju
 Ejemplo de `docker-compose.yml`:
 
 ```yaml
-## Define la versión del archivo de configuración de Docker Compose
+# Define la versión del archivo de configuración de Docker Compose
 version: "3.9"
 
-## Define los servicios que se van a utilizar en esta configuración
+# Define los servicios que se van a utilizar en esta configuración
 services:
   
-  ## Servicio para la aplicación
+  # Servicio para la aplicación
   mi-app:
     
-    ## Especifica el contexto de construcción, en este caso el directorio actual
+    # Especifica el contexto de construcción, en este caso el directorio actual
     build: .
 
-    ## Mapea el puerto 3000 del contenedor al puerto 3000 del host
+    # Mapea el puerto 3000 del contenedor al puerto 3000 del host
     ports:
       - "3000:3000"
 
-    ## Define los enlaces de red entre los servicios
+    # Define los enlaces de red entre los servicios
     links:
-      ## Establece un enlace con el servicio 'mongodb'
+      # Establece un enlace con el servicio 'mongodb'
       - mongodb
   
-  ## Servicio para la base de datos MongoDB
+  # Servicio para la base de datos MongoDB
   mongodb:
     
-    ## Usa la imagen oficial de MongoDB
+    # Usa la imagen oficial de MongoDB
     image: mongo
 
-    ## Mapea el puerto 27017 del contenedor al puerto 27017 del host
+    # Mapea el puerto 27017 del contenedor al puerto 27017 del host
     ports:
       - "27017:27017"
 
-    ## Configura las variables de entorno para la inicialización de la base de datos
+    # Configura las variables de entorno para la inicialización de la base de datos
     environment:
-      ## Define el nombre de usuario raíz para MongoDB
+      # Define el nombre de usuario raíz para MongoDB
       - MONGO_INITDB_ROOT_USERNAME=dani
 
-      ## Define la contraseña para el usuario raíz de MongoDB
+      # Define la contraseña para el usuario raíz de MongoDB
       - MONGO_INITDB_ROOT_PASSWORD=clave
 ```
 
@@ -327,54 +328,54 @@ Tipos de volúmenes:
 Ejemplo de `docker-compose.yml` con volúmenes:
 
 ```yaml
-## Define la versión del archivo de configuración de Docker Compose
+# Define la versión del archivo de configuración de Docker Compose
 version: "3.9"
 
-## Define los servicios que se van a utilizar en esta configuración
+# Define los servicios que se van a utilizar en esta configuración
 services:
   
-  ## Servicio para la aplicación
+  # Servicio para la aplicación
   mi-app:
     
-    ## Especifica el contexto de construcción, en este caso el directorio actual
+    # Especifica el contexto de construcción, en este caso el directorio actual
     build: .
 
-    ## Mapea el puerto 3000 del contenedor al puerto 3000 del host
+    # Mapea el puerto 3000 del contenedor al puerto 3000 del host
     ports:
       - "3000:3000"
 
-    ## Define los enlaces de red entre los servicios
+    # Define los enlaces de red entre los servicios
     links:
-      ## Establece un enlace con el servicio 'mongodb'
+      # Establece un enlace con el servicio 'mongodb'
       - mongodb
   
-  ## Servicio para la base de datos MongoDB
+  # Servicio para la base de datos MongoDB
   mongodb:
     
-    ## Usa la imagen oficial de MongoDB
+    # Usa la imagen oficial de MongoDB
     image: mongo
 
-    ## Mapea el puerto 27017 del contenedor al puerto 27017 del host
+    # Mapea el puerto 27017 del contenedor al puerto 27017 del host
     ports:
       - "27017:27017"
 
-    ## Configura las variables de entorno para la inicialización de la base de datos
+    # Configura las variables de entorno para la inicialización de la base de datos
     environment:
-      ## Define el nombre de usuario raíz para MongoDB
+      # Define el nombre de usuario raíz para MongoDB
       - MONGO_INITDB_ROOT_USERNAME=dani
 
-      ## Define la contraseña para el usuario raíz de MongoDB
+      # Define la contraseña para el usuario raíz de MongoDB
       - MONGO_INITDB_ROOT_PASSWORD=clave
     
-    ## Monta un volumen para persistir los datos de MongoDB
+    # Monta un volumen para persistir los datos de MongoDB
     volumes:
-      ## Asocia el volumen 'mongo-data' al directorio '/data/db' en el contenedor
+      # Asocia el volumen 'mongo-data' al directorio '/data/db' en el contenedor
       - mongo-data:/data/db
 
-## Define los volúmenes que se van a utilizar en esta configuración
+# Define los volúmenes que se van a utilizar en esta configuración
 volumes:
   
-  ## Declara un volumen llamado 'mongo-data' para almacenar datos persistentes
+  # Declara un volumen llamado 'mongo-data' para almacenar datos persistentes
   mongo-data:
 ```
 
@@ -434,60 +435,60 @@ Kubernetes emplea volúmenes persistentes, que a diferencia de otros recursos co
 **StatefulSet** permite la creación de pods con volúmenes persistentes, garantizando la integridad de los datos incluso si el pod se reinicia o se elimina.
 
 ```yaml
-## Versión de la API de Kubernetes que se está utilizando
+# Versión de la API de Kubernetes que se está utilizando
 apiVersion: apps/v1
 
-## Tipo de recurso que se está creando
+# Tipo de recurso que se está creando
 kind: StatefulSet
 
 metadata:
-  ## Nombre del StatefulSet
+  # Nombre del StatefulSet
   name: my-csi-app-set
 
 spec:
   selector:
     matchLabels:
-      ## Etiqueta que debe coincidir para que un pod sea considerado parte 
-      ## de este StatefulSet
+      # Etiqueta que debe coincidir para que un pod sea considerado parte 
+      # de este StatefulSet
       app: my-frontend
 
-  ## Nombre del servicio que se utilizará para este StatefulSet
+  # Nombre del servicio que se utilizará para este StatefulSet
   serviceName: "my-frontend"
 
-  ## Número de réplicas del pod que se mantendrán en ejecución
+  # Número de réplicas del pod que se mantendrán en ejecución
   replicas: 1
 
-  ## Plantilla que define los pods que se crearán
+  # Plantilla que define los pods que se crearán
   template:
     metadata:
       labels:
-        ## Etiquetas para los pods que se crearán
+        # Etiquetas para los pods que se crearán
         app: my-frontend
 
     spec:
-      containers:  ## Lista de contenedores que se ejecutarán en cada pod
-      - name: my-frontend  ## Nombre del contenedor
-        image: busybox  ## Imagen del contenedor que se utilizará
+      containers:  # Lista de contenedores que se ejecutarán en cada pod
+      - name: my-frontend  # Nombre del contenedor
+        image: busybox  # Imagen del contenedor que se utilizará
         args:
         - sleep
-        - infinity  ## Argumentos que se pasarán al contenedor
-        volumeMounts:  ## Puntos de montaje de los volúmenes en el contenedor
-        - name: data  ## Nombre del volumen
-          mountPath: "/data"  ## Ruta en la que se montará el volumen
+        - infinity  # Argumentos que se pasarán al contenedor
+        volumeMounts:  # Puntos de montaje de los volúmenes en el contenedor
+        - name: data  # Nombre del volumen
+          mountPath: "/data"  # Ruta en la que se montará el volumen
 
-  ## Plantillas para las solicitudes de volumen persistente
+  # Plantillas para las solicitudes de volumen persistente
   volumeClaimTemplates:
   - metadata:
-      ## Nombre de la solicitud de volumen persistente
+      # Nombre de la solicitud de volumen persistente
       name: csi-pvc
 
     spec:
-      ## Modos de acceso para el volumen
+      # Modos de acceso para el volumen
       accessModes: [ "ReadWriteOnce" ]
 
       resources:
         requests:
-          ## Cantidad de almacenamiento solicitado
+          # Cantidad de almacenamiento solicitado
           storage: 1Gi
 
 ```
@@ -495,8 +496,8 @@ spec:
 Para verificar el estado de los volúmenes y los StatefulSets, se pueden utilizar los siguientes comandos:
 
 ```bash
-kubectl get pvc  ## Para ver la asignación del volumen, capacidad, etc.
-kubectl get sts  ## Para ver los StatefulSets.
+kubectl get pvc  # Para ver la asignación del volumen, capacidad, etc.
+kubectl get sts  # Para ver los StatefulSets.
 ```
 
 ### 3.3. Manifiestos
@@ -526,19 +527,19 @@ kubectl -n nombre_namespace delete pod nombre_pod
 Ejemplo de manifiesto para crear un Pod simple:
 
 ```yaml
-## Versión de la API del recurso de Kubernetes, está asociado al tipo
-## por lo que hay que mirar la documentación.
+# Versión de la API del recurso de Kubernetes, está asociado al tipo
+# por lo que hay que mirar la documentación.
 apiVersion: v1
 
-## Tipo del manifiesto.
+# Tipo del manifiesto.
 kind: Pod
 
-## Nombre del Pod.
+# Nombre del Pod.
 metadata:
   name: nginx
 
-## Contenedores que se ejecutan dentro de este pod. Todos los contenedores
-## que se ejecutan dentro de un Pod, tienen la misma IP.
+# Contenedores que se ejecutan dentro de este pod. Todos los contenedores
+# que se ejecutan dentro de un Pod, tienen la misma IP.
 spec:
   containers:
   - name: nginx
@@ -548,8 +549,8 @@ spec:
 Para aplicar el manifiesto:
 
 ```bash
-kubectl apply -f nombre.yaml  ## Aplica el manifiesto en el namespace por defecto
-kubectl get pods  ## Ver el estado del pod
+kubectl apply -f nombre.yaml  # Aplica el manifiesto en el namespace por defecto
+kubectl get pods  # Ver el estado del pod
 ```
 
 Ejemplo de manifiesto para crear un Pod más complejo:
@@ -566,8 +567,8 @@ spec:
   - name: nginx
     image: nginx:alpine
     env:
-    ## Variables de entorno, al igual que en Docker. Esto es específico
-    ## de cada contenedor.
+    # Variables de entorno, al igual que en Docker. Esto es específico
+    # de cada contenedor.
     - name: MI_VARIABLE
       value: "pelado"
     - name: MI_OTRA_VARIABLE
@@ -575,35 +576,35 @@ spec:
     - name: DD_AGENT_HOST
       valueFrom:
         fieldRef:
-         ## Obtener la IP del Host a partir de la API de Kubernetes.
+         # Obtener la IP del Host a partir de la API de Kubernetes.
          fieldPath: status.hostIP
     resources:
-      ## Recursos garantizados siempre. La instancia debe tener esto, sino
-      ## no puede hacer el despliegue.
+      # Recursos garantizados siempre. La instancia debe tener esto, sino
+      # no puede hacer el despliegue.
       requests:
         memory: "64Mi"
-        ## Medida en milicores, donde 1000 milicores es 1 core de CPU.
+        # Medida en milicores, donde 1000 milicores es 1 core de CPU.
         cpu: "200m"
-      ## Límite que puede alcanzar el Pod, si usa más recursos, el kernel de 
-      ## Linux mata el proceso y el pod se reinicia.
+      # Límite que puede alcanzar el Pod, si usa más recursos, el kernel de 
+      # Linux mata el proceso y el pod se reinicia.
       limits:
         memory: "128Mi"
         cpu: "500m"
-    ## Manera de decirle a Kubernetes que el Pod está listo para recibir
-    ## tráfico
+    # Manera de decirle a Kubernetes que el Pod está listo para recibir
+    # tráfico
     readinessProbe:
       httpGet:
         path: /
         port: 80
       initialDelaySeconds: 5
       periodSeconds: 10
-    ## Manera de decirle a Kubernetes que el Pod está vivo y que no lo mate
+    # Manera de decirle a Kubernetes que el Pod está vivo y que no lo mate
     livenessProbe:
       tcpSocket:
         port: 80
       initialDelaySeconds: 15
       periodSeconds: 20
-    ## Exponer el puerto 80 para nginx.
+    # Exponer el puerto 80 para nginx.
     ports:
     - containerPort: 80
 ```
@@ -613,27 +614,27 @@ spec:
 Un despliegue permite declarar el número de réplicas, es decir, el número de Pods, y asegurar que el estado deseado se mantenga, monitorizándolos. 
 
 ```yaml
-## Versión de la API del recurso de Kubernetes, está asociado al tipo
-## por lo que hay que mirar la documentación.
+# Versión de la API del recurso de Kubernetes, está asociado al tipo
+# por lo que hay que mirar la documentación.
 apiVersion: apps/v1
 
-## Tipo del manifiesto.
+# Tipo del manifiesto.
 kind: Deployment
 
-## Nombre del Despliegue.
+# Nombre del Despliegue.
 metadata:
   name: nginx-deployment
 
 spec:
-  ## Número de réplicas del pod que se mantendrán en ejecución.
+  # Número de réplicas del pod que se mantendrán en ejecución.
   replicas: 3
 
-  ## Etiqueta que debe coincidir para que un pod sea considerado parte de este Despliegue.
+  # Etiqueta que debe coincidir para que un pod sea considerado parte de este Despliegue.
   selector:
     matchLabels:
       app: nginx
 
-  ## Plantilla que define los pods que se crearán.
+  # Plantilla que define los pods que se crearán.
   template:
     metadata:
       labels:
@@ -651,24 +652,24 @@ spec:
 Un DaemonSet es una forma de hacer un despliegue de un Pod, pero este Pod va a estar en todos los nodos del clúster. Un solo Pod en cada nodo. No se especifica por tanto el número de réplicas, porque depende del número de nodos. Se suele utilizar mucho para servicios de monitoreo.
 
 ```yaml
-## Versión de la API del recurso de Kubernetes, está asociado al tipo
-## por lo que hay que mirar la documentación.
+# Versión de la API del recurso de Kubernetes, está asociado al tipo
+# por lo que hay que mirar la documentación.
 apiVersion: apps/v1
 
-## Tipo del manifiesto.
+# Tipo del manifiesto.
 kind: DaemonSet
 
-## Nombre del DaemonSet.
+# Nombre del DaemonSet.
 metadata:
   name: nginx-daemonset
 
 spec:
-  ## Etiqueta que debe coincidir para que un pod sea considerado parte de este DaemonSet.
+  # Etiqueta que debe coincidir para que un pod sea considerado parte de este DaemonSet.
   selector:
     matchLabels:
       app: nginx
 
-  ## Plantilla que define los pods que se crearán.
+  # Plantilla que define los pods que se crearán.
   template:
     metadata:
       labels:

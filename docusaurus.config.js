@@ -16,7 +16,7 @@ const config = {
   baseUrl: `/${projectName}/`,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.ico",
   trailingSlash: false,
 
   // GitHub pages deployment config.
@@ -79,6 +79,11 @@ const config = {
             docId: "intro",
             position: "left",
             label: "Contenido",
+          },
+          {
+            href: `https://danibcorr.github.io/linktree/`,
+            label: "Linktree",
+            position: "right",
           },
           {
             href: `https://github.com/${organizationName}/${projectName}`,
