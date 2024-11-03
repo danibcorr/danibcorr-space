@@ -1,34 +1,87 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #171717;
+  --ifm-color-primary-dark: #151515;
+  --ifm-color-primary-darker: #141414;
+  --ifm-color-primary-darkest: #101010;
+  --ifm-color-primary-light: #191919;
+  --ifm-color-primary-lighter: #1a1a1a;
+  --ifm-color-primary-lightest: #1e1e1e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --colorFondoDoc: #fdfdf7;
+  --colorTarjetas: #ffffff;
+  --primaryColor: #D6C0B3;
+  --colorLinkSelection: #AF8F6F;
+  --accentColor: #171717;
+  --borderColor: #e0e0e0;
+  --transitionTime: 0.3s;
+  --maxWidth: 100%;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+.main-wrapper {
+  /* Permite cambiar el color del fondo*/
+  background-color: var(--colorFondoDoc);
+  color: var(--accentColor);
 }
 
-table {
-  width: 100%;
+.footer {
+  /* Cambiar el fondo del footer */
+  background-color: var(--primaryColor);
+  /* Cambiar el color del texto del footer */
+  color: var(--colorTarjetas);
+}
+
+.navbar {
+  /* Cambiar el color de fondo de la navbar */
+  background-color: var(--colorFondoDoc);
+}
+
+.navbar__link {
+  /* Cambiar el color de los enlaces en la navbar */
+  color: var(--accentColor);
+}
+
+.navbar__link:hover {
+  /* Cambiar el color de los enlaces al pasar el ratón */
+  color: var(--colorLinkSelection);
+}
+
+.card {
+  /* Fondo de la tarjeta */
+  background-color: var(--colorTarjetas);
+  /* Borde de la tarjeta */
+  border: 1px solid var(--borderColor);
+  border-radius: 8px;
+  /* Sombra para darle relieve */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Animación al pasar el ratón */
+  transition: transform var(--transitionTime) ease;
+  color: var(--accentColor);
+}
+
+.markdown table {
+  /* Ajuste del ancho de las tablas de Markdown */
+  width: var(--maxWidth);
+  display: table;
+  margin: 1rem 0;
+}
+
+.markdown table td,
+.markdown table th {
+  /* Opcional: para hacer que las celdas se ajusten mejor */
+  min-width: 120px;
+  padding: 0.5rem;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Hacer scrollable las tablas de Markdown en móviles */
+  .markdown {
+    overflow-x: auto;
+  }
+
+  .markdown table {
+    min-width: 600px;
+  }
 }

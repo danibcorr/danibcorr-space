@@ -1,5 +1,10 @@
 ---
-description: Realizado por Daniel Bazo Correa.
+sidebar_position: 1
+authors:
+  - name: Daniel Bazo Correa
+description: Machine Learning.
+title: Fundamentos de Machine Learning
+toc_max_heading_level: 4
 ---
 
 # Bibliografía
@@ -18,10 +23,6 @@ El **aprendizaje automático** es una rama de la inteligencia artificial que se 
 
 ### 1.2.1. Aprendizaje supervisado
 
-<figure style="display: flex; justify-content: center;">
-  <img src="../machine-learning/imagenes/ejemplo_supervisado.drawio.png" alt="Problema de clasificación supervisado.">
-</figure>
-
 El **aprendizaje supervisado** se basa en un conjunto de datos etiquetados, como se muestra en la figura anterior. En este enfoque, el objetivo es entrenar un modelo que pueda predecir la salida correcta para datos que no ha visto previamente. El entrenamiento se realiza utilizando ejemplos de entrada junto con sus correspondientes etiquetas de salida. Los algoritmos de aprendizaje supervisado se dividen en dos principales categorías:
 
 - **Algoritmos de clasificación**: Aquí, el modelo predice una clase o categoría para una entrada. Por ejemplo, en la clasificación de correos electrónicos como "spam" o "no spam", el modelo utiliza datos etiquetados para aprender a distinguir entre las diferentes categorías. Ejemplos de algoritmos de clasificación incluyen la regresión logística, las máquinas de vectores de soporte (SVM) y las redes neuronales.
@@ -29,10 +30,6 @@ El **aprendizaje supervisado** se basa en un conjunto de datos etiquetados, como
 - **Algoritmos de regresión**: En este caso, el modelo predice un valor numérico continuo. Por ejemplo, en la predicción del precio de una casa basado en características como el tamaño y la ubicación, el modelo utiliza datos históricos para aprender la relación entre las variables independientes (características de la casa) y la variable dependiente (precio de la casa). Ejemplos de algoritmos de regresión incluyen la regresión lineal.
 
 ### 1.2.2. Aprendizaje no supervisado
-
-<figure style="display: flex; justify-content: center;">
-  <img src="../machine-learning/imagenes/ejemplo_nosupervisado.drawio.png" alt="Problema de agrupamiento no supervisado.">
-</figure>
 
 En el **aprendizaje no supervisado**, como se muestra en la figura anterior, el modelo trabaja con datos que no tienen etiquetas predefinidas. El objetivo es identificar patrones, estructuras o relaciones ocultas en los datos sin una guía explícita. Este enfoque se utiliza para obtener información útil que no se conoce previamente. Los principales usos del aprendizaje no supervisado incluyen:
 
@@ -44,10 +41,6 @@ En el **aprendizaje no supervisado**, como se muestra en la figura anterior, el 
 
 ### 1.2.3. Aprendizaje por refuerzo
 
-<figure style="display: flex; justify-content: center;">
-  <img src="../machine-learning/imagenes/ejemplo_refuerzo.drawio.png" alt="Problema de aprendizaje por refuerzo">
-</figure>
-
 El **aprendizaje por refuerzo**, ilustrado en la figura anterior, es un área del aprendizaje automático donde un **agente** aprende a tomar decisiones en un entorno para maximizar una recompensa acumulativa. Durante el entrenamiento, el agente interactúa con el entorno y recibe recompensas basadas en las acciones que toma. El objetivo es aprender una política de acción que maximice la recompensa a largo plazo. Los algoritmos comunes en aprendizaje por refuerzo incluyen:
 
 - **Método de Monte Carlo**: Utiliza el promedio de recompensas obtenidas a lo largo de episodios para estimar la calidad de las acciones.
@@ -57,10 +50,6 @@ El **aprendizaje por refuerzo**, ilustrado en la figura anterior, es un área de
 - **Deep Q-Network (DQN)**: Combina Q-learning con redes neuronales profundas para manejar entornos de alta dimensionalidad.
 
 ### 1.2.4. Aprendizaje auto supervisado
-
-<figure style="display: flex; justify-content: center;">
-  <img src="https://assets-global.website-files.com/5d7b77b063a9066d83e1209c/6215a9d83fdf7cbaba694463_AnSllmn2dm2x7hGZ8tFFjb6EfizwAyHlGV5kbXor1ob3sh1EYifEZ14nYpt8RK2JCa7tjtox7AITcl7EVY0MAOeU0XiNRNyF3gXnqFqO8_Hzq4mfvoQKtM2qzfJD2gHotaF5wmz1.png" alt="Problema de aprendizaje auto supervisado">
-</figure>
 
 El **aprendizaje auto supervisado** es una técnica donde el modelo aprende a partir de datos sin etiquetas utilizando las propias características de los datos para generar pseudo etiquetas. Este enfoque es útil cuando hay una escasez de datos etiquetados y se desea aprovechar la estructura inherente de los datos. Algunos ejemplos de técnicas de aprendizaje auto supervisado incluyen:
 
@@ -96,16 +85,15 @@ En problemas de clasificación, la **entropía cruzada** es una función de pér
 
 ### 1.3.X. Optimización
 
-Los métodos de optimización, entre los que se incluyen la regularización, la normalización de datos, la inicialización de pesos y el uso de lotes, son fundamentales para combatir el sobreajuste y acelerar el aprendizaje \cite{heaton2020applications}\cite{howard2020deep}.
+Los métodos de optimización, entre los que se incluyen la regularización, la normalización de datos, la inicialización de pesos y el uso de lotes, son fundamentales para combatir el sobreajuste y acelerar el aprendizaje.
 
-La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el \emph{Dropout}, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste \cite{dropout}. 
+La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste. 
 
 La normalización de los datos de entrada facilita la optimización de la función de coste. Esta práctica implica escalar las características de los datos para que tengan una media de $0$ y varianza $1$, o reescalar las características para que se encuentren en un rango específico, como $[0, 1]$. Este procedimiento mejora la convergencia de los algoritmos de optimización al reducir la dispersión de los datos.
 
-Una inicialización adecuada de los pesos es también esencial para un entrenamiento eficaz. Por ejemplo, la inicialización \textit{Glorot} ajusta los pesos iniciales de tal manera que se mantenga la varianza de las activaciones a lo largo de las capas, evitando problemas de desvanecimiento o explosión de gradientes. Otra estrategia consiste en la inicialización de los pesos mediante el uso de modelos preentrenados, que emplea pesos de redes previamente entrenadas en grandes conjuntos de datos, acelerando el entrenamiento y mejorando el rendimiento en tareas específicas.
+Una inicialización adecuada de los pesos es también esencial para un entrenamiento eficaz. Por ejemplo, la inicialización Glorot ajusta los pesos iniciales de tal manera que se mantenga la varianza de las activaciones a lo largo de las capas, evitando problemas de desvanecimiento o explosión de gradientes. Otra estrategia consiste en la inicialización de los pesos mediante el uso de modelos preentrenados, que emplea pesos de redes previamente entrenadas en grandes conjuntos de datos, acelerando el entrenamiento y mejorando el rendimiento en tareas específicas.
 
-Además, la división de conjuntos de datos grandes en lotes permite avanzar antes de procesar la totalidad del conjunto de datos, lo que acelera el entrenamiento y reduce el uso de memoria \cite{power2batch}. Los métodos de optimización basados en lotes, como el descenso de gradiente estocástico (\glsf{SGD}) y sus variantes (p. ej., \gls{Adam} y \gls{RMSprop}), se benefician de esta división, permitiendo actualizaciones de los pesos más frecuentes y estables.
-
+Además, la división de conjuntos de datos grandes en lotes permite avanzar antes de procesar la totalidad del conjunto de datos, lo que acelera el entrenamiento y reduce el uso de memoria. Los métodos de optimización basados en lotes, como el descenso de gradiente estocástico (SGD) y sus variantes (p. ej., Adam y RMSprop), se benefician de esta división, permitiendo actualizaciones de los pesos más frecuentes y estables.
 
 # 2. Algoritmos fundamentales
 
@@ -117,9 +105,6 @@ Además, la división de conjuntos de datos grandes en lotes permite avanzar ant
 
 La regresión lineal es una técnica de modelado que intenta encontrar la relación lineal entre una variable independiente, $X$, y una variable dependiente, $y$. El objetivo es ajustar una línea recta a los datos de manera que se minimice el error entre los valores reales y los valores predichos por la línea.
 
-<figure style="display: flex; justify-content: center;">
-  <img src="https://www.themachinelearners.com/wp-content/uploads/2020/06/1280px-Linear_regression.svg_.png" alt="Imagen de KNN" width="500" height="300">
-</figure>
 
 Con la imagen anterior como ejemplo, la ecuación de la línea roja se define como 
 
@@ -359,10 +344,6 @@ if __name__ == '__main__':
 Los árboles de decisión son una técnica común en el aprendizaje supervisado, aplicable tanto a clasificación como a regresión. Estos modelos organizan las reglas de predicción en una estructura de árbol, donde cada nodo interno representa una condición sobre una característica del conjunto de datos, cada rama refleja el resultado de una prueba, y cada nodo hoja representa una decisión o un valor de salida.
 
 La construcción de un árbol de decisión busca dividir los datos en grupos homogéneos en relación con la variable objetivo. Este proceso involucra **splitting** (división) y **pruning** (poda) para optimizar la clasificación o predicción de los datos.
-
-<figure style="display: flex; justify-content: center;">
-  <img src="https://wcs.smartdraw.com/decision-tree/img/structure-of-a-decision-tree.png?bn=15100111862" alt="Imagen de KNN" width="550" height="400">
-</figure>
 
 Los componentes principales de un árbol de decisión son:
 
@@ -912,10 +893,6 @@ El dendrograma permite observar cómo se fusionan los _*clusters*_ a lo largo de
 El algoritmo KNN (K-Nearest Neighbors) es un algoritmo de aprendizaje supervisado utilizado tanto para clasificación como para regresión. La idea principal es calcular la distancia entre un punto de datos nuevo y todos los puntos de datos en el conjunto de entrenamiento. Luego, se seleccionan los $$K$$ puntos más cercanos y, dependiendo del tipo de problema, se realiza la predicción.
 
 En el caso de problemas de clasificación se toma la clase mayoritaria entre los $$K$$ vecinos más cercanos, mientras que para problemas de regresión se calcula el promedio de los valores de los $$K$$ vecinos más cercanos.
-
-<figure style="display: flex; justify-content: center;">
-  <img src="../machine-learning/imagenes/knn_image.png" alt="Imagen de KNN" width="400" height="300">
-</figure>
 
 De la imagen anterior, se observa un conjunto de datos donde los valores verdes pertenecen a un grupo y los valores rojos a otro grupo. Tenemos un nuevo punto de datos, que es amarillo. Calculamos la distancia del punto amarillo a todos los puntos en el conjunto de datos, seleccionamos los 3 vecinos más cercanos ($$K=3$$). Si todos ellos son verdes, clasificamos el nuevo punto como verde.
 

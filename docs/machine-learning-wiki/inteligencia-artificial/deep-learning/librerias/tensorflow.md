@@ -229,41 +229,10 @@ history = modelo.fit(
 
 #### 1.0.1. Redes Neuronales Convolucionales (CNN)
 
-<figure><img src="../../.gitbook/assets/0001.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0002.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0003.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0004.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0005.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0006.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0007.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0008.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/0009.jpg" alt=""><figcaption></figcaption></figure>
 
 #### 1.0.2. Transfer Learning
 
-<figure><img src="../../.gitbook/assets/Untitled.png" alt=""><figcaption></figcaption></figure>
-
 #### 1.0.3. Tipos de arquitecturas para visión computacional
-
-<figure><img src="../../.gitbook/assets/Untitled 1.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 2 (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 3 (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 4.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 5 (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 6.png" alt=""><figcaption></figcaption></figure>
 
 ### 1.1. Lenguaje de signos, SIGN MNIST
 
@@ -601,24 +570,6 @@ plt.show()
 Para hacer uso de las utilidades, modelo y demás herramientas, debemos descargar las herramientas del repositorio.
 
 #### 1.3.0. Teoría
-
-<figure><img src="../../.gitbook/assets/Untitled 7.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 8 (2).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 9 (2).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 10 (2).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 11 (2).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 12 (2).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 13.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 14.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Untitled 15.png" alt=""><figcaption></figcaption></figure>
 
 #### 1.3.1. Anotaciones
 
