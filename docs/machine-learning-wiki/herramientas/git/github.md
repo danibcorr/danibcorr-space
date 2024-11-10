@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
 description: Utiliza Git con GitHub

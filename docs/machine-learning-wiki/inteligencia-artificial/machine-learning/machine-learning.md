@@ -2,8 +2,8 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Machine Learning.
-title: Fundamentos de Machine Learning
+description: Fundamentos del Machine Learning.
+title: Fundamentos del Machine Learning
 toc_max_heading_level: 4
 ---
 

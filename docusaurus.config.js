@@ -47,6 +47,16 @@ const config = {
     ],
   ],
 
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
@@ -127,6 +137,10 @@ const config = {
           position: 'left'
         },
         {
+          type: 'localeDropdown', // Este es el ítem del selector de idioma
+          position: 'right', // Posición en la barra de navegación
+        },
+        {
           href: `https://github.com/${organizationName}/${projectName}`,
           label: "Wiki GitHub",
           position: "right",
@@ -144,6 +158,23 @@ const config = {
     prism: {
       theme: darkCodeTheme,
       additionalLanguages: ['bash', 'makefile'],
+    },
+  },
+
+  i18n: {
+    // Idioma por defecto
+    defaultLocale: 'es', 
+    // Lista de idiomas disponibles
+    locales: ['en', 'es'], 
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      es: {
+        label: 'Español',
+        direction: 'ltr',
+      },
     },
   },
 };

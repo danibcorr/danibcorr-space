@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
-title: Aprendizaje Automático Wiki
+title: Machine Learning Wiki
 description: Explicación de los contenidos.
 hide_table_of_contents: true
 ---
 
-Bienvenido/a a esta sección de contenidos adicionales, donde encontrarás temas relacionados con el desarrollo de sistemas de software, con un enfoque especial en la experimentación y desarrollo de inteligencia artificial. Aquí exploro las distintas etapas del proceso de desarrollo, abarcando desde los fundamentos de los algoritmos más comunes en aprendizaje automático hasta conceptos avanzados de aprendizaje profundo, utilizando las principales bibliotecas del sector.
+¡Bienvenido/a a esta sección! Aquí encontrarás contenido especializado sobre el desarrollo de sistemas de software, con un enfoque particular en la experimentación y el avance de la inteligencia artificial. Exploro cada etapa del proceso de desarrollo, desde los fundamentos de los algoritmos más utilizados en el aprendizaje automático hasta conceptos avanzados de aprendizaje profundo, aprovechando las bibliotecas más destacadas del sector.
 
-Además, trato aspectos clave como la creación y gestión de entornos, el mantenimiento de dependencias, buenas prácticas de programación y herramientas para llevar modelos a producción. Mi objetivo es reunir y organizar el conocimiento que he adquirido en este campo, destacando los elementos más relevantes de mi formación y experiencia profesional actual.
+También abordo aspectos esenciales como la creación y gestión de entornos, el mantenimiento de dependencias, las buenas prácticas de programación y las herramientas clave para llevar modelos a producción. Mi objetivo es compartir y organizar el conocimiento que he adquirido en este campo, destacando los elementos más importantes de mi formación y experiencia profesional.
 
-Te invito a explorar y disfrutar este contenido. Si encuentras errores o tienes sugerencias, puedes contribuir mediante una pull request en el repositorio de GitHub de la Wiki. Así, ayudas a construir y mejorar este espacio en español, facilitando el acceso a conocimientos diversos para toda la comunidad. ¡Gracias por tu interés y por ayudar a expandir este proyecto!
+Te invito a sumergirte en este contenido y disfrutarlo. Si encuentras algún error o tienes sugerencias, estaré encantado de recibir tu contribución mediante una pull request en el repositorio de GitHub de la Wiki. Tu ayuda es fundamental para mejorar este espacio, haciendo que el conocimiento sea más accesible y útil para toda la comunidad. ¡Gracias por tu interés y por contribuir a la expansión de este proyecto!

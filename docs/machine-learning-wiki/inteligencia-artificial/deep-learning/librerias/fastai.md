@@ -1,6 +1,11 @@
 ---
-description: Realizado por Daniel Bazo Correa.
+sidebar_position: 1
+authors:
+  - name: Daniel Bazo Correa
+title: FastAI
+toc_max_heading_level: 4
 ---
+
 
 <div align="justify">
 

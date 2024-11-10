@@ -36,58 +36,8 @@ Para trabajar con Python en entornos de pruebas se suele emplear **Jupyter Noteb
 
 ### 1.2. Creación y configuración del entorno
 
-Una vez instalado Miniconda, es necesario crear un entorno virtual configurando la versión de Python y los paquetes necesarios para cada proyecto. El procedimiento es el siguiente:
-
-1. Abrir el terminal de **Anaconda Prompt**.
-2. **Crear un entorno nuevo**:
-
-   ```bash
-   conda create --name nombre_del_entorno
-   ```
-
-3. **Activar el entorno**:
-
-   ```bash
-   conda activate nombre_del_entorno
-   ```
-
-4. **Instalar y actualizar PIP** utilizando el gestor de paquetes de Anaconda:
-
-   ```bash
-   conda install anaconda::pip
-   pip install --upgrade pip
-   ```
-
-5. **Instalar ipykernel**, para permitir que Jupyter interactúe con los entornos de Python:
-
-   ```bash
-   pip install ipykernel
-   ```
-
-6. **Agregar el entorno a Jupyter**:
-
-   ```bash
-   python -m ipykernel install --user --name=nombre_del_entorno
-   ```
-
-#### 1.2.1. Gestor de paquetes
-
-La gestión de paquetes se realiza mediante el gestor de paquetes de [**Conda**](https://anaconda.org/anaconda/repo) con los siguientes comandos:
-
-- **Instalar un paquete**:
-    ```bash
-    conda install nombre_paquete
-    ```
-- **Actualizar un paquete**:
-    ```bash
-    conda update nombre_paquete
-    ```
-- **Eliminar un paquete**:
-    ```bash
-    conda remove nombre_paquete
-    ```
-
-También es posible gestionar paquetes utilizando **PyPi**. Sin embargo, se recomienda evitar mezclar paquetes instalados desde **Conda** y **PyPi**, ya que esto puede generar conflictos.
+Una vez instalado Miniconda, es necesario crear un entorno virtual configurando la versión de Python y los paquetes necesarios para cada proyecto. Para ello,
+puedes seguir los pasos del [apartado de herramientas, gestión de entornos en Python](../herramientas/entornos_python.md).
 
 ### 1.3. Comandos útiles para la terminal
 

@@ -13,6 +13,12 @@ toc_max_heading_level: 4
   
 ## 1. Introducción
 
+<p align="center">
+  <img src="https://static-00.iconduck.com/assets.00/makefile-icon-1024x915-mmjry4k7.png" height="300"/>
+  <br />
+  <em>Logo de Makefile</em>
+</p>
+
 Un **Makefile** es un archivo de configuración utilizado por la herramienta `make`, que permite automatizar el proceso de compilación y ejecución de proyectos de software. Generalmente, se emplea en entornos con sistemas operativos basados en GNU/Linux y puede contener comandos en [Bash](../programacion/bash.md).
 
 El uso de Makefiles ofrece varios beneficios en el desarrollo de software, entre los que destacan:
@@ -442,32 +448,6 @@ $(TARGET): CFLAGS += -DVERSION=\"$(VERSION)\"
 ```
 
 En este ejemplo, la variable `VERSION` toma la versión del código desde Git usando `git describe`, que devuelve la etiqueta más cercana, el número de commits desde esa etiqueta y el estado del repositorio. Esta versión se pasa como una macro de preprocesador a través de `CFLAGS`.
-
-#### 5.3.2. Generación automática de documentación
-
-Makefiles pueden automatizar la generación de documentación utilizando herramientas como Doxygen. Esta automatización es especialmente útil en proyectos donde la documentación debe actualizarse regularmente en función de los cambios en el código.
-
-Ejemplo de generación de documentación con Doxygen:
-
-```makefile
-docs: $(SRCS)
-    doxygen Doxyfile
-```
-
-En este ejemplo, la regla `docs` utiliza Doxygen para generar la documentación a partir de los archivos fuente listados en `$(SRCS)` y las configuraciones definidas en `Doxyfile`. Al ejecutar `make docs`, se genera automáticamente la documentación en el formato deseado (HTML, PDF, etc.).
-
-#### 5.3.3. Creación y gestión de paquetes
-
-Los Makefiles pueden también facilitar la creación de paquetes para distribución, empaquetando los binarios y archivos relacionados en formatos como `.tar.gz`.
-
-Ejemplo de creación de paquetes:
-
-```makefile
-package: all
-    tar -czf $(TARGET)-$(VERSION).tar.gz $(TARGET) README.md
-```
-
-Este ejemplo genera un archivo comprimido `tar.gz` que contiene el binario final `$(TARGET)` y el archivo `README.md`. El nombre del paquete incluye el número de versión, lo cual es útil para identificar diferentes versiones del software.
 
 ## 6. GNU Make
 

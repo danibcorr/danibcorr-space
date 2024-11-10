@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
-description: Deep Learning
+description: Fundamentos del Deep Learning.
 title: Fundamentos de Deep Learning
 toc_max_heading_level: 4
 ---

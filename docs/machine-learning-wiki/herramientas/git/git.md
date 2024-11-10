@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 authors:
   - name: Daniel Bazo Correa
 description: Controla versiones de tu código con Git.
@@ -27,15 +27,15 @@ El control de versiones gestiona los cambios en archivos a lo largo del tiempo, 
 
 ###  1.1. Terminología
 
-- **Repositorio Local**: Base de datos que almacena versiones de archivos.
-- **Copia Local**: Versión del archivo que el usuario modifica en su directorio.
-- **Repositorio Remoto**: Proyecto alojado en una red externa.
-- **Histórico (Log)**: Registro de cambios realizados en el repositorio.
+- **Repositorio local**: Base de datos que almacena versiones de archivos a nivel local.
+- **Copia local**: Versión del archivo que el usuario modifica en su directorio.
+- **Repositorio remoto**: Proyecto alojado en una red externa, p.ej. GitHub, GitLab, entre otros.
+- **Histórico (***Log***)**: Registro de cambios realizados en el repositorio.
 - **Conflicto**: Ocurre cuando dos usuarios modifican las mismas líneas de un archivo o cuando uno lo elimina y otro lo modifica.
 
 ### 1.2. Estados de un archivo
 
-- **Sin Seguimiento**: Archivo no registrado en la instantánea anterior.
+- **Sin seguimiento**: Archivo no registrado en la instantánea anterior.
 - **Confirmado**: Datos almacenados en la base de datos local.
 - **Modificado**: Archivo alterado cuyos cambios no han sido confirmados.
 - **Preparado**: Archivo marcado para inclusión en la próxima confirmación.
@@ -43,13 +43,13 @@ El control de versiones gestiona los cambios en archivos a lo largo del tiempo, 
 
 ### 1.3. Operaciones
 
-- **Clone**: Crea una copia local de un repositorio remoto.
-- **Add**: Añade cambios al área de preparación.
-- **Commit**: Registra una nueva versión en el repositorio local.
-- **Push**: Sincroniza cambios locales con un repositorio remoto.
-- **Pull**: Actualiza el repositorio local con cambios del repositorio remoto.
-- **Fork**: Crea una copia de un proyecto para modificarla independientemente.
-- **Pull Request**: Solicita la integración de cambios en un proyecto.
+- ***Clone***: Crea una copia local de un repositorio remoto.
+- ***Add***: Añade cambios al área de preparación.
+- ***Commit***: Registra una nueva versión en el repositorio local.
+- ***Push***: Sincroniza cambios locales con un repositorio remoto.
+- ***Pull***: Actualiza el repositorio local con cambios del repositorio remoto.
+- ***Fork***: Crea una copia de un proyecto para modificarla independientemente.
+- ***Pull Request***: Solicita la integración de cambios en un proyecto.
 
 ## 2. Git
 
@@ -357,7 +357,7 @@ Al colocarse estos scripts en el directorio correcto y con los permisos necesari
     git pull origin main  
 
     # Reiniciar el servidor web para aplicar cambios (por ejemplo, con PM2)
-    pm2 restart mi-aplicacion
+    pm2 restart mi-aplicacionDescripción: 
     ```
 
 ### 4.2. Recomendaciones para Git Hooks
@@ -369,3 +369,60 @@ Al escribir y gestionar Git Hooks, se sugiere seguir las siguientes pautas:
 - **Documentación clara**: Es fundamental que los scripts estén bien documentados, mediante comentarios que describan su funcionalidad, de modo que cualquier miembro del equipo pueda entender su propósito y modificarlos si es necesario.
 
 - **No intrusivos**: Es importante evitar que los hooks modifiquen automáticamente el código o los archivos sin el consentimiento del desarrollador, ya que esto podría generar conflictos no deseados.
+
+## 5. Casos de uso práctico
+
+### 5.1. Errores comunes 
+
+#### 5.1.1. Conflictos de fusión (Merge Conflicts)
+
+Estos conflictos surgen cuando dos personas modifican la misma línea de un archivo o realizan cambios que no son compatibles.
+
+Solución:
++ Utiliza herramientas de fusión (*merge tools*) para resolver los conflictos de manera eficiente.
++ Coordina con el equipo para gestionar mejor los cambios y minimizar conflictos.
+
+#### 5.1.2. Branches divergentes
+
+Ocurre cuando las ramas se separan tanto que la integración se vuelve complicada.
+
+Solución:
++ Integra cambios con frecuencia (*continuous integration*) para evitar divergencias significativas.
++ Implementa estrategias de gestión de ramas como GitFlow o GitHub Flow para mantener el código sincronizado.
++ Revisa y valida los cambios antes de fusionar ramas altamente divergentes.
+
+#### 5.1.3. Ramas abandonadas
+
+Ramas antiguas y sin uso permanecen en el repositorio, generando desorden.
+
+Solución:
++ Elimina ramas locales y remotas que ya no se necesiten con `git branch -d` y `git push origin --delete`.
++ Mantén un registro organizado de las ramas activas y sus propósitos.
++ Realiza limpiezas periódicas en el repositorio para mantenerlo ordenado y eficiente.
+
+#### 5.1.4. Código no versionado
+
+No realizar commits con regularidad puede resultar en la pérdida de trabajo o de cambios importantes.
+
+Solución:
++ Haz commits frecuentes y significativos para proteger el progreso del proyecto.
++ Usa `git stash` para guardar cambios temporales sin alterar el historial del proyecto.
++ Implementa herramientas de gestión de tareas para vincular los commits con actividades o requerimientos específicos.
+
+#### 5.1.5. Desincronización entre local y remoto
+
+Cuando el repositorio local no está sincronizado con el remoto, se pueden presentar problemas de integración.
+
+Solución:
++ Realiza `git pull` regularmente para mantener tu copia local actualizada con el remoto.
++ Usa `git push` para enviar tus cambios al repositorio remoto, evitando desincronizaciones.
++ Configura alertas o notificaciones para estar al tanto de actualizaciones en el repositorio remoto.
+
+#### 5.1.7. Pérdida de historial de cambios
+
+Ocurre cuando se realizan cambios directamente en el repositorio remoto, omitiendo el historial de commits en local.
+
+Solución:
++ Emplea `git fetch` y `git rebase` para integrar los cambios remotos en el historial local de forma adecuada.
++ Evita hacer modificaciones directamente en la rama principal sin seguir un proceso de revisión adecuado.
++ Utiliza pull requests para realizar revisiones y fusiones, asegurando un historial de cambios claro y ordenado.
