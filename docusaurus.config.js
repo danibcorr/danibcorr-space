@@ -2,14 +2,14 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const organizationName = "danibcorr";
-const projectName = "danibcorr-space";
+const projectName = "web";
 
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Web page",
   url: `https://${organizationName}.github.io`,
-  baseUrl: '/',
+  baseUrl: '/web/',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/logo.ico",
