@@ -2,12 +2,12 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const organizationName = "danibcorr";
-const projectName = "machine-learning-wiki";
+const projectName = "danibcorr-space";
 
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Machine Learning Wiki",
+  title: "Web page",
   url: `https://${organizationName}.github.io`,
   baseUrl: '/',
   onBrokenLinks: "throw",
