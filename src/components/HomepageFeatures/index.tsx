@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { TbWorld } from "react-icons/tb";
-import { BsArrowRight } from 'react-icons/bs';
 
 const features = [
   {
