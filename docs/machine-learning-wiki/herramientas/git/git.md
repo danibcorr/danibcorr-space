@@ -14,7 +14,7 @@ toc_max_heading_level: 4
 # Introducción
 
 <p align="center">
-  <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="200"/>
+  <img src={require("../../../img/git-logo.png").default}/>
   <br />
   <em>Logo de Git</em>
 </p>
@@ -94,32 +94,60 @@ A continuación, se presentan algunos de los comandos más utilizados para la ge
 | **git stash** | Almacena temporalmente los cambios no confirmados para limpiarlos del área de trabajo. | `git stash` - Guarda los cambios en un área temporal.<br />`git stash pop` - Recupera los cambios guardados en el stash. |
 | **git rm** | Elimina archivos del repositorio y del área de preparación. | `git rm archivo.txt` - Elimina el archivo "archivo.txt" del repositorio y del área de trabajo. |
 
-### 2.3. Control de versiones centralizado
+### 2.3. Configuración básica de Git para GitHub/GitLab
 
-Git soporta control de versiones centralizado, donde un servidor central alberga el repositorio principal y los colaboradores sincronizan sus copias locales.
+Antes de trabajar con GitHub o GitLab, es necesario configurar tu entorno de Git local. Esto incluye establecer tu identidad y configurar autenticación con las plataformas.
 
-#### 2.3.1. Configuración de Git para trabajar a través de un proxy
+#### 2.3.1. Configurar nombre de usuario y correo
 
-Configurar un proxy global para Git:
-
-```bash
-git config --global http.proxy http://<proxyUsername>:<proxyPassword>@<proxy.server.com>:<port>
-git config --global https.proxy https://<proxyUsername>:<proxyPassword>@<proxy.server.com>:<port>
-```
-
-Configurar un proxy para un dominio específico:
+Git utiliza el nombre y el correo configurados para identificar tus contribuciones. Puedes configurarlos globalmente para que se apliquen a todos tus repositorios:
 
 ```bash
-git config --global http.<http://domain.com>.proxy http://<proxyUsername>:<proxyPassword>@<proxy.server.com>:<port>
-git config --global https.<https://domain.com>.proxy https://<proxyUsername>:<proxyPassword>@<proxy.server.com>:<port>
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu-correo@example.com"
 ```
 
-#### 2.3.2. Resolver conflictos al traer cambios
+Para verificar la configuración:
 
-Si existen conflictos al realizar `git pull`, se pueden resolver mediante:
+```bash
+git config --global --list
+```
 
-1. Subir cambios a otra rama y realizar un pull request.
-2. Confirmar cambios locales y volver a ejecutar `git pull` para usar el solucionador de conflictos de Git.
+Si deseas configurarlos solo para un repositorio específico, omite la opción `--global` y ejecuta los comandos dentro del directorio del repositorio.
+
+#### 2.3.2. Configurar autenticación SSH para GitHub/GitLab
+
+Configurar claves SSH simplifica la autenticación con GitHub/GitLab:
+
+1. Genera una clave SSH si no tienes una:
+   ```bash
+   ssh-keygen -t ed25519 -C "tu-correo@example.com"
+   ```
+   Si tu sistema no soporta `ed25519`, usa:
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "tu-correo@example.com"
+   ```
+
+2. Copia la clave pública generada:
+   ```bash
+   cat ~/.ssh/id_ed25519.pub
+   ```
+
+3. Ve a tu cuenta de GitHub o GitLab, accede a **Settings** > **SSH and GPG keys**, y añade la clave pública copiada.
+
+4. Prueba la conexión:
+   ```bash
+   ssh -T git@github.com
+   ```
+   (Para GitLab: `ssh -T git@gitlab.com`).
+
+#### 2.3.3. Configurar autenticación con tokens personales
+
+Si prefieres usar HTTPS en lugar de SSH, puedes crear un token personal de acceso en GitHub/GitLab y usarlo como contraseña al clonar o realizar *push*. Para configurarlo:
+
+1. Ve a **Settings** > **Developer Settings** > **Personal Access Tokens**.
+2. Genera un token con los permisos necesarios.
+3. Al realizar una operación que requiera autenticación, usa tu usuario como nombre de usuario y el token como contraseña.
 
 ## 3. Estrategia de control de versiones
 
@@ -128,7 +156,7 @@ Tanto **Trunk-Based Development** como **Git Flow** son estrategias populares de
 ### 3.1. Trunk-Based Development
 
 <p align="center">
-  <img src="https://aungkyawpaing.dev/content/images/size/w1000/2022/02/image-3.png"/>
+  <img src={require("../../../img/trunk-based-git.png").default}/>
   <br />
   <em>Esquema de desarrollo Trunk-Based</em>
 </p>
@@ -148,7 +176,7 @@ Sin embargo, presenta las siguientes desventajas:
 ### 3.2. Git Flow
 
 <p align="center">
-  <img src="https://www.bitbull.it/blog/git-flow-come-funziona/gitflow-1.png" />
+  <img src={require("../../../img/git-flow-git.png").default} width="500"/>
   <br />
   <em>Esquema de desarrollo Git Flow</em>
 </p>

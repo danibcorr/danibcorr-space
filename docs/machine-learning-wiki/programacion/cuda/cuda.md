@@ -25,7 +25,7 @@ toc_max_heading_level: 4
 La plataforma de computación CUDA ofrece un amplio ecosistema. No obstante, en los puntos 1 y 2, se abordará el uso de CUDA en combinación con el lenguaje de programación C. A partir del punto 3, se explorarán otras bibliotecas y aplicaciones de CUDA en Python.
 
 <p align="center">
-  <img src={require("./assets/B0FF9827-9E32-46F2-8365-FA0E686C649D.jpeg").default}/>
+  <img src={require("./assets/B0FF9827-9E32-46F2-8365-FA0E686C649D.png").default}/>
   <br />
 </p>
 
@@ -347,7 +347,7 @@ La memoria unificada presenta algunas consideraciones:
 Podemos resumir el proceso de la memoria unificada con la siguiente imagen:
 
 <p align="center">
-  <img src={require("./assets/AB407146-6A59-4476-A97F-B0D7BF2AA8CC.jpeg").default}/>
+  <img src={require("./assets/AB407146-6A59-4476-A97F-B0D7BF2AA8CC.png").default}/>
   <br />
 </p>
 

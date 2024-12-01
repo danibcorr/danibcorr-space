@@ -1,0 +1,74 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Herramientas": {
+    "message": "Herramientas",
+    "description": "The label for category Herramientas in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Herramientas.link.generated-index.description": {
+    "message": "Encuentra las herramientas esenciales para el día a día del desarrollo, automatización, gestión de código y más.",
+    "description": "The generated-index page description for category Herramientas in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Git": {
+    "message": "Git",
+    "description": "The label for category Git in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Programación": {
+    "message": "Programación",
+    "description": "The label for category Programación in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Programación.link.generated-index.description": {
+    "message": "Explora lenguajes de programación, estructuras de datos y algoritmos que potenciarán tus habilidades de desarrollo.",
+    "description": "The generated-index page description for category Programación in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Estructuras de datos y algoritmos": {
+    "message": "Estructuras de datos y algoritmos",
+    "description": "The label for category Estructuras de datos y algoritmos in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.SQL": {
+    "message": "SQL",
+    "description": "The label for category SQL in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.CUDA": {
+    "message": "CUDA",
+    "description": "The label for category CUDA in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Procesos y Metodologías": {
+    "message": "Procesos y Metodologías",
+    "description": "The label for category Procesos y Metodologías in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Procesos y Metodologías.link.generated-index.description": {
+    "message": "Conoce los procesos y metodologías que te ayudarán en el desarrollo e integración de proyectos en producción.",
+    "description": "The generated-index page description for category Procesos y Metodologías in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Sistemas Operativos": {
+    "message": "Sistemas Operativos",
+    "description": "The label for category Sistemas Operativos in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Sistemas Operativos.link.generated-index.description": {
+    "message": "Descubre más sobre los sistemas operativos con los que trabajas y aprende los comandos más útiles para desarrollar con mayor eficiencia.",
+    "description": "The generated-index page description for category Sistemas Operativos in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Inteligencia Artificial": {
+    "message": "Inteligencia Artificial",
+    "description": "The label for category Inteligencia Artificial in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Inteligencia Artificial.link.generated-index.description": {
+    "message": "Adquiere los conocimientos esenciales en el ámbito de la inteligencia artificial.",
+    "description": "The generated-index page description for category Inteligencia Artificial in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Fundamentos de Deep Learning": {
+    "message": "Fundamentos de Deep Learning",
+    "description": "The label for category Fundamentos de Deep Learning in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Librerias": {
+    "message": "Librerias",
+    "description": "The label for category Librerias in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Librerias.link.generated-index.description": {
+    "message": "Encuentra las librerías más utilizadas en el ámbito de la Inteligencia Artificial.",
+    "description": "The generated-index page description for category Librerias in sidebar tutorialSidebar"
+  }
+}

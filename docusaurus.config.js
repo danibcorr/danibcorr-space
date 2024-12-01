@@ -121,16 +121,16 @@ const config = {
           type: 'doc',
           docId: 'intro',
           position: "left",
-          label: "Machine Learning Wiki",
+          label: "Wiki de Machine Learning",
           docsPluginId: "machine-learning-wiki",
         },
         {
           type: 'doc',
           docId: 'intro',
           position: "left",
-          label: "Contenido adicional",
+          label: "Recursos Adicionales",
           docsPluginId: "otros",
-        },
+        },        
         {
           to: '/blog', 
           label: 'Blog', 
@@ -142,7 +142,7 @@ const config = {
         },
         {
           href: `https://github.com/${organizationName}/${projectName}`,
-          label: "Wiki GitHub",
+          label: "GitHub",
           position: "right",
         },
       ],
@@ -165,14 +165,14 @@ const config = {
     // Idioma por defecto
     defaultLocale: 'es', 
     // Lista de idiomas disponibles
-    locales: ['en', 'es'], 
+    locales: ['es', 'en'], 
     localeConfigs: {
-      en: {
-        label: 'English',
-        direction: 'ltr',
-      },
       es: {
         label: 'Español',
+        direction: 'ltr',
+      },
+      en: {
+        label: 'English',
         direction: 'ltr',
       },
     },

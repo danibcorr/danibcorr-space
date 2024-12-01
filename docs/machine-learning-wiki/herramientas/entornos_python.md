@@ -9,7 +9,11 @@ toc_max_heading_level: 4
 
 ## Introducción
 
-![Logo de Anaconda](https://th.bing.com/th/id/R.7b4ee475a8fa6657174bc8477be3df41?rik=7C3cFBxzAcC5Xw&pid=ImgRaw&r=0)
+<p align="center">
+  <img src={require("../../img/anaconda-logo.png").default} width="500"/>
+  <br />
+  <em>Logo de Anaconda</em>
+</p>
 
 **Anaconda** es una plataforma de código abierto que facilita la creación y gestión de entornos virtuales de Python, diseñada especialmente para proyectos de ciencia de datos y aprendizaje automático. Proporciona una distribución de Python con numerosas bibliotecas preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas para trabajar con cuadernos Jupyter. La gestión de paquetes se realiza mediante el gestor de paquetes de [**Conda**](https://anaconda.org/anaconda/repo), aunque también se puede utilizar el gestor de paquetes de [**PIP**](https://pypi.org/).
 
@@ -19,7 +23,7 @@ Este tutorial asume el uso de un sistema basado en Linux, particularmente una di
 
 ## 1. Creación de un entorno virtual
 
-### 1.1. Usando VENV
+### 1.1. Utilizando VENV
 
 Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
 
@@ -60,7 +64,7 @@ Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
    source nombre_del_entorno/bin/activate
    ```
 
-### 1.2. Usando Anaconda
+### 1.2. Utilizando Anaconda
 
 Si prefieres utilizar Anaconda, sigue estos pasos:
 
@@ -207,4 +211,56 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
 
    ```bash
    python -m ipykernel install --user --name=nombre_del_entorno
+   ```
+
+### 2.6. Eliminar paquetes instalados de un entorno
+
+#### 2.6.1. Utilizando PIP
+
+##### Eliminar todos los paquetes
+
+1. **Listar todos los paquetes instalados**:
+   ```bash
+   pip list --format=freeze > installed.txt
+   ```
+
+2. **Eliminar todos los paquetes listados**:
+   ```bash
+   pip uninstall -r installed.txt -y
+   ```
+
+##### Eliminar un paquete en concreto
+
+1. **Eliminar un paquete específico**:
+   ```bash
+   pip uninstall nombre_del_paquete
+   ```
+
+#### 2.6.2. Utilizando Anaconda
+
+##### Eliminar todos los paquetes
+
+1. **Eliminar un entorno de Anaconda completo**:
+   Si tienes entornos específicos que quieres eliminar, puedes hacerlo con:
+   ```bash
+   conda remove --name nombre_entorno --all
+   ```
+
+2. **Eliminar paquetes de un entorno específico sin eliminar el entorno**:
+   Primero, activa el entorno:
+   ```bash
+   conda activate nombre_entorno
+   ```
+
+3. **Eliminar todos los paquetes del entorno activo**:
+   ```bash
+   conda list --export > installed_conda.txt
+   conda remove --yes --file installed_conda.txt
+   ```
+
+##### Eliminar un paquete en concreto
+
+1. **Eliminar un paquete específico**:
+   ```bash
+   conda remove nombre_del_paquete
    ```

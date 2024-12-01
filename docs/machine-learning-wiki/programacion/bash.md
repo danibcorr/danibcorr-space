@@ -15,7 +15,7 @@ toc_max_heading_level: 4
 # Introducción
 
 <p align="center">
-  <img src="https://freepngdesign.com/content/uploads/images/p-2744-3-bash-logo-png-transparent-logo-848251298474.png" height="350"/>
+  <img src={require("../../img/bash-logo.png").default} width="500"/>
   <br />
   <em>Logo de Bash</em>
 </p>

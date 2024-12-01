@@ -309,5 +309,98 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "perfil.descripcion": {
+    "message": "I am an Electronic Systems Engineer currently working as a Data Scientist at Ericsson. I am passionate about AI, data, and their applications to enhance human capabilities."
+  },
+  "bloque.proyectos.ia": {
+    "message": "Data and Artificial Intelligence Projects"
+  },
+  "bloque.proyectos.ia.descripcion": {
+    "message": "Discover my work related to data and artificial intelligence."
+  },
+  "bloque.proyectos.electronica": {
+    "message": "Electronics and Robotics Projects"
+  },
+  "bloque.proyectos.electronica.descripcion": {
+    "message": "Explore my projects in the field of electronics and robotics."
+  },
+  "bloque.ocultar.proyectos": {
+    "message": "Hide projects"
+  },
+  "bloque.ver.proyectos": {
+    "message": "View projects"
+  },
+  "bloque.proyectos": {
+    "message": "Projects"
+  },
+  "proyectos.ia.wiki": {
+    "message": "🏫 Machine Learning Wiki"
+  },
+  "proyectos.ia.wiki.descripcion": {
+    "message": "A Spanish wiki to store and share learnings, notes, and code in one place, focusing on machine learning."
+  },
+  "proyectos.ia.musica": {
+    "message": "🎵 Music Genre Classifier"
+  },
+  "proyectos.ia.musica.descripcion": {
+    "message": "Music genre classifier for automatic equalization parameters in JamesDSP, using Convolutional Neural Networks with Transformers."
+  },
+  "proyectos.ia.ventas": {
+    "message": "💸 Streamlit Sales Suite"
+  },
+  "proyectos.ia.ventas.descripcion": {
+    "message": "Comprehensive web platform for data analysis and visualization powered by Streamlit, complemented by an automated item classifier to optimize label assignments."
+  },
+  "proyectos.ia.papers": {
+    "message": "📄 Papers with Code"
+  },
+  "proyectos.ia.papers.descripcion": {
+    "message": "Implementations of machine learning and deep learning research papers in code."
+  },
+  "proyectos.ia.universidad": {
+    "message": "🎓 University Assistant"
+  },
+  "proyectos.ia.universidad.descripcion": {
+    "message": "Tool simplifying academic and administrative tasks for students, educators, and researchers, providing utilities to manage document metadata, convert PDFs to Markdown, transcribe audio, analyze grade statistics, and more."
+  },
+  "proyectos.ia.wattpad": {
+    "message": "📚 Your Wattpad Companion"
+  },
+  "proyectos.ia.wattpad.descripcion": {
+    "message": "Tool to gather insights from Wattpad and connect with users who share your interests, facilitating interactions with them."
+  },
+  "proyectos.electronica.robótica": {
+    "message": "Electronics and Robotics Projects"
+  },
+  "proyectos.ia.sistema-monitoreo": {
+    "message": "🏔️ Environmental Monitoring System"
+  },
+  "proyectos.ia.sistema-monitoreo.descripcion": {
+    "message": "IoT monitoring system for wireless communications using Arduino and ESP32. Proposed as the final project for the Master’s in Telematics and Telecommunication Networks at UMA, within the Software Engineering for the Internet of Things course."
+  },
+  "proyectos.ia.electronica-tiva": {
+    "message": "🎛️ Electronics with Tiva C"
+  },
+  "proyectos.ia.electronica-tiva.descripcion": {
+    "message": "Embedded systems project with Tiva C using UART and I2C communications."
+  },
+  "proyectos.ia.electronica-arduino": {
+    "message": "🎛️ Electronics with Arduino"
+  },
+  "proyectos.ia.electronica-arduino.descripcion": {
+    "message": "Repository containing a collection of Arduino and Processing projects developed for the Creative Electronics course at the University of Malaga (UMA). Main focus on a robotic arm project, with additional work on piezoelectric sensors and LED lamps."
+  },
+  "proyectos.ia.controlador-kinect": {
+    "message": "👀 Kinect Controller for PowerPoint"
+  },
+  "proyectos.ia.controlador-kinect.descripcion": {
+    "message": "Development of a program enabling natural control of PowerPoint presentations using gestures and voice."
+  },
+  "proyectos.ia.microbot-sumo": {
+    "message": "🤖 Microbot Sumo"
+  },
+  "proyectos.ia.microbot-sumo.descripcion": {
+    "message": "Design of a microbot for sumo wrestling."
   }
 }

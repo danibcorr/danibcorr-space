@@ -14,7 +14,7 @@ toc_max_heading_level: 4
 # Introducción
 
 <p align="center">
-  <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png" height="300"/>
+  <img src={require("../../../img/github-logo.png").default} width="500"/>
   <br />
   <em>Logo de GitHub</em>
 </p>

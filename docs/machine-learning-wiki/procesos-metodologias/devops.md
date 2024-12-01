@@ -19,7 +19,7 @@ toc_max_heading_level: 4
 ## 1. Introducción a DevOps
 
 <p align="center">
-  <img src="https://octopus.com/devops/i/x/octopus-devops-infinity.png" height="300"/>
+  <img src={require("../../img/devops-logo.png").default} width="500"/>
   <br />
   <em>Ciclo de vide de un proyecto DevOps</em>
 </p>
@@ -45,7 +45,7 @@ Además DevOps también requiere de prácticas adicionales para optimizar todo e
 ## 2. Docker
 
 <p align="center">
-  <img src="https://logos-world.net/wp-content/uploads/2021/02/Docker-Logo.png" height="300"/>
+  <img src={require("../../img/docker-logo.png").default} width="500"/>
   <br />
   <em>Logo de Docker</em>
 </p>
@@ -382,7 +382,7 @@ volumes:
 ## 3. Kubernetes
 
 <p align="center">
-  <img src="https://logos-download.com/wp-content/uploads/2018/09/Kubernetes_Logo.png" height="300"/>
+  <img src={require("../../img/kubernetes-logo.png").default} width="500"/>
   <br />
   <em>Logo de Kubernetes</em>
 </p>

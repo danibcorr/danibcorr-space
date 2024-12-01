@@ -15,7 +15,7 @@ toc_max_heading_level: 4
 # Introducción
 
 <p align="center">
-  <img src="https://python-thailand.github.io/assets/img/python-logo.png" height="300"/>
+  <img src={require("../../img/python-logo.png").default} height="300"/>
   <br />
   <em>Logo de Python</em>
 </p>

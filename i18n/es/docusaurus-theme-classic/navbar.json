@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Inicio",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Wiki de Machine Learning": {
+    "message": "Wiki de Machine Learning",
+    "description": "Navbar item with label Wiki de Machine Learning"
+  },
+  "item.label.Recursos Adicionales": {
+    "message": "Recursos Adicionales",
+    "description": "Navbar item with label Recursos Adicionales"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
