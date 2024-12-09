@@ -7,12 +7,12 @@ title: Bash
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 - [Pradumnasaraf/DevOps](https://github.com/Pradumnasaraf/DevOps)
 - [TODOS deberían aprender BASH - Bash PARTE 1](https://www.youtube.com/watch?v=4_ub6614dwY)
 
-# Introducción
+## 1. Introducción
 
 <p align="center">
   <img src={require("../../img/bash-logo.png").default} width="500"/>
@@ -20,13 +20,23 @@ toc_max_heading_level: 4
   <em>Logo de Bash</em>
 </p>
 
-**BASH** es un intérprete de comandos y lenguaje de programación para sistemas Unix, desarrollado por Brian Fox para el Proyecto GNU y lanzado en 1989. Es una versión mejorada del shell Bourne (sh) y se destaca por su capacidad para ejecutar comandos de manera eficiente, su compatibilidad con scripts de shell, y su utilidad en la automatización de tareas y administración de sistemas. BASH es ampliamente utilizado en entornos de desarrollo y servidores debido a su flexibilidad y robustez.
+**BASH** (Bourne Again Shell) es un intérprete de comandos y un lenguaje de programación para sistemas basados en Unix. Fue desarrollado por Brian Fox para el Proyecto GNU y lanzado en 1989. BASH es una versión mejorada del shell Bourne (sh) y se destaca por su capacidad para ejecutar comandos de manera eficiente, su compatibilidad con scripts de shell y su utilidad en la automatización de tareas y administración de sistemas. Hoy en día, es uno de los intérpretes más populares, ampliamente utilizado tanto en entornos de desarrollo como en servidores, debido a su flexibilidad y robustez.
 
-## 1. Conceptos básicos
+## 2. Conceptos básicos
 
-### 1.1. Ejemplo de programa base
+### 2.1. Ejemplo de programa base
 
-Un programa básico en BASH:
+Un programa básico en BASH comienza con la línea `#!/bin/bash` (*shebang*), que indica al sistema qué intérprete debe usar para ejecutar los comandos del script. Es importante destacar que los scripts de BASH suelen tener la extensión `.sh`.
+
+:::note
+El uso del shebang `#!/bin/bash` garantiza que el script se ejecute con el intérprete adecuado, independientemente del entorno en el que se ejecute.
+:::
+
+A continuación, se añaden las líneas de comandos que definen las acciones a realizar, como mostrar un mensaje en la terminal, ejecutar otros scripts o realizar tareas específicas.
+
+:::tip Ejemplo
+
+Supongamos que tenemos un script llamado `script.sh`. Para hacerlo ejecutable, primero debemos otorgarle permisos. Aquí te mostramos cómo hacerlo:
 
 ```bash
 #!/bin/bash
@@ -34,19 +44,24 @@ Un programa básico en BASH:
 echo "Hola mundo"
 ```
 
-La línea `#!/bin/bash` (shebang) indica al sistema el intérprete a utilizar para ejecutar los comandos.
-
-Para ejecutar el script con `./nombre_script.sh`, es necesario modificar los permisos del archivo con:
+Para otorgar permisos de ejecución al script, usamos el siguiente comando:
 
 ```bash
-chmod +x nombre_script.sh
+chmod +x script.sh
 ```
 
-Alternativamente, se puede ejecutar con `bash nombre_script.sh`.
+También puedes ejecutar el script con el comando:
 
-### 1.2. Pasar parámetros como argumentos
+```bash
+bash script.sh
+```
+:::
 
-Los parámetros se pasan al script utilizando `$` seguido de la posición del argumento, donde `$0` es el nombre del script. Por ejemplo, en `./script.sh Daniel Paco`, `Daniel` será `$1` y `Paco` será `$2`.
+### 2.2. Pasar parámetros como argumentos
+
+En BASH, los parámetros se pasan al script mediante el uso de `$`, seguido del número que representa la posición del argumento.
+
+:::tip Ejemplo
 
 ```bash
 #!/bin/bash
@@ -54,42 +69,57 @@ echo "Hola $1"
 echo "Adiós $2"
 ```
 
-### 1.3. Asignación de variables
+En este caso, el primer argumento se pasa como `$1`, el segundo como `$2`, y así sucesivamente. Además, `$0` siempre contiene el nombre del script.
+:::
 
-Las variables se asignan de la siguiente manera:
+### 2.3. Asignación de variables
+
+En BASH, las variables se asignan de manera sencilla, sin necesidad de declarar su tipo previamente.
+
+:::tip Ejemplo
 
 ```bash
 #!/bin/bash
-VARIABLE="Daniel"
-echo "Mi nombre es $VARIABLE"
+nombre="Daniel"
+echo "Mi nombre es $nombre"
 ```
 
-Es posible almacenar el resultado de comandos del sistema:
+También es posible almacenar el resultado de la ejecución de un comando del sistema en una variable:
 
 ```bash
 #!/bin/bash
 resultado=$(comando)
 ```
 
-### 1.4. Introducción de entradas del usuario
+:::tip
+El uso de `$(comando)` permite capturar la salida de un comando y almacenarla en una variable, lo cual resulta útil para automatizar tareas y procesar información.
+:::
 
-La entrada del usuario se captura con `read`:
+### 2.4. Introducción de entradas del usuario
 
-```bash
-#!/bin/bash
-echo "Nombre"
-read NOMBRE
-echo "Mi nombre es $NOMBRE"
-```
+Para capturar entradas del usuario, se utiliza el comando `read`.
 
-### 1.5. Operaciones aritméticas
-
-Las operaciones aritméticas se realizan con `(( ))`:
+:::tip Ejemplo
 
 ```bash
 #!/bin/bash
-echo $((5+5))
+echo "¿Cuál es tu nombre?"
+read nombre
+echo "Tu nombre es $nombre"
 ```
+:::
+
+### 2.5. Operaciones aritméticas
+
+Las operaciones aritméticas en BASH se realizan dentro de `(( ))`, lo que permite evaluar expresiones matemáticas de manera sencilla.
+
+:::tip Ejemplo
+
+```bash
+#!/bin/bash
+echo $((5 + 5))
+```
+:::
 
 Operaciones disponibles:
 
@@ -99,10 +129,11 @@ Operaciones disponibles:
 - `/` - División
 - `%` - Módulo
 
-### 1.6. Condiciones
+### 2.6. Condiciones
 
-Las condiciones en BASH se expresan de la siguiente forma:
+En BASH, las condiciones se expresan utilizando el comando `if`, junto con los operadores de comparación y lógicos.
 
+:::tip Ejemplo
 ```bash
 #!/bin/bash
 
@@ -114,6 +145,7 @@ else
     echo "Intruso"
 fi
 ```
+:::
 
 Operadores de comparación:
 
@@ -126,16 +158,21 @@ Operadores de comparación:
 
 Operadores booleanos:
 
-- `-a` o `&&` - Y (And)
-- `-o` o `||` - O (Or)
-- `!` - No (Not)
+- `-a` o `&&` - Y (AND)
+- `-o` o `||` - O (OR)
+- `!` - No (NOT)
 
-Se utiliza `-a` y `-o` dentro de corchetes y `&&` y `||` fuera de ellos.
+Es importante recordar que `-a` y `-o` se usan dentro de corchetes, mientras que `&&` y `||` se emplean fuera de ellos.
 
-### 1.7. Bucles
+:::note
+Recuerda que los operadores `&&` y `||` son más comunes fuera de los corchetes, mientras que los operadores `-a` y `-o` se utilizan dentro de los corchetes en las condiciones del `if`.
+:::
 
-Un bucle `for` se define así:
+### 2.7. Bucles
 
+BASH soporta varios tipos de bucles. Un bucle `for` se define de la siguiente manera:
+
+:::tip Ejemplo
 ```bash
 #!/bin/bash
 
@@ -143,9 +180,11 @@ for i in 1 2 3; do
     echo $i
 done
 ```
+:::
 
-Un bucle `while` se define de la siguiente manera:
+Un bucle `while` se usa cuando se necesita repetir una acción mientras se cumpla una condición específica:
 
+:::tip Ejemplo
 ```bash
 #!/bin/bash
 
@@ -155,22 +194,30 @@ while [ $i -le 5 ]; do
     (( i++ ))
 done
 ```
+:::
 
 Comandos adicionales:
 
 - `break` - Finaliza el bucle.
-- `continue` - Salta a la siguiente iteración.
+- `continue` - Salta a la siguiente iteración del bucle.
 
-### 1.8. Funciones
+:::note
+Los bucles `for` son ideales cuando se conoce el número exacto de iteraciones, mientras que los bucles `while` se utilizan cuando la condición de salida depende de una variable o el resultado de una operación.
+:::
 
-Las funciones en BASH se definen así:
+### 2.8. Funciones
+
+Las funciones en BASH permiten organizar y reutilizar el código de manera más eficiente. Definir funciones ayuda a hacer el código más modular, legible y fácil de mantener, facilitando además la reutilización de bloques de código sin tener que escribirlos varias veces.
+
+:::tip Ejemplo
 
 ```bash
 #!/bin/bash
 
 function funcion() {
-    echo "Función de prueba"
+    echo "Esta es una función de prueba"
 }
 
 funcion
 ```
+::::

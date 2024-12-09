@@ -223,11 +223,6 @@ h2 {
     transition: color var(--delay), transform var(--transitionTime) ease-in-out;
 }
 
-/* Efecto hover en enlaces sociales */
-.socialLinks a:hover {
-    color: var(--colorLinkSelection);
-}
-
 /* Meta viewport para móvil */
 @media screen and (max-width: 768px) {
     body {

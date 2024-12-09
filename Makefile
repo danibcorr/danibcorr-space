@@ -10,7 +10,7 @@ translate:
 
 run:
 	@echo "Testear la Wiki localmente..."
-	npm run serve
+	npm run start
 
 build:
 	@echo "Limpiando cache de yarn..."

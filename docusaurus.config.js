@@ -114,7 +114,7 @@ const config = {
       title: "Inicio",
       logo: {
         alt: "Logo",
-        src: "img/logo.svg",
+        src: "img/logo motivo.svg",
       },
       items: [
         {

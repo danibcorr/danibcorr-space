@@ -7,143 +7,111 @@ title: MLOps
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 - [ML in Production: From Data Scientist to ML Engineer](https://www.udemy.com/course/ml-in-production/?couponCode=SKILLS4SALEA)
 - [PEP 8 — the Style Guide for Python Code](https://pep8.org/)
   
-## 1. Introducción a MLOps
+## 1. Introducción
 
-### 1.1. Definición y objetivos
-### 1.2. Importancia en el ciclo de vida de los proyectos de ML
+<p align="center">
+  <img src={require("../../img/mlops-logo.png").default} width="500"/>
+  <br />
+  <em>Ciclo de vide de un proyecto MLOps</em>
+</p>
 
-## 2. Fundamentos
+MLOps, o *Machine Learning Operations*, es el conjunto de prácticas, herramientas y procesos que permiten desarrollar, implementar y mantener modelos de 
+*machine learning* en entornos de producción. Este enfoque combina conocimientos de ingeniería de software, computación en la nube y gestión de redes, 
+siendo fundamental para garantizar que los modelos sean eficaces, escalables y sostenibles.
 
-### 2.1. Diseño del producto y sistemas
+<p align="center">
+  <img src="https://ml-ops.org/img/mlops-phasen.jpg" width="500"/>
+  <br />
+  <em>Ejemplo de los pasos seguidos en un proyecto de MLOps</em>
+</p>
 
-El diseño del producto debe justificar su necesidad y detallar sus objetivos e impacto, siguiendo los siguientes pasos:
+Un sistema de MLOps se compone de diversos elementos. En su núcleo está el modelo o algoritmo, que representa la solución entrenada en datos. 
+Este modelo opera sobre una infraestructura que puede variar desde servicios en la nube hasta servidores locales o en los propios dispositivos 
+(*on edge*), dependiendo de las necesidades. Una API o interfaz es esencial para procesar solicitudes y devolver predicciones, 
+mientras que la gestión de predicciones y la monitorización aseguran la calidad, fiabilidad y rendimiento en tiempo real.
 
-1. **Definición del producto**: Identificar la necesidad del producto y describir sus objetivos e impacto.
+## 2. Los desafíos de MLOps
 
-2. **Antecedentes**: Comprender a los usuarios, sus objetivos y los obstáculos que enfrentan.
+Uno de los principales desafíos en la adopción de metodologías de MLOps es la correcta definición tanto del problema como de la posible solución. 
+Además, es fundamental implementar tecnologías que puedan comunicarse eficazmente entre sí, permitiendo la creación de sistemas y procesos 
+automatizados que agilicen la recopilación, el tratamiento, el análisis y el uso de los datos. Este enfoque requiere una infraestructura sólida, 
+cuyo diseño y construcción demandan tiempo y conocimientos especializados.
 
-3. **Propuesta de valor**: Definir lo que el producto debe ofrecer para ayudar a los usuarios a alcanzar sus objetivos, cómo aliviará sus problemas y qué beneficios generará.
+Una vez establecida la infraestructura necesaria para integrar los diferentes componentes, surgen nuevos retos en la etapa de puesta en producción. 
 
-4. **Objetivos**: Desglosar el producto en objetivos clave.
+Entre ellos destaca el ***data drift***, que ocurre cuando los datos de producción difieren de los de entrenamiento, afectando la precisión del modelo. 
+Otro desafío común es el manejo de **datos fuera de distribución** (*Out of Distribution*, OOD), aquellos que no encajan con los patrones aprendidos 
+durante el entrenamiento. Además, la actualización y el mantenimiento de los modelos para adaptarlos a nuevos datos o requerimientos constituyen 
+un esfuerzo continuo.
 
-5. **Solución**: Describir la solución para cumplir los objetivos, incluyendo características principales, integración con otros servicios, alternativas consideradas, limitaciones y características no desarrolladas.
+:::note
+El mantenimiento de modelos basados en inteligencia artificial suele implicar su reentrenamiento con nuevos datos para evitar la degradación de 
+las métricas establecidas y asegurar un rendimiento óptimo.
+:::
 
-6. **Factibilidad**: Evaluar la viabilidad de la solución y los recursos necesarios (datos, dinero, equipo, etc.).
+### 2.1. Ciclo de vida de MLOps
 
-Para el diseño del sistema, se consideran los siguientes aspectos:
+El ciclo de vida de MLOps es un proceso iterativo que permite realizar ajustes en cualquier etapa para optimizar el sistema. 
+Un diseño efectivo de un producto basado en *machine learning* debe justificar su necesidad, detallar sus objetivos e impacto, 
+y abordar las siguientes áreas clave:
 
-1. **Diseño del sistema**: Incluir todos los elementos necesarios, desde el consumo de datos hasta la entrega del modelo.
+1. **Definición del proyecto**: En esta etapa se identifican las necesidades del usuario y los objetivos del producto, además de evaluar la viabilidad técnica y financiera. Los pasos esenciales incluyen:  
+   - **Identificación de problemas y métricas clave**: Métricas como precisión, latencia y ROI (Retorno de Inversión) son fundamentales para medir el éxito del proyecto.  
+   - **Propuesta de valor**: Se define cómo el producto resolverá problemas específicos y generará beneficios para los usuarios.  
+   - **Factibilidad**: Se evalúan los recursos necesarios (humanos, tecnológicos y financieros) para implementar la solución.  
+   - **Planificación**: Se establecen cronogramas y se asignan recursos para el desarrollo del producto.
 
-2. **Cargas de trabajo de ML**: Describir las fuentes de datos para el entrenamiento y la producción, el proceso de etiquetado, y la selección de características y etiquetas.
+2. **Datos**: El manejo de datos es la base de cualquier sistema de ML. Incluye los siguientes procesos:  
+   - **Recopilación y organización**: Los datos pueden provenir de bases de datos, archivos o servicios web. En proyectos complejos, el almacenamiento en la nube es una opción ideal.  
+   - **Etiquetado y preprocesamiento**: Incluye normalización, codificación y extracción de características para garantizar que los datos sean adecuados para el entrenamiento.  
+   - **Análisis exploratorio de datos (EDA)**: Se analiza la distribución de los datos, se identifican anomalías y se descubren correlaciones relevantes.  
+   - **Manejo de desequilibrios**: Técnicas como el sobremuestreo o submuestreo equilibran clases desbalanceadas, asegurando que los datos sean representativos.  
+   - **División en conjuntos**: Los datos se dividen en conjuntos de entrenamiento, validación y prueba, manteniendo distribuciones similares para evitar problemas como el sobreajuste.
 
-3. **Métricas**: Vincular los objetivos principales con métricas cuantitativas que optimicen el modelo.
+3. **Modelado**: El modelado implica seleccionar, entrenar y validar modelos de ML. Las principales actividades incluyen:  
+   - **Desarrollo iterativo**: Se comienza con soluciones base y se incrementa la complejidad según sea necesario.  
+   - **Optimización**: Herramientas como Ray permiten el entrenamiento distribuido en sistemas escalables, mientras que técnicas como *pruning*, *quantization* y *distillation* optimizan modelos grandes.  
+   - **Ajuste de hiperparámetros y seguimiento de experimentos**: Se experimenta con configuraciones para obtener un rendimiento óptimo, guiándose por métricas específicas como F1 en clasificaciones desbalanceadas.  
+   - **Despliegue del modelo**: Los modelos se implementan como servicios robustos, ya sea para predicciones en tiempo real o por lotes, asegurando personalización, pruebas exhaustivas y escalabilidad.
 
-4. **Evaluación del modelo**: Realizar la evaluación del modelo según las métricas definidas, ya sea con datos de referencia (sin conexión) o en producción (en línea).
+4. **Despliegue**: El modelo se implementa inicialmente en entornos de preproducción, donde se evalúa con un número limitado de usuarios o bajo condiciones controladas. Posteriormente, se despliega en producción, aumentando gradualmente el tráfico de usuarios mientras se monitorizan métricas clave y se configuran alertas para detectar anomalías.
 
-5. **Rendimiento en tiempo real**: Medir el rendimiento en tiempo real antes de reemplazar la versión existente del sistema.
+5. **Mantenimiento**: Incluye el entrenamiento continuo con datos recientes y la monitorización constante para identificar y resolver problemas de rendimiento, asegurando que el modelo siga cumpliendo los objetivos establecidos.
 
-6. **Modelado**: Aplicar principios como la utilidad de extremo a extremo, probar un sistema simple antes de avanzar a modelos complejos, complementar el proceso de toma de decisiones y evaluar cada enfoque a fondo.
+Un diseño robusto debe abarcar todos los elementos necesarios, desde la ingesta de datos hasta la entrega de predicciones, tomando en cuenta:
 
-7. **Inferencia**: Decidir entre inferencia en lotes (sin conexión) o en tiempo real (en línea):
+- **Carga de trabajo ML**: Definición de fuentes de datos, etiquetado y selección de características.  
+- **Inferencia**: Elección entre inferencia en lotes o en tiempo real, dependiendo de los requisitos del sistema.  
+- **Impacto real**: Garantizar que el sistema genere valor tangible y que su rendimiento mejore continuamente.
 
-   - **Inferencia en lotes**: Permite predicciones en grupo y almacenamiento para una inferencia rápida, sin requerir un servicio separado, pero con riesgo de desactualización.
-   - **Inferencia en línea**: Ofrece predicciones en tiempo real, mejorando la experiencia del usuario, pero requiere un servicio separado y monitoreo constante.
+Este enfoque integral e iterativo asegura que los sistemas de ML sean sostenibles, escalables y efectivos en el mundo real.
 
-8. **Retroalimentación**: Recoger e incorporar retroalimentación humana y automática en la siguiente iteración.
+### 2.2. Estrategias de despliegue
 
-9. **Impacto real**: Asegurar que los sistemas de ML generen un impacto tangible, interactuando con los usuarios para iterar y mejorar el sistema.
+Existen diversas técnicas para implementar modelos en producción de manera segura y con el mínimo impacto:
 
-### 2.2. La importancia del flujo de los datos
+- **Gradual ramp-up**: Consiste en incrementar progresivamente el tráfico hacia el nuevo modelo, lo que permite monitorear su desempeño y hacer ajustes según sea necesario.
+- **Rollback**: Esta estrategia permite revertir rápidamente al modelo anterior en caso de que el nuevo no cumpla con las expectativas o falle.
+- **Canary deployment**: En esta técnica, se asigna inicialmente un pequeño porcentaje de tráfico al nuevo modelo, incrementándolo gradualmente si demuestra ser eficaz y estable.
+- **Blue-green deployment**: Utiliza dos entornos paralelos (uno activo y otro de prueba), lo que facilita la implementación de cambios y una rápida recuperación en caso de problemas.
 
-#### 2.2.1. Origen
+### 2.3. Consideraciones de desarrollo
 
-Los datos son el punto de partida en cualquier proyecto de MLOps y pueden provenir de diversas fuentes, como bases de datos, archivos CSV o servicios web. El alojamiento de estos datos depende de las necesidades del sistema:
+El desarrollo de modelos de ML puede seguir dos enfoques principales: ***model-centric***, enfocado en optimizar algoritmos, 
+y ***data-centric***, que prioriza la mejora de la calidad de los datos, lo cual es esencial para garantizar un buen rendimiento en producción. 
 
-- **Sistemas sencillos**: Los datos pueden alojarse localmente en servidores controlados por la empresa.
-- **Sistemas complejos o escalables**: Es recomendable utilizar **servicios en la nube** como Amazon S3 o Google Cloud Storage, que ofrecen la flexibilidad y escalabilidad necesarias para manejar grandes volúmenes de datos y facilitar su acceso y procesamiento.
+Es crucial realizar un *sanity check* inicial para validar las hipótesis del modelo, establecer líneas base robustas y emplear herramientas de 
+versionado como **MLFlow** o **DVC** para rastrear de manera efectiva modelos, datos y resultados.
 
-#### 2.2.2. Análisis
-
-Una vez obtenidos los datos, se realiza un *Exploratory Data Analysis (EDA)*, un proceso iterativo que se aplica en diferentes etapas del proyecto para comprender mejor los datos y asegurar su adecuación a la tarea. El objetivo principal es extraer información relevante mediante gráficos para evaluar la cantidad de datos, entender la distribución, detectar anomalías y posibles correlaciones.
-
-#### 2.2.3. Preprocesado de los datos
-
-Con un conocimiento previo de los datos, se aplican técnicas de preprocesamiento antes de introducirlos en un modelo. Este proceso incluye:
-
-- Unir tablas para consolidar información en una vista única.
-- Manejar valores faltantes mediante eliminación o reemplazo.
-- Detectar y tratar valores atípicos que podrían distorsionar los resultados.
-- Realizar ingeniería de características para extraer información adicional.
-
-Durante el preprocesamiento, se pueden emplear técnicas como aumentación de datos, eliminación de muestras y asignación de pesos por clases. Además, los datos pueden requerir transformaciones como:
-
-- **Normalización o estandarización**: Ajuste de las escalas de las características para mejorar el procesamiento por los modelos.
-- **Codificación de características**: Conversión de características categóricas en representaciones numéricas.
-- **Extracción de características**: Derivación de nuevas características a partir de las existentes para resaltar información relevante.
-
-#### 2.2.4. Balance y división de los datos
-
-Con los datos transformados, se procede al último paso, que incluye:
-
-1. **Manejo del desequilibrio de los datos**: El desequilibrio puede afectar el rendimiento del modelo. Para abordarlo, se utilizan técnicas como `train_test_split` de *Scikit-Learn*, que divide los datos equitativamente utilizando el parámetro `stratify`.
-
-2. **Técnicas de sobremuestreo y submuestreo**: 
-
-   - **Sobremuestreo**: Aumenta las instancias de la clase minoritaria mediante duplicación o generación de ejemplos sintéticos.
-   - **Submuestreo**: Reduce las instancias de la clase mayoritaria eliminando registros.
-
-   Es crucial evaluar el impacto de estas técnicas, ya que el sobremuestreo puede llevar al sobreajuste, mientras que el submuestreo puede causar la pérdida de información útil.
-
-3. **División de los datos**: Se divide en conjuntos de entrenamiento, validación y prueba para prevenir el sobreajuste y asegurar que el modelo generalice adecuadamente. Es esencial que estas divisiones mantengan distribuciones similares.
-
-### 2.3. Proceso de elaboración de un modelo
-
-#### 2.3.1. Creación del modelo base
-
-El desarrollo de un modelo de aprendizaje automático comienza con la creación de un modelo base, que puede ser tan simple como un conjunto de reglas `if-else`. Si este enfoque satisface las necesidades y requisitos, no se justifica crear soluciones más complejas, lo que evitaría un costo innecesario. Si el modelo base no es suficiente, la complejidad se incrementa gradualmente, considerando factores como la latencia y el tamaño del modelo, buscando un equilibrio óptimo entre complejidad y rendimiento.
-
-#### 2.3.2. Entrenamiento distribuido
-
-El entrenamiento distribuido es una estrategia para entrenar modelos de aprendizaje automático en sistemas distribuidos, especialmente útil cuando se requiere una gran carga computacional. Utilizando herramientas como Ray, se aprovecha la escalabilidad de estos sistemas. En este enfoque, un nodo maestro coordina el entrenamiento, mientras los nodos trabajadores entrenan el modelo y envían los resultados al nodo central. Para su implementación, cada nodo trabajador recibe una parte de los datos, adaptando el modelo para el entrenamiento paralelo. Es necesario ajustar el entorno, configurar la red, asignar recursos y gestionar dependencias, además de implementar técnicas de paralelización y sincronización. Se debe garantizar la capacidad de guardar el estado del modelo durante el entrenamiento para facilitar la reanudación o depuración en caso de interrupciones.
-
-#### 2.3.3. Iteración en los datos
-
-En lugar de iterar en los modelos manteniendo el conjunto de datos fijo, otra opción es mantener el modelo constante e iterar en el conjunto de datos. Este enfoque mejora la calidad de los datos mediante la corrección de muestras incorrectas, la transformación de características, la expansión de clases y la adición de nuevos conjuntos de datos.
-
-#### 2.3.4. Optimización del modelo
-
-Cuando los datos o modelos son demasiado grandes para el entrenamiento tradicional o cuando se busca mejorar la eficiencia, se aplican técnicas de compresión del modelo, especialmente en el aprendizaje profundo:
-
-- __*Pruning*__: Elimina pesos o canales enteros de la red para reducir su tamaño, manteniendo el rendimiento.
-- __*Quantization*__: Reduce la precisión de los pesos, disminuyendo la huella de memoria con una pérdida mínima de precisión.
-- __*Distillation*__: Entrena redes más pequeñas para imitar a redes más grandes, reproduciendo las salidas de las capas de la red mayor.
-
-#### 2.3.5. Ajuste de hiperparámetros
-
-El ajuste de hiperparámetros optimiza los parámetros de un modelo de aprendizaje automático. Herramientas como Ray Tune, integradas con HyperOpt, u Optuna, permiten definir y explorar un espacio de búsqueda para identificar los mejores hiperparámetros. Estas herramientas facilitan la gestión del ciclo de vida de los proyectos de aprendizaje automático, desde el seguimiento de experimentos hasta la implementación y gestión de modelos.
-
-#### 2.3.6. Métricas de evaluación
-
-Las métricas de evaluación son esenciales para medir el rendimiento de un modelo en MLOps. Es importante evitar la sobreoptimización de una métrica específica para no comprometer el rendimiento general. La selección de métricas depende del problema.
-
-Por ejemplo, el F1 es útil para la clasificación en casos de clases desequilibradas. Técnicas como matrices de confusión y Grad-CAM ayudan a interpretar cómo el modelo toma decisiones. 
-
-Es crucial realizar una evaluación integral, comenzando con una preparación adecuada y analizando resultados detallados para entender el rendimiento en diferentes clases y situaciones.
-
-#### 2.3.7. Modelos como servicios
-
-Implementar modelos como servicios es crucial para su uso en aplicaciones en tiempo real o por lotes, asegurando escalabilidad y robustez. Este proceso implica hacer que los modelos estén disponibles en producción, considerando aspectos clave como la escalabilidad, robustez, rendimiento y latencia. 
-
-La elección del marco de trabajo adecuado depende de las necesidades específicas del proyecto. Según los requisitos, se puede optar por la inferencia por lotes, útil para predicciones sobre grandes conjuntos de datos sin necesidad de respuesta inmediata, o por la inferencia en tiempo real, esencial para aplicaciones que demandan decisiones rápidas. 
-
-Es necesario personalizar el servicio, añadiendo lógica específica o configurando umbrales de control de confianza en las predicciones. 
-
-Finalmente, el proceso de despliegue y pruebas, incluyendo pruebas de carga y funcionales, es crucial para garantizar un despliegue exitoso y eficiente en el entorno de producción.
+El mantenimiento continuo de los modelos requiere una supervisión constante para detectar ***drifts*** (desviaciones en el comportamiento del modelo) 
+y **datos OOD** (fuera de distribución), así como la recolección de métricas clave para evaluar su rendimiento. Además, es fundamental equilibrar 
+adecuadamente los conjuntos de datos y mantener la consistencia en las divisiones para entrenamiento, validación y prueba, garantizando que el modelo 
+sea fiable y escalable a largo plazo.
 
 ## 3. MLOps en práctica
 

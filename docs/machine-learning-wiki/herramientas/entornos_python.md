@@ -4,10 +4,10 @@ authors:
   - name: Daniel Bazo Correa  
 description: Creación y gestión de entornos virtuales de Python con VENV y Anaconda.  
 title: Gestión de entornos en Python  
-toc_max_heading_level: 4  
+toc_max_heading_level: 3  
 ---
 
-## Introducción
+## 1. Introducción
 
 <p align="center">
   <img src={require("../../img/anaconda-logo.png").default} width="500"/>
@@ -15,15 +15,23 @@ toc_max_heading_level: 4
   <em>Logo de Anaconda</em>
 </p>
 
-**Anaconda** es una plataforma de código abierto que facilita la creación y gestión de entornos virtuales de Python, diseñada especialmente para proyectos de ciencia de datos y aprendizaje automático. Proporciona una distribución de Python con numerosas bibliotecas preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas para trabajar con cuadernos Jupyter. La gestión de paquetes se realiza mediante el gestor de paquetes de [**Conda**](https://anaconda.org/anaconda/repo), aunque también se puede utilizar el gestor de paquetes de [**PIP**](https://pypi.org/).
+**Anaconda** es una plataforma de código abierto que facilita la creación y gestión de entornos virtuales de Python, diseñada especialmente para proyectos de ciencia de datos y aprendizaje automático. 
 
-Por otra parte, **VENV** es una opción más ligera que permite crear entornos virtuales sin las dependencias adicionales de Anaconda. La gestión de paquetes se realiza mediante el gestor de paquetes de [**PIP**](https://pypi.org/).
+Proporciona una distribución de Python con numerosas bibliotecas preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas para trabajar con cuadernos [Jupyter](https://jupyter.org/). 
 
+La gestión de paquetes se realiza mediante el gestor de paquetes de [**Conda**](https://anaconda.org/anaconda/repo), aunque también se puede utilizar el gestor de paquetes de [**PIP**](https://pypi.org/).
+
+Por otra parte, [**VENV**](https://docs.python.org/3/library/venv.html) es una opción más ligera que permite crear entornos virtuales sin las dependencias adicionales de Anaconda. La gestión de paquetes se realiza mediante el gestor de paquetes de [**PIP**](https://pypi.org/).
+
+:::warning
 Este tutorial asume el uso de un sistema basado en Linux, particularmente una distribución derivada de Debian. Ten en cuenta que algunos comandos podrían variar según la distribución o el sistema operativo utilizado.
+:::
 
-## 1. Creación de un entorno virtual
+## 2. Utilidades para la gestión de entornos
 
-### 1.1. Utilizando VENV
+### 2.1. Creación de un entorno virtual
+
+#### 2.1.1. Utilizando VENV
 
 Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
 
@@ -64,7 +72,7 @@ Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
    source nombre_del_entorno/bin/activate
    ```
 
-### 1.2. Utilizando Anaconda
+#### 2.1.2. Utilizando Anaconda
 
 Si prefieres utilizar Anaconda, sigue estos pasos:
 
@@ -89,11 +97,9 @@ Si prefieres utilizar Anaconda, sigue estos pasos:
    pip install --upgrade pip
    ```
 
-## 2. Utilidades para la gestión de entornos
+### 2.2. Gestión de la caché de PIP
 
-### 2.1. Gestión de la caché de PIP
-
-#### 2.1.1. Utilizando PIP
+#### 2.2.1. Utilizando PIP
 
 Parar liberar espacio en el sistema o solucionar problemas con dependencias, podemos purgar la caché de PIP con el comando siguiente:
 
@@ -101,7 +107,7 @@ Parar liberar espacio en el sistema o solucionar problemas con dependencias, pod
 pip cache purge
 ```
 
-#### 2.1.2. Utilizando Anaconda
+#### 2.2.2. Utilizando Anaconda
 
 Del mismo modo, en el caso de estar utilizando Anaconda, podemos emplear el siguiente comando:
 
@@ -109,11 +115,11 @@ Del mismo modo, en el caso de estar utilizando Anaconda, podemos emplear el sigu
 conda clean --all
 ```
 
-### 2.2. Actualización de paquetes
+### 2.3. Actualización de paquetes
 
 Es importante mantener las dependencias de tu proyecto actualizadas. Aquí se explican los pasos para hacerlo:
 
-#### 2.2.1. Utilizando PIP
+#### 2.3.1. Utilizando PIP
 
 ##### Actualizar todos los paquetes
 
@@ -137,7 +143,7 @@ Para actualizar un paquete específico:
 pip install --upgrade nombre_del_paquete
 ```
 
-#### 2.2.2. Utilizando Anaconda
+#### 2.3.2. Utilizando Anaconda
 
 ##### Actualizar todos los paquetes
 
@@ -155,7 +161,7 @@ Para actualizar un paquete específico:
 conda update nombre_del_paquete
 ```
 
-### 2.3. Instalación de paquetes desde un archivo de requisitos
+### 2.4. Instalación de paquetes desde un archivo de requisitos
 
 Cuando un proyecto necesita dependencias específicas, es útil usar un archivo `requirements.txt`:
 
@@ -173,9 +179,9 @@ Cuando un proyecto necesita dependencias específicas, es útil usar un archivo 
    pip install -r requirements.txt
    ```
 
-### 2.4. Eliminar un entorno
+### 2.5. Eliminar un entorno
 
-#### 2.4.1. Utilizando VENV
+#### 2.5.1. Utilizando VENV
 
 Para eliminar un entorno creado con VENV, dirígete al directorio donde se creó y elimina la carpeta correspondiente:
 
@@ -183,7 +189,7 @@ Para eliminar un entorno creado con VENV, dirígete al directorio donde se creó
 rm -rf nombre_del_entorno
 ```
 
-#### 2.4.2. Utilizando Anaconda
+#### 2.5.2. Utilizando Anaconda
 
 1. **Listar los entornos disponibles**:
 
@@ -197,7 +203,7 @@ rm -rf nombre_del_entorno
    conda env remove --name nombre_del_entorno
    ```
 
-### 2.5. Añadir el entorno en Jupyter
+### 2.6. Añadir el entorno en Jupyter
 
 Para añadir el entorno virtual creado, independientemente de si se trata de Anaconda o VENV, podemos seguir los pasos siguientes:
 
@@ -213,9 +219,9 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
    python -m ipykernel install --user --name=nombre_del_entorno
    ```
 
-### 2.6. Eliminar paquetes instalados de un entorno
+### 2.7. Eliminar paquetes instalados de un entorno
 
-#### 2.6.1. Utilizando PIP
+#### 2.7.1. Utilizando PIP
 
 ##### Eliminar todos los paquetes
 
@@ -236,7 +242,7 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
    pip uninstall nombre_del_paquete
    ```
 
-#### 2.6.2. Utilizando Anaconda
+#### 2.7.2. Utilizando Anaconda
 
 ##### Eliminar todos los paquetes
 

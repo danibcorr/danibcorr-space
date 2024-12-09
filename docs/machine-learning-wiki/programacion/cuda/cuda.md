@@ -7,20 +7,26 @@ title: CUDA
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 * [https://www.nvidia.com/](https://www.nvidia.com/)
 * [El DLI (Deep Learning Institute) (uma.es)](http://nvidiadli.uma.es/index.php/es/certificaciones-nvidia)
 * [CuPy: NumPy & SciPy for GPU](https://cupy.dev/)
 * [Numba: A High Performance Python Compiler (pydata.org)](https://numba.pydata.org/)
 
-# Introducción
+## 1. Introducción
+
+<p align="center">
+  <img src={require("../../../img/cuda-logo.png").default} height="200"/>
+  <br />
+  <em>Logo de Nvidia CUDA</em>
+</p>
 
 **CUDA** (*Compute Unified Device Architecture*) es una plataforma de computación paralela y una interfaz de programación de aplicaciones (API) desarrollada por NVIDIA. Permite el uso de unidades de procesamiento gráfico (GPU) para realizar cálculos complejos con mayor eficiencia en comparación con las unidades de procesamiento central (CPU). CUDA se utiliza en áreas como la inteligencia artificial, simulaciones y renderización de gráficos.
 
-## 1. Conceptos de CUDA
+## 2. Conceptos de CUDA
 
-### 1.1. Introducción
+### 2.1. Introducción
 
 La plataforma de computación CUDA ofrece un amplio ecosistema. No obstante, en los puntos 1 y 2, se abordará el uso de CUDA en combinación con el lenguaje de programación C. A partir del punto 3, se explorarán otras bibliotecas y aplicaciones de CUDA en Python.
 
@@ -35,7 +41,7 @@ CUDA se basa en tres cualidades fundamentales que destacan la capacidad de la GP
 * **Escalabilidad**: La plataforma permite la creación de modelos de paralelización sostenible gracias a la abundancia de datos, especialmente en aplicaciones a gran escala. Utiliza el modelo _Single Instruction Multiple Threads_ (SIMT) para manejar grandes volúmenes de datos de manera eficiente.
 * **Productividad**: CUDA permite que los hilos que enfrentan latencias oculten este tiempo mediante la conmutación con otros hilos, manteniendo una alta eficiencia en el procesamiento.
 
-### 1.2. Los *warps* en CUDA
+### 2.2. Los *warps* en CUDA
 
 El concepto clave en CUDA es el ***warp***. En el nivel de hardware, un bloque de hilos se divide en _warps_, que son grupos de 32 hilos que ejecutan instrucciones en paralelo. Estos _warps_ permanecen en el multiprocesador hasta completar su ejecución. Un nuevo bloque de hilos no se lanza hasta que se liberen suficientes registros y memoria compartida para los _warps_ del nuevo bloque. La conmutación inmediata entre los hilos dentro de un _warp_ contribuye a una ejecución eficiente.
 
@@ -45,7 +51,7 @@ CUDA combina software, firmware y hardware para ofrecer una plataforma de comput
 * **Firmware**: Incluye drivers para la programación GPU, que soportan tareas como renderizado, manejo de APIs y gestión de memoria.
 * **Hardware**: Habilita el paralelismo general de la GPU, optimizando la capacidad de procesamiento paralelo.
 
-### 1.3. Computación heterogénea 
+### 2.3. Computación heterogénea 
 
 Aunque CUDA ofrece ventajas significativas, es crucial equilibrar la carga de trabajo entre la GPU y la CPU, un enfoque conocido como computación heterogénea, la cual se basa en:
 
@@ -61,7 +67,7 @@ Es fundamental identificar qué partes del código se benefician de la paraleliz
 
 Vemos por tanto que el paralelismo por el que CUDA destaca es en el paralelismo de datos (_**data parallelism**_).
 
-### 1.4. Hardware
+### 2.4. Hardware
 
 Una GPU está compuesta por _N_ multiprocesadores, cada uno de los cuales contiene _M_ núcleos. Algunas de las familias de GPU de la familia Tesla de NVidia se muestran en la siguiente imagen.
 
@@ -91,7 +97,7 @@ De la imagen anterior se observa que el diseño de un bloque se utiliza como bas
   <br />
 </p>
 
-#### 1.4.1. Núcleos tensoriales
+#### 2.4.1. Núcleos tensoriales
 
 En la última década, uno de los componentes que mayor protagonismo ha tomado han sido los núcleos tensoriales. Los núcleos tensoriales están diseñados para realizar operaciones matriciales a alta velocidad, lo que resulta crucial en el entrenamiento de modelos de Inteligencia Artificial y en procesos que implican operaciones matriciales extensivas. El siguiente diagrama ilustra el proceso de operación de cada núcleo tensorial por ciclo de reloj.
 
@@ -100,7 +106,7 @@ En la última década, uno de los componentes que mayor protagonismo ha tomado h
   <br />
 </p>
 
-#### 1.4.2. Precisión numérica
+#### 2.4.2. Precisión numérica
 
 La precisión de los datos, como pasar de enteros de 32 bits a enteros de 16 bits, impacta en la tasa de transferencia (_Throughput_) del sistema. Reducir la precisión permite realizar un mayor número de operaciones, aunque con una precisión menor en los resultados. Dependiendo de la aplicación, esta reducción de precisión puede ser aceptable. A continuación, se muestra el _Throughput_ para diferentes precisiones de datos en arquitecturas de GPU modernas.
 
@@ -109,9 +115,9 @@ La precisión de los datos, como pasar de enteros de 32 bits a enteros de 16 bit
   <br />
 </p>
 
-## 2. Programación con CUDA en C
+## 3. Programación con CUDA en C
 
-### 2.1. Conceptos básicos
+### 3.1. Conceptos básicos
 
 En CUDA, una función paralelizada se denomina **Kernel**. Para conocer la GPU y sus características se puede utilizar el siguiente comando en una terminal del equipo a utilizar:
 
@@ -209,7 +215,7 @@ void main()
 
 El bucle anterior es adecuado para la paralelización, ya que cada índice es independiente y no requiere un orden específico (las hebras en un _warp_ se ejecutan desordenadamente).
 
-#### 2.1.1. Identificar hilos, bloques y mallas en un *kernel* de CUDA
+#### 3.1.1. Identificar hilos, bloques y mallas en un *kernel* de CUDA
 
 CUDA proporciona variables que describen los hilos, bloques y mallas (_grid_):
 
@@ -274,7 +280,7 @@ En casos donde el número de hilos excede el número de tareas, se debe asegurar
   <br />
 </p>
 
-### 2.2. Asignación de memoria en GPU
+### 3.2. Asignación de memoria en GPU
 
 La asignación y liberación de memoria se realiza para la CPU y la GPU utilizando las funciones `malloc()` y `free()` en la CPU, y `cudaMallocManaged()` y `cudaFree()` en la GPU.
 
@@ -406,7 +412,7 @@ int main()
 
 Es posible clonar estructuras sin usar memoria unificada, pero esto requiere realizar copias sucesivas entre la CPU y la GPU. También es posible hacerlo con memoria unificada utilizando C++.
 
-### 2.4. Kernels con gran tamaño de datos
+### 3.4. Kernels con gran tamaño de datos
 
 Cuando se trabaja con una cantidad de datos que excede el número máximo de hebras disponibles, es necesario dividir los datos en bloques más pequeños que se ajusten al número de hebras. Tras completar el procesamiento de una división, se pasa a la siguiente utilizando la expresión:
 
@@ -433,7 +439,7 @@ __global__ void kernel(int *a, int N)
 }
 ```
 
-### 2.5. Manejo de errores
+### 3.5. Manejo de errores
 
 Las funciones de CUDA a menudo devuelven un valor que indica si se ha producido un error, facilitando el manejo de errores. A continuación, se muestra cómo gestionar errores al reservar memoria:
 
@@ -498,7 +504,7 @@ int main()
 }
 ```
 
-### 2.6. Ejemplos de Kernels característicos/comunes
+### 3.6. Ejemplos de Kernels característicos/comunes
 
 <p align="center">
   <img src={require("./assets/Untitled 12.png").default}/>
@@ -625,19 +631,19 @@ Como análisis final tenemos:
 * El operador de reducción requiere una mayor intervención del programador.
 * El histograma es el más desafiante para el programador.
   
-## 3. Acelerar aplicaciones con CUDA en Python utilizando Numba y CuPy
+## 4. Acelerar aplicaciones con CUDA en Python utilizando Numba y CuPy
 
 El rendimiento de las aplicaciones científicas y de ingeniería en Python se puede mejorar significativamente mediante el uso de herramientas como Numba y CuPy. Estas tecnologías permiten la paralelización y aceleración del código, aprovechando la potencia de procesamiento de las GPUs y superando las limitaciones del intérprete de Python.
 
-### 3.1. Numba
+### 4.1. Numba
 
-#### 3.1.1. Introducción
+#### 4.1.1. Introducción
 
 Numba es un compilador JIT (*Just-In-Time*) para Python que acelera el código al convertir funciones en código máquina optimizado para CPU y GPU. Esto evita el intérprete de Python y permite la ejecución eficiente de operaciones numéricas, especialmente aquellas que involucran bucles y cálculos intensivos. La compilación se realiza en tiempo de ejecución, aplicando optimizaciones basadas en los datos de entrada.
 
 Sin embargo, Numba presenta ciertas limitaciones como el no ser compatible con Pandas, por lo que para utilizar Numba con datos de Pandas, se recomienda convertir los DataFrames a matrices de NumPy o CuPy. Para más información, consultar la [página oficial de Numba](https://numba.pydata.org/).
 
-#### 3.1.2. Decoradores
+#### 4.1.2. Decoradores
 
 Numba ofrece varios decoradores para la compilación y optimización de funciones:
 
@@ -686,15 +692,15 @@ print(result)
 
 En este ejemplo, el decorador `@njit()` compila la función para ejecutarse sin el intérprete de Python, mejorando notablemente el rendimiento.
 
-### 3.2. CuPy
+### 4.2. CuPy
 
-#### 3.2.1. Introducción
+#### 4.2.1. Introducción
 
 CuPy es una biblioteca de Python diseñada para acelerar cálculos numéricos mediante la ejecución de código en GPUs. Ofrece una API similar a NumPy, permitiendo realizar operaciones similares aprovechando la arquitectura de CUDA para mejorar el rendimiento. Es útil en tareas que involucran grandes volúmenes de datos o cálculos intensivos.
 
 Para más información, consultar la [página oficial de CuPy](https://cupy.dev/).
 
-#### 3.2.2. Uso básico de CuPy
+#### 4.2.2. Uso básico de CuPy
 
 CuPy ofrece una API similar a NumPy, facilitando la transición entre ambas bibliotecas. A continuación se presenta un ejemplo básico de cómo realizar cálculos en una GPU utilizando CuPy:
 
@@ -714,7 +720,7 @@ c_numpy = cp.asnumpy(c)
 print(c_numpy)  ## Resultado: [ 7  9 11 13 15]
 ```
 
-### 3.3. Comparación entre Numba y CuPy
+### 4.3. Comparación entre Numba y CuPy
 
 - **Numba**: Ideal para acelerar funciones específicas y bucles en Python. Permite compilación JIT para CPU y GPU, y se integra bien con código existente de NumPy. Recomendado para optimizar algoritmos matemáticos complejos y simulaciones con estructuras de bucles que pueden beneficiarse de la compilación JIT.
   

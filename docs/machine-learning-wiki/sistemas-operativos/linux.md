@@ -7,11 +7,11 @@ title: Linux
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 + [60 Linux Commands you NEED to know (in 10 minutes)](https://www.youtube.com/watch?v=gd7BXuUQ91w)
   
-# Introducción
+## Introducción
 
 <p align="center">
   <img src={require("../../img/linux-logo.png").default} height="300"/>

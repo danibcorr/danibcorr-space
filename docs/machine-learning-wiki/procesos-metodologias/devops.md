@@ -7,7 +7,7 @@ title: DevOps
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 * [Aprende Docker ahora! curso completo gratis desde cero!](https://youtu.be/4Dko5W96WHg?si=pOAHHRxpPkqpQ2go)
 * [Docker Docs](https://docs.docker.com/)
