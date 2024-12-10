@@ -70,5 +70,13 @@
   "sidebar.tutorialSidebar.category.Librerias.link.generated-index.description": {
     "message": "Encuentra las librerías más utilizadas en el ámbito de la Inteligencia Artificial.",
     "description": "The generated-index page description for category Librerias in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.inteligencia-artificial": {
+    "message": "inteligencia-artificial",
+    "description": "The label for category inteligencia-artificial in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.librerias": {
+    "message": "librerias",
+    "description": "The label for category librerias in sidebar tutorialSidebar"
   }
 }

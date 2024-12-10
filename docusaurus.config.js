@@ -28,6 +28,18 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: false,
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
         theme: {
           customCss: ['./src/css/custom.css'],
         },
@@ -119,6 +131,11 @@ const config = {
           label: "Recursos Adicionales",
           docsPluginId: "otros",
         },        
+        {
+          to: '/blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
         {
           type: 'localeDropdown', // Este es el ítem del selector de idioma
           position: 'right', // Posición en la barra de navegación

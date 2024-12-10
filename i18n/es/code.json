@@ -1,4 +1,97 @@
 {
+  "perfil.descripcion": {
+    "message": "Soy Ingeniero de Sistemas Electrónicos y actualmente trabajo como Científico de Datos en Ericsson. Me apasionan la IA, los datos y sus aplicaciones para mejorar las capacidades humanas."
+  },
+  "bloque.proyectos.ia": {
+    "message": "Proyectos de Datos e Inteligencia Artificial"
+  },
+  "bloque.proyectos.ia.descripcion": {
+    "message": "Descubre mis trabajos relacionados con datos e inteligencia artificial."
+  },
+  "bloque.proyectos.electronica": {
+    "message": "Proyectos de Electrónica y Robótica"
+  },
+  "bloque.proyectos.electronica.descripcion": {
+    "message": "Explora mis proyectos en el campo de la electrónica y robótica."
+  },
+  "bloque.ocultar.proyectos": {
+    "message": "Ocultar proyectos"
+  },
+  "bloque.ver.proyectos": {
+    "message": "Ver proyectos"
+  },
+  "bloque.proyectos": {
+    "message": "Proyectos"
+  },
+  "proyectos.ia.wiki": {
+    "message": "🏫 Wiki de Aprendizaje Automático"
+  },
+  "proyectos.ia.wiki.descripcion": {
+    "message": "Una wiki en español para almacenar y compartir aprendizajes, notas y código en un solo lugar, con un enfoque en el aprendizaje automático."
+  },
+  "proyectos.ia.musica": {
+    "message": "🎵 Clasificador de Géneros Musicales"
+  },
+  "proyectos.ia.musica.descripcion": {
+    "message": "Clasificador de géneros musicales para parámetros de ecualización automática de JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers."
+  },
+  "proyectos.ia.ventas": {
+    "message": "💸 Suite de Ventas Streamlit"
+  },
+  "proyectos.ia.ventas.descripcion": {
+    "message": "Plataforma web integral para análisis y visualización de datos, impulsada con Streamlit, complementada con un clasificador automatizado de ítems que optimiza la asignación de etiquetas."
+  },
+  "proyectos.ia.papers": {
+    "message": "📄 Papers con Código"
+  },
+  "proyectos.ia.papers.descripcion": {
+    "message": "Implementaciones de artículos de aprendizaje automático y profundo en código."
+  },
+  "proyectos.ia.universidad": {
+    "message": "🎓 Asistente Universitario"
+  },
+  "proyectos.ia.universidad.descripcion": {
+    "message": "Herramienta que simplifica tareas académicas y administrativas para estudiantes, educadores e investigadores, proporcionando utilidades para gestionar metadatos de documentos, convertir PDFs a Markdown, transcribir audio, analizar estadísticas de calificaciones y más."
+  },
+  "proyectos.ia.wattpad": {
+    "message": "📚 Tu Compañero de Wattpad"
+  },
+  "proyectos.ia.wattpad.descripcion": {
+    "message": "Herramienta para obtener información de Wattpad y conocer usuarios con los mismos gustos y accesibles para interactuar con ellos."
+  },
+  "proyectos.electronica.robótica": {
+    "message": "Proyectos de Electrónica y Robótica"
+  },
+  "proyectos.ia.sistema-monitoreo": {
+    "message": "🏔️ Sistema de Monitoreo Ambiental"
+  },
+  "proyectos.ia.sistema-monitoreo.descripcion": {
+    "message": "Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando Arduino y ESP32. Propuesta realizada para el proyecto final del Máster en Telemática y Redes de Telecomunicación de la UMA, en la asignatura de Ingeniería de Software para el Internet de las Cosas."
+  },
+  "proyectos.ia.electronica-tiva": {
+    "message": "🎛️ Electrónica con Tiva C"
+  },
+  "proyectos.ia.electronica-tiva.descripcion": {
+    "message": "Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C."
+  },
+  "proyectos.ia.electronica-arduino": {
+    "message": "🎛️ Electrónica con Arduino"
+  },
+  "proyectos.ia.electronica-arduino.descripcion": {
+    "message": "Repositorio que contiene una colección de proyectos de Arduino y Processing desarrollados para el curso de Electrónica Creativa en la Universidad de Málaga (UMA). Enfoque principal en un proyecto de brazo robótico, con trabajos adicionales en sensores piezoeléctricos y lámparas LED."
+  },
+  "proyectos.ia.controlador-kinect": {
+    "message": "👀 Controlador Kinect para PowerPoint"
+  },
+  "proyectos.ia.controlador-kinect.descripcion": {
+    "message": "Desarrollo de un programa que permite el control natural de presentaciones de PowerPoint utilizando gestos y voz."
+  },
+  "proyectos.ia.microbot-sumo": {
+    "message": "🤖 Microbot Sumo"
+  },
+  "proyectos.ia.microbot-sumo.descripcion": {
+    "message": "Diseño de un microbot para lucha de sumo."
+  },
   "theme.ErrorPageContent.title": {
     "message": "Esta página ha fallado.",
     "description": "The title of the fallback page when the page crashed"
@@ -122,13 +215,13 @@
     "message": "Última actualización{atDate}{byUser}",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versiones",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
   "theme.NotFound.title": {
     "message": "Página No Encontrada",
     "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versiones",
+    "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.tags.tagsListLabel": {
     "message": "Etiquetas:",
@@ -194,10 +287,6 @@
     "message": "Principal",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Idiomas",
-    "description": "The label for the mobile language switcher dropdown"
-  },
   "theme.NotFound.p1": {
     "message": "No pudimos encontrar lo que buscaba.",
     "description": "The first paragraph of the 404 page"
@@ -205,6 +294,10 @@
   "theme.NotFound.p2": {
     "message": "Comuníquese con el dueño del sitio que le proporcionó la URL original y hágale saber que su vínculo está roto.",
     "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Idiomas",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "En esta página",
@@ -309,98 +402,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiquetas",
     "description": "The title of the tag list page"
-  },
-  "perfil.descripcion": {
-    "message": "Soy Ingeniero de Sistemas Electrónicos y actualmente trabajo como Científico de Datos en Ericsson. Me apasionan la IA, los datos y sus aplicaciones para mejorar las capacidades humanas."
-  },
-  "bloque.proyectos.ia": {
-    "message": "Proyectos de Datos e Inteligencia Artificial"
-  },
-  "bloque.proyectos.ia.descripcion": {
-    "message": "Descubre mis trabajos relacionados con datos e inteligencia artificial."
-  },
-  "bloque.proyectos.electronica": {
-    "message": "Proyectos de Electrónica y Robótica"
-  },
-  "bloque.proyectos.electronica.descripcion": {
-    "message": "Explora mis proyectos en el campo de la electrónica y robótica."
-  },
-  "bloque.ocultar.proyectos": {
-    "message": "Ocultar proyectos"
-  },
-  "bloque.ver.proyectos": {
-    "message": "Ver proyectos"
-  },
-  "bloque.proyectos": {
-    "message": "Proyectos"
-  },
-  "proyectos.ia.wiki": {
-    "message": "🏫 Wiki de Aprendizaje Automático"
-  },
-  "proyectos.ia.wiki.descripcion": {
-    "message": "Una wiki en español para almacenar y compartir aprendizajes, notas y código en un solo lugar, con un enfoque en el aprendizaje automático."
-  },
-  "proyectos.ia.musica": {
-    "message": "🎵 Clasificador de Géneros Musicales"
-  },
-  "proyectos.ia.musica.descripcion": {
-    "message": "Clasificador de géneros musicales para parámetros de ecualización automática de JamesDSP, utilizando Redes Neuronales Convolucionales con Transformers."
-  },
-  "proyectos.ia.ventas": {
-    "message": "💸 Suite de Ventas Streamlit"
-  },
-  "proyectos.ia.ventas.descripcion": {
-    "message": "Plataforma web integral para análisis y visualización de datos, impulsada con Streamlit, complementada con un clasificador automatizado de ítems que optimiza la asignación de etiquetas."
-  },
-  "proyectos.ia.papers": {
-    "message": "📄 Papers con Código"
-  },
-  "proyectos.ia.papers.descripcion": {
-    "message": "Implementaciones de artículos de aprendizaje automático y profundo en código."
-  },
-  "proyectos.ia.universidad": {
-    "message": "🎓 Asistente Universitario"
-  },
-  "proyectos.ia.universidad.descripcion": {
-    "message": "Herramienta que simplifica tareas académicas y administrativas para estudiantes, educadores e investigadores, proporcionando utilidades para gestionar metadatos de documentos, convertir PDFs a Markdown, transcribir audio, analizar estadísticas de calificaciones y más."
-  },
-  "proyectos.ia.wattpad": {
-    "message": "📚 Tu Compañero de Wattpad"
-  },
-  "proyectos.ia.wattpad.descripcion": {
-    "message": "Herramienta para obtener información de Wattpad y conocer usuarios con los mismos gustos y accesibles para interactuar con ellos."
-  },
-  "proyectos.electronica.robótica": {
-    "message": "Proyectos de Electrónica y Robótica"
-  },
-  "proyectos.ia.sistema-monitoreo": {
-    "message": "🏔️ Sistema de Monitoreo Ambiental"
-  },
-  "proyectos.ia.sistema-monitoreo.descripcion": {
-    "message": "Sistema de monitoreo IoT para comunicaciones inalámbricas utilizando Arduino y ESP32. Propuesta realizada para el proyecto final del Máster en Telemática y Redes de Telecomunicación de la UMA, en la asignatura de Ingeniería de Software para el Internet de las Cosas."
-  },
-  "proyectos.ia.electronica-tiva": {
-    "message": "🎛️ Electrónica con Tiva C"
-  },
-  "proyectos.ia.electronica-tiva.descripcion": {
-    "message": "Proyecto de sistemas embebidos con Tiva C utilizando comunicaciones UART e I2C."
-  },
-  "proyectos.ia.electronica-arduino": {
-    "message": "🎛️ Electrónica con Arduino"
-  },
-  "proyectos.ia.electronica-arduino.descripcion": {
-    "message": "Repositorio que contiene una colección de proyectos de Arduino y Processing desarrollados para el curso de Electrónica Creativa en la Universidad de Málaga (UMA). Enfoque principal en un proyecto de brazo robótico, con trabajos adicionales en sensores piezoeléctricos y lámparas LED."
-  },
-  "proyectos.ia.controlador-kinect": {
-    "message": "👀 Controlador Kinect para PowerPoint"
-  },
-  "proyectos.ia.controlador-kinect.descripcion": {
-    "message": "Desarrollo de un programa que permite el control natural de presentaciones de PowerPoint utilizando gestos y voz."
-  },
-  "proyectos.ia.microbot-sumo": {
-    "message": "🤖 Microbot Sumo"
-  },
-  "proyectos.ia.microbot-sumo.descripcion": {
-    "message": "Diseño de un microbot para lucha de sumo."
   }
 }
