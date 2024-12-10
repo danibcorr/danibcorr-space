@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Impresión 3D": {
+    "message": "Impresión 3D",
+    "description": "The label for category Impresión 3D in sidebar tutorialSidebar"
+  }
+}

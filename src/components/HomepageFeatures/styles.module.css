@@ -20,85 +20,62 @@
 /* Sección de características */
 .features {
     padding: 40px 0;
-    /* Centra el contenido de la sección */
     text-align: center;
 }
 
 /* Contenedor de características */
 .featureContainer {
-    /* Cambia la disposición a flex */
     display: flex;
-    /* Alinea verticalmente al centro */
     align-items: center;
-    /* Centra horizontalmente el contenedor */
     justify-content: center;
 }
 
 /* Característica individual */
 .feature {
     display: flex;
-    /* Alinea los elementos en fila */
     flex-direction: row;
-    /* Alinea verticalmente al centro */
     align-items: center;
-    /* Aumenta el espacio entre características */
     margin: 30px 0;
-    /* Limita el ancho máximo del contenedor */
     max-width: var(--containerMaxWidth);
-    /* Alinea el texto a la izquierda */
     text-align: left;
 }
 
 /* Contenedor de imagen */
 .imageContainer {
-    /* Aumenta el espacio entre la imagen y el texto */
     margin-right: 30px;
 }
 
 /* Imagen */
 .featureImage {
-    /* Ancho de la imagen */
     width: var(--widthImage);
-    /* Altura de la imagen para mantener la proporción */
     height: var(--heightImage);
-    /* Redondea la imagen para que sea circular */
     border-radius: var(--borderRadiusImage);
-    /* Transición suave */
     transition: transform var(--transitionTime) ease;
 }
 
 .textContainer {
-    /* Hace que el contenedor de texto ocupe el espacio restante */
     flex: 1;
 }
 
 /* Títulos con tamaño H2 */
 h2 {
-    /* Aumenta el tamaño de la fuente del título */
     font-size: 2rem;
     color: var(--accentColor);
 }
 
 /* Título de proyectos */
 .projectsTitle {
-    /* Margen superior para separar el título de proyectos */
     margin-top: var(--marginTop);
     color: var(--accentColor);
 }
 
 /* Contenedor de proyectos */
 .projectsContainer {
-    /* Utiliza flexbox para columnas */
     display: flex;
-    /* Centra horizontalmente las columnas */
     justify-content: center;
-    /* Margen superior */
     margin-top: var(--marginTop);
-    /* Margen inferior */
     margin-bottom: 0px;
-    /* Limita el ancho máximo del contenedor de proyectos */
     max-width: 830px;
-    /* Centra el contenedor en la página */
     margin: 0 auto;
     width: var(--maxWidth);
 }
@@ -107,23 +84,14 @@ h2 {
 .project {
     background-color: var(--colorTarjetas);
     color: var(--accentColor);
-    /* Borde de las tarjetas */
     border: 1px solid #e0e0e0;
-    /* Bordes redondeados */
     border-radius: var(--border-radius);
-    /* Relleno dentro de las tarjetas */
     padding: 15px;
-    /* Margen entre tarjetas */
     margin: 0 15px;
-    /* Hace que cada tarjeta ocupe el mismo ancho */
     flex: 1;
-    /* Alinea el texto a la izquierda */
     text-align: left;
-    /* Sombra opcional para destacar las tarjetas */
     box-shadow: 0 2px 5px var(--shadowColor);
-    /* Utiliza flexbox en la tarjeta */
     display: flex;
-    /* Organiza los elementos verticalmente */
     flex-direction: column;
 }
 
@@ -134,51 +102,51 @@ h2 {
     padding: 10px 15px;
     background-color: var(--primaryColor);
     color: var(--accentColor);
-    /* Elimina el borde */
     border: none;
-    /* Elimina el contorno */
     outline: none;
     border-radius: var(--border-radius);
     text-decoration: none;
     width: var(--maxWidth);
     font-size: var(--fontSize);
     text-align: center;
-    /* Añade un cursor de puntero para el botón */
     cursor: pointer;
-    /* Transiciones suaves */
     transition: background-color var(--transitionTime) ease, color var(--transitionTime) ease;
 }
 
 /* Efecto hover en botón de proyecto */
 .projectButton:hover {
-    /* Color de fondo al pasar el ratón */
     background-color: #c0a695;
-    /* Color del texto al pasar el ratón */
     color: var(--colorTarjetas);
 }
 
 /* Sección de detalles de proyectos */
 .projectsDetailSection {
-    /* Limita el ancho máximo de la sección de detalles */
     max-width: var(--containerMaxWidth);
-    /* Centra la sección de detalles */
     margin: 40px auto;
 }
 
 .projectDetail {
-    /* Margen superior para separar la sección de detalles */
     margin-top: var(--marginTop);
     display: block;
     flex-direction: column;
     align-items: center;
     width: var(--maxWidth);
-    max-width: var(--containerMaxWidth)
+    max-width: var(--containerMaxWidth);
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    /* Transición suave para la opacidad */
+}
+
+.projectDetail.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease;
+    /* Hace que el elemento sea visible cuando la clase 'visible' se aplica */
 }
 
 .projectItem {
     background-color: var(--colorTarjetas);
     color: var(--accentColor);
-    /* Borde de las tarjetas */
     border: 1px solid #e0e0e0;
     border-radius: var(--border-radius);
     font-size: var(--fontSize);
@@ -186,49 +154,36 @@ h2 {
     padding: 15px;
     text-decoration: none;
     transition: all var(--transitionTime) ease;
-    /* Margen inferior entre proyectos */
     margin-bottom: 20px;
-    /* Para posicionar los iconos */
     position: relative;
 }
 
 /* Efecto hover en item de proyecto */
 .projectItem:hover {
-    /* Mueve el ítem hacia arriba */
     transform: translateY(-3px);
-    /* Sombra al pasar el ratón */
     box-shadow: 0 3px 10px var(--shadowColor);
 }
 
 /* Título de proyecto */
 .projectTitle {
     display: flex;
-    /* Espacia los elementos */
     justify-content: space-between;
-    /* Alinea verticalmente al centro */
     align-items: center;
-    /* Margen inferior */
     margin-bottom: 10px;
-    /* Fuente en negrita */
     font-weight: bold;
-    /* Hace que el título ocupe el espacio restante */
     flex-grow: 1;
 }
 
 /* Descripción de proyecto */
 .projectDescription {
-    /* Alinea el texto a la izquierda */
     text-align: left;
-    /* Tamaño de la fuente */
     font-size: var(--fontSize);
 }
 
 /* Contenedor de enlaces de proyecto */
 .projectLinks {
     position: absolute;
-    /* Posiciona el contenedor en la parte superior */
     top: 10px;
-    /* Posiciona el contenedor a la derecha */
     right: 10px;
 }
 
@@ -238,9 +193,7 @@ h2 {
     color: var(--accentColor);
     font-size: 1.3rem;
     text-decoration: none;
-    /* Transición suave */
     transition: color var(--transitionTime), transform var(--transitionTime);
-    /* Añade espacio entre los iconos */
     margin-right: 10px;
 }
 
@@ -257,6 +210,8 @@ h2 {
 /* Contenedor de enlaces sociales */
 .socialLinks {
     display: flex;
+    gap: 10px;
+    /* Añade espacio entre los enlaces */
 }
 
 /* Estilos de enlaces sociales */
@@ -266,11 +221,105 @@ h2 {
     font-size: 1.3rem;
     text-decoration: none;
     transition: color var(--delay), transform var(--transitionTime) ease-in-out;
-    /* Añade espacio entre los iconos */
-    margin-right: 10px;
 }
 
-/* Efecto hover en enlaces sociales */
-.socialLinks a:hover {
-    color: var(--colorLinkSelection);
+/* Meta viewport para móvil */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+        /* Ajusta la fuente para pantallas pequeñas */
+    }
+
+    /* Sección de características */
+    .features {
+        padding: 20px 0;
+    }
+
+    /* Contenedor de características */
+    .featureContainer {
+        flex-direction: column;
+        /* Cambia a columna en móviles */
+        align-items: center;
+    }
+
+    /* Característica individual */
+    .feature {
+        flex-direction: column;
+        /* Apila los elementos verticalmente en móviles */
+        text-align: center;
+        /* Centra el texto en pantallas pequeñas */
+    }
+
+    .imageContainer {
+        margin-right: 0;
+        /* Elimina el margen derecho en dispositivos pequeños */
+        margin-bottom: 20px;
+        /* Añade un margen inferior para separar la imagen del texto */
+    }
+
+    /* Imagen */
+    .featureImage {
+        width: 180px;
+        /* Ajusta el tamaño de la imagen */
+        height: 180px;
+        /* Ajusta la altura de la imagen */
+    }
+
+    .socialLinks {
+        display: flex;
+        justify-content: center;
+        /* Centra los enlaces de manera horizontal */
+        align-items: center;
+        /* Centra los enlaces de manera vertical (opcional, pero útil si hay más espacio vertical) */
+        gap: 10px;
+        /* Añade espacio entre los enlaces (puedes ajustar este valor si lo deseas) */
+    }
+
+    /* Contenedor de proyectos */
+    .projectsContainer {
+        display: block;
+        /* Cambia la disposición a bloque para móviles */
+        margin-top: 20px;
+    }
+
+    /* Tarjeta de proyecto */
+    .project {
+        margin: 20px 0;
+        /* Espaciado entre tarjetas */
+        padding: 15px;
+        width: 100%;
+        /* Hace que las tarjetas ocupen el 100% del ancho */
+    }
+
+    /* Botón de proyecto */
+    .projectButton {
+        width: 100%;
+        /* El botón ocupará todo el ancho */
+    }
+
+    /* Contenedor de enlaces de proyecto */
+    .projectLinks {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 10px;
+    }
+
+    /* Título de proyecto */
+    .projectTitle {
+        font-size: 1.2rem;
+        /* Ajusta el tamaño de la fuente */
+    }
+
+    /* Descripción de proyecto */
+    .projectDescription {
+        font-size: 0.9rem;
+        /* Ajusta el tamaño de la fuente */
+    }
+
+    /* Estilo de los enlaces sociales */
+    .socialLinks a {
+        font-size: 1.2rem;
+        /* Ajusta el tamaño de los enlaces sociales */
+    }
 }

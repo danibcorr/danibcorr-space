@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "Traductor Web"
+version = "0.1.0"
+description = "Dependencias para la traducción de la web mediante Python"
+authors = ["Daniel Bazo"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+deep-translator = "^1.11.4"
+tqdm = "^4.67.0"
+transformers = "^4.46.3"
+torch = "^2.5.1"
+sentencepiece = "^0.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

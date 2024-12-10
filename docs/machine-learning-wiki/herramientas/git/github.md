@@ -7,14 +7,14 @@ title: GitHub
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 - [ML in Production: From Data Scientist to ML Engineer](https://www.udemy.com/course/ml-in-production/?couponCode=SKILLS4SALEA)
 
-# Introducción
+## 1. Introducción
 
 <p align="center">
-  <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png" height="300"/>
+  <img src={require("../../../img/github-logo.png").default} width="500"/>
   <br />
   <em>Logo de GitHub</em>
 </p>
@@ -23,21 +23,31 @@ toc_max_heading_level: 4
 
 GitHub se ha convertido en una herramienta esencial, ofreciendo funcionalidades avanzadas como **GitHub Actions** para la automatización de flujos de trabajo y **GitHub Pages** para la publicación de sitios web directamente desde repositorios.
 
-## 1. CI/CD con GitHub Actions
+## 2. CI/CD con GitHub Actions
 
-El término **CI (*Continuous Integration*)** se refiere a la automatización de los pasos necesarios para integrar nuevo código en un repositorio compartido, garantizando que los cambios se validen continuamente mediante pruebas y compilaciones. **CD (*Continuous Deployment*)** implica la automatización de los pasos necesarios para llevar el código del repositorio compartido a producción, facilitando la creación y entrega continua de nuevas versiones de un producto.
+El término **CI (*Continuous Integration*)** se refiere a la automatización de los pasos necesarios para integrar nuevo código en un repositorio compartido, garantizando que los cambios se validen continuamente mediante pruebas y compilaciones. 
 
-### 1.1. GitHub Actions y su funcionamiento
+**CD (*Continuous Deployment*)** implica la automatización de los pasos necesarios para llevar el código del repositorio compartido a producción, facilitando la creación y entrega continua de nuevas versiones de un producto.
 
-GitHub Actions es una plataforma que permite automatizar flujos de trabajo mediante archivos de configuración YAML. El runner de GitHub Actions es un servidor que ejecuta estos workflows en el entorno definido por el proyecto. Para configurar un workflow, se crea un archivo YAML dentro del repositorio, generalmente bajo la ruta `.github/workflows/`, que define los pasos o acciones a realizar.
+### 2.1. GitHub Actions y su funcionamiento
 
-### 1.2. Estructura del workflow
+GitHub Actions es una plataforma que permite automatizar flujos de trabajo mediante archivos de configuración YAML. 
 
-El archivo de configuración del workflow (por ejemplo, `workflow.yml`) contiene ***jobs***, que representan unidades de trabajo como la compilación del proyecto, la ejecución de pruebas o el despliegue de la aplicación. Cada job está compuesto por pasos secuenciales que describen tareas específicas, y requiere un sistema operativo para ejecutarse. Los ***triggers*** o eventos, como un `push`, un `pull request` o eventos programados, determinan cuándo se debe iniciar el workflow. Además, es posible definir **permisos** que limitan el acceso del workflow a los recursos del repositorio.
+El **runner** de GitHub Actions es un servidor que ejecuta estos workflows en el entorno definido por el proyecto. Para configurar un workflow, se crea un archivo YAML dentro del repositorio, generalmente bajo la ruta `.github/workflows/`, que define los pasos o acciones a realizar.
+
+:::note
+Recuerda que los **workflows** se definen mediante archivos YAML, lo que facilita su lectura y modificación. Además, se pueden reutilizar en diferentes repositorios.
+:::
+
+### 2.2. Estructura del workflow
+
+El archivo de configuración del workflow (por ejemplo, `workflow.yml`) contiene ***jobs***, que representan unidades de trabajo como la compilación del proyecto, la ejecución de pruebas o el despliegue de la aplicación. Cada ***job*** está compuesto por pasos secuenciales que describen tareas específicas, y requiere un sistema operativo para ejecutarse. 
+
+Los ***triggers*** o eventos, como un `push`, un `pull request` o eventos programados, determinan cuándo se debe iniciar el workflow. Además, es posible definir **permisos** que limitan el acceso del workflow a los recursos del repositorio.
 
 GitHub Actions permite utilizar acciones definidas por terceros, disponibles en [github.com/actions](https://github.com/actions) y en el [Marketplace de GitHub](https://github.com/marketplace).
 
-#### 1.2.1. Organización del proyecto
+#### 2.2.1. Organización del proyecto
 
 Para integrar GitHub Actions en un proyecto, se debe crear una carpeta `.github` en la raíz del repositorio, dentro de la cual se debe incluir una subcarpeta `workflows` que contendrá los archivos `.yml` con la definición de los workflows.
 
@@ -49,11 +59,11 @@ src
 │       ├── workflow.yml
 ```
 
-#### 1.2.2. Ejemplos de configuración de workflows
+#### 2.2.2. Ejemplos de configuración de workflows
 
-##### 1.2.2.1. Ejemplo básico
+##### 2.2.2.1. Ejemplo básico
 
-A continuación se muestra un ejemplo básico de un workflow que se ejecuta cuando hay un `push` o un `pull request` en la rama `main`.
+A continuación se muestra un ejemplo básico de un workflow que se ejecuta cuando hay un `push` o un `pull request` en la rama `main`:
 
 ```yml
 name: Workflow básico
@@ -78,7 +88,11 @@ jobs:
 
 Este ejemplo clona el repositorio utilizando la acción de terceros `actions/checkout@v4`, simplificando el proceso de preparación del entorno para el workflow.
 
-##### 1.2.2.2. Configuración de Python, Poetry y Flake8
+:::tip
+Es una buena práctica incluir la acción `checkout` al principio del workflow, ya que asegura que el código más reciente se descargue antes de realizar cualquier otra operación.
+:::
+
+##### 2.2.2.2. Configuración de Python, Poetry y Flake8
 
 En este ejemplo, se configura un workflow para instalar Python, gestionar dependencias con Poetry y verificar el código utilizando Flake8, una herramienta que valida el estilo y la calidad del código.
 
@@ -117,7 +131,7 @@ jobs:
         run: poetry run flake8 src/
 ```
 
-##### 1.2.2.3. Uso de caché para optimización de workflows
+##### 2.2.2.3. Uso de caché para optimización de workflows
 
 Es posible mejorar el rendimiento del workflow utilizando caché para almacenar dependencias, evitando su reinstalación en cada ejecución. A continuación, un ejemplo de cómo utilizar el caché en un entorno configurado con Poetry.
 
@@ -165,7 +179,11 @@ jobs:
 
 El uso de caché se gestiona mediante la clave `key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}`, que asegura que el caché solo se actualice si el archivo `poetry.lock` ha cambiado.
 
-### 1.3. Modularización de workflows y acciones
+:::note
+El uso de caché puede mejorar significativamente la velocidad de las ejecuciones al evitar la reinstalación de dependencias. Sin embargo, hay que tener cuidado de no hacer que el caché quede desactualizado si las dependencias cambian, ya que podría llevar a resultados incorrectos.
+:::
+
+### 2.3. Modularización de workflows y acciones
 
 Es recomendable dividir los workflows en acciones más pequeñas y reutilizables para simplificar la configuración y mejorar el mantenimiento. Para ello, se crean carpetas separadas para las acciones y los workflows dentro de la carpeta `.github`.
 
@@ -242,5 +260,9 @@ jobs:
       - name: Lint with flake8
         run: poetry run flake8 src/
 ```
+
+:::tip
+La modularización de workflows no solo mejora la reutilización, sino que también facilita el mantenimiento del código y la integración de nuevas funcionalidades sin modificar los workflows principales.
+:::
 
 Este enfoque modular permite dividir la complejidad de los workflows, mejorar la eficiencia y permitir la reutilización de configuraciones a lo largo del proyecto.

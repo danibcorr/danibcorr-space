@@ -7,11 +7,11 @@ title: Ejercicios Leetcode
 toc_max_heading_level: 4
 ---
 
-# Bibliografía
+## Bibliografía
 
 * [Leetcode BLIND-75 Solutions](https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf)
   
-## Ejercicios fáciles
+## 1. Ejercicios fáciles
 
 ### Two sum
 
@@ -230,7 +230,7 @@ def funcion(lista: list[int]) -> int:
 </details>
 
 
-## Ejercicios medios
+## 2. Ejercicios medios
 
 ### Product of array except self
 
@@ -341,4 +341,4 @@ def funcion3(lista: list[int]) -> bool:
 ```
 </details>
 
-## Ejercicios difíciles
+## 3. Ejercicios difíciles
