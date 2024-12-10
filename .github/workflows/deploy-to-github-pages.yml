@@ -38,14 +38,31 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.X
+          node-version: 23.X
           cache: yarn
           
+      # Cache Node.js dependencies
+      - name: Cache Node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
 
       - name: Build
         run: yarn build
+
+      # Optional: Validate that the build was successful before uploading
+      - name: Validate build output
+        run: |
+          if [ ! -d "build" ]; then
+            echo "Build directory does not exist!"
+            exit 1
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -53,7 +70,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload the build directory
           path: build
 
       - name: Deploy to GitHub Pages
