@@ -7,6 +7,14 @@ title: Fundamentos de Deep Learning
 toc_max_heading_level: 4
 ---
 
+:::danger **Este contenido aún está en desarrollo**  
+
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+
+Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
+:::  
+
+
 ## Inteligencia artificial
 
 En la última década, el ámbito de la inteligencia artificial ha experimentado un crecimiento significativo, impulsado por la acumulación masiva de datos digitalizados y los avances en *hardware*. Factores clave en este crecimiento han sido los avances en la paralelización de procesos, el desarrollo acelerado de unidades de procesamiento gráfico (GPU) más eficientes y potentes, y la implementación de algoritmos más avanzados.
