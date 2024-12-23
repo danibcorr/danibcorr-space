@@ -6,16 +6,16 @@ title: Jax
 toc_max_heading_level: 4
 ---
 
-:::danger **Este contenido aún está en desarrollo**  
+:::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
-:::  
+:::
 
 # Bibliografía
 
-+ https://huggingface.co/blog/afmck/flax-tutorial
+- https://huggingface.co/blog/afmck/flax-tutorial
 
 # Introducción a JAX y las Unidades de Procesamiento Tensorial (TPU)
 
@@ -27,10 +27,10 @@ La compilación es especialmente útil en entornos de investigación donde el c�
 
 Además de Optax y FLAX, existen otras librerías o familias que se basan en JAX:
 
-+ **Dopamine**: Es una librería orientada al Aprendizaje por Refuerzo.
-+ **Trax**: Es una librería de aprendizaje profundo que se centra en la claridad para la investigación.
-+ **Objax**: Es una librería de aprendizaje profundo que combina la simplicidad de Keras con la flexibilidad de JAX.
-+ **Haiku**: Es una librería para redes neuronales en JAX que se centra en la simplicidad y la transparencia.
+- **Dopamine**: Es una librería orientada al Aprendizaje por Refuerzo.
+- **Trax**: Es una librería de aprendizaje profundo que se centra en la claridad para la investigación.
+- **Objax**: Es una librería de aprendizaje profundo que combina la simplicidad de Keras con la flexibilidad de JAX.
+- **Haiku**: Es una librería para redes neuronales en JAX que se centra en la simplicidad y la transparencia.
 
 Estas librerías, junto con JAX, forman un ecosistema robusto y flexible para la investigación y el desarrollo en el campo del aprendizaje automático.
 
@@ -119,10 +119,10 @@ key, call_key = jax.random.split(key)
 
 En este caso:
 
-+ `key = jax.random.PRNGKey(0x1234)`: Inicializa una clave pseudoaleatoria con el valor de semilla (seed) especificado, en este caso, 0x1234. El valor de semilla determina la secuencia de números pseudoaleatorios generada.
-+ `key, model_key = jax.random.split(key)`: Divide la clave original (key) en dos subclaves, key y model_key. Esto se hace para garantizar que las operaciones aleatorias realizadas en la inicialización del modelo (o cualquier otra operación aleatoria relacionada con el modelo) sean reproducibles. model_key se utilizará más adelante para inicializar los parámetros del modelo.
-+ `model = VAE(latent_dim=4)`: Aquí se crea una instancia del modelo VAE (autoencoder variacional) con una dimensionalidad latente de 4. Esto no tiene relación directa con la generación de claves aleatorias, pero es parte del proceso de inicialización del modelo.
-+ `key, call_key = jax.random.split(key)`: Finalmente, se divide la clave key nuevamente para generar una nueva subclave llamada call_key. Esta división se hace probablemente para garantizar que las operaciones posteriores que dependen de la aleatoriedad, como la selección de datos de entrenamiento o la introducción de ruido en el proceso de entrenamiento, sean reproducibles y controladas. 
+- `key = jax.random.PRNGKey(0x1234)`: Inicializa una clave pseudoaleatoria con el valor de semilla (seed) especificado, en este caso, 0x1234. El valor de semilla determina la secuencia de números pseudoaleatorios generada.
+- `key, model_key = jax.random.split(key)`: Divide la clave original (key) en dos subclaves, key y model_key. Esto se hace para garantizar que las operaciones aleatorias realizadas en la inicialización del modelo (o cualquier otra operación aleatoria relacionada con el modelo) sean reproducibles. model_key se utilizará más adelante para inicializar los parámetros del modelo.
+- `model = VAE(latent_dim=4)`: Aquí se crea una instancia del modelo VAE (autoencoder variacional) con una dimensionalidad latente de 4. Esto no tiene relación directa con la generación de claves aleatorias, pero es parte del proceso de inicialización del modelo.
+- `key, call_key = jax.random.split(key)`: Finalmente, se divide la clave key nuevamente para generar una nueva subclave llamada call_key. Esta división se hace probablemente para garantizar que las operaciones posteriores que dependen de la aleatoriedad, como la selección de datos de entrenamiento o la introducción de ruido en el proceso de entrenamiento, sean reproducibles y controladas.
 
 Estas características hacen de JAX una herramienta poderosa y flexible para la computación numérica y el aprendizaje automático, permitiendo un control preciso sobre la aleatoriedad y la reproducibilidad de los experimentos.
 
@@ -177,7 +177,7 @@ class Net(nn.Module):
 
         self.conv = nn.Conv(self.units, [3, 3], [3, 3])
         self.fc = nn.Dense(10)
-        
+
     def __call__(self, x):
 
         x = self.conv(x)
@@ -221,9 +221,9 @@ def initialize_model(rng_key, input_shape, model_cls):
 
     # Añadimos la dimensión del lote
     input_shape = (1,) + input_shape
-      
+
     # Creamos un array de ceros con el tamaño de entrada
-    input_shape = jnp.zeros(input_shape)  
+    input_shape = jnp.zeros(input_shape)
     _, initial_params = model_cls.init_by_shape(jax.random.PRNGKey(0), [input_shape])
 
     return initial_params

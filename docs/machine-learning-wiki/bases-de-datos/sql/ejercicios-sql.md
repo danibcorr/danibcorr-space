@@ -13,17 +13,17 @@ toc_max_heading_level: 4
 
 ### job_posting_fact
 
-| job_id | job_title_short   | job_title                | salary_year_avg | job_location |
-|--------|-------------------|--------------------------|-----------------|--------------|
-| 1      | Data Analyst      | Junior Data Analyst      | 95000           | Boston, MA   |
-| 2      | Business Analyst  | Senior Business Analyst  | 120000          | Anywhere     |
-| 3      | Data Analyst      | Data Analyst             | 105000          | Boston, MA   |
-| 4      | Business Analyst  | Business Analyst         | 75000           | Anywhere     |
+| job_id | job_title_short  | job_title               | salary_year_avg | job_location |
+| ------ | ---------------- | ----------------------- | --------------- | ------------ |
+| 1      | Data Analyst     | Junior Data Analyst     | 95000           | Boston, MA   |
+| 2      | Business Analyst | Senior Business Analyst | 120000          | Anywhere     |
+| 3      | Data Analyst     | Data Analyst            | 105000          | Boston, MA   |
+| 4      | Business Analyst | Business Analyst        | 75000           | Anywhere     |
 
 ### invoices_fact
 
 | invoice_id | project_id | hours_spent | hours_rate |
-|------------|------------|-------------|------------|
+| ---------- | ---------- | ----------- | ---------- |
 | 101        | 1          | 10          | 50         |
 | 102        | 2          | 20          | 60         |
 | 103        | 1          | 15          | 55         |
@@ -31,16 +31,16 @@ toc_max_heading_level: 4
 
 ### skills_dim
 
-| skill_id | skills         |
-|----------|----------------|
-| 1        | SQL            |
-| 2        | Data Analysis  |
+| skill_id | skills            |
+| -------- | ----------------- |
+| 1        | SQL               |
+| 2        | Data Analysis     |
 | 3        | Business Analysis |
 
 ### skills_job_dim
 
 | skill_id | job_id |
-|----------|--------|
+| -------- | ------ |
 | 1        | 1      |
 | 2        | 1      |
 | 2        | 3      |
@@ -50,6 +50,7 @@ toc_max_heading_level: 4
 ## Ejercicio 1: Obtener detalles de trabajos para 'Data Analyst' o 'Business Analyst'
 
 ### Enunciado
+
 Obtener detalles de trabajos para las posiciones de 'Data Analyst' o 'Business Analyst'. Para 'Data Analyst', solo quiero trabajos con salario > \$100k, y para 'Business Analyst', solo quiero trabajos con salario > \$70k. Incluir solo trabajos ubicados en 'Boston, MA' o 'Anywhere'.
 
 <details>
@@ -75,6 +76,7 @@ WHERE
 ## Ejercicio 2: Buscar roles de analista no senior
 
 ### Enunciado
+
 Buscar roles de 'Data Analyst' o 'Business Analyst' que no sean senior. Obtener el título del trabajo, la ubicación y el salario promedio anual.
 
 <details>
@@ -84,7 +86,7 @@ Buscar roles de 'Data Analyst' o 'Business Analyst' que no sean senior. Obtener 
 SELECT
     job_posting_fact.job_title,
     job_posting_fact.job_location,
-    job_posting_fact.salary_year_avg 
+    job_posting_fact.salary_year_avg
 FROM
     job_posting_fact
 WHERE
@@ -98,6 +100,7 @@ WHERE
 ## Ejercicio 3: Calcular ganancias totales del mes actual por proyecto
 
 ### Enunciado
+
 Calcular las ganancias totales del mes actual por proyecto. Calcular un escenario donde la tarifa por hora aumenta en \$5.
 
 <details>
@@ -107,7 +110,7 @@ Calcular las ganancias totales del mes actual por proyecto. Calcular un escenari
 SELECT
     invoices_fact.project_id AS Proyecto,
     SUM(invoices_fact.hours_spent * invoices_fact.hours_rate) AS Coste_original,
-    SUM(invoices_fact.hours_spent * (invoices_fact.hours_rate + 5)) AS Coste_incremento 
+    SUM(invoices_fact.hours_spent * (invoices_fact.hours_rate + 5)) AS Coste_incremento
 FROM
     invoices_fact
 GROUP BY
@@ -121,6 +124,7 @@ ORDER BY
 ## Ejercicio 4: Encontrar el salario promedio y el número de ofertas de trabajo por habilidad
 
 ### Enunciado
+
 Encontrar el salario promedio y el número de ofertas de trabajo para cada habilidad.
 
 <details>

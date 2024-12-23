@@ -7,19 +7,19 @@ title: Fundamentos del Machine Learning
 toc_max_heading_level: 4
 ---
 
-:::danger **Este contenido aún está en desarrollo**  
+:::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
-:::  
+:::
 
 # Bibliografía
 
-* [scikit-learn: machine learning in Python — scikit-learn 1.1.2 documentation](https://scikit-learn.org/stable/index.html)
-* [Intuitive Machine Learning - YouTube](https://www.youtube.com/c/IntuitiveMachineLearning)
-* [Machine Learning](https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=lKBpNiBH8dM4UUJ0)
-  
+- [scikit-learn: machine learning in Python — scikit-learn 1.1.2 documentation](https://scikit-learn.org/stable/index.html)
+- [Intuitive Machine Learning - YouTube](https://www.youtube.com/c/IntuitiveMachineLearning)
+- [Machine Learning](https://youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&si=lKBpNiBH8dM4UUJ0)
+
 # 1. Introducción
 
 ## 1.1. Conceptos básicos
@@ -44,7 +44,7 @@ En el **aprendizaje no supervisado**, como se muestra en la figura anterior, el 
 
 - **Auto Encoders**: Son redes neuronales que aprenden una representación comprimida de los datos, lo que ayuda a reducir la dimensionalidad y extraer características importantes.
 
-- **Análisis de Componentes Principales (*Principal Component Analysis*, PCA)**: Es una técnica de reducción de dimensionalidad que transforma los datos en un nuevo espacio de características, donde las dimensiones corresponden a las direcciones de mayor varianza en los datos originales.
+- **Análisis de Componentes Principales (_Principal Component Analysis_, PCA)**: Es una técnica de reducción de dimensionalidad que transforma los datos en un nuevo espacio de características, donde las dimensiones corresponden a las direcciones de mayor varianza en los datos originales.
 
 ### 1.2.3. Aprendizaje por refuerzo
 
@@ -86,7 +86,7 @@ Esta separación garantiza una evaluación objetiva de la capacidad del modelo p
 
 Las funciones de coste y pérdida son fundamentales para entrenar un modelo de Machine Learning. La **función de pérdida** mide el error por cada instancia, mientras que la **función de coste** calcula el promedio de la función de pérdida en todo el conjunto de datos. El objetivo del entrenamiento es minimizar estas funciones, ajustando los parámetros del modelo para mejorar su precisión en la predicción.
 
-Para problemas de regresión, se utilizan comúnmente funciones de pérdida como el **Error Cuadrático Medio (*Mean Square Error*, MSE)** y el **Error Absoluto Medio (*Mean Absolute Error*, MAE)**. El MSE penaliza los errores grandes al calcular el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales, mientras que el MAE calcula la media de las diferencias absolutas, siendo más robusto frente a valores atípicos.
+Para problemas de regresión, se utilizan comúnmente funciones de pérdida como el **Error Cuadrático Medio (_Mean Square Error_, MSE)** y el **Error Absoluto Medio (_Mean Absolute Error_, MAE)**. El MSE penaliza los errores grandes al calcular el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales, mientras que el MAE calcula la media de las diferencias absolutas, siendo más robusto frente a valores atípicos.
 
 En problemas de clasificación, la **entropía cruzada** es una función de pérdida habitual. Mide la discrepancia entre la distribución de probabilidad real y la predicha, penalizando más las predicciones incorrectas con alta confianza.
 
@@ -94,7 +94,7 @@ En problemas de clasificación, la **entropía cruzada** es una función de pér
 
 Los métodos de optimización, entre los que se incluyen la regularización, la normalización de datos, la inicialización de pesos y el uso de lotes, son fundamentales para combatir el sobreajuste y acelerar el aprendizaje.
 
-La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste. 
+La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste.
 
 La normalización de los datos de entrada facilita la optimización de la función de coste. Esta práctica implica escalar las características de los datos para que tengan una media de $0$ y varianza $1$, o reescalar las características para que se encuentren en un rango específico, como $[0, 1]$. Este procedimiento mejora la convergencia de los algoritmos de optimización al reducir la dispersión de los datos.
 
@@ -112,8 +112,7 @@ Además, la división de conjuntos de datos grandes en lotes permite avanzar ant
 
 La regresión lineal es una técnica de modelado que intenta encontrar la relación lineal entre una variable independiente, $X$, y una variable dependiente, $y$. El objetivo es ajustar una línea recta a los datos de manera que se minimice el error entre los valores reales y los valores predichos por la línea.
 
-
-Con la imagen anterior como ejemplo, la ecuación de la línea roja se define como 
+Con la imagen anterior como ejemplo, la ecuación de la línea roja se define como
 
 $$
 y = wx + b,
@@ -133,39 +132,39 @@ donde $$y_i$$ es el valor real y $\hat{y}_i$ es el valor estimado por el modelo 
 
 Para encontrar los mejores valores de $$w$$ y $$b$$ que minimizan la función de coste se utiliza un proceso llamado descenso de gradiente.
 
-> El descenso del gradiente es un algoritmo de optimización utilizado para minimizar funciones de coste en modelos de aprendizaje automático. Funciona ajustando los parámetros del modelo (los pesos y sesgos) en la dirección opuesta al gradiente de la función de coste con respecto a esos parámetros. Para ello, se siguen los pasos siguiente: 
+> El descenso del gradiente es un algoritmo de optimización utilizado para minimizar funciones de coste en modelos de aprendizaje automático. Funciona ajustando los parámetros del modelo (los pesos y sesgos) en la dirección opuesta al gradiente de la función de coste con respecto a esos parámetros. Para ello, se siguen los pasos siguiente:
+>
 > 1. Se calcula la derivada de la función en un punto dado con el fin de determinar la pendiente de la función.
 > 2. Conocida la pendiente de la función se actualizan los parámetros del modelo en la dirección opuesta a la pendiente para reducir el error.
 > 3. El proceso se repite hasta que la función de coste alcanza un mínimo, lo que se conoce como la convergencia del modelo.
-   
+
 Utilizando la regla de la cadena (a recordar esas clases de cálculo de la universidad) la derivada de la función MSE con respecto a $$w$$ y $$b$$ se define respectivamente como
-  
-  $$
-  \frac{\partial \text{MSE}}{\partial w} = \frac{2}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) \cdot x_i,
-  $$
-  
-  $$
-  \frac{\partial \text{MSE}}{\partial b} = \frac{2}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i),
-  $$
+
+$$
+\frac{\partial \text{MSE}}{\partial w} = \frac{2}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) \cdot x_i,
+$$
+
+$$
+\frac{\partial \text{MSE}}{\partial b} = \frac{2}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i),
+$$
 
 La actualización de parámetros se realizaría tal que así
 
-  $$
-  w := w - \alpha \cdot \frac{\partial \text{MSE}}{\partial w},
-  $$
+$$
+w := w - \alpha \cdot \frac{\partial \text{MSE}}{\partial w},
+$$
 
-  $$
-  b := b - \alpha \cdot \frac{\partial \text{MSE}}{\partial b},
-  $$
+$$
+b := b - \alpha \cdot \frac{\partial \text{MSE}}{\partial b},
+$$
 
 donde $\alpha$ es la tasa de aprendizaje (_*learning rate*_) y permite ajustar el tamaño de paso utilizado para actualizar los parámetros del modelo.
 
-> La tasa de aprendizaje es un hiperparámetro, un parámetro que afecta a otros parámetros del modelo, crucial en el descenso del gradiente que determina el tamaño de los pasos que da el modelo al ajustar sus parámetros. 
-> 
-> + Una tasa de aprendizaje alta puede provocar que el modelo de pasos muy grandes y saltarse el mínimo de la función de coste, lo que puede resultar en una convergencia inestable o en que nunca alcance el mínimo.
-> 
-> + Una tasa de aprendizaje baja puede provocar que el modelo de pasos muy pequeños, lo que puede hacer que el proceso de entrenamiento sea muy lento y que el modelo tarde mucho en converger, o incluso que se quede atrapado en un mínimo local.
-> 
+> La tasa de aprendizaje es un hiperparámetro, un parámetro que afecta a otros parámetros del modelo, crucial en el descenso del gradiente que determina el tamaño de los pasos que da el modelo al ajustar sus parámetros.
+>
+> - Una tasa de aprendizaje alta puede provocar que el modelo de pasos muy grandes y saltarse el mínimo de la función de coste, lo que puede resultar en una convergencia inestable o en que nunca alcance el mínimo.
+> - Una tasa de aprendizaje baja puede provocar que el modelo de pasos muy pequeños, lo que puede hacer que el proceso de entrenamiento sea muy lento y que el modelo tarde mucho en converger, o incluso que se quede atrapado en un mínimo local.
+>
 > La clave está en encontrar un balance adecuado para que el modelo converja de manera eficiente y efectiva. A menudo, se utiliza una técnica llamada decaimiento de la tasa de aprendizaje (_*learning rate decay*_), donde la tasa de aprendizaje se reduce gradualmente durante el entrenamiento.
 
 #### Práctica
@@ -193,7 +192,7 @@ class LinearRegression:
         n_samples, n_features = X.shape
         self.weights = np.zeros(n_features)
         self.bias = 0
-        
+
         for _ in range(self.n_iterations):
 
             y_pred = self.predict(X)
@@ -236,7 +235,7 @@ if __name__ == '__main__':
 
 #### Teoría
 
-La regresión logística es una técnica de modelado que se utiliza para predecir la probabilidad de una clase en función de las características de los datos. A diferencia de la regresión lineal, que predice valores continuos, la regresión logística genera probabilidades en el rango de 0 a 1. 
+La regresión logística es una técnica de modelado que se utiliza para predecir la probabilidad de una clase en función de las características de los datos. A diferencia de la regresión lineal, que predice valores continuos, la regresión logística genera probabilidades en el rango de 0 a 1.
 
 El modelo de regresión logística se basa en la función sigmoide, que se define como
 
@@ -302,15 +301,15 @@ class LogisticRegression:
         num_samples, num_features = X.shape
         self.weights = np.zeros(num_features)
         self.bias = 0
-        
+
         for _ in range(self.num_iterations):
 
             linear_predictions = np.dot(X, self.weights) + self.bias
             predictions = self.sigmoid(linear_predictions)
-            
+
             dw = (1 / num_samples) * np.dot(X.T, (predictions - y))
             db = (1 / num_samples) * np.sum(predictions - y)
-            
+
             self.weights -= self.learning_rate * dw
             self.bias -= self.learning_rate * db
 
@@ -415,28 +414,28 @@ tree.plot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=i
 plt.show()
 ```
 
-## 2.3. Métodos de agrupamiento 
+## 2.3. Métodos de agrupamiento
 
 ### 2.3.1. K-means clustering
 
 #### Teoría
 
-El **algoritmo K-means** es una técnica de aprendizaje no supervisado utilizada para agrupar datos en $$k$$ grupos o *clusters* basados en características similares. El objetivo del algoritmo es dividir un conjunto de datos en $$k$$ grupos, de manera que los puntos de datos dentro de cada grupo sean lo más similares posible entre sí y lo más diferentes posible de los puntos en otros grupos.
+El **algoritmo K-means** es una técnica de aprendizaje no supervisado utilizada para agrupar datos en $$k$$ grupos o _clusters_ basados en características similares. El objetivo del algoritmo es dividir un conjunto de datos en $$k$$ grupos, de manera que los puntos de datos dentro de cada grupo sean lo más similares posible entre sí y lo más diferentes posible de los puntos en otros grupos.
 
 El proceso de K-means incluye los siguientes pasos:
 
-1. **Inicialización**: Seleccionar $$k$$ puntos al azar del conjunto de datos como los centros iniciales de los *clusters*.
-2. **Asignación**: Asignar cada punto de datos al *cluster* cuyo centro esté más cercano. Esta asignación se realiza utilizando una métrica de distancia, generalmente la distancia euclidiana.
-3. **Actualización**: Calcular nuevos centros de *clusters* como la media de todos los puntos asignados a cada *cluster*.
-4. **Repetición**: Repetir los pasos 2 y 3 hasta que los centros de los *clusters* no cambien significativamente o se alcance un número máximo de iteraciones.
+1. **Inicialización**: Seleccionar $$k$$ puntos al azar del conjunto de datos como los centros iniciales de los _clusters_.
+2. **Asignación**: Asignar cada punto de datos al _cluster_ cuyo centro esté más cercano. Esta asignación se realiza utilizando una métrica de distancia, generalmente la distancia euclidiana.
+3. **Actualización**: Calcular nuevos centros de _clusters_ como la media de todos los puntos asignados a cada _cluster_.
+4. **Repetición**: Repetir los pasos 2 y 3 hasta que los centros de los _clusters_ no cambien significativamente o se alcance un número máximo de iteraciones.
 
-El objetivo del algoritmo es minimizar, como función de coste, la **suma de las distancias cuadradas** entre los puntos de datos y el centro de su *cluster* correspondiente, representada como
+El objetivo del algoritmo es minimizar, como función de coste, la **suma de las distancias cuadradas** entre los puntos de datos y el centro de su _cluster_ correspondiente, representada como
 
 $$
 J = \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2,
 $$
 
-donde $$C_i$$ es el conjunto de puntos asignados al *cluster* $$i$$, $$\mu_i$$ es el centro del *cluster* $$i$$, y $$\|x - \mu_i\|^2$$ es la distancia cuadrada entre el punto $$x$$ y el centro del *cluster* $$\mu_i$$.
+donde $$C_i$$ es el conjunto de puntos asignados al _cluster_ $$i$$, $$\mu_i$$ es el centro del _cluster_ $$i$$, y $$\|x - \mu_i\|^2$$ es la distancia cuadrada entre el punto $$x$$ y el centro del _cluster_ $$\mu_i$$.
 
 #### Práctica
 
@@ -455,14 +454,14 @@ class KMeans:
         self.max_iter = max_iter
 
         # Tolerancia para la convergencia
-        self.tol = tol  
+        self.tol = tol
 
     def fit(self, X: np.ndarray) -> None:
 
         # Inicialización de los centros de clusters
-        np.random.seed(0) 
+        np.random.seed(0)
         self.centers = X[np.random.choice(X.shape[0], self.n_clusters, replace=False)]
-        
+
         for _ in range(self.max_iter):
 
             # Asignación de cada punto al cluster más cercano
@@ -511,7 +510,7 @@ if __name__ == '__main__':
 
     # Generar datos sintéticos
     X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
-    
+
     # Crear y entrenar el modelo
     model = KMeans(n_clusters=4)
     model.fit(X)
@@ -519,6 +518,7 @@ if __name__ == '__main__':
     # Mostrar resultados
     model.plot_clusters(X)
 ```
+
 ### 2.3.2. Spectral clustering
 
 #### Teoría
@@ -530,11 +530,11 @@ El proceso de clustering espectral se realiza en los siguientes pasos:
 1. **Construcción de la Matriz de Similaridad**: Se construye una matriz de afinidad que refleja la relación entre cada par de puntos en el conjunto de datos. Comúnmente, se utiliza la matriz de adyacencia $$A$$, donde $$A_{ij}$$ representa la similitud entre los puntos $$i$$ y $$j$$. Esta matriz se puede construir usando métodos como _*K-nearest neighbors*_ (KNN) y la distancia euclidiana.
 
 2. **Cálculo de la Matriz de Laplaciano**: A partir de la matriz de afinidad, se calcula el **Laplaciano del gráfico** $$L$$. Hay varias versiones del Laplaciano, siendo el Laplaciano Normalizado una de las más comunes:
-   
+
    $$
    L_{sym} = I - D^{-1/2} A D^{-1/2},
    $$
-   
+
    donde $$D$$ es la matriz diagonal de grados, con $$D_{ii}$$ siendo la suma de las similitudes en la fila $$i$$ de $$A$$.
 
 3. **Cálculo de Valores Propios y Vectores Propios**: Se calculan los valores propios y vectores propios de la matriz Laplaciana. Se seleccionan los primeros $$k$$ vectores propios correspondientes a los $$k$$ valores propios más pequeños.
@@ -566,35 +566,35 @@ class SpectralClustering:
 
         # Construcción de la matriz de afinidad
         affinity_matrix = self._construct_affinity_matrix(X)
-        
+
         # Cálculo de la matriz de Laplaciano
         laplacian = self._compute_laplacian(affinity_matrix)
-        
+
         # Cálculo de los valores propios y vectores propios
         eigenvalues, eigenvectors = eigh(laplacian)
-        
+
         # Selección de los primeros k vectores propios
         self.eigenvectors = eigenvectors[:, :self.n_clusters]
-        
+
         # Aplicar K-means en el espacio reducido
         self.labels = self._kmeans_clustering(self.eigenvectors)
-        
+
     def _construct_affinity_matrix(self, X: np.ndarray) -> np.ndarray:
 
         # Calcular la matriz de afinidad usando la distancia euclidiana
         distances = distance_matrix(X, X)
         return np.exp(-distances**2 / (2. * self.epsilon**2))
-    
+
     def _compute_laplacian(self, affinity_matrix: np.ndarray) -> np.ndarray:
 
         # Matriz de grados
         degrees = np.sum(affinity_matrix, axis=1)
         D = np.diag(degrees)
-        
+
         # Matriz Laplaciana Normalizada
         laplacian = np.identity(len(degrees)) - np.linalg.inv(D**0.5) @ affinity_matrix @ np.linalg.inv(D**0.5)
         return laplacian
-    
+
     def _kmeans_clustering(self, X: np.ndarray) -> np.ndarray:
 
         kmeans = KMeans(n_clusters=self.n_clusters, random_state=0).fit(X)
@@ -621,6 +621,7 @@ if __name__ == '__main__':
     # Mostrar resultados
     model.plot_clusters(X)
 ```
+
 ### 2.3.3. Clustering con DBSCAN
 
 #### Teoría
@@ -666,13 +667,13 @@ class DBSCANClustering:
     def fit(self, X: np.ndarray) -> None:
 
         # Inicializar todas las etiquetas como ruido
-        self.labels = np.full(X.shape[0], -1) 
+        self.labels = np.full(X.shape[0], -1)
         cluster_id = 0
-        
+
         for i in range(X.shape[0]):
 
             # Si el punto aún no ha sido etiquetado
-            if self.labels[i] == -1:  
+            if self.labels[i] == -1:
 
                 neighbors = self._region_query(X, i)
 
@@ -739,13 +740,14 @@ if __name__ == '__main__':
 El **clustering K-Medoids** es una técnica de agrupamiento basada en particiones, que comparte similitudes con el algoritmo K-Means pero con una diferencia fundamental: en lugar de usar la media de los puntos en un cluster como el centroide, el algoritmo K-Medoids utiliza un punto real del conjunto de datos llamado medoid. Este enfoque hace que K-Medoids sea más robusto frente a outliers y al ruido, ya que el medoid es menos sensible a las diferencias extremas en los datos.
 
 **Diferencias entre K-Medoids y K-Means**:
+
 - **K-Means**: Calcula el centroide del cluster como la media de todos los puntos en el cluster.
 - **K-Medoids**: Utiliza puntos reales del dataset como medoids para cada cluster, minimizando la suma de las distancias dentro del cluster.
 
 **Proceso del algoritmo K-Medoids**:
+
 1. **Inicialización**: Se seleccionan aleatoriamente $$K$$ puntos del conjunto de datos como los medoids iniciales. Estos puntos se pueden elegir al azar o mediante algún criterio heurístico.
-   
-2. **Asignación**: Cada punto en el conjunto de datos se asigna al medoid más cercano, utilizando una medida de distancia como la euclidiana. 
+2. **Asignación**: Cada punto en el conjunto de datos se asigna al medoid más cercano, utilizando una medida de distancia como la euclidiana.
 
 3. **Actualización**: Se selecciona un nuevo medoid en el conjunto de datos que minimice la suma de las distancias dentro de su cluster. Este paso implica intercambiar el medoid actual con otro punto del conjunto de datos y recalcular la suma de las distancias para evaluar si el cambio es beneficioso.
 
@@ -774,12 +776,12 @@ class KMedoidsClustering:
         # Inicialización aleatoria de medoids
         medoids_indices = np.random.choice(n_samples, self.n_clusters, replace=False)
         self.medoids = X[medoids_indices]
-        
+
         for _ in range(self.max_iter):
             # Asignación de clusters
             distances = cdist(X, self.medoids, metric='euclidean')
             self.labels = np.argmin(distances, axis=1)
-            
+
             # Actualización de medoids
             new_medoids = np.copy(self.medoids)
             for i in range(self.n_clusters):
@@ -787,7 +789,7 @@ class KMedoidsClustering:
                 if len(cluster_points) > 0:
                     distances_to_points = np.sum(cdist(cluster_points, cluster_points, metric='euclidean'), axis=1)
                     new_medoids[i] = cluster_points[np.argmin(distances_to_points)]
-            
+
             # Comprobar convergencia
             if np.all(new_medoids == self.medoids):
                 break
@@ -982,7 +984,6 @@ if __name__ == '__main__':
 
 ## 2.4. Perceptrón
 
-
 # 3. Selección de modelos
 
 ## 3.1. Estrategias de selección de modelos
@@ -1061,6 +1062,7 @@ print(f'Accuracy en Random Split: {accuracy_score(y_test, y_pred)}')
 La división basada en el tiempo es útil cuando se trabaja con datos temporales. Se divide el conjunto de datos en conjuntos de entrenamiento y prueba basados en una fecha o intervalo de tiempo específico.
 
 **Ejemplo de Implementación**:
+
 ```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -1099,6 +1101,7 @@ print(f'Accuracy en Time-Based Split: {accuracy_score(y_test, y_pred)}')
 La validación cruzada K-Fold divide el conjunto de datos en K subconjuntos (o folds) y entrena el modelo K veces, utilizando cada fold como conjunto de prueba una vez y el resto como conjunto de entrenamiento.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.model_selection import cross_val_score
 from sklearn.datasets import load_iris
@@ -1121,6 +1124,7 @@ print(f'Accuracy promedio en K-Fold Cross-Validation: {np.mean(scores)}')
 La validación cruzada estratificada K-Fold asegura que cada fold tiene una proporción representativa de cada clase del conjunto de datos, lo que es especialmente útil para problemas de clasificación con clases desbalanceadas.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.datasets import load_iris
@@ -1150,6 +1154,7 @@ El preprocesamiento de datos es una etapa crucial en el flujo de trabajo de cien
 La limpieza de datos implica identificar y corregir errores o inconsistencias en el conjunto de datos. Esto puede incluir la eliminación de duplicados, la corrección de errores tipográficos y la normalización de valores.
 
 **Ejemplo de Implementación**:
+
 ```python
 import pandas as pd
 import numpy as np
@@ -1180,6 +1185,7 @@ print(data_cleaned)
 La normalización y la estandarización son técnicas para ajustar la escala de las características numéricas. La normalización (o escalado) transforma los datos para que estén en un rango específico, generalmente [0, 1]. La estandarización transforma los datos para que tengan una media de 0 y una desviación estándar de 1.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 import numpy as np
@@ -1205,6 +1211,7 @@ print(data_standardized)
 El manejo de datos faltantes es esencial para preparar un conjunto de datos para el análisis. Las técnicas incluyen eliminar filas o columnas con datos faltantes o rellenar los valores faltantes con estadísticas como la media, la mediana o valores de moda.
 
 **Ejemplo de Implementación**:
+
 ```python
 import pandas as pd
 import numpy as np
@@ -1232,6 +1239,7 @@ print(data_filled)
 La selección de características implica elegir las características más relevantes para el modelo y eliminar las irrelevantes o redundantes. Esto puede mejorar la precisión del modelo y reducir el tiempo de entrenamiento.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.datasets import load_iris
 from sklearn.feature_selection import SelectKBest, f_classif
@@ -1260,6 +1268,7 @@ La reducción de dimensionalidad es una técnica fundamental en el procesamiento
 PCA es una técnica estadística que transforma un conjunto de datos con muchas variables en un conjunto de datos con menos variables, llamadas componentes principales. Estas componentes son combinaciones lineales de las variables originales y capturan la mayor parte de la varianza en los datos.
 
 **Ejemplo de Implementación**:
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1295,7 +1304,7 @@ class PCA():
     def transform(self, X):
 
         X -= self.media
-        return np.dot(X, self.componentes.T) 
+        return np.dot(X, self.componentes.T)
 
 # Cargar datos
 data = load_iris()
@@ -1321,6 +1330,7 @@ plt.show()
 t-SNE es una técnica de reducción de dimensionalidad que se utiliza principalmente para la visualización. Reduce la dimensionalidad de los datos de alta dimensión en 2 o 3 dimensiones, preservando las relaciones de proximidad en el espacio de alta dimensión.
 
 **Ejemplo de Implementación**:
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1351,6 +1361,7 @@ plt.show()
 Los _*Auto Encoders*_ son redes neuronales utilizadas para la reducción de dimensionalidad mediante el aprendizaje no supervisado. Se componen de un codificador que reduce la dimensión de los datos y un decodificador que reconstruye los datos a partir de la representación reducida.
 
 **Ejemplo de Implementación**:
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1404,6 +1415,7 @@ Las métricas de rendimiento en clasificación permiten evaluar la precisión y 
 La precisión (accuracy) es la proporción de predicciones correctas respecto al total de predicciones realizadas.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import accuracy_score
 from sklearn.datasets import load_iris
@@ -1435,6 +1447,7 @@ print(f'Accuracy: {accuracy:.2f}')
 La precisión mide la proporción de verdaderos positivos entre los positivos predichos. Es útil en contextos donde el costo de un falso positivo es alto.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import precision_score
 
@@ -1448,6 +1461,7 @@ print(f'Precisión: {precision:.2f}')
 El recall mide la proporción de verdaderos positivos entre los positivos reales. Es útil en contextos donde el costo de un falso negativo es alto.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import recall_score
 
@@ -1461,6 +1475,7 @@ print(f'Recall: {recall:.2f}')
 El F1 Score es la media armónica entre precisión y recall. Es una métrica balanceada que considera tanto los falsos positivos como los falsos negativos.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import f1_score
 
@@ -1474,6 +1489,7 @@ print(f'F1 Score: {f1:.2f}')
 El AUC-ROC (Área bajo la Curva de la Característica Operativa del Receptor) mide la capacidad del modelo para distinguir entre clases. Un valor más alto indica una mejor capacidad discriminativa.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import roc_auc_score
 from sklearn.preprocessing import label_binarize
@@ -1496,6 +1512,7 @@ Las métricas de rendimiento en regresión evalúan la calidad de las prediccion
 El MSE mide el promedio de los cuadrados de los errores, es decir, la diferencia entre los valores predichos y los valores reales.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import mean_squared_error
 
@@ -1509,6 +1526,7 @@ print(f'Mean Squared Error (MSE): {mse:.2f}')
 El RMSE es la raíz cuadrada del MSE y proporciona una medida en las mismas unidades que la variable objetivo, lo que facilita la interpretación.
 
 **Ejemplo de Implementación**:
+
 ```python
 import numpy as np
 
@@ -1522,6 +1540,7 @@ print(f'Root Mean Squared Error (RMSE): {rmse:.2f}')
 El MAE mide el promedio de los errores absolutos entre las predicciones y los valores reales.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import mean_absolute_error
 
@@ -1535,6 +1554,7 @@ print(f'Mean Absolute Error (MAE): {mae:.2f}')
 El RMSLE mide la raíz cuadrada del error cuadrático medio de los logaritmos de las predicciones y los valores reales. Es útil cuando se desea penalizar las diferencias relativas más que las absolutas.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import mean_squared_log_error
 
@@ -1548,6 +1568,7 @@ print(f'Root Mean Squared Log Error (RMSLE): {rmsle:.2f}')
 El R-Squared indica la proporción de la varianza en la variable dependiente que es explicada por el modelo. Un valor de 1 indica una explicación perfecta, mientras que un valor de 0 indica que el modelo no explica nada de la varianza.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import r2_score
 
@@ -1561,6 +1582,7 @@ print(f'R-Squared: {r_squared:.2f}')
 El Adjusted R-Squared ajusta el R-Squared para tener en cuenta el número de predictores en el modelo. Es útil para comparar modelos con diferentes números de predictores.
 
 **Ejemplo de Implementación**:
+
 ```python
 # Suponiendo que tienes el número de muestras (n) y el número de características (p)
 n = X_test.shape[0]
@@ -1580,6 +1602,7 @@ Las métricas de rendimiento en clustering ayudan a evaluar la calidad de la agr
 El método del codo ayuda a determinar el número óptimo de clusters. Se basa en la suma de errores cuadráticos dentro del cluster (inertia) y busca el punto donde la disminución de la inertia se estabiliza.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
@@ -1610,6 +1633,7 @@ plt.show()
 La puntuación de silueta mide la calidad de los clusters formados, considerando tanto la cohesión interna como la separación entre clusters. Los valores cercanos a 1 indican clusters bien formados.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import silhouette_score
 from sklearn.cluster import KMeans
@@ -1626,6 +1650,7 @@ print(f'Puntuación de la Silueta: {silhouette_avg:.2f}')
 El índice de Caliński-Harabasz mide la dispersión entre clusters en comparación con la dispersión dentro de los clusters. Valores más altos indican una mejor separación de los clusters.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import calinski_harabasz_score
 from sklearn.cluster import K
@@ -1644,6 +1669,7 @@ print(f'Índice CH: {ch_score:.2f}')
 El Dunn Index mide la separación entre los clusters en comparación con la dispersión dentro de los clusters. Valores más altos indican una mejor separación entre clusters.
 
 **Ejemplo de Implementación**:
+
 ```python
 from sklearn.metrics import pairwise_distances_argmin_min
 import numpy as np
@@ -1659,7 +1685,7 @@ def dunn_index(X, labels):
             if i != j:
                 inter_cluster_distances.append(np.min(pairwise_distances_argmin_min(cluster_i, cluster_j)[1]))
         intra_cluster_distances.append(np.max(pairwise_distances_argmin_min(cluster_i, cluster_i)[1]))
-    
+
     return np.min(inter_cluster_distances) / np.max(intra_cluster_distances)
 
 # Calcular Dunn Index

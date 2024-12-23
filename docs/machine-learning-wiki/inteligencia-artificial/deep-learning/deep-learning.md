@@ -7,17 +7,16 @@ title: Fundamentos de Deep Learning
 toc_max_heading_level: 4
 ---
 
-:::danger **Este contenido aún está en desarrollo**  
+:::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
-:::  
-
+:::
 
 ## Inteligencia artificial
 
-En la última década, el ámbito de la inteligencia artificial ha experimentado un crecimiento significativo, impulsado por la acumulación masiva de datos digitalizados y los avances en *hardware*. Factores clave en este crecimiento han sido los avances en la paralelización de procesos, el desarrollo acelerado de unidades de procesamiento gráfico (GPU) más eficientes y potentes, y la implementación de algoritmos más avanzados.
+En la última década, el ámbito de la inteligencia artificial ha experimentado un crecimiento significativo, impulsado por la acumulación masiva de datos digitalizados y los avances en _hardware_. Factores clave en este crecimiento han sido los avances en la paralelización de procesos, el desarrollo acelerado de unidades de procesamiento gráfico (GPU) más eficientes y potentes, y la implementación de algoritmos más avanzados.
 
 La inteligencia artificial se define como la capacidad de desarrollar sistemas y algoritmos que emulan la inteligencia humana, con el objetivo de identificar patrones y tomar decisiones a través de la computación. Dentro de la inteligencia artificial, el aprendizaje automático juega un papel fundamental y se clasifica en cuatro tipos principales: aprendizaje supervisado, no supervisado, autosupervisado y por refuerzo [1, 2, 3]. El aprendizaje profundo, una subcategoría del aprendizaje automático, utiliza redes neuronales avanzadas para modelar datos complejos y es aplicable a los cuatro tipos mencionados. En este trabajo, se emplean técnicas de aprendizaje supervisado para abordar el problema planteado.
 
@@ -75,7 +74,7 @@ $$
 
 donde $\frac{\partial \mathcal{J}(\mathbf{W}, b)}{\partial \mathbf{W}}$ y $\frac{\partial \mathcal{J}(\mathbf{W}, b)}{\partial b}$ son la derivada parcial de la función de coste $\mathcal{J}(\mathbf{W}, b)$ con respecto a las variables $\mathbf{W}$ y $b$, respectivamente. El parámetro $\alpha$ se define como el ratio de aprendizaje, el cual determina el tamaño de paso en cada iteración durante el proceso de descenso del gradiente.
 
-Técnicas como *Momentum*, RMSprop y Adam mejoran la técnica del descenso del gradiente. *Momentum* suaviza las oscilaciones, RMSprop ajusta la tasa de aprendizaje dinámicamente y Adam combina ambas técnicas.
+Técnicas como _Momentum_, RMSprop y Adam mejoran la técnica del descenso del gradiente. _Momentum_ suaviza las oscilaciones, RMSprop ajusta la tasa de aprendizaje dinámicamente y Adam combina ambas técnicas.
 
 La evaluación del modelo se realiza verificando su capacidad de generalización en datos no visualizados durante el entrenamiento. En esta situación pueden darse diferentes casos. El sobreajuste se produce cuando el modelo se ajusta demasiado a los datos de entrenamiento y presenta un rendimiento bajo en nuevos datos, mientras que el infraajuste ocurre cuando el modelo es demasiado simple o el conjunto de datos es insuficiente. La Figura b) de la Figura representa una correcta generalización.
 
@@ -83,7 +82,7 @@ La evaluación del modelo se realiza verificando su capacidad de generalización
 
 Los métodos de optimización, entre los que se incluyen la regularización, la normalización de datos, la inicialización de pesos y el uso de lotes, son fundamentales para combatir el sobreajuste y acelerar el aprendizaje.
 
-La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste. 
+La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste.
 
 La normalización de los datos de entrada facilita la optimización de la función de coste. Esta práctica implica escalar las características de los datos para que tengan una media de $0$ y varianza $1$, o reescalar las características para que se encuentren en un rango específico, como $[0, 1]$. Este procedimiento mejora la convergencia de los algoritmos de optimización al reducir la dispersión de los datos.
 

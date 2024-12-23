@@ -21,10 +21,13 @@ update:
 	npm update
 
 build:
-	@echo "Limpiando cache de yarn..."
+	@echo "Formateo con Prettier..."
+	npm run pretty
+
+	@echo "Limpiando cache..."
 	yarn cache clean
 
-	@echo "Instalando las dependencias de yarn..."
+	@echo "Instalando las dependencias..."
 	yarn install
 
 	@echo "Creando los ficheros de configuración para la traducción..."

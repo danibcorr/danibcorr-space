@@ -6,12 +6,12 @@ title: Tensorflow
 toc_max_heading_level: 4
 ---
 
-:::danger **Este contenido aún está en desarrollo**  
+:::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
-:::  
+:::
 
 <div align="justify">
 
@@ -19,29 +19,29 @@ Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando 
 
 ## Bibliografía
 
-* [https://www.tensorflow.org/api\_docs](https://www.tensorflow.org/api\_docs)
-* [Deep Learning by deeplearning.ai | Coursera](https://www.coursera.org/specializations/deep-learning)
-* [Certificado profesional de DeepLearning.AI desarrollador de TensorFlow | Coursera](https://www.coursera.org/professional-certificates/tensorflow-in-practice)
+- [https://www.tensorflow.org/api_docs](https://www.tensorflow.org/api_docs)
+- [Deep Learning by deeplearning.ai | Coursera](https://www.coursera.org/specializations/deep-learning)
+- [Certificado profesional de DeepLearning.AI desarrollador de TensorFlow | Coursera](https://www.coursera.org/professional-certificates/tensorflow-in-practice)
 
 ## Anexo A: Terminología útil
 
 Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuenta a modo de recordatorio. No tiene ningún tipo de orden, ni pretende ser el primer capítulo a visualizar.
 
-* **La letra ‘x’ se asocia a la variable independiente**, lo que usamos para hacer predicciones, por ejemplo imágenes. Mientras que la **letra ‘y’ se asocia a la variable dependiente**, lo que se denominan etiquetas y es nuestro objetivo obtener una predicción que tenga una alta probabilidad de parecerse a dicha ‘y’, un ejemplo de etiquetas pueden ser los nombres de las imágenes que permiten clasificar razas de perros.
-* **weigth** = pesos: valores aleatorios con los que se inicializan a las neuronas, estos parámetros son fundamentales para determinar el tipo de funcionamiento de una red.
-  * Forma (shape) → w(tamaño input, número de neuronas)
-* **bias** = sesgo:
-  * Forma (shape) → b(1, número de neuronas)
-* Un **set de datos de puede dividir** en:
-  * Set de entrenamiento (train set).
-  * Set de desarrollo o validación (dev set o validation set).
-  * Set de pruebas (test set)
-* Función de pérdida (**Loss function**): función que mide el rendimiento del modelo en uno de los ejemplos del set de entrenamiento.
-* Función de coste (**Cost function**): función que mide el rendimiento del modelo en todos los ejemplos del set de entrenamiento. Sería la media de cada una de las funciones de pérdidas de cada ejemplo del set de entrenamiento.
-* **Dataset**: una colección que devuelve un tuple de su variable independiente y dependiente para un solo elemento.
-* **DataLoader**: un iterador que proporciona un flujo de grupos reducidos (mini-batches), donde cada grupo reducido es un tuple de un lote de variables independientes y un lote de variables dependientes.
-* **one-hot encoding**: vectores de 0’s con el tamaño del número de clases que tenga el dataset, cada categoría representa una posición en el vector por lo que si la imagen contiene algún elemento de alguna clase el vector tendrá un 1 en la posición del vector que corresponderá a su clase.
-* Es importante saber que **una clasificación** pretende predecir una clase o categoría mientras que un modelo de **regresión** intenta predecir 1 o más cantidades numéricas.
+- **La letra ‘x’ se asocia a la variable independiente**, lo que usamos para hacer predicciones, por ejemplo imágenes. Mientras que la **letra ‘y’ se asocia a la variable dependiente**, lo que se denominan etiquetas y es nuestro objetivo obtener una predicción que tenga una alta probabilidad de parecerse a dicha ‘y’, un ejemplo de etiquetas pueden ser los nombres de las imágenes que permiten clasificar razas de perros.
+- **weigth** = pesos: valores aleatorios con los que se inicializan a las neuronas, estos parámetros son fundamentales para determinar el tipo de funcionamiento de una red.
+  - Forma (shape) → w(tamaño input, número de neuronas)
+- **bias** = sesgo:
+  - Forma (shape) → b(1, número de neuronas)
+- Un **set de datos de puede dividir** en:
+  - Set de entrenamiento (train set).
+  - Set de desarrollo o validación (dev set o validation set).
+  - Set de pruebas (test set)
+- Función de pérdida (**Loss function**): función que mide el rendimiento del modelo en uno de los ejemplos del set de entrenamiento.
+- Función de coste (**Cost function**): función que mide el rendimiento del modelo en todos los ejemplos del set de entrenamiento. Sería la media de cada una de las funciones de pérdidas de cada ejemplo del set de entrenamiento.
+- **Dataset**: una colección que devuelve un tuple de su variable independiente y dependiente para un solo elemento.
+- **DataLoader**: un iterador que proporciona un flujo de grupos reducidos (mini-batches), donde cada grupo reducido es un tuple de un lote de variables independientes y un lote de variables dependientes.
+- **one-hot encoding**: vectores de 0’s con el tamaño del número de clases que tenga el dataset, cada categoría representa una posición en el vector por lo que si la imagen contiene algún elemento de alguna clase el vector tendrá un 1 en la posición del vector que corresponderá a su clase.
+- Es importante saber que **una clasificación** pretende predecir una clase o categoría mientras que un modelo de **regresión** intenta predecir 1 o más cantidades numéricas.
 
 ## Capítulo 0: Útiles
 
@@ -59,7 +59,7 @@ lugar_descomprimir = ''
 if os.path.exists(lugar_descomprimir) == False:
 
 	zip_ref = zipfile.ZipFile(lugar_descomprimir , 'r')
-	zip_ref.extractall()	
+	zip_ref.extractall()
 	zip_ref.close()
 ```
 
@@ -99,7 +99,7 @@ Tener en cuenta, que dependiendo del modelo pre-entrenado a utilizar deberemos s
 train_datagen = ImageDataGenerator(
     dtype='float32',
     preprocessing_function = preprocess_input,
-    horizontal_flip = True,  
+    horizontal_flip = True,
     validation_split = 0.05 # Division del dataset de entrenamiento a 80/20, 20 para validación
 )
 ```
@@ -145,7 +145,7 @@ def Modelo(modelo_base):
 
     x = layers.Dense(units = 256, activation = 'relu')(x)
     x = layers.Dropout(rate = 0.2)(x)
-    
+
     x = layers.Dense(units = num_clases, activation = 'softmax')(x)
 
     modelo = Model(modelo_base.input, x)
@@ -197,9 +197,9 @@ Un posible uso sería el siguiente:
 train_datagen = ImageDataGenerator(
     dtype='float32',
     preprocessing_function = preprocess_input,
-    horizontal_flip = True,  
+    horizontal_flip = True,
     validation_split = 0.05 # 5% de los datros de entrenamiento para validación
-)  
+)
 
 train_generator = train_datagen.flow_from_directory(
     train_dir,
@@ -208,7 +208,7 @@ train_generator = train_datagen.flow_from_directory(
     target_size = (224, 224),
     shuffle = True,
     subset = 'training'
-    )     
+    )
 
 validation_generator =  train_datagen.flow_from_directory(
     train_dir,
@@ -239,7 +239,6 @@ history = modelo.fit(
 ### 1.0. Teoría previa
 
 #### 1.0.1. Redes Neuronales Convolucionales (CNN)
-
 
 #### 1.0.2. Transfer Learning
 
@@ -291,12 +290,12 @@ def Modelo():
         tf.keras.layers.Conv2D(32, (3, 3), strides=1, padding="same", activation="relu", input_shape=(28, 28, 1)),
         tf.keras.layers.MaxPool2D((2, 2), strides=2, padding="same"),
         tf.keras.layers.BatchNormalization(),
-        
+
         tf.keras.layers.Conv2D(64, (3, 3), strides=1, padding="same", activation="relu"),
         tf.keras.layers.MaxPool2D((2, 2), strides=2, padding="same"),
         tf.keras.layers.BatchNormalization(),
         tf.keras.layers.Dropout(0.25),
-        
+
         tf.keras.layers.Conv2D(64, (3, 3), strides=1, padding="same", activation="relu"),
         tf.keras.layers.MaxPool2D((2, 2), strides=2, padding="same"),
         tf.keras.layers.BatchNormalization(),
@@ -306,9 +305,9 @@ def Modelo():
         tf.keras.layers.MaxPool2D((2, 2), strides=2, padding="same"),
         tf.keras.layers.BatchNormalization(),
         tf.keras.layers.Dropout(0.25),
-        
+
          tf.keras.layers.Flatten(),
-        
+
         tf.keras.layers.Dense(units=512, activation="relu"),
         tf.keras.layers.BatchNormalization(),
         tf.keras.layers.Dropout(0.5),
@@ -319,12 +318,12 @@ def Modelo():
 
         tf.keras.layers.Dense(units=num_classes, activation="softmax")
     ])
-  
+
     modelo.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate = 1e-3),
         loss=tf.keras.losses.CategoricalCrossentropy(),
         metrics=['accuracy']
-        ) 
+        )
 
     return modelo
 
@@ -339,22 +338,22 @@ train_datagen = ImageDataGenerator(
     horizontal_flip=True,  # randomly flip images horizontally
     brightness_range = (0.4, 0.75),
     validation_split = 0.2
-)  
+)
 
 test_datagen = ImageDataGenerator(
     rescale = 1./255
 )
 
 train_gen = train_datagen.flow(
-    x_train, 
-    y_train, 
+    x_train,
+    y_train,
     batch_size = 64,
     subset = 'training'
 )
 
 valid_gen = train_datagen.flow(
-    x_train, 
-    y_train, 
+    x_train,
+    y_train,
     batch_size = 64,
     subset = 'validation'
 )
@@ -366,11 +365,11 @@ test_gen = test_datagen.flow(
 )
 
 class CallBack(tf.keras.callbacks.Callback):
-    
+
     def on_epoch_end(self, epocas, logs = {}):
-    
-        if(logs.get('val_accuracy') >= 0.98): 
-            
+
+        if(logs.get('val_accuracy') >= 0.98):
+
             print("\nSe alcanzo un 98% de precision, cancelamos el entrenamiento")
             self.model.stop_training = True
 
@@ -447,7 +446,7 @@ print(os.listdir(base_dir))
 
 print("\nContenido en el directorio de entrenamiento:")
 # Con mostrar algunos ejemplos es suficiente
-print(os.listdir(f'{base_dir}/train')) 
+print(os.listdir(f'{base_dir}/train'))
 
 print("\nContenido en el directorio de test:")
 print(os.listdir(f'{base_dir}/validation'))
@@ -459,7 +458,7 @@ validation_dir = os.path.join(base_dir, 'validation')
 def Modelo():
 
     modelo = tf.keras.models.Sequential([
-        
+
         tf.keras.layers.Conv2D(filters = 32, kernel_size = (3, 3), strides = (1, 1), input_shape = (150, 150, 3), activation = 'relu'),
         tf.keras.layers.MaxPool2D(pool_size = (2, 2)),
         tf.keras.layers.BatchNormalization(),
@@ -469,7 +468,7 @@ def Modelo():
         tf.keras.layers.MaxPool2D(pool_size = (2, 2)),
         tf.keras.layers.BatchNormalization(),
         #tf.keras.layers.Dropout(rate = 0.25),
-        
+
         tf.keras.layers.Conv2D(filters = 64, kernel_size = (3, 3), strides = (1, 1), activation = 'relu'),
         tf.keras.layers.MaxPool2D(pool_size = (2, 2)),
         tf.keras.layers.BatchNormalization(),
@@ -479,7 +478,7 @@ def Modelo():
         tf.keras.layers.MaxPool2D(pool_size = (2, 2)),
         tf.keras.layers.BatchNormalization(),
         #tf.keras.layers.Dropout(rate = 0.25),
-        
+
         tf.keras.layers.Flatten(),
 
         tf.keras.layers.Dense(units = 512, activation = 'relu'),
@@ -493,7 +492,7 @@ def Modelo():
         optimizer=tf.keras.optimizers.Adam(learning_rate = lr),
         loss=tf.keras.losses.BinaryCrossentropy(),
         metrics=['accuracy']
-        ) 
+        )
 
     return modelo
 
@@ -518,7 +517,7 @@ train_generator = train_datagen.flow_from_directory(
     batch_size = batch_size,
     class_mode = 'binary',
     target_size = (150, 150)
-    )     
+    )
 
 validation_generator =  test_datagen.flow_from_directory(
     validation_dir,
@@ -531,7 +530,7 @@ modelo = Modelo()
 modelo.summary()
 
 early_stopping = tf.keras.callbacks.EarlyStopping(
-    monitor = 'val_loss', 
+    monitor = 'val_loss',
     min_delta = 1e-3,
     patience = 10,
     verbose = 1,
@@ -586,13 +585,13 @@ Para hacer uso de las utilidades, modelo y demás herramientas, debemos descarga
 
 El modelo YOLO ha sido entrenado con datos de entrada con tamaños de (m, 608, 608, 3). Cada salida resultante, consiste en un cuadro delimitador (_bounding boxes_) con la clase reconocida. A su vez, cada cuadro está representado por 6 números (𝑝𝑐, 𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤, 𝑐). Para este ejemplo de algoritmo de YOLO, usaremos **yad2k** (YAD2K: Yet Another Darknet 2 Keras) que cuenta con 80 clases.
 
-Las cajas de anclaje se eligen explorando los datos de entrenamiento para elegir proporciones razonables de altura y anchura que representen mejor a las diferentes clases. Para esta tarea, se han elegido 5 cajas de anclaje (para cubrir las 80 clases), almacenados en el archivo './model\_data/yolo\_anchors.txt'
+Las cajas de anclaje se eligen explorando los datos de entrenamiento para elegir proporciones razonables de altura y anchura que representen mejor a las diferentes clases. Para esta tarea, se han elegido 5 cajas de anclaje (para cubrir las 80 clases), almacenados en el archivo './model_data/yolo_anchors.txt'
 
 La dimensión para las cajas de anclaje es la penúltima dimensión en la codificación (𝑚, 𝑛𝐻, 𝑛𝑊, 𝑎𝑛𝑐ℎ𝑜𝑟𝑠, 𝑐𝑙𝑎𝑠𝑒𝑠) .
 
 Por tanto, la arquitectura YOLO consiste en:
 
-* IMAGEN (m, 608, 608, 3) → CNN PROFUNDA → CODIFICACIÓN (m, 19, 19, 5, 85).
+- IMAGEN (m, 608, 608, 3) → CNN PROFUNDA → CODIFICACIÓN (m, 19, 19, 5, 85).
 
 Dado que estamos utilizando 5 cajas de anclaje, cada una de las 19 x19 celdas codifica información sobre 5 cajas. Las cajas de anclaje se definen únicamente por su anchura y altura.
 
@@ -627,9 +626,9 @@ from yad2k.utils.utils import draw_boxes, get_colors_for_classes, scale_boxes, r
 
 En primer lugar, vamos a aplicar un filtro para el umbral, lo que implica que eliminará cualquier casilla cuya puntuación de clase sea inferior a un umbral elegido. El modelo arrojará un total de 19x19x6x85 números, con cada caja descrita por 85 números. Es conveniente reordenar el tensor dimensional (19, 19, 5, 85) o (19, 19, 425) en las siguientes variables:
 
-* **box\_confidence**: tensor de forma (19, 19, 5, 1) que contiene 𝑝𝑐 (probabilidad de confianza de que haya algún objeto) para cada una de las 5 cajas previstas en cada una de las 19x19 casillas.
-* **boxes**: tensor de forma (19, 19, 5, 4) que contiene el punto medio y las dimensiones (𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤) para cada una de las 5 cajas en cada celda.
-* **box\_class\_probs**: tensor de forma (19, 19, 5, 80) que contiene las "probabilidades de clase" (𝑐1, 𝑐2, ..., 𝑐80) para cada una de las 80 clases para cada una de las 5 cajas por celda.
+- **box_confidence**: tensor de forma (19, 19, 5, 1) que contiene 𝑝𝑐 (probabilidad de confianza de que haya algún objeto) para cada una de las 5 cajas previstas en cada una de las 19x19 casillas.
+- **boxes**: tensor de forma (19, 19, 5, 4) que contiene el punto medio y las dimensiones (𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤) para cada una de las 5 cajas en cada celda.
+- **box_class_probs**: tensor de forma (19, 19, 5, 80) que contiene las "probabilidades de clase" (𝑐1, 𝑐2, ..., 𝑐80) para cada una de las 80 clases para cada una de las 5 cajas por celda.
 
 ```python
 def yolo_filter_boxes(boxes, box_confidence, box_class_probs, threshold = .6):
@@ -642,18 +641,18 @@ def yolo_filter_boxes(boxes, box_confidence, box_class_probs, threshold = .6):
     ##(≈ 2 lines)
     box_classes = tf.math.argmax(input = box_scores, axis = -1)
     box_class_scores = tf.math.reduce_max(input_tensor = box_scores, axis = -1)
-    
+
     # Step 3: Create a filtering mask based on "box_class_scores" by using "threshold". The mask should have the
     # same dimension as box_class_scores, and be True for the boxes you want to keep (with probability >= threshold)
     ## (≈ 1 line)
     filtering_mask = box_class_scores >= threshold
-    
+
     # Step 4: Apply the mask to box_class_scores, boxes and box_classes
     ## (≈ 3 lines)
     scores = tf.boolean_mask(tensor = box_class_scores, mask = filtering_mask)
     boxes = tf.boolean_mask(tensor = boxes, mask = filtering_mask)
     classes = tf.boolean_mask(tensor = box_classes, mask = filtering_mask)
-    
+
     return scores, boxes, classes
 ```
 
@@ -661,7 +660,7 @@ Implementar IoU (_Intersection over Union_). No es necesario implementarlo pero 
 
 ```python
 def iou(box1, box2):
-    
+
     (box1_x1, box1_y1, box1_x2, box1_y2) = box1
     (box2_x1, box2_y1, box2_x2, box2_y2) = box2
 
@@ -674,13 +673,13 @@ def iou(box1, box2):
     inter_width = xi2-xi1
     inter_height = yi2-yi1
     inter_area = max(inter_width, 0) * max(inter_height, 0)
-    
+
     # Calculate the Union area by using Formula: Union(A,B) = A + B - Inter(A,B)
     ## (≈ 3 lines)
     box1_area = (box1_x2 - box1_x1) * (box1_y2 - box1_y1)
     box2_area = (box2_x2 - box2_x1) * (box2_y2 - box2_y1)
     union_area = box1_area + box2_area - inter_area
-    
+
     # compute the IoU
     return inter_area / union_area
 ```
@@ -689,22 +688,22 @@ Implementar _Non-Max Suppression._ `Tensorflow` tiene dos funciones incorporadas
 
 ```python
 def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5):
-    
+
     # tensor to be used in tf.image.non_max_suppression()
-    max_boxes_tensor = tf.Variable(max_boxes, dtype='int32')  
-    
+    max_boxes_tensor = tf.Variable(max_boxes, dtype='int32')
+
     # Use tf.image.non_max_suppression() to get the list of indices corresponding to boxes you keep
     nms_indices = tf.image.non_max_suppression(
-									boxes = boxes, 
-									scores = scores, 
-									max_output_size = max_boxes, 
+									boxes = boxes,
+									scores = scores,
+									max_output_size = max_boxes,
 									iou_threshold = iou_threshold)
-    
+
     # Use tf.gather() to select only nms_indices from scores, boxes and classes
     scores = tf.gather(params = scores, indices = nms_indices)
     boxes = tf.gather(params = boxes, indices = nms_indices)
     classes = tf.gather(params = classes, indices = nms_indices)
-    
+
     return scores, boxes, classes
 ```
 
@@ -712,7 +711,7 @@ Convertir las predicciones de la caja YOLO en esquinas de la caja delimitadora.
 
 ```python
 def yolo_boxes_to_corners(box_xy, box_wh):
-    
+
     box_mins = box_xy - (box_wh / 2.)
     box_maxes = box_xy + (box_wh / 2.)
 
@@ -728,24 +727,24 @@ Convertimos la salida de la codificación YOLO (un montón de cajas) en sus caja
 
 ```python
 def yolo_eval(yolo_outputs, image_shape = (720, 1280), max_boxes=10, score_threshold=.6, iou_threshold=.5):
-    
+
     ### START CODE HERE
     # Retrieve outputs of the YOLO model (≈1 line)
     box_xy, box_wh, box_confidence, box_class_probs = yolo_outputs
-    
+
     # Convert boxes to be ready for filtering functions (convert boxes box_xy and box_wh to corner coordinates)
-    boxes = yolo_boxes_to_corners(box_xy, box_wh) 
-    
+    boxes = yolo_boxes_to_corners(box_xy, box_wh)
+
     # Use one of the functions you've implemented to perform Score-filtering with a threshold of score_threshold (≈1 line)
     scores, boxes, classes = yolo_filter_boxes(boxes, box_confidence, box_class_probs, score_threshold)
-    
+
     # Scale boxes back to original image shape.
     boxes = scale_boxes(boxes, image_shape)
-    
-    # Use one of the functions you've implemented to perform Non-max suppression with 
+
+    # Use one of the functions you've implemented to perform Non-max suppression with
     # maximum number of boxes set to max_boxes and a threshold of iou_threshold (≈1 line)
     scores, boxes, classes = yolo_non_max_suppression(scores, boxes, classes, max_boxes, iou_threshold)
-    
+
     return scores, boxes, classes
 ```
 
@@ -764,10 +763,10 @@ Creamos una función para poder ejecutar el gráfico para predecir las cajas.
 def predict(image_file):
     # Preprocess your image
     image, image_data = preprocess_image("images/" + image_file, model_image_size = (608, 608))
-    
+
     yolo_model_outputs = yolo_model(image_data)
     yolo_outputs = yolo_head(yolo_model_outputs, anchors, len(class_names))
-    
+
     out_scores, out_boxes, out_classes = yolo_eval(yolo_outputs, [image.size[1],  image.size[0]], 10, 0.3, 0.5)
 
     # Print predictions info

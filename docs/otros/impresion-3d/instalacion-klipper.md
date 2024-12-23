@@ -7,12 +7,12 @@ title: Instalación de Klipper
 toc_max_heading_level: 4
 ---
 
-:::danger **Este contenido aún está en desarrollo**  
+:::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
-:::  
+:::
 
 # Instalación de Klipper en Ender 3 S1
 
@@ -79,7 +79,7 @@ En este tutorial, aprenderemos cómo instalar Klipper en una Ender 3 S1 utilizan
    ```bash
    sudo apt install htop
    ```
-   
+
 10. **(Opcional) Instalación de Pi-hole:** Si no desea utilizar la dirección IP asignada al servidor cada vez que acceda a Mainsail para imprimir con Klipper, puede instalar Pi-hole y configurar un servidor DNS. Siga estos pasos:
 
     ```bash
@@ -98,9 +98,9 @@ En este tutorial, aprenderemos cómo instalar Klipper en una Ender 3 S1 utilizan
     ```bash
     sudo service lighttpd restart
     ```
-    
+
     Además, deberá habilitar una serie de puertos a través de los siguientes comandos:
-    
+
     ```bash
     sudo ufw allow 80/tcp
     sudo ufw allow 53/tcp
@@ -109,6 +109,7 @@ En este tutorial, aprenderemos cómo instalar Klipper en una Ender 3 S1 utilizan
     sudo ufw allow 67/udp
     sudo ufw allow 546:547/udp
     ```
+
 11. **Controlar la impresora desde un terminal:** Si deseas controlar tu impresora desde un dispositivo Android o iOS, puedes utilizar la aplicación MobileRacker. Para hacerlo, sigue estos pasos:
 
     a. Descarga e instala la aplicación MobileRacker desde la tienda de aplicaciones.

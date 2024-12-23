@@ -44,6 +44,7 @@ Cada contenedor contiene solo la aplicación y sus dependencias, como biblioteca
 ##### Características de los contenedores
 
 - **Imágenes y contenedores**:
+
   - **Imágenes**: Paquetes inmutables que contienen la aplicación y sus dependencias necesarias para ejecutarla. Las imágenes son reutilizables y se almacenan en repositorios como [**Docker Hub**](https://hub.docker.com/).
   - **Contenedores**: Instancias en ejecución de imágenes, que pueden crearse, detenerse y eliminarse rápidamente.
 
@@ -57,7 +58,6 @@ Cada contenedor contiene solo la aplicación y sus dependencias, como biblioteca
     - `uts`: Aísla nombres de host y dominios.
     - `user`: Aísla identificadores de usuarios y grupos.
   - Los **cgroups** (grupos de control) gestionan el uso de recursos como CPU, memoria y disco, garantizando que los contenedores no consuman más recursos de los asignados.
-  
 - **Union Filesystem (UFS)**: Permite que los contenedores se construyan en capas. Las capas de solo lectura contienen archivos del sistema, mientras que las capas de escritura se mantienen en la parte superior, minimizando el uso de almacenamiento y facilitando el desarrollo iterativo.
 
 - **Ligereza**: Los contenedores no incluyen un sistema operativo completo; se ejecutan como procesos dentro del sistema operativo del host, lo que los hace mucho más ligeros que las máquinas virtuales.
@@ -102,31 +102,31 @@ En la nube, proveedores como **Google Cloud Platform (GCP)**, **Amazon Web Servi
 
 ### 1.3. Recopilación de comandos
 
-| Comando | Uso/función |
-|:-------:|:-----------:|
-| **docker images** | Devuelve un listado de todas las imágenes descargadas en la máquina. |
-| **docker pull nombre_imagen** | Descargar una imagen de Docker (puedes visitar [Docker Hub](https://hub.docker.com/) para explorar imágenes disponibles). |
-| **docker image rm nombre_imagen:tag** | Eliminar una imagen de Docker. |
-| **docker create nombre_imagen** | Crear un contenedor a partir de una imagen, devuelve el ID del contenedor creado. |
-| **docker create --name nombre_contenedor nombre_imagen** | Crear un contenedor con un nombre específico a partir de una imagen. |
-| **docker start ID_contenedor_creado** | Iniciar un contenedor. |
-| **docker start nombre_contenedor** | Iniciar un contenedor utilizando su nombre. |
-| **docker ps** | Mostrar solo los contenedores activos. Devuelve una tabla con información sobre cada contenedor, incluyendo el ID, la imagen, el estado y el nombre. |
-| **docker ps -a** | Ver todos los contenedores (activos y no activos) en tu máquina. |
-| **docker stop nombre_contenedor** | Detener un contenedor usando su nombre. |
-| **docker stop ID_contenedor** | Detener un contenedor usando su ID. |
-| **docker rm nombre_contenedor** | Eliminar un contenedor de Docker. |
-| **docker run -d -p 8080:80 -i --name Debian debian:latest** | Crear un contenedor para alojar un servicio y publicarlo en un puerto del host para que sea accesible. <br /> - **Debian**: Nombre del contenedor <br /> - **debian:latest**: Imagen del contenedor <br /> - **8080**: Puerto del host <br /> - **80**: Puerto del contenedor <br /> - **-d**: Ejecuta el contenedor en segundo plano y devuelve el ID del contenedor <br /> - **-p**: Mapea un puerto del host con un puerto del contenedor <br /> - **-i**: Mantiene el acceso al terminal del contenedor <br /> - **--name**: Asigna un nombre al contenedor |
-| **docker exec -it nombre_contenedor bash** | Accede al terminal del contenedor para interactuar con él. |
-| **docker cp ruta_archivos_host nombre_contenedor:ruta_archivos_contenedor** | Copia archivos del host al contenedor. |
-| **docker stats nombre_contenedor** | Monitorea el uso de CPU, memoria y ancho de banda de un contenedor en ejecución. |
-| **docker network ls** | Muestra todas las redes configuradas en Docker. |
-| **docker network inspect nombre_red** | Obtiene detalles sobre una red específica, como las direcciones IP de los contenedores conectados y qué contenedores están en la red. |
-| **docker update [OPTIONS] CONTAINER [CONTAINER...]** | Actualiza la configuración de uno o varios contenedores. [Documentación Docker Update](https://docs.docker.com/engine/reference/commandline/update/) |
+|                                   Comando                                   |                                                                                                                                                                                                                                                                           Uso/función                                                                                                                                                                                                                                                                           |
+| :-------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                              **docker images**                              |                                                                                                                                                                                                                                              Devuelve un listado de todas las imágenes descargadas en la máquina.                                                                                                                                                                                                                                               |
+|                        **docker pull nombre_imagen**                        |                                                                                                                                                                                                                    Descargar una imagen de Docker (puedes visitar [Docker Hub](https://hub.docker.com/) para explorar imágenes disponibles).                                                                                                                                                                                                                    |
+|                    **docker image rm nombre_imagen:tag**                    |                                                                                                                                                                                                                                                                 Eliminar una imagen de Docker.                                                                                                                                                                                                                                                                  |
+|                       **docker create nombre_imagen**                       |                                                                                                                                                                                                                                        Crear un contenedor a partir de una imagen, devuelve el ID del contenedor creado.                                                                                                                                                                                                                                        |
+|          **docker create --name nombre_contenedor nombre_imagen**           |                                                                                                                                                                                                                                              Crear un contenedor con un nombre específico a partir de una imagen.                                                                                                                                                                                                                                               |
+|                    **docker start ID_contenedor_creado**                    |                                                                                                                                                                                                                                                                     Iniciar un contenedor.                                                                                                                                                                                                                                                                      |
+|                     **docker start nombre_contenedor**                      |                                                                                                                                                                                                                                                           Iniciar un contenedor utilizando su nombre.                                                                                                                                                                                                                                                           |
+|                                **docker ps**                                |                                                                                                                                                                                                      Mostrar solo los contenedores activos. Devuelve una tabla con información sobre cada contenedor, incluyendo el ID, la imagen, el estado y el nombre.                                                                                                                                                                                                       |
+|                              **docker ps -a**                               |                                                                                                                                                                                                                                                Ver todos los contenedores (activos y no activos) en tu máquina.                                                                                                                                                                                                                                                 |
+|                      **docker stop nombre_contenedor**                      |                                                                                                                                                                                                                                                             Detener un contenedor usando su nombre.                                                                                                                                                                                                                                                             |
+|                        **docker stop ID_contenedor**                        |                                                                                                                                                                                                                                                               Detener un contenedor usando su ID.                                                                                                                                                                                                                                                               |
+|                       **docker rm nombre_contenedor**                       |                                                                                                                                                                                                                                                                Eliminar un contenedor de Docker.                                                                                                                                                                                                                                                                |
+|         **docker run -d -p 8080:80 -i --name Debian debian:latest**         | Crear un contenedor para alojar un servicio y publicarlo en un puerto del host para que sea accesible. <br /> - **Debian**: Nombre del contenedor <br /> - **debian:latest**: Imagen del contenedor <br /> - **8080**: Puerto del host <br /> - **80**: Puerto del contenedor <br /> - **-d**: Ejecuta el contenedor en segundo plano y devuelve el ID del contenedor <br /> - **-p**: Mapea un puerto del host con un puerto del contenedor <br /> - **-i**: Mantiene el acceso al terminal del contenedor <br /> - **--name**: Asigna un nombre al contenedor |
+|                 **docker exec -it nombre_contenedor bash**                  |                                                                                                                                                                                                                                                   Accede al terminal del contenedor para interactuar con él.                                                                                                                                                                                                                                                    |
+| **docker cp ruta_archivos_host nombre_contenedor:ruta_archivos_contenedor** |                                                                                                                                                                                                                                                             Copia archivos del host al contenedor.                                                                                                                                                                                                                                                              |
+|                     **docker stats nombre_contenedor**                      |                                                                                                                                                                                                                                        Monitorea el uso de CPU, memoria y ancho de banda de un contenedor en ejecución.                                                                                                                                                                                                                                         |
+|                            **docker network ls**                            |                                                                                                                                                                                                                                                         Muestra todas las redes configuradas en Docker.                                                                                                                                                                                                                                                         |
+|                    **docker network inspect nombre_red**                    |                                                                                                                                                                                                              Obtiene detalles sobre una red específica, como las direcciones IP de los contenedores conectados y qué contenedores están en la red.                                                                                                                                                                                                              |
+|            **docker update [OPTIONS] CONTAINER [CONTAINER...]**             |                                                                                                                                                                                                      Actualiza la configuración de uno o varios contenedores. [Documentación Docker Update](https://docs.docker.com/engine/reference/commandline/update/)                                                                                                                                                                                                       |
 
 ### 1.4. Acceso a contenedores mediante mapeo de puertos
 
-El mapeo de puertos, o *port mapping*, asigna un puerto específico del host al puerto de un contenedor, lo que permite que una aplicación dentro del contenedor sea accesible desde el host o desde otros contenedores.
+El mapeo de puertos, o _port mapping_, asigna un puerto específico del host al puerto de un contenedor, lo que permite que una aplicación dentro del contenedor sea accesible desde el host o desde otros contenedores.
 
 Por ejemplo, el siguiente comando crea un contenedor de MongoDB y mapea el puerto 27017 del host al puerto 27017 del contenedor:
 
@@ -179,7 +179,7 @@ Ejemplo de un `Dockerfile`:
 
 ```dockerfile
 # Imagen base
-FROM node:18  
+FROM node:18
 
 # Crear un directorio para el código
 RUN mkdir -p /home/app
@@ -188,10 +188,10 @@ RUN mkdir -p /home/app
 COPY . /home/app
 
 # Exponer el puerto de la aplicación
-EXPOSE 3000  
+EXPOSE 3000
 
 # Ejecutar la aplicación
-CMD ["node", "/home/app/index.js"]  
+CMD ["node", "/home/app/index.js"]
 ```
 
 Para permitir la comunicación entre contenedores, es necesario configurar una red interna. Docker proporciona comandos para gestionar estas redes:
@@ -217,7 +217,7 @@ Modos de red en Docker:
 
 - **Modo bridge**: Modo predeterminado; la red es reconocible solo dentro del host y el contenedor.
 - **Red personalizada**: Permite especificar el rango de direcciones IP y otros parámetros.
-  
+
 ### 1.8. Definición y gestión de múltiples contenedores mediante Docker Compose
 
 Docker Compose es una herramienta que permite definir y gestionar múltiples contenedores como un conjunto de servicios interconectados. Utiliza un archivo de configuración `docker-compose.yml` en formato YAML para especificar la configuración de los servicios, redes, volúmenes y otros aspectos relacionados con los contenedores. Esto simplifica la gestión de aplicaciones complejas compuestas por varios contenedores.
@@ -230,10 +230,8 @@ version: "3.9"
 
 # Define los servicios que se van a utilizar en esta configuración
 services:
-
   # Servicio para la aplicación
   mi-app:
-
     # Especifica el contexto de construcción, en este caso el directorio actual
     build: .
 
@@ -248,7 +246,6 @@ services:
 
   # Servicio para la base de datos MongoDB
   mongodb:
-
     # Usa la imagen oficial de MongoDB
     image: mongo
 
@@ -273,7 +270,7 @@ Para iniciar los servicios definidos en el archivo `docker-compose.yml`, basta c
 docker compose up
 ```
 
-Este comando descarga las imágenes necesarias (si no están disponibles localmente), crea los contenedores y los pone en funcionamiento. 
+Este comando descarga las imágenes necesarias (si no están disponibles localmente), crea los contenedores y los pone en funcionamiento.
 
 Para detener y eliminar los servicios, incluidos los contenedores, redes y volúmenes asociados, se utiliza:
 
@@ -299,10 +296,8 @@ version: "3.9"
 
 # Define los servicios que se van a utilizar en esta configuración
 services:
-
   # Servicio para la aplicación
   mi-app:
-
     # Especifica el contexto de construcción, en este caso el directorio actual
     build: .
 
@@ -317,7 +312,6 @@ services:
 
   # Servicio para la base de datos MongoDB
   mongodb:
-
     # Usa la imagen oficial de MongoDB
     image: mongo
 
@@ -340,13 +334,12 @@ services:
 
 # Define los volúmenes que se van a utilizar en esta configuración
 volumes:
-  
   # Declara un volumen llamado 'mongo-data' para almacenar datos persistentes
   mongo-data:
 ```
 
 En este ejemplo, el servicio `mongodb` utiliza un volumen nombrado llamado `mongo-data` para almacenar los datos persistentes de la base de datos. Este volumen se monta en el directorio `/data/db` del contenedor, lo que asegura que los datos de MongoDB se conserven incluso si el contenedor es detenido o eliminado.
 
-Al final del archivo `docker-compose.yml`, se declara el volumen `mongo-data` en la sección `volumes`. De este modo, Docker se encarga de gestionar la creación y almacenamiento de dicho volumen. 
+Al final del archivo `docker-compose.yml`, se declara el volumen `mongo-data` en la sección `volumes`. De este modo, Docker se encarga de gestionar la creación y almacenamiento de dicho volumen.
 
 Con este archivo de configuración, el proceso de persistencia de datos es completamente automatizado, lo que garantiza la disponibilidad continua de los datos en situaciones de reinicio o actualización de los servicios.

@@ -71,17 +71,16 @@ int main()
     cudaDeviceSynchronize();
 
     helloCPU();
-    
+
     helloGPU<<<num_bloques, num_hebras_bloque>>>();
-    
+
     cudaDeviceSynchronize();
-    
+
     return 0;
 }
 ```
 
 </details>
-
 
 ### Ejecución de hilos y bloques en un Kernel
 
@@ -107,11 +106,11 @@ int main()
 {
     int num_bloques = 1;
     int num_hebras_bloques = 5;
-    
+
     firstParallel<<<num_bloques, num_hebras_bloques>>>();
-    
+
     cudaDeviceSynchronize();
-    
+
     return 0;
 }
 ```
@@ -133,11 +132,11 @@ int main()
 {
     int num_bloques = 5;
     int num_hebras_bloques = 5;
-    
+
     firstParallel<<<num_bloques, num_hebras_bloques>>>();
-    
+
     cudaDeviceSynchronize();
-    
+
     return 0;
 }
 ```
@@ -169,12 +168,13 @@ int main()
     int num_hebras_bloque = 1024;
 
     printSuccessForCorrectExecutionConfiguration<<<num_bloques, num_hebras_bloque>>>();
-    
+
     cudaDeviceSynchronize();
-    
+
     return 0;
 }
 ```
+
 </details>
 
 ### Aceleración de un bucle con un único bloque de subprocesos
@@ -188,9 +188,9 @@ Ejemplo
 #include <stdio.h>
 
 __global__ void loop(int N)
-{   
+{
     int i = (blockIdx.x * blockDim.x) + threadIdx.x;
-    
+
     if(i < N)
     {
         printf("Esta es la iteracion número %d\n", i);
@@ -200,14 +200,14 @@ __global__ void loop(int N)
 int main()
 {
     int N = 10;
-    
+
     int num_bloques = 1;
     int num_hebras_bloque = N;
-    
+
     loop<<<num_bloques, num_hebras_bloque>>>(N);
-    
+
     cudaDeviceSynchronize();
-    
+
     return 0;
 }
 ```
@@ -227,7 +227,7 @@ Ejemplo
 __global__ void loop(int N)
 {
     int i = (blockIdx.x * blockDim.x) + threadIdx.x;
-    
+
     if(i < N)
     {
         printf("This is iteration number %d\n", i);
@@ -237,20 +237,21 @@ __global__ void loop(int N)
 int main()
 {
     int N = 10;
-    
+
     int num_bloques = 2;
     int num_hebras_bloque = N/num_bloques;
-    
+
     loop<<<num_bloques, num_hebras_bloque>>>(N);
-    
+
     cudaDeviceSynchronize();
-    
+
     return 0;
 }
 ```
+
 </details>
 
-### Manipulación de arrays en el *host* y *device*
+### Manipulación de arrays en el _host_ y _device_
 
 <details>
 <summary>
@@ -263,7 +264,7 @@ Ejemplo
 void init(int *a, int N)
 {
     int i
-    
+
     for (i = 0; i < N; ++i)
     {
         a[i] = i;
@@ -273,7 +274,7 @@ void init(int *a, int N)
 __global__ void doubleElements(int *a, int N)
 {
     int i = (blockIdx.x * blockDim.x) + threadIdx.x;
-    
+
     if (i < N)
     {
         a[i] *= 2;
@@ -283,12 +284,12 @@ __global__ void doubleElements(int *a, int N)
 bool checkElementsAreDoubled(int *a, int N)
 {
     int i
-    
+
     for (i = 0; i < N; ++i)
     {
         if (a[i] != i*2) return false;
     }
-    
+
     return true;
 }
 
@@ -307,13 +308,13 @@ int main()
 
     //a = (int *)malloc(size);
     cudaMallocManaged(&a, tamaño);
-    
-    
+
+
     init(a, N);
 
     size_t hilos_por_bloque = 10;
     size_t numero_de_bloques = 10;
-    
+
     /*
     * Este lanzamiento no funcionará hasta que el puntero `a` esté también
     * disponible en el dispositivo.
@@ -326,10 +327,11 @@ int main()
     printf("¿Se han duplicado todos los elementos? %s\n", areDoubled ? "TRUE" : "FALSE");
 
     cudaFree(a);
-    
-    return 0;		
+
+    return 0;
 }
 ```
+
 </details>
 
 ### Aceleración de un bucle con una configuración de ejecución no coincidente
@@ -353,7 +355,7 @@ Ejemplo
 __global__ void initializeElementsTo(int initialValue, int *a, int N)
 {
     int i = threadIdx.x + blockIdx.x * blockDim.x;
-    
+
     if(i < N)
     {
         a[i] = initialValue;
@@ -399,17 +401,18 @@ int main()
             exit(1);
         }
     }
-    
+
     printf("¡Éxito!\n");
 
     cudaFree(a);
-    
+
     return 0;
 }
 ```
+
 </details>
 
-### Utilizar un bucle *Grid-Stride* para manipular un array mayor que la cuadrícula de los bloques
+### Utilizar un bucle _Grid-Stride_ para manipular un array mayor que la cuadrícula de los bloques
 
 <details>
 <summary>
@@ -422,7 +425,7 @@ Ejemplo
 void init(int *a, int N)
 {
     int i
-    
+
     for (i = 0; i < N; ++i)
     {
         a[i] = i;
@@ -439,7 +442,7 @@ __global__ void doubleElements(int *a, int N)
 {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     int gridStride = gridDim.x * blockDim.x;
-    
+
     for (int j = i; j < N; j += gridStride)
     {
         a[j] *= 2;
@@ -453,7 +456,7 @@ bool checkElementsAreDoubled(int *a, int N)
     {
         if (a[i] != i*2) return false;
     }
-    
+
     return true;
 }
 
@@ -486,10 +489,11 @@ int main()
     printf("¿Se han duplicado todos los elementos? %s\n", areDoubled ? "TRUE" : "FALSE");
 
     cudaFree(a);
-    
+
     return 0;
 }
 ```
+
 </details>
 
 ### Manejo de errores
@@ -527,7 +531,7 @@ bool checkElementsAreDoubled(int *a, int N)
     {
         if (a[i] != i*2) return false;
     }
-    
+
     return true;
 }
 
@@ -538,7 +542,7 @@ int main()
     * existen, y luego corregirlos. Googlear los mensajes de error puede ser
     * de servicio si las acciones para resolverlos no son claras para usted.
     */
-    
+
     cudaError_t gestor_errores;
 
     int N = 10000
@@ -546,7 +550,7 @@ int main()
 
     size_t tamaño = N * sizeof(int);
     gestor_errores = cudaMallocManaged(&a, size);
-    
+
     if(gestor_errores != cudaSuccess)
     {
         printf("Hubo un error en la reserva de memoria\n");
@@ -559,17 +563,17 @@ int main()
     size_t numero_de_bloques = 32;
 
     doubleElements<<número_de_bloques, hilos_por_bloque><>(a, N);
-    
+
     gestor_errores = cudaGetLastError();
-    
+
     if (gestor_errores != cudaSuccess)
     {
       printf("Error en el lanzamiento del Kernel\n");
       printf("Error obtenido: %s\n", cudaGetErrorString(gestor_errores));
     }
-    
+
     gestor_errores = cudaDeviceSynchronize();
-    
+
     if(gestor_errores != cudaSuccess)
     {
         printf("Hubo un error en la sincronizacion\n");
@@ -580,7 +584,7 @@ int main()
     printf("¿Se han duplicado todos los elementos? %s\n", areDoubled ? "TRUE" : "FALSE");
 
     cudaFree(a);
-    
+
     return 0;
 }
 ```
@@ -608,7 +612,7 @@ Ejemplo
 
 inline cudaError_t checkCuda(cudaError_t result)
 {
-    if (result != cudaSuccess) 
+    if (result != cudaSuccess)
     {
         fprintf(stderr, "CUDA Runtime Error: %s\n", cudaGetErrorString(result));
         assert(resultado == cudaSuccess);
@@ -629,7 +633,7 @@ __global__ void addVectorsInto(float *resultado, float *a, float *b, int N)
 {
     int i = (blockIdx.x * blockDim.x) + threadIdx.x;
     int gridStride = gridDim.x * blockDim.x;
-    
+
     for (int j = i; j < N; j += gridStride)
     {
         result[j] = a[j] + b[j];
@@ -646,7 +650,7 @@ void checkElementsAre(float target, float *array, int N)
             exit(1);
         }
     }
-    
+
     printf("¡ÉXITO! Todos los valores añadidos correctamente.\n");
 }
 
@@ -656,7 +660,7 @@ int main()
     size_t tamaño = N * sizeof(float);
 
     float *a, *b, *c;
-    
+
     checkCuda(cudaMallocManaged(&a, tamaño));
     checkCuda(cudaMallocManaged(&b, tamaño));
     checkCuda(cudaMallocManaged(&c, tamaño));
@@ -664,12 +668,12 @@ int main()
     initWith(3, a, N);
     initWith(4, b, N);
     initWith(0, c, N);
-    
+
     int num_hebras_bloque = 1024;
     int num_bloques = (N + num_hebras_bloque - 1) / num_hebras_bloque;
 
     addVectorsInto<<num_bloques, num_hebras_bloque><>(c, a, b, N);
-    
+
     checkCuda(cudaGetLastError());
     checkCuda(cudaDeviceSynchronize());
 
@@ -681,10 +685,11 @@ int main()
     checkCuda(cudaFree(a));
     checkCuda(cudaFree(b));
     checkCuda(cudaFree(c));
-    
+
     return 0;
 }
 ```
+
 </details>
 
 ### Acelerar la multiplicación de matrices 2D
@@ -707,10 +712,10 @@ Ejemplo
 __global__ void matrixMulGPU( int * a, int * b, int * c )
 {
     int val = 0;
-    
+
     int fila = (bloqueDim.x * bloqueIdx.x) + hiloIdx.x;
     int col = (blockDim.y * blockIdx.y) + threadIdx.y;
-    
+
     if(fila < N && col < N)
     {
         for ( int k = 0; k < N; ++k )
@@ -730,7 +735,7 @@ void matrixMulCPU( int * a, int * b, int * c )
         for( int col = 0; col < N; ++col )
         {
             val = 0;
-            
+
             for ( int k = 0; k < N; ++k )
             {
                 val += a[fila * N + k] * b[k * N + col];
@@ -743,10 +748,10 @@ void matrixMulCPU( int * a, int * b, int * c )
 int main()
 {
     // Asigna una matriz de soluciones para las operaciones de la CPU y la GPU
-    int *a, *b, *c_cpu, *c_gpu; 
-    
+    int *a, *b, *c_cpu, *c_gpu;
+
     // Número de bytes de una matriz N x N
-    int size = N * N * sizeof (int); 
+    int size = N * N * sizeof (int);
 
     // Asignar memoria
     cudaMallocManaged (&a, tamaño);
@@ -770,21 +775,21 @@ int main()
     * Asigna los valores 2D `threads_per_block` y `number_of_blocks
     * que pueden ser usados en matrixMulGPU arriba.
     */
-    
+
     // dim3 permite definir el número de bloques por cuadrícula y de hilos por bloque.
     /*
-    Utilizar un bloque multidimensional significa que hay que tener cuidado al distribuir 
-    este número de hilos entre todas las dimensiones. En un bloque 1D, puede establecer 1024 hilos 
-    como máximo en el eje x, pero en un bloque 2D, si establece 2 como tamaño de y, 
-    ¡no puede superar los 512 (1024/2 = 512) para la x! Por ejemplo, se permite dim3 threadsPerBlock(1024, 1, 1), 
+    Utilizar un bloque multidimensional significa que hay que tener cuidado al distribuir
+    este número de hilos entre todas las dimensiones. En un bloque 1D, puede establecer 1024 hilos
+    como máximo en el eje x, pero en un bloque 2D, si establece 2 como tamaño de y,
+    ¡no puede superar los 512 (1024/2 = 512) para la x! Por ejemplo, se permite dim3 threadsPerBlock(1024, 1, 1),
     así como dim3 threadsPerBlock(512, 2, 1), pero no dim3 threadsPerBlock(256, 3, 2).
     */
     int x1 = N/2;
     int y1 = N/2;
-    
+
     int x2 = 2
     int y2 = 2;
-    
+
     dim3 hilos_por_bloque (x1, y1, 1);
     dim3 número_de_bloques (x2, y2, 1);
 
@@ -816,12 +821,13 @@ int main()
     }
 
     // Liberar toda la memoria asignada
-    cudaFree(a); 
+    cudaFree(a);
     cudaFree(b);
-    cudaFree(c_cpu); 
+    cudaFree(c_cpu);
     cudaFree(c_gpu);
 }
 ```
+
 </details>
 
 ### Acelerar una aplicación de conductividad térmica
@@ -843,7 +849,7 @@ Ejemplo
 
 inline cudaError_t checkCuda(cudaError_t result)
 {
-    if (result != cudaSuccess) 
+    if (result != cudaSuccess)
     {
         fprintf(stderr, "CUDA Runtime Error: %s\n", cudaGetErrorString(result));
         assert(resultado == cudaSuccess);
@@ -864,10 +870,10 @@ __global__ void step_kernel_mod(int ni, int nj, float fact, float* temp_in, floa
 {
     int i00, im10, ip10, i0m1, i0p1;
     float d2tdx2, d2tdy2;
-    
+
     int j = ((blockIdx.x * blockDim.x) + threadIdx.x) + 1;
     int i = ((bloqueIdx.y * bloqueDim.y) + hiloIdx.y) + 1;
-    
+
     if((j < nj - 1 && i < ni-1))
     {
         // encontrar índices en memoria lineal
@@ -893,9 +899,9 @@ void step_kernel_ref(int ni, int nj, float fact, float* temp_in, float* temp_out
     float d2tdx2, d2tdy2;
 
     // bucle sobre todos los puntos del dominio (excepto el límite)
-    for ( int j=1; j < nj-1; j++ ) 
+    for ( int j=1; j < nj-1; j++ )
     {
-        for ( int i=1; i < ni-1; i++ ) 
+        for ( int i=1; i < ni-1; i++ )
         {
             // encontrar índices en memoria lineal
             // para el punto central y los vecinos
@@ -916,7 +922,7 @@ void step_kernel_ref(int ni, int nj, float fact, float* temp_in, float* temp_out
 }
 
 int main()
-{   
+{
     int istep
     int nstep = 200; // número de pasos temporales
 
@@ -935,13 +941,13 @@ int main()
     checkCuda(cudaMallocManaged(&temp2, tamaño));
 
     // Inicializar con datos aleatorios
-    for( int i = 0; i < ni*nj; ++i) 
+    for( int i = 0; i < ni*nj; ++i)
     {
         temp1_ref[i] = temp2_ref[i] = temp1[i] = temp2[i] = (float)rand()/(float)(RAND_MAX/100.0f);
     }
 
     // Ejecuta la versión de referencia sólo para CPU
-    for (istep=0; istep < nstep; istep++) 
+    for (istep=0; istep < nstep; istep++)
     {
         step_kernel_ref(ni, nj, tfac, temp1_ref, temp2_ref);
 
@@ -950,34 +956,34 @@ int main()
         temp1_ref = temp2_ref;
         temp2_ref= temp_tmp;
     }
-    
+
     dim3 num_hebras_bloq(32, 32, 1);
     dim3 malla(4, 7, 1);
     //dim3 num_hebras_bloq(128, 224, 1);
     //dim3 malla(1, 1, 1);
 
     // Ejecutar la versión modificada utilizando los mismos datos
-    for (istep=0; istep < nstep; istep++) 
+    for (istep=0; istep < nstep; istep++)
     {
         step_kernel_mod<<malla, num_hebras_bloq><>>(ni, nj, tfac, temp1, temp2);
-        
+
         checkCuda(cudaGetLastError());
         checkCuda(cudaDeviceSynchronize());
-        
+
         // intercambia los punteros de temp
         temp_tmp = temp1;
         temp1 = temp2;
         temp2= temp_tmp;
     }
-    
+
     float maxError = 0;
-    
+
     // La salida debe almacenarse siempre en temp1 y temp1_ref en este punto
-    for( int i = 0; i < ni*nj; ++i ) 
+    for( int i = 0; i < ni*nj; ++i )
     {
         if (abs(temp1[i]-temp1_ref[i]) > maxError)
-        { 
-            maxError = abs(temp1[i]-temp1_ref[i]); 
+        {
+            maxError = abs(temp1[i]-temp1_ref[i]);
         }
     }
 
@@ -990,7 +996,7 @@ int main()
     {
         printf("El error máximo de %.5f está dentro de los límites aceptables;)
     }
-    
+
     checkCuda(cudaFree(temp1_ref));
     checkCuda(cudaFree(temp2_ref));
     checkCuda(cudaFree(temp1));
@@ -999,6 +1005,7 @@ int main()
     return 0;
 }
 ```
+
 </details>
 
 ## Ejercicios avanzados
@@ -1024,9 +1031,9 @@ Ejemplo
 int main()
 {
     int deviceId;
-    
+
     cudaGetDevice(&deviceId);
-    
+
     cudaDeviceProp props;
     cudaGetDeviceProperties(&props, deviceId);
 
@@ -1034,10 +1041,11 @@ int main()
     printf("Tamano del Warp grafica: %d\n", props.warpSize);
     printf("Numero total de hebras por bloque: %d\n", props.maxThreadsPerBlock);
     printf("Numero total de SMs: %d\n", props.multiProcessorCount);
-    
+
     return 0;
 }
 ```
+
 </details>
 
 #### Optimizar la suma de vectores con cuadrículas del tamaño del número de SMs de la GPU
@@ -1095,7 +1103,7 @@ void checkElementsAre(float target, float *vector, int N)
             exit(1);
         }
     }
-    
+
     printf("¡Éxito! Todos los valores calculados correctamente.\n");
 }
 
@@ -1123,13 +1131,13 @@ int main()
     * nsys debe registrar los cambios de rendimiento cuando la configuración de ejecución
     * se actualiza.
     */
-    
+
     int deviceID;
     cudaGetDevice(&deviceID);
-    
+
     cudaDeviceProp props;
     cudaGetDeviceProperties(&props, deviceID);
-		
+
 		threadsPerBlock = props.maxThreadsPerBlock;
     numberOfBlocks = (N/threadsPerBlock) + 1;
 
@@ -1143,13 +1151,13 @@ int main()
     {
         printf("Error: %s\n", cudaGetErrorString(addVectorsErr));
     }
-    
+
     asyncErr = cudaDeviceSynchronize();
-    if(asyncErr != cudaSuccess) 
+    if(asyncErr != cudaSuccess)
     {
         printf("Error: %s\n", cudaGetErrorString(asyncErr));
     }
-    
+
     checkElementsAre(7, c, N);
 
     cudaFree(a);
@@ -1157,6 +1165,7 @@ int main()
     cudaFree(c);
 }
 ```
+
 </details>
 
 #### Prefetch/precarga de memoria
@@ -1180,7 +1189,7 @@ Al utilizar precarga de memoria, obtenemos menos transferencias de memoria pero 
 __global__ void initWith(float num, float *a, int N)
 {
     int i = (blockDim.x * blockIdx.x) + threadIdx.x;
-    
+
     if(i < N)
     {
         a[i] = num;
@@ -1225,7 +1234,7 @@ int main()
 {
     int deviceID;
     cudaGetDevice(&deviceID);
-    
+
     const int N = 2<<24;
     size_t size = N * sizeof(float);
 
@@ -1234,7 +1243,7 @@ int main()
     cudaMallocManaged(&a, tamaño);
     cudaMallocManaged(&b, tamaño);
     cudaMallocManaged(&c, tamaño);
-    
+
     cudaMemPrefetchAsync(a, size, deviceID);
     cudaMemPrefetchAsync(b, tamaño, deviceID);
     cudaMemPrefetchAsync(c, tamaño, deviceID);
@@ -1267,15 +1276,15 @@ int main()
     {
         printf("Error: %s\n", cudaGetErrorString(addVectorsErr));
     }
-    
+
     asyncErr = cudaDeviceSynchronize();
-    if(asyncErr != cudaSuccess) 
+    if(asyncErr != cudaSuccess)
     {
         printf("Error: %s\n", cudaGetErrorString(asyncErr));
     }
-    
+
     cudaMemPrefetchAsync(c, size, cudaCpuDeviceId);
-    
+
     checkElementsAre(7, c, N);
 
     cudaFree(a);
@@ -1283,4 +1292,5 @@ int main()
     cudaFree(c);
 }
 ```
+
 </details>

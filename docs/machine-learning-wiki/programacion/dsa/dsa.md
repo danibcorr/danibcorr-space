@@ -9,8 +9,8 @@ toc_max_heading_level: 4
 
 ## Bibliografía
 
-* [YouTube Cesar Ramos](https://www.youtube.com/@cesarramos2592)
-  
+- [YouTube Cesar Ramos](https://www.youtube.com/@cesarramos2592)
+
 ## 1. Notación Big O
 
 La notación Big O se utiliza para evaluar la eficiencia de los algoritmos en términos de complejidad temporal y espacial. La **complejidad temporal** se refiere a cómo varía el tiempo requerido por un algoritmo en función del número de elementos de entrada, mientras que la **complejidad espacial** se refiere al uso de memoria en función del número de variables utilizadas por el algoritmo.
@@ -23,7 +23,7 @@ La notación Big O se utiliza para evaluar la eficiencia de los algoritmos en t�
 
 - $O\left(N\right)$: El tiempo de ejecución crece linealmente con el tamaño de la entrada. Típico de algoritmos que realizan una operación en cada elemento de la entrada, como sumar todos los elementos de una lista.
 
-- $O\left(N\log N\right)$: Representa una combinación de comportamiento lineal y logarítmico. Es común en algoritmos de ordenación eficientes, como el algoritmo de ordenación rápida (*quicksort*).
+- $O\left(N\log N\right)$: Representa una combinación de comportamiento lineal y logarítmico. Es común en algoritmos de ordenación eficientes, como el algoritmo de ordenación rápida (_quicksort_).
 
 - $O\left(N^2\right)$: El tiempo de ejecución crece cuadráticamente con el tamaño de la entrada. Se presenta en algoritmos que realizan operaciones sobre cada par de elementos, como el algoritmo de ordenación por burbuja.
 
@@ -36,6 +36,7 @@ En casos donde se realizan múltiples operaciones con diferentes costes temporal
 En algoritmos que involucran múltiples estructuras de datos, la complejidad puede depender de más de un parámetro.
 
 :::tip Ejemplo
+
 ```python
 def funcion():
     for i in arrayA:
@@ -43,10 +44,12 @@ def funcion():
     for i in arrayB:
         ...
 ```
+
 En este ejemplo, cada bucle tiene una complejidad de $O\left(N\right)$, pero como los bucles operan en arrays diferentes, la complejidad total es $O\left(A + B\right)$, donde $A$ y $B$ son los tamaños de los arrays `arrayA` y `arrayB`, respectivamente.
 :::
 
 :::tip Ejemplo
+
 ```python
 def funcion():
     for i in arrayA:
@@ -63,7 +66,7 @@ Es importante señalar que la notación Big O no está limitada a la letra $N$; 
 
 Este capítulo presenta algunos de los métodos de ordenación más utilizados en estructuras de datos y algoritmos.
 
-### 2.1. Ordenación de Burbuja (*Bubble Sort*)
+### 2.1. Ordenación de Burbuja (_Bubble Sort_)
 
 La ordenación de burbuja es un algoritmo de ordenación sencillo que compara pares adyacentes de elementos en una lista e intercambia sus posiciones si están en orden incorrecto. Este proceso se repite hasta que no se requieren más intercambios, lo que indica que la lista está ordenada.
 
@@ -71,6 +74,7 @@ La ordenación de burbuja es un algoritmo de ordenación sencillo que compara pa
 - **Complejidad espacial**: $$O\left(1\right)$$, porque solo utiliza un número constante de variables temporales.
 
 :::tip Implementación
+
 ```python
 def ordenacion_burbuja(lista: list[int]) -> list[int]:
 
@@ -93,9 +97,10 @@ def ordenacion_burbuja(lista: list[int]) -> list[int]:
     # Devuelve la lista ordenada
     return lista
 ```
+
 :::
 
-### 2.2. Ordenación por Selección (*Selection Sort*)
+### 2.2. Ordenación por Selección (_Selection Sort_)
 
 La ordenación por selección selecciona el elemento más pequeño de la lista y lo coloca al principio. Este proceso se repite para el resto de la lista hasta que está completamente ordenada.
 
@@ -114,7 +119,7 @@ def ordenacion_seleccion(lista: list[int]) -> list[int]:
         idx_min_value = i
 
         # Bucle interno que busca el elemento más pequeño en la sublista no ordenada
-        for j in range(i + 1, len(lista)): 
+        for j in range(i + 1, len(lista)):
 
             # Compara si el elemento actual es menor que el mínimo encontrado hasta ahora
             if lista[idx_min_value] > lista[j]:
@@ -128,9 +133,10 @@ def ordenacion_seleccion(lista: list[int]) -> list[int]:
     # Devuelve la lista ordenada
     return lista
 ```
+
 :::
 
-### 2.3. Ordenación por Inserción (*Insertion Sort*)
+### 2.3. Ordenación por Inserción (_Insertion Sort_)
 
 La ordenación por inserción funciona dividiendo la lista en una parte ordenada y otra desordenada. Se toma un elemento de la parte desordenada y se inserta en la posición correcta dentro de la parte ordenada. Este proceso continúa hasta que no quedan elementos desordenados.
 
@@ -162,6 +168,7 @@ def ordenacion_insercion(lista: list[int]) -> list[int]:
     # Devuelve la lista ordenada
     return lista
 ```
+
 :::
 
 Estos métodos de ordenación, aunque menos eficientes para grandes conjuntos de datos, proporcionan una buena base para entender algoritmos más avanzados y eficientes.
@@ -170,7 +177,7 @@ Estos métodos de ordenación, aunque menos eficientes para grandes conjuntos de
 
 Este capítulo explora algunos de los métodos de búsqueda más utilizados en estructuras de datos y algoritmos.
 
-### 3.1. Búsqueda Lineal (*Linear Search*)
+### 3.1. Búsqueda Lineal (_Linear Search_)
 
 La búsqueda lineal es un método de búsqueda sencillo que recorre cada elemento de la lista uno por uno hasta encontrar el elemento buscado o hasta recorrer todos los elementos.
 
@@ -193,9 +200,10 @@ def busqueda_lineal(lista: list[int], valor_buscar: int) -> int:
     # Si no encuentra el valor, devuelve None
     return None
 ```
+
 :::
 
-### 3.2. Búsqueda Binaria (*Binary Search*)
+### 3.2. Búsqueda Binaria (_Binary Search_)
 
 La búsqueda binaria es un método de búsqueda eficiente que divide repetidamente a la mitad la parte de la lista que podría contener el elemento buscado, hasta reducir las posibles ubicaciones a una sola. Este método requiere que la lista esté ordenada.
 
@@ -234,16 +242,17 @@ def busqueda_binaria(lista: list[int], valor_buscar: int) -> int:
     # Si no encuentra el valor, devuelve None
     return None
 ```
+
 :::
 
 ## 4. Estructuras de Datos
 
 ### 4.1. Pilas
 
-Una pila es una estructura de datos que organiza elementos de manera secuencial siguiendo el principio LIFO (*Last In, First Out*). Esto implica que el último elemento añadido es el primero en ser retirado. Las operaciones principales en una pila son:
+Una pila es una estructura de datos que organiza elementos de manera secuencial siguiendo el principio LIFO (_Last In, First Out_). Esto implica que el último elemento añadido es el primero en ser retirado. Las operaciones principales en una pila son:
 
-- **Apilar (*push*)**: Añade un elemento a la pila.
-- **Desapilar (*pop*)**: Retira el último elemento añadido.
+- **Apilar (_push_)**: Añade un elemento a la pila.
+- **Desapilar (_pop_)**: Retira el último elemento añadido.
 
 Las pilas pueden tener un tamaño estático o dinámico.
 
@@ -306,11 +315,12 @@ class Pila:
 
         return len(self.lista)
 ```
+
 :::
 
 ### 4.2. Colas
 
-Una cola es una estructura de datos que organiza elementos de manera secuencial bajo el principio FIFO (*First In, First Out*). Las operaciones de inserción se realizan en un extremo y las de extracción en el otro. 
+Una cola es una estructura de datos que organiza elementos de manera secuencial bajo el principio FIFO (_First In, First Out_). Las operaciones de inserción se realizan en un extremo y las de extracción en el otro.
 
 :::tip Implementación
 
@@ -347,7 +357,7 @@ class Cola():
             raise Exception("Error, cola llena.")
 
     def eliminar(self):
-        
+
         if not self.empty():
 
             self.lista.pop(0)
@@ -387,7 +397,8 @@ class Cola():
 
         print(self.lista)
 ```
-::: 
+
+:::
 
 ### 4.3. Nodos
 
@@ -489,7 +500,8 @@ class ListaEnlazada():
                 del self.nodo_inicial
                 self.nodo_inicial = nuevo_nodo_inicial
 ```
-::: 
+
+:::
 
 ### 4.5. Listas Doblemente Enlazadas
 
@@ -564,15 +576,15 @@ class ListaDobleEnlazada:
             nodo = nodo.ptr_ant
 
     def eliminar_ultimo(self):
-        
+
         if not self.vacia():
 
             if self.nodo_inicial.ptr is None:
 
                 self.nodo_inicial = self.nodo_final = None
-            
+
             else:
-                
+
                 ultimo = self.nodo_final
                 penultimo = ultimo.ptr_ant
                 penultimo.ptr_sig = None
@@ -595,7 +607,8 @@ class ListaDobleEnlazada:
                 del primero
                 self.nodo_inicial = segundo
 ```
-::: 
+
+:::
 
 ### 4.6. Lista Circular Simple
 
@@ -686,7 +699,7 @@ class ListaCircular():
                 self.nodo_final = ant
 
     def eliminar_primero(self):
-        
+
         if self.vacia():
 
             if self.nodo_inicial == self.nodo_final:
@@ -700,7 +713,8 @@ class ListaCircular():
                 del self.nodo_inicial
                 self.nodo_inicial = siguiente_nodo
 ```
-::: 
+
+:::
 
 ### 4.7. Lista Circular Doble
 
@@ -716,7 +730,7 @@ class Nodo():
         self.dato = dato
         self.ptr_siguiente = None
         self.ptr_anterior = None
-        
+
 class ListaDobleCircular():
 
     def __init__(self):
@@ -814,7 +828,7 @@ class ListaDobleCircular():
                 self.nodo_final = penultimo
 
     def eliminar_primero(self):
-        
+
         if self.vacia():
 
             if self.nodo_inicial == self.nodo_final:
@@ -833,6 +847,7 @@ class ListaDobleCircular():
 
                 self.nodo_inicial = segundo
 ```
+
 :::
 
 ### 4.8. Árboles binarios
@@ -857,30 +872,30 @@ Un árbol binario es una estructura de datos en la que cada nodo puede tener, co
 
 ```python
 class Nodo():
-    
+
     def __init__(self, valor: int = None, padre: int = None, es_raiz: bool = False, es_izquierdo: bool = False, es_derecho: bool = False):
-        
+
         # Valor del nodo
-        self.valor = valor   
-        # Nodo hijo izquierdo          
-        self.izquierdo = None   
-        # Nodo hijo derecho            
-        self.derecho = None            
-        # Nodo padre     
-        self.padre = padre                  
+        self.valor = valor
+        # Nodo hijo izquierdo
+        self.izquierdo = None
+        # Nodo hijo derecho
+        self.derecho = None
+        # Nodo padre
+        self.padre = padre
         # Indica si el nodo es la raíz
-        self.es_raiz = es_raiz              
+        self.es_raiz = es_raiz
         # Indica si el nodo es un hijo derecho
-        self.es_derecho = es_derecho        
+        self.es_derecho = es_derecho
         # Indica si el nodo es un hijo izquierdo
-        self.es_izquierdo = es_izquierdo    
+        self.es_izquierdo = es_izquierdo
 
 class ArbolBinario():
 
     def __init__(self):
 
         # Nodo raíz del árbol
-        self.nodo_raiz = None              
+        self.nodo_raiz = None
 
     def esta_vacio(self):
 
@@ -969,4 +984,5 @@ class ArbolBinario():
 
                 return self.buscar(nodo.derecho, valor)
 ```
+
 :::

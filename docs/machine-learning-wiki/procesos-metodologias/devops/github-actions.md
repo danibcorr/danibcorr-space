@@ -19,19 +19,19 @@ toc_max_heading_level: 4
   <em>Logo de GitHub</em>
 </p>
 
-**GitHub** es una plataforma de desarrollo colaborativo que se utiliza para gestionar proyectos de software. Proporciona herramientas que permiten la integración continua (*Continuous Integration*, CI), la entrega continua (*Continuous Deployment*, CD) y el control de versiones a través de **Git**. 
+**GitHub** es una plataforma de desarrollo colaborativo que se utiliza para gestionar proyectos de software. Proporciona herramientas que permiten la integración continua (_Continuous Integration_, CI), la entrega continua (_Continuous Deployment_, CD) y el control de versiones a través de **Git**.
 
 GitHub se ha convertido en una herramienta esencial, ofreciendo funcionalidades avanzadas como **GitHub Actions** para la automatización de flujos de trabajo y **GitHub Pages** para la publicación de sitios web directamente desde repositorios.
 
 ## 2. CI/CD con GitHub Actions
 
-El término **CI (*Continuous Integration*)** se refiere a la automatización de los pasos necesarios para integrar nuevo código en un repositorio compartido, garantizando que los cambios se validen continuamente mediante pruebas y compilaciones. 
+El término **CI (_Continuous Integration_)** se refiere a la automatización de los pasos necesarios para integrar nuevo código en un repositorio compartido, garantizando que los cambios se validen continuamente mediante pruebas y compilaciones.
 
-**CD (*Continuous Deployment*)** implica la automatización de los pasos necesarios para llevar el código del repositorio compartido a producción, facilitando la creación y entrega continua de nuevas versiones de un producto.
+**CD (_Continuous Deployment_)** implica la automatización de los pasos necesarios para llevar el código del repositorio compartido a producción, facilitando la creación y entrega continua de nuevas versiones de un producto.
 
 ### 2.1. GitHub Actions y su funcionamiento
 
-GitHub Actions es una plataforma que permite automatizar flujos de trabajo mediante archivos de configuración YAML. 
+GitHub Actions es una plataforma que permite automatizar flujos de trabajo mediante archivos de configuración YAML.
 
 El **runner** de GitHub Actions es un servidor que ejecuta estos workflows en el entorno definido por el proyecto. Para configurar un workflow, se crea un archivo YAML dentro del repositorio, generalmente bajo la ruta `.github/workflows/`, que define los pasos o acciones a realizar.
 
@@ -41,9 +41,9 @@ Recuerda que los **workflows** se definen mediante archivos YAML, lo que facilit
 
 ### 2.2. Estructura del workflow
 
-El archivo de configuración del workflow (por ejemplo, `workflow.yml`) contiene ***jobs***, que representan unidades de trabajo como la compilación del proyecto, la ejecución de pruebas o el despliegue de la aplicación. Cada ***job*** está compuesto por pasos secuenciales que describen tareas específicas, y requiere un sistema operativo para ejecutarse. 
+El archivo de configuración del workflow (por ejemplo, `workflow.yml`) contiene **_jobs_**, que representan unidades de trabajo como la compilación del proyecto, la ejecución de pruebas o el despliegue de la aplicación. Cada **_job_** está compuesto por pasos secuenciales que describen tareas específicas, y requiere un sistema operativo para ejecutarse.
 
-Los ***triggers*** o eventos, como un `push`, un `pull request` o eventos programados, determinan cuándo se debe iniciar el workflow. Además, es posible definir **permisos** que limitan el acceso del workflow a los recursos del repositorio.
+Los **_triggers_** o eventos, como un `push`, un `pull request` o eventos programados, determinan cuándo se debe iniciar el workflow. Además, es posible definir **permisos** que limitan el acceso del workflow a los recursos del repositorio.
 
 GitHub Actions permite utilizar acciones definidas por terceros, disponibles en [github.com/actions](https://github.com/actions) y en el [Marketplace de GitHub](https://github.com/marketplace).
 
@@ -70,9 +70,9 @@ name: Workflow básico
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -101,9 +101,9 @@ name: Verificación con Flake8
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -115,11 +115,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Instalar Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Instalar Poetry
         uses: snok/install-poetry@v1
@@ -140,9 +140,9 @@ name: Workflow con caché
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -154,11 +154,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Instalar Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Instalar Poetry
         uses: snok/install-poetry@v1
@@ -213,7 +213,7 @@ runs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10.7'
+        python-version: "3.10.7"
 
     - name: Instalar Poetry
       uses: snok/install-poetry@v1
@@ -239,9 +239,9 @@ name: Lint Workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read

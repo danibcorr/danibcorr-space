@@ -10,7 +10,7 @@ toc_max_heading_level: 4
 ## Bibliografía
 
 - [Makefile Tutorial](https://makefiletutorial.com/)
-  
+
 ## 1. Introducción
 
 <p align="center">
@@ -19,7 +19,7 @@ toc_max_heading_level: 4
   <em>Logo de Makefile</em>
 </p>
 
-Un **Makefile** es un archivo de configuración utilizado por la herramienta `make`, que permite automatizar el proceso de compilación y ejecución de proyectos de software. 
+Un **Makefile** es un archivo de configuración utilizado por la herramienta `make`, que permite automatizar el proceso de compilación y ejecución de proyectos de software.
 
 Generalmente, se emplea en entornos con sistemas operativos basados en GNU/Linux y puede contener comandos en [Bash](../programacion/bash.md).
 
@@ -33,7 +33,7 @@ El uso de Makefiles ofrece varios beneficios en el desarrollo de software, entre
 
 ### 2.1. Estructura de una regla
 
-Una regla en un Makefile define el proceso de construcción de un objetivo (***target***) a partir de sus prerrequisitos. 
+Una regla en un Makefile define el proceso de construcción de un objetivo (**_target_**) a partir de sus prerrequisitos.
 
 La estructura básica de una regla es la siguiente:
 
@@ -44,10 +44,10 @@ targets: prerequisites
   comando
 ```
 
-- ***targets:*** Son los nombres de los archivos o tareas que se crearán, separados por espacios. Usualmente, se define un único *target* por regla.
-- ***prerequisites:*** Son los archivos o dependencias necesarios para generar el *target*, también separados por espacios.
-- **comandos:** Son las instrucciones que se ejecutan para crear el *target*. Cada comando debe comenzar con un carácter de tabulación, no con espacios.
-  
+- **_targets:_** Son los nombres de los archivos o tareas que se crearán, separados por espacios. Usualmente, se define un único _target_ por regla.
+- **_prerequisites:_** Son los archivos o dependencias necesarios para generar el _target_, también separados por espacios.
+- **comandos:** Son las instrucciones que se ejecutan para crear el _target_. Cada comando debe comenzar con un carácter de tabulación, no con espacios.
+
 :::tip Ejemplo
 
 ```makefile
@@ -57,8 +57,8 @@ install: pyproject.toml
 
 En este ejemplo:
 
-- **`install`** es el *target* u "objetivo". Representa la tarea a realizar o el archivo que se va a generar. En este caso, es una tarea llamada `install` que indica que se deben instalar las dependencias del proyecto.
-- **`pyproject.toml`** es el *prerrequisito*. Es un archivo que debe existir antes de ejecutar la tarea. En este caso, `pyproject.toml` es un archivo de configuración de Poetry, que se usa para gestionar las dependencias de un proyecto Python.
+- **`install`** es el _target_ u "objetivo". Representa la tarea a realizar o el archivo que se va a generar. En este caso, es una tarea llamada `install` que indica que se deben instalar las dependencias del proyecto.
+- **`pyproject.toml`** es el _prerrequisito_. Es un archivo que debe existir antes de ejecutar la tarea. En este caso, `pyproject.toml` es un archivo de configuración de Poetry, que se usa para gestionar las dependencias de un proyecto Python.
 - **`poetry install`** es el comando que se ejecutará para completar la tarea. En este caso, el comando instala las dependencias especificadas en `pyproject.toml`.
 
 Cuando ejecutas el comando `make install`, Make verifica si el archivo `pyproject.toml` existe. Si el archivo está presente, Make ejecutará `poetry install` para instalar las dependencias del proyecto. Si el archivo no existe, Make mostrará un error.
@@ -75,24 +75,25 @@ Los comentarios en un Makefile se escriben utilizando el símbolo `#`. Estos com
 install: pyproject.toml
     poetry install
 ```
+
 :::
 
 ### 2.3. Variables
 
-Las variables en Makefiles permiten almacenar y reutilizar valores, facilitando la personalización de comandos o rutas. 
+Las variables en Makefiles permiten almacenar y reutilizar valores, facilitando la personalización de comandos o rutas.
 
 :::tip Ejemplo
 
-```makefile
+````makefile
 
 ```makefile
 TEST_FILE ?= ./tests
 
 # Regla para ejecutar tests al código
-tests: 
+tests:
     @echo "Testeando el código..."
     poetry run pytest -v $(TEST_FILE)
-```
+````
 
 En este caso:
 
@@ -110,16 +111,16 @@ Esto ejecutará los tests usando el archivo `test_ejemplo.py` en lugar del direc
 
 #### 2.3.1. Variables automáticas
 
-Make proporciona variables automáticas que son útiles para simplificar reglas. Estas variables permiten referirse de manera dinámica a los *targets* y prerrequisitos sin necesidad de escribirlos explícitamente cada vez.
+Make proporciona variables automáticas que son útiles para simplificar reglas. Estas variables permiten referirse de manera dinámica a los _targets_ y prerrequisitos sin necesidad de escribirlos explícitamente cada vez.
 
-| Variable | Descripción                                                                 |
-|----------|-----------------------------------------------------------------------------|
-| `$@`     | Nombre del *target* actual.                                                |
-| `$<`     | Primer prerrequisito de la regla.                                          |
-| `$^`     | Todos los prerrequisitos de la regla.                                      |
-| `$*`     | Parte del nombre (*stem*) que coincide con el patrón `%`.                  |
-| `$(@D)`  | Directorio del *target* actual.                                            |
-| `$(@F)`  | Nombre del archivo del *target* actual.                                    |
+| Variable | Descripción                                               |
+| -------- | --------------------------------------------------------- |
+| `$@`     | Nombre del _target_ actual.                               |
+| `$<`     | Primer prerrequisito de la regla.                         |
+| `$^`     | Todos los prerrequisitos de la regla.                     |
+| `$*`     | Parte del nombre (_stem_) que coincide con el patrón `%`. |
+| `$(@D)`  | Directorio del _target_ actual.                           |
+| `$(@F)`  | Nombre del archivo del _target_ actual.                   |
 
 :::tip Ejemplo
 Supongamos que estamos procesando datos en Python y queremos automatizar la creación de un archivo comprimido a partir de varios archivos generados:
@@ -138,7 +139,7 @@ output.zip: processed_data/input1.csv processed_data/input2.csv
 ```
 
 - `$<`: Se refiere al primer prerrequisito. En la regla `process_data`, `$<` será `input1.txt`.
-- `$@`: Representa el *target* actual. En la regla `archive`, `$@` será `output.zip`.
+- `$@`: Representa el _target_ actual. En la regla `archive`, `$@` será `output.zip`.
 - `$^`: Contiene todos los prerrequisitos. En la regla `output.zip`, `$^` incluye `processed_data/input1.csv processed_data/input2.csv`.
 
 El script `script.py` podría utilizar los prerrequisitos para producir archivos de salida:
@@ -148,7 +149,7 @@ import sys
 import os
 
 def process_file(input_file, output_dir):
-  
+
     output_file = os.path.join(output_dir, os.path.basename(input_file).replace(".txt", ".csv"))
     with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
         for line in infile:
@@ -165,15 +166,16 @@ if __name__ == "__main__":
 ```
 
 Al ejecutar `make all` este produce:
-  - Archivos procesados en `processed_data/` a partir de los prerrequisitos.
-  - Archivo comprimido `output.zip` que contiene los archivos procesados.
+
+- Archivos procesados en `processed_data/` a partir de los prerrequisitos.
+- Archivo comprimido `output.zip` que contiene los archivos procesados.
 
 En la regla `process_data`, Python recibe como entrada el primer prerrequisito `input1.txt` a través de `$<` y genera la salida en `processed_data/input1.csv` automáticamente.
 :::
 
 #### 2.3.2. Variables específicas de objetivo y patrones
 
-En Make, las variables específicas de objetivo y patrones permiten definir configuraciones particulares para ciertos objetivos o archivos. 
+En Make, las variables específicas de objetivo y patrones permiten definir configuraciones particulares para ciertos objetivos o archivos.
 
 :::tip Ejemplo
 
@@ -190,11 +192,11 @@ Si queremos procesar archivos .csv para generar archivos .txt con una configurac
 
 En este ejemplo:
 
-  + El patrón `%.txt` indica que cualquier archivo con extensión `.csv` se convertirá en un archivo `.txt`.
-    Por ejemplo, data.csv se convertirá en data.txt.
-  + La variable específica `PYTHONFLAGS += --optimize` se aplicará al comando Python solo cuando se genere un archivo `.txt`.
-  + La regla `%.txt: %.csv` usa el archivo `.csv` como entrada (representado por `$<`) y genera un archivo `.txt` como salida (representado por `$@`).
-:::
+- El patrón `%.txt` indica que cualquier archivo con extensión `.csv` se convertirá en un archivo `.txt`.
+  Por ejemplo, data.csv se convertirá en data.txt.
+- La variable específica `PYTHONFLAGS += --optimize` se aplicará al comando Python solo cuando se genere un archivo `.txt`.
+- La regla `%.txt: %.csv` usa el archivo `.csv` como entrada (representado por `$<`) y genera un archivo `.txt` como salida (representado por `$@`).
+  :::
 
 ## 3. Funciones avanzadas
 
@@ -215,7 +217,7 @@ $(subst from,to,text)
 - **from**: Texto a reemplazar.
 - **to**: Texto de reemplazo.
 - **text**: Cadena donde se hace la búsqueda.
-:::
+  :::
 
 :::tip Ejemplo
 
@@ -240,7 +242,7 @@ $(patsubst pattern,replacement,text)
 - **pattern**: Patrón a buscar (puede usar `%`).
 - **replacement**: Texto con el cual reemplazar el patrón.
 - **text**: Texto donde buscar el patrón.
-:::
+  :::
 
 :::tip Ejemplo
 
@@ -265,6 +267,7 @@ Estas funciones permiten filtrar listas.
 $(filter pattern...,text)
 $(filter-out pattern...,text)
 ```
+
 :::
 
 :::tip Ejemplo
@@ -290,7 +293,7 @@ $(foreach var,list,text)
 - **var**: Variable que tomará cada valor de la lista.
 - **list**: Lista sobre la que se iterará.
 - **text**: Texto que se evaluará para cada valor.
-:::
+  :::
 
 :::tip Ejemplo
 
@@ -315,7 +318,7 @@ $(if condition,then-part[,else-part])
 - **condition**: Condición a evaluar.
 - **then-part**: Acción si la condición es verdadera.
 - **else-part**: Acción si la condición es falsa (opcional).
-:::
+  :::
 
 :::tip Ejemplo
 
@@ -383,7 +386,6 @@ La directiva `.DELETE_ON_ERROR` indica que Make debe eliminar un archivo de obje
 Esto asegura que cualquier archivo generado se eliminará si ocurre un error en su construcción, manteniendo el sistema limpio.
 :::
 
-
 ### 3.3. Condicionales
 
 Makefiles permiten el uso de estructuras condicionales para adaptar las reglas según diferentes entornos o configuraciones. Esto es útil para crear Makefiles más flexibles y reutilizables.
@@ -400,7 +402,7 @@ endif
 
 - **condición**: La condición a evaluar (puede ser una variable o expresión).
 - **acción**: La acción a realizar si la condición es verdadera o falsa.
-:::
+  :::
 
 :::tip Ejemplo
 
@@ -429,7 +431,7 @@ endef
 
 - **nombre_de_macro**: El nombre de la macro que se define.
 - **comandos**: Los comandos que ejecutará la macro.
-:::
+  :::
 
 :::tip Ejemplo de macro
 
@@ -557,10 +559,10 @@ Asegurar la portabilidad de los Makefiles es crucial cuando el proyecto se compi
 
 2. **Evitar características específicas de shell:** En la medida de lo posible, es preferible no depender de características o comandos específicos de una shell particular (como `bash`), ya que esto puede limitar la compatibilidad con otros sistemas.
 
-    :::tip Ejemplo
+   :::tip Ejemplo
 
-    Evitar comandos específicos de `bash` como `$(shell command)` para funciones complejas, y en su lugar, usar sintaxis que sea compatible con múltiples shells o sistemas.
-    :::
+   Evitar comandos específicos de `bash` como `$(shell command)` para funciones complejas, y en su lugar, usar sintaxis que sea compatible con múltiples shells o sistemas.
+   :::
 
 ## 5. Casos de uso avanzados
 
@@ -642,35 +644,42 @@ GNU Make ofrece diversas opciones de línea de comandos que permiten modificar s
 
 - `-j [N]`: Ejecuta N tareas en paralelo, aprovechando sistemas con múltiples núcleos. Esta opción es especialmente útil en compilaciones grandes, ya que reduce el tiempo de construcción al ejecutar tareas simultáneamente.
   :::tip Ejemplo
-  
+
   ```sh
   make -j4
   ```
+
   En este caso, se ejecutan cuatro tareas en paralelo.
   :::
-  
+
 - `-n` o `--dry-run`: Muestra los comandos que se ejecutarían, pero sin ejecutarlos realmente. Es una excelente herramienta para verificar que las reglas y dependencias estén correctamente configuradas antes de hacer cambios efectivos.
-  
+
   :::tip Ejemplo
+
   ```sh
   make -n install
   ```
+
   Muestra los comandos que se ejecutarían para la regla `install` sin ejecutarlos.
   :::
 
 - `-B` o `--always-make`: Fuerza la reconstrucción de todos los objetivos, independientemente de si los archivos están actualizados o no.
   :::tip Ejemplo
+
   ```sh
   make -B
   ```
+
   Vuelve a compilar todo el proyecto sin considerar si los archivos objetivo ya están actualizados.
   :::
 
 - `-d`: Proporciona información detallada de depuración, mostrando cómo Make decide qué archivos necesitan ser reconstruidos y cómo se evalúan las reglas.
   :::tip Ejemplo
+
   ```sh
   make -d
   ```
+
   Ejecuta Make con información de depuración detallada, útil para diagnosticar problemas complejos en Makefiles.
   :::
 
@@ -688,26 +697,32 @@ GNU Make utiliza varias variables de entorno para ajustar su comportamiento. Est
 
 - `MAKEFILES`: Es una lista de Makefiles que se incluyen automáticamente antes de procesar el Makefile principal. Esta variable es útil cuando se desea forzar la inclusión de ciertos archivos en todas las invocaciones de Make sin tener que modificar cada Makefile individual.
   :::tip Ejemplo
+
   ```sh
   export MAKEFILES=common.mk
   ```
+
   Hace que `common.mk` se incluya automáticamente en todos los Makefiles.
   :::
 
 - `MAKELEVEL`: Indica el nivel de recursión actual en una construcción de Make. Este valor es útil para evitar comportamientos indeseados en construcciones recursivas o para imprimir mensajes específicos solo en el nivel más alto de la recursión.
   :::tip Ejemplo
+
   ```makefile
   ifeq ($(MAKELEVEL),0)
       @echo "Ejecutando nivel superior de Make"
   endif
   ```
+
   :::
 
 - `MAKEFLAGS`: Almacena las opciones de línea de comandos que se pasaron a Make. Es útil para mantener las mismas opciones de compilación en todo un proyecto, especialmente en construcciones recursivas.
   :::tip Ejemplo
+
   ```bash
   make -j4
   ```
+
   Después de ejecutar este comando, `MAKEFLAGS` almacenará `-j4`, garantizando que las llamadas recursivas a Make también utilicen esta opción.
   :::
 

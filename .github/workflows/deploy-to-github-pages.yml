@@ -21,7 +21,7 @@ env:
 jobs:
   build:
     name: Build Wiki
-    
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,7 +32,7 @@ jobs:
         with:
           node-version: 23.X
           cache: yarn
-          
+
       # Cache Node.js dependencies
       - name: Cache Node modules
         uses: actions/cache@v3
@@ -74,12 +74,12 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    
+
     # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages

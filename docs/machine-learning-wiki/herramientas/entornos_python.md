@@ -1,10 +1,10 @@
 ---
-sidebar_position: 1  
+sidebar_position: 1
 authors:
-  - name: Daniel Bazo Correa  
-description: Creación y gestión de entornos virtuales de Python con VENV y Anaconda.  
-title: Gestión de entornos en Python  
-toc_max_heading_level: 3  
+  - name: Daniel Bazo Correa
+description: Creación y gestión de entornos virtuales de Python con VENV y Anaconda.
+title: Gestión de entornos en Python
+toc_max_heading_level: 3
 ---
 
 ## 1. Introducción
@@ -15,9 +15,9 @@ toc_max_heading_level: 3
   <em>Logo de Anaconda</em>
 </p>
 
-**Anaconda** es una plataforma de código abierto que facilita la creación y gestión de entornos virtuales de Python, diseñada especialmente para proyectos de ciencia de datos y aprendizaje automático. 
+**Anaconda** es una plataforma de código abierto que facilita la creación y gestión de entornos virtuales de Python, diseñada especialmente para proyectos de ciencia de datos y aprendizaje automático.
 
-Proporciona una distribución de Python con numerosas bibliotecas preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas para trabajar con cuadernos [Jupyter](https://jupyter.org/). 
+Proporciona una distribución de Python con numerosas bibliotecas preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas para trabajar con cuadernos [Jupyter](https://jupyter.org/).
 
 La gestión de paquetes se realiza mediante el gestor de paquetes de [**Conda**](https://anaconda.org/anaconda/repo), aunque también se puede utilizar el gestor de paquetes de [**PIP**](https://pypi.org/).
 
@@ -130,6 +130,7 @@ pip freeze | grep -v "^\-e" | cut -d = -f 1 | xargs -n1 pip install -U
 ```
 
 Donde:
+
 - `pip freeze`: Genera una lista de los paquetes instalados.
 - `grep -v "^\-e"`: Excluye las instalaciones en modo editable.
 - `cut -d = -f 1`: Extrae solo los nombres de los paquetes, sin las versiones.
@@ -226,6 +227,7 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
 ##### Eliminar todos los paquetes
 
 1. **Listar todos los paquetes instalados**:
+
    ```bash
    pip list --format=freeze > installed.txt
    ```
@@ -248,12 +250,14 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
 
 1. **Eliminar un entorno de Anaconda completo**:
    Si tienes entornos específicos que quieres eliminar, puedes hacerlo con:
+
    ```bash
    conda remove --name nombre_entorno --all
    ```
 
 2. **Eliminar paquetes de un entorno específico sin eliminar el entorno**:
    Primero, activa el entorno:
+
    ```bash
    conda activate nombre_entorno
    ```

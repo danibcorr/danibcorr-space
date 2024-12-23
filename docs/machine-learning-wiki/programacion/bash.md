@@ -26,7 +26,7 @@ toc_max_heading_level: 4
 
 ### 2.1. Ejemplo de programa base
 
-Un programa básico en BASH comienza con la línea `#!/bin/bash` (*shebang*), que indica al sistema qué intérprete debe usar para ejecutar los comandos del script. Es importante destacar que los scripts de BASH suelen tener la extensión `.sh`.
+Un programa básico en BASH comienza con la línea `#!/bin/bash` (_shebang_), que indica al sistema qué intérprete debe usar para ejecutar los comandos del script. Es importante destacar que los scripts de BASH suelen tener la extensión `.sh`.
 
 :::note
 El uso del shebang `#!/bin/bash` garantiza que el script se ejecute con el intérprete adecuado, independientemente del entorno en el que se ejecute.
@@ -55,6 +55,7 @@ También puedes ejecutar el script con el comando:
 ```bash
 bash script.sh
 ```
+
 :::
 
 ### 2.2. Pasar parámetros como argumentos
@@ -107,6 +108,7 @@ echo "¿Cuál es tu nombre?"
 read nombre
 echo "Tu nombre es $nombre"
 ```
+
 :::
 
 ### 2.5. Operaciones aritméticas
@@ -119,6 +121,7 @@ Las operaciones aritméticas en BASH se realizan dentro de `(( ))`, lo que permi
 #!/bin/bash
 echo $((5 + 5))
 ```
+
 :::
 
 Operaciones disponibles:
@@ -134,6 +137,7 @@ Operaciones disponibles:
 En BASH, las condiciones se expresan utilizando el comando `if`, junto con los operadores de comparación y lógicos.
 
 :::tip Ejemplo
+
 ```bash
 #!/bin/bash
 
@@ -145,6 +149,7 @@ else
     echo "Intruso"
 fi
 ```
+
 :::
 
 Operadores de comparación:
@@ -173,6 +178,7 @@ Recuerda que los operadores `&&` y `||` son más comunes fuera de los corchetes,
 BASH soporta varios tipos de bucles. Un bucle `for` se define de la siguiente manera:
 
 :::tip Ejemplo
+
 ```bash
 #!/bin/bash
 
@@ -180,11 +186,13 @@ for i in 1 2 3; do
     echo $i
 done
 ```
+
 :::
 
 Un bucle `while` se usa cuando se necesita repetir una acción mientras se cumpla una condición específica:
 
 :::tip Ejemplo
+
 ```bash
 #!/bin/bash
 
@@ -194,6 +202,7 @@ while [ $i -le 5 ]; do
     (( i++ ))
 done
 ```
+
 :::
 
 Comandos adicionales:
@@ -220,4 +229,5 @@ function funcion() {
 
 funcion
 ```
+
 ::::

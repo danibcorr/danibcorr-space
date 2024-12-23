@@ -11,8 +11,8 @@
   --colorFondoDoc: #fdfdf7;
   --colorTarjetas: #ffffff;
   --colorLetraFooter: #191919;
-  --primaryColor: #D6C0B3;
-  --colorLinkSelection: #AF8F6F;
+  --primaryColor: #d6c0b3;
+  --colorLinkSelection: #af8f6f;
   --accentColor: #171717;
   --borderColor: #e0e0e0;
   --transitionTime: 0.3s;
@@ -20,7 +20,7 @@
 }
 
 /* Dark Mode Variables */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #e0e0e0;
   --ifm-color-primary-dark: #cacaca;
   --ifm-color-primary-darker: #bebebe;
@@ -30,10 +30,10 @@
   --ifm-color-primary-lightest: #ffffff;
   --colorFondoDoc: #15191d;
   --colorTarjetas: #313b4b;
-  --colorLetraFooter: #E0E0E0;
-  --primaryColor: #E0E0E0;
+  --colorLetraFooter: #e0e0e0;
+  --primaryColor: #e0e0e0;
   --colorLinkSelection: #6f6f6f;
-  --accentColor: #E0E0E0;
+  --accentColor: #e0e0e0;
   --borderColor: #555555;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
@@ -96,7 +96,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   /* Hacer scrollable las tablas de Markdown en móviles */
   .markdown {
     overflow-x: auto;

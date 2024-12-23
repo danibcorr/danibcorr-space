@@ -9,9 +9,9 @@ toc_max_heading_level: 4
 
 ## Bibliografía
 
-* [Python Docs](https://docs.python.org/3/)
-* [Python Bootcamps Udemy](https://www.udemy.com/course/complete-python-bootcamp/)
-  
+- [Python Docs](https://docs.python.org/3/)
+- [Python Bootcamps Udemy](https://www.udemy.com/course/complete-python-bootcamp/)
+
 ## 1. Introducción
 
 <p align="center">
@@ -24,7 +24,7 @@ toc_max_heading_level: 4
 
 ## 2. Instalación
 
-### 2.1. Miniconda y los Jupyter Notebooks 
+### 2.1. Miniconda y los Jupyter Notebooks
 
 **Miniconda** es una versión ligera de **Conda** que incluye únicamente lo esencial: Conda, Python y algunos paquetes básicos. Su función principal es facilitar la creación de entornos virtuales para aislar dependencias y evitar conflictos entre versiones de paquetes. La instalación de Miniconda se debe realizar siguiendo las instrucciones oficiales disponibles en la [página de Miniconda](https://docs.anaconda.com/miniconda/).
 
@@ -43,34 +43,34 @@ puedes seguir los pasos del [apartado de herramientas, gestión de entornos en P
 
 A continuación, se listan algunos comandos útiles para la terminal en Linux, junto con su función:
 
-| Comando                  | Función                                                                                   |
-| ------------------------ | ----------------------------------------------------------------------------------------- |
-| `pwd`                    | Muestra la ruta completa del directorio actual.                                            |
-| `ls`                     | Lista los archivos y carpetas en el directorio actual.                                     |
-| `ls -l`                  | Muestra una lista detallada de los archivos y carpetas.                                    |
-| `cd nombre_directorio`    | Cambia al directorio especificado.                                                        |
-| `cd ..`                  | Navega al directorio superior (padre).                                                     |
-| `cd /`                   | Navega al directorio raíz del sistema.                                                     |
-| `mkdir nombre_carpeta`    | Crea una nueva carpeta con el nombre especificado.                                         |
-| `rm nombre_archivo`       | Elimina un archivo especificado.                                                          |
-| `rm -r nombre_carpeta`    | Elimina una carpeta y su contenido de manera recursiva.                                    |
-| `touch nombre_archivo`    | Crea un archivo vacío con el nombre especificado.                                          |
-| `mv origen destino`       | Mueve o renombra archivos o carpetas.                                                     |
-| `cp origen destino`       | Copia archivos o carpetas de un lugar a otro.                                             |
-| `clear`                  | Limpia la pantalla del terminal.                                                          |
+| Comando                | Función                                                 |
+| ---------------------- | ------------------------------------------------------- |
+| `pwd`                  | Muestra la ruta completa del directorio actual.         |
+| `ls`                   | Lista los archivos y carpetas en el directorio actual.  |
+| `ls -l`                | Muestra una lista detallada de los archivos y carpetas. |
+| `cd nombre_directorio` | Cambia al directorio especificado.                      |
+| `cd ..`                | Navega al directorio superior (padre).                  |
+| `cd /`                 | Navega al directorio raíz del sistema.                  |
+| `mkdir nombre_carpeta` | Crea una nueva carpeta con el nombre especificado.      |
+| `rm nombre_archivo`    | Elimina un archivo especificado.                        |
+| `rm -r nombre_carpeta` | Elimina una carpeta y su contenido de manera recursiva. |
+| `touch nombre_archivo` | Crea un archivo vacío con el nombre especificado.       |
+| `mv origen destino`    | Mueve o renombra archivos o carpetas.                   |
+| `cp origen destino`    | Copia archivos o carpetas de un lugar a otro.           |
+| `clear`                | Limpia la pantalla del terminal.                        |
 
 ### 2.4. Atajos de teclado para Jupyter Notebooks
 
 A continuación, se presentan algunos atajos de teclado útiles para trabajar en **Jupyter Notebooks**:
 
-| Atajo                     | Función                                                                                   |
-| ------------------------- | ----------------------------------------------------------------------------------------- |
-| `ctrl + shift + p`         | Abre la paleta de comandos en Visual Studio Code (incluye la opción de abrir Jupyter).    |
-| `shift + tab`              | Muestra la documentación de una función o método en Jupyter.                              |
-| `esc + m`                  | Cambia una celda a modo Markdown en Jupyter.                                              |
-| `esc + y`                  | Cambia una celda a modo de código en Jupyter.                                             |
-| `ctrl + enter`             | Ejecuta la celda actual sin avanzar a la siguiente.                                       |
-| `shift + enter`            | Ejecuta la celda actual y avanza a la siguiente.                                          |
+| Atajo              | Función                                                                                |
+| ------------------ | -------------------------------------------------------------------------------------- |
+| `ctrl + shift + p` | Abre la paleta de comandos en Visual Studio Code (incluye la opción de abrir Jupyter). |
+| `shift + tab`      | Muestra la documentación de una función o método en Jupyter.                           |
+| `esc + m`          | Cambia una celda a modo Markdown en Jupyter.                                           |
+| `esc + y`          | Cambia una celda a modo de código en Jupyter.                                          |
+| `ctrl + enter`     | Ejecuta la celda actual sin avanzar a la siguiente.                                    |
+| `shift + enter`    | Ejecuta la celda actual y avanza a la siguiente.                                       |
 
 ## 3. Conceptos básicos
 
@@ -78,36 +78,36 @@ A continuación, se presentan algunos atajos de teclado útiles para trabajar en
 
 Python ofrece varios tipos de datos fundamentales que permiten definir, almacenar y manipular información. A continuación, se detallan los principales tipos de datos y sus características:
 
-| Tipo de Datos                                   | Palabra Reservada | Ejemplos                        |
-|-------------------------------------------------|-------------------|---------------------------------|
-| **Números Enteros**                             | `int`             | `3`                    |
-| **Números Flotantes**                           | `float`           | `2.3`                |
-| **Cadenas de Texto**                            | `str`             | `"Hola"` |
-| **Listas** (colección ordenada y mutable)      | `list`            | `[10, "hello", 200.3]`           |
-| **Diccionarios** (pares clave-valor)           | `dict`            | `{"edad": 20, "nombre": "Dani"}` |
-| **Tuplas** (secuencia ordenada e inmutable)    | `tuple`           | `(10, "hello", 200.3)`           |
-| **Sets** (colección única y desordenada)        | `set`             | `{"a", "b"}`                   |
-| **Booleanos** (valores lógicos)                 | `bool`            | `True`, `False`                    |
+| Tipo de Datos                               | Palabra Reservada | Ejemplos                         |
+| ------------------------------------------- | ----------------- | -------------------------------- |
+| **Números Enteros**                         | `int`             | `3`                              |
+| **Números Flotantes**                       | `float`           | `2.3`                            |
+| **Cadenas de Texto**                        | `str`             | `"Hola"`                         |
+| **Listas** (colección ordenada y mutable)   | `list`            | `[10, "hello", 200.3]`           |
+| **Diccionarios** (pares clave-valor)        | `dict`            | `{"edad": 20, "nombre": "Dani"}` |
+| **Tuplas** (secuencia ordenada e inmutable) | `tuple`           | `(10, "hello", 200.3)`           |
+| **Sets** (colección única y desordenada)    | `set`             | `{"a", "b"}`                     |
+| **Booleanos** (valores lógicos)             | `bool`            | `True`, `False`                  |
 
 ### 3.2. Operaciones con datos
 
 Python permite realizar una amplia variedad de operaciones sobre datos numéricos y otros tipos. A continuación, se describen las principales operaciones matemáticas y funciones disponibles:
 
-| Operador/Función       | Descripción                                           |
-|------------------------|-------------------------------------------------------|
+| Operador/Función        | Descripción                                                            |
+| ----------------------- | ---------------------------------------------------------------------- |
 | `+`, `-`, `*`, `/`, `%` | Suma, resta, multiplicación, división y módulo (resto de la división). |
-| `-x`                   | Cambia el signo de un número.                         |
-| `abs(x)`               | Devuelve el valor absoluto de `x`.                    |
-| `pow(x, y)` o `x**y`   | Potencia de `x` elevado a `y`.                        |
-| `max(x, y)`            | Devuelve el valor máximo entre `x` y `y`.             |
-| `min(x, y)`            | Devuelve el valor mínimo entre `x` y `y`.             |
-| `round(x, n)`          | Redondea `x` a `n` decimales.                         |
-| `math.floor(x)`        | Redondea hacia abajo. Requiere importar `math`.       |
-| `math.ceil(x)`         | Redondea hacia arriba. Requiere importar `math`.      |
-| `math.sqrt(x)`         | Devuelve la raíz cuadrada de `x`. Requiere importar `math`. |
-| `math.pi`              | Devuelve el valor de Pi. Requiere importar `math`.    |
-| `hex(x)`               | Convierte `x` a hexadecimal.                          |
-| `bin(x)`               | Convierte `x` a binario.                              |
+| `-x`                    | Cambia el signo de un número.                                          |
+| `abs(x)`                | Devuelve el valor absoluto de `x`.                                     |
+| `pow(x, y)` o `x**y`    | Potencia de `x` elevado a `y`.                                         |
+| `max(x, y)`             | Devuelve el valor máximo entre `x` y `y`.                              |
+| `min(x, y)`             | Devuelve el valor mínimo entre `x` y `y`.                              |
+| `round(x, n)`           | Redondea `x` a `n` decimales.                                          |
+| `math.floor(x)`         | Redondea hacia abajo. Requiere importar `math`.                        |
+| `math.ceil(x)`          | Redondea hacia arriba. Requiere importar `math`.                       |
+| `math.sqrt(x)`          | Devuelve la raíz cuadrada de `x`. Requiere importar `math`.            |
+| `math.pi`               | Devuelve el valor de Pi. Requiere importar `math`.                     |
+| `hex(x)`                | Convierte `x` a hexadecimal.                                           |
+| `bin(x)`                | Convierte `x` a binario.                                               |
 
 ### 3.3. Operadores
 
@@ -115,24 +115,24 @@ Python permite realizar una amplia variedad de operaciones sobre datos numérico
 
 Los operadores de comparación permiten evaluar relaciones entre dos valores, devolviendo un resultado booleano (`True` o `False`).
 
-| Expresión | Descripción                |
-|-----------|----------------------------|
-| `A == B`    | A es igual a B.            |
-| `A != B`    | A es distinto de B.        |
-| `A < B`     | A es menor que B.          |
-| `A <= B`    | A es menor o igual que B.  |
-| `A > B`     | A es mayor que B.          |
-| `A >= B`    | A es mayor o igual que B.  |
+| Expresión | Descripción               |
+| --------- | ------------------------- |
+| `A == B`  | A es igual a B.           |
+| `A != B`  | A es distinto de B.       |
+| `A < B`   | A es menor que B.         |
+| `A <= B`  | A es menor o igual que B. |
+| `A > B`   | A es mayor que B.         |
+| `A >= B`  | A es mayor o igual que B. |
 
 #### 3.3.2. Operadores lógicos
 
 Los operadores lógicos permiten combinar varias condiciones y controlar el flujo de ejecución en función de los resultados.
 
-| Operador | Descripción                                              |
-|----------|----------------------------------------------------------|
+| Operador | Descripción                                                  |
+| -------- | ------------------------------------------------------------ |
 | `and`    | Devuelve `True` si **todas** las condiciones son verdaderas. |
-| `or`     | Devuelve `True` si **al menos una** condición es verdadera. |
-| `not`    | Invierte el valor lógico de la condición.                 |
+| `or`     | Devuelve `True` si **al menos una** condición es verdadera.  |
+| `not`    | Invierte el valor lógico de la condición.                    |
 
 Los operadores lógicos se utilizan principalmente en estructuras de control, como condicionales y bucles, para determinar el flujo del programa en función de condiciones lógicas. Estas estructuras de control se explicarán en secciones posteriores.
 
@@ -140,10 +140,10 @@ Los operadores lógicos se utilizan principalmente en estructuras de control, co
 
 Al crear variables en Python, se deben seguir ciertas reglas:
 
-* Los nombres no deben comenzar con números.
-* No se permiten espacios en los nombres.
-* No se deben utilizar los siguientes símbolos: `: ''' <> / , ? | \ ( ) ! @ ## $ % ^ & * ~ - +`.
-* Es recomendable utilizar nombres de variables en minúsculas. 
+- Los nombres no deben comenzar con números.
+- No se permiten espacios en los nombres.
+- No se deben utilizar los siguientes símbolos: `: ''' <> / , ? | \ ( ) ! @ ## $ % ^ & * ~ - +`.
+- Es recomendable utilizar nombres de variables en minúsculas.
 
 **Python es un lenguaje de tipificación dinámica**, por lo que no es necesario declarar explícitamente el tipo de dato, ya que este se asigna automáticamente según el valor. Por ejemplo:
 
@@ -191,7 +191,7 @@ print(f"El número pi con 5 decimales es: {pi:.5f}")
 
 ### 3.6. Introducción de datos
 
-Python permite recibir información del usuario mediante la función `input(...)`. Esta función siempre devuelve el valor ingresado como una cadena de texto (`string`). Por lo tanto, es necesario realizar una conversión de tipo (***casting***) si se requiere un tipo de dato diferente. Por ejemplo:
+Python permite recibir información del usuario mediante la función `input(...)`. Esta función siempre devuelve el valor ingresado como una cadena de texto (`string`). Por lo tanto, es necesario realizar una conversión de tipo (**_casting_**) si se requiere un tipo de dato diferente. Por ejemplo:
 
 ```python
 nombre = input("Introduce tu nombre: ")
@@ -202,7 +202,7 @@ print(f"Nombre: {nombre}")
 print(f"Edad: {edad}")
 ```
 
-Para convertir un `input` a un número, es necesario hacer un *casting*, como en el siguiente ejemplo, donde se convierte una entrada de tipo `string` a `float`:
+Para convertir un `input` a un número, es necesario hacer un _casting_, como en el siguiente ejemplo, donde se convierte una entrada de tipo `string` a `float`:
 
 ```python
 numero = float(input("Introduce un numero: "))
@@ -225,6 +225,7 @@ print("El sexto carácter de mi string es " + frase[5])
 ```
 
 En este caso, el índice de un string comienza en `0`, por lo que:
+
 - `frase[0]` hace referencia al primer carácter del string, que es `"H"`.
 - `frase[5]` hace referencia al sexto carácter del string, que es `"b"`. Se observa como el espacio en blanco cuenta como un carácter.
 
@@ -248,7 +249,7 @@ frase = "Hola buenas"
 nueva_frase = "h" + frase[1:]
 
 # Imprime: "hola buenas"
-print(nueva_frase)  
+print(nueva_frase)
 ```
 
 En este ejemplo, se construye una nueva cadena concatenando `"h"` con el resto del string original (`frase[1:]`), que devuelve el string desde el segundo carácter en adelante.
@@ -257,31 +258,31 @@ En este ejemplo, se construye una nueva cadena concatenando `"h"` con el resto d
 
 Las variables de tipo string en Python disponen de varias funciones incorporadas para manipular y analizar el contenido de la cadena:
 
-| Función                                           | Definición                                                                                                                                                                                                                                           |
-|---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `str(variable_a_convertir_en_string)`             | Convierte una variable en una cadena de texto.                                                                                                                                                                                                       |
-| `variable *= x`                                   | Duplica la cadena `variable` `x` veces, siendo `x` un número entero.                                                                                                                                                                                |
-| `variable[índice:]`                               | Obtiene una subcadena desde el índice hasta el final de la cadena.                                                                                                                                                                                   |
-| `variable[::X]`                                   | Obtiene caracteres de la cadena con un paso de `X`, es decir, toma un carácter cada `X` caracteres.                                                                                                                                                  |
-| `variable[::-1]`                                  | Invierte la cadena.                                                                                                                                                                                                                                   |
-| `variable.lower()`                                | Convierte toda la cadena a minúsculas.                                                                                                                                                                                                               |
-| `variable.upper()`                                | Convierte toda la cadena a mayúsculas.                                                                                                                                                                                                               |
-| `variable.isupper()`                              | Devuelve True si toda la cadena está en mayúsculas, False en caso contrario.                                                                                                                                                                         |
-| `variable.upper().isupper()`                      | Convierte la cadena a mayúsculas y devuelve True si toda la cadena está en mayúsculas.                                                                                                                                                               |
-| `variable.split()`                                | Divide la cadena en una lista de subcadenas basadas en espacios. Puede especificarse un delimitador diferente.                                                                                                                                         |
-| `len(variable)`                                   | Devuelve el número de caracteres en la cadena.                                                                                                                                                                                                       |
-| `variable.index("a")` o `variable.index("buenas")`| Devuelve el primer índice donde se encuentra el parámetro especificado.                                                                                                                                                                               |
-| `variable.replace("buenas", "me llamo Daniel")` | Reemplaza una subcadena dentro de la cadena por otra subcadena.                                                                                                                                                                                        |
-| `variable.count('x')`                             | Cuenta el número de veces que aparece el carácter especificado.                                                                                                                                                                                       |
-| `variable.find('x')`                              | Devuelve la primera posición en la que se encuentra el carácter especificado.                                                                                                                                                                         |
-| `variable.isalnum()`                              | Devuelve True si todos los caracteres son alfanuméricos.                                                                                                                                                                                              |
-| `variable.isalpha()`                              | Devuelve True si todos los caracteres son alfabéticos.                                                                                                                                                                                                |
-| `variable.islower()`                              | Devuelve True si todos los caracteres están en minúsculas.                                                                                                                                                                                           |
-| `variable.isspace()`                              | Devuelve True si todos los caracteres son espacios en blanco.                                                                                                                                                                                          |
-| `variable.istitle()`                              | Devuelve True si la primera letra de cada palabra está en mayúsculas.                                                                                                                                                                                 |
-| `variable.split('x')`                             | Divide la cadena en partes cuando encuentra el carácter `x`.                                                                                                                                                                                          |
-| `variable.partition('x')`                         | Divide la cadena en dos partes en el primer encuentro del carácter `x`.                                                                                                                                                                                 |
-| `variable.strip()`                                | Elimina los espacios al principio y al final de la cadena.                                                                                                                                                                                             |
+| Función                                            | Definición                                                                                                     |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `str(variable_a_convertir_en_string)`              | Convierte una variable en una cadena de texto.                                                                 |
+| `variable *= x`                                    | Duplica la cadena `variable` `x` veces, siendo `x` un número entero.                                           |
+| `variable[índice:]`                                | Obtiene una subcadena desde el índice hasta el final de la cadena.                                             |
+| `variable[::X]`                                    | Obtiene caracteres de la cadena con un paso de `X`, es decir, toma un carácter cada `X` caracteres.            |
+| `variable[::-1]`                                   | Invierte la cadena.                                                                                            |
+| `variable.lower()`                                 | Convierte toda la cadena a minúsculas.                                                                         |
+| `variable.upper()`                                 | Convierte toda la cadena a mayúsculas.                                                                         |
+| `variable.isupper()`                               | Devuelve True si toda la cadena está en mayúsculas, False en caso contrario.                                   |
+| `variable.upper().isupper()`                       | Convierte la cadena a mayúsculas y devuelve True si toda la cadena está en mayúsculas.                         |
+| `variable.split()`                                 | Divide la cadena en una lista de subcadenas basadas en espacios. Puede especificarse un delimitador diferente. |
+| `len(variable)`                                    | Devuelve el número de caracteres en la cadena.                                                                 |
+| `variable.index("a")` o `variable.index("buenas")` | Devuelve el primer índice donde se encuentra el parámetro especificado.                                        |
+| `variable.replace("buenas", "me llamo Daniel")`    | Reemplaza una subcadena dentro de la cadena por otra subcadena.                                                |
+| `variable.count('x')`                              | Cuenta el número de veces que aparece el carácter especificado.                                                |
+| `variable.find('x')`                               | Devuelve la primera posición en la que se encuentra el carácter especificado.                                  |
+| `variable.isalnum()`                               | Devuelve True si todos los caracteres son alfanuméricos.                                                       |
+| `variable.isalpha()`                               | Devuelve True si todos los caracteres son alfabéticos.                                                         |
+| `variable.islower()`                               | Devuelve True si todos los caracteres están en minúsculas.                                                     |
+| `variable.isspace()`                               | Devuelve True si todos los caracteres son espacios en blanco.                                                  |
+| `variable.istitle()`                               | Devuelve True si la primera letra de cada palabra está en mayúsculas.                                          |
+| `variable.split('x')`                              | Divide la cadena en partes cuando encuentra el carácter `x`.                                                   |
+| `variable.partition('x')`                          | Divide la cadena en dos partes en el primer encuentro del carácter `x`.                                        |
+| `variable.strip()`                                 | Elimina los espacios al principio y al final de la cadena.                                                     |
 
 ### 3.8. Declaraciones condicionales
 
@@ -348,38 +349,38 @@ for variable in iterable:
 1. **Recorrer un rango de números**  
    La función `range(n, m, s)` genera una secuencia de números desde `n` hasta `m - 1`, con un paso de `s`. Por ejemplo, para mostrar números desde 0 hasta 10 en pasos de 2:
 
-    ```python
-    for numero in range(0, 11, 2): 
-        print(numero)
-    ```
+   ```python
+   for numero in range(0, 11, 2):
+       print(numero)
+   ```
 
 2. **Recorrer los caracteres de un string**  
    Se puede utilizar `range()` y `len()` para iterar sobre los índices de un string:
 
-    ```python
-    mi_string = "Hola caracola"
-    for letra in range(len(mi_string)):
-        print(mi_string[letra])
-    ```
+   ```python
+   mi_string = "Hola caracola"
+   for letra in range(len(mi_string)):
+       print(mi_string[letra])
+   ```
 
    Alternativamente, se puede iterar directamente sobre los caracteres del string:
 
-    ```python
-    mi_string = "Hola caracola"
-    for letra in mi_string:
-        print(letra)
-    ```
+   ```python
+   mi_string = "Hola caracola"
+   for letra in mi_string:
+       print(letra)
+   ```
 
 3. **Recorrer dos secuencias simultáneamente con `zip()`**  
    `zip()` permite recorrer dos secuencias al mismo tiempo, emparejando sus elementos:
 
-    ```python
-    mi_lista1 = "Hola"
-    mi_lista2 = "Yadi"
+   ```python
+   mi_lista1 = "Hola"
+   mi_lista2 = "Yadi"
 
-    for item in zip(mi_lista1, mi_lista2):
-        print(item)
-    ```
+   for item in zip(mi_lista1, mi_lista2):
+       print(item)
+   ```
 
    En este ejemplo, solo se recorrerán los caracteres hasta el final del string más corto.
 
@@ -407,14 +408,14 @@ while condicion:
 1. **Crear un contador**  
    Un bucle `while` puede usarse para incrementar un contador hasta que alcance un valor determinado:
 
-    ```python
-    contador = 0
-    while contador < 5:
-        print(contador)
-        contador += 1
-    ```
+   ```python
+   contador = 0
+   while contador < 5:
+       print(contador)
+       contador += 1
+   ```
 
-    En este caso, el bucle imprime los valores de `contador` mientras este sea menor que 5.
+   En este caso, el bucle imprime los valores de `contador` mientras este sea menor que 5.
 
 #### 3.9.3. Control de flujo en bucles: `break`, `continue`, y `pass`
 
@@ -547,37 +548,37 @@ El acceso a los elementos se realiza mediante el índice. Por ejemplo:
 lista_amigos = ["Jorge", "Fran", "Ricardo"]
 
 # Accede al primer elemento
-print(f"El primer amigo es {lista_amigos[0]}")        
+print(f"El primer amigo es {lista_amigos[0]}")
 
-# Accede al último elemento 
-print(f"Mi amigo del pueblo es {lista_amigos[-1]}")   
+# Accede al último elemento
+print(f"Mi amigo del pueblo es {lista_amigos[-1]}")
 
 # Selecciona un rango de elementos
-print(lista_amigos[0:2])       
+print(lista_amigos[0:2])
 
 # Muestra la lista completa
-print(lista_amigos)                                 
+print(lista_amigos)
 ```
 
 #### 4.1.1. Métodos
 
-| Función                  | Definición                                                                                                                                              |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `lista[indice] = x`      | Cambia el elemento en el índice especificado por `x`.                                                                                                  |
-| `lista.extend(x)`        | Agrega los elementos de `x` al final de la lista actual.                                                                                              |
-| `lista.append(x)`        | Añade un elemento `x` al final de la lista.                                                                                                           |
-| `lista.insert(indice,x)` | Inserta `x` en el índice especificado.                                                                                                                |
-| `lista.remove(x)`        | Elimina la primera aparición de `x` en la lista.                                                                                                      |
-| `lista.clear()`          | Vacía la lista.                                                                                                                                        |
-| `lista.pop()`            | Elimina el último elemento de la lista o el elemento en el índice especificado.                                                                       |
-| `lista.index(x)`         | Devuelve el índice de la primera aparición de `x`.                                                                                                     |
-| `lista.count(x)`         | Devuelve el número de veces que `x` aparece en la lista.                                                                                              |
-| `lista.sort()`           | Ordena la lista en orden ascendente.                                                                                                                   |
-| `lista.reverse()`        | Invierte el orden de los elementos en la lista.                                                                                                       |
-| `lista2 = lista1.copy()` | Crea una copia de `lista1` en `lista2`.                                                                                                                 |
-| `max(lista)`             | Devuelve el valor máximo de la lista.                                                                                                                  |
-| `min(lista)`             | Devuelve el valor mínimo de la lista.                                                                                                                  |
-| `del lista[x]`           | Elimina el elemento en el índice `x` de la lista.                                                                                                     |
+| Función                  | Definición                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| `lista[indice] = x`      | Cambia el elemento en el índice especificado por `x`.                           |
+| `lista.extend(x)`        | Agrega los elementos de `x` al final de la lista actual.                        |
+| `lista.append(x)`        | Añade un elemento `x` al final de la lista.                                     |
+| `lista.insert(indice,x)` | Inserta `x` en el índice especificado.                                          |
+| `lista.remove(x)`        | Elimina la primera aparición de `x` en la lista.                                |
+| `lista.clear()`          | Vacía la lista.                                                                 |
+| `lista.pop()`            | Elimina el último elemento de la lista o el elemento en el índice especificado. |
+| `lista.index(x)`         | Devuelve el índice de la primera aparición de `x`.                              |
+| `lista.count(x)`         | Devuelve el número de veces que `x` aparece en la lista.                        |
+| `lista.sort()`           | Ordena la lista en orden ascendente.                                            |
+| `lista.reverse()`        | Invierte el orden de los elementos en la lista.                                 |
+| `lista2 = lista1.copy()` | Crea una copia de `lista1` en `lista2`.                                         |
+| `max(lista)`             | Devuelve el valor máximo de la lista.                                           |
+| `min(lista)`             | Devuelve el valor mínimo de la lista.                                           |
+| `del lista[x]`           | Elimina el elemento en el índice `x` de la lista.                               |
 
 #### 4.1.2. Uso de bucles `for` dentro de listas
 
@@ -649,10 +650,10 @@ print(f"Mi lista de tuplas es {lista_tuplas}")
 
 A pesar de ser inmutables, las tuplas tienen algunos métodos útiles:
 
-| Función                  | Descripción                                                                                   |
-| ------------------------ | --------------------------------------------------------------------------------------------- |
-| `tupla.count(x)`         | Devuelve el número de veces que `x` aparece en la tupla.                                       |
-| `tupla.index(x)`         | Devuelve el índice de la primera aparición de `x` en la tupla.                                 |
+| Función          | Descripción                                                    |
+| ---------------- | -------------------------------------------------------------- |
+| `tupla.count(x)` | Devuelve el número de veces que `x` aparece en la tupla.       |
+| `tupla.index(x)` | Devuelve el índice de la primera aparición de `x` en la tupla. |
 
 ### 4.3. Sets
 
@@ -665,28 +666,28 @@ Un set se puede definir usando llaves `{}` o con la función `set()`:
 mi_set = set()
 
 # Añadir elementos
-mi_set.add(1) 
+mi_set.add(1)
 mi_set.add(1)  # No se añadirá, ya que el elemento es único
 
 # Inicializar un set con elementos
 mi_nuevo_set = {'a', 'b', 'c'}
 ```
 
-#### 4.3.1. Métodos 
+#### 4.3.1. Métodos
 
 Un set se puede definir usando llaves `{}` o con la función `set()`:
 
-| Función                    | Definición                                                                                                                 |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `s.add(x)`                 | Añade un elemento `x` al set.                                                                                              |
-| `s.clear()`                | Elimina todos los elementos del set.                                                                                      |
-| `sc = s.copy()`            | Crea una copia del set.                                                                                                   |
-| `s1.difference(s2)`        | Devuelve los elementos en `s1` que no están en `s2`.                                                                     |
-| `s1.difference_update(s2)` | Elimina los elementos en `s1` que están en `s2`.                                                                         |
-| `s.discard(elem)`          | Elimina el elemento `elem` del set sin causar error si `elem` no está presente.                                           |
-| `s1.intersection(s2)`      | Devuelve los elementos comunes a `s1` y `s2`.                                                                            |
-| `s1.issubset(s2)`          | Verifica si todos los elementos de `s1` están en `s2`.                                                                  |
-| `s1.union(s2)`             | Devuelve la unión de `s1` y `s2`, combinando todos los elementos únicos de ambos sets.                                   |
+| Función                    | Definición                                                                             |
+| -------------------------- | -------------------------------------------------------------------------------------- |
+| `s.add(x)`                 | Añade un elemento `x` al set.                                                          |
+| `s.clear()`                | Elimina todos los elementos del set.                                                   |
+| `sc = s.copy()`            | Crea una copia del set.                                                                |
+| `s1.difference(s2)`        | Devuelve los elementos en `s1` que no están en `s2`.                                   |
+| `s1.difference_update(s2)` | Elimina los elementos en `s1` que están en `s2`.                                       |
+| `s.discard(elem)`          | Elimina el elemento `elem` del set sin causar error si `elem` no está presente.        |
+| `s1.intersection(s2)`      | Devuelve los elementos comunes a `s1` y `s2`.                                          |
+| `s1.issubset(s2)`          | Verifica si todos los elementos de `s1` están en `s2`.                                 |
+| `s1.union(s2)`             | Devuelve la unión de `s1` y `s2`, combinando todos los elementos únicos de ambos sets. |
 
 ### 4.4. Diccionarios
 
@@ -703,7 +704,7 @@ conversion_meses = {
 }
 
 # Acceso a valores
-print(conversion_meses["Ene"]) 
+print(conversion_meses["Ene"])
 print(conversion_meses.get("Ene"))
 
 # Manejo de claves no encontradas
@@ -711,15 +712,15 @@ clave = "Daniel"
 print(conversion_meses.get(clave, f"La clave {clave} no está en el diccionario"))
 ```
 
-#### 4.4.1. Métodos 
+#### 4.4.1. Métodos
 
 Los diccionarios ofrecen varios métodos para interactuar con sus elementos:
 
-| Función                  | Definición                                                                                   |
-| ------------------------ | ------------------------------------------------------------------------------------------ |
-| `diccionario.items()`    | Devuelve una vista de los pares clave-valor del diccionario.                              |
-| `diccionario.keys()`     | Devuelve una vista de las claves del diccionario.                                         |
-| `diccionario.values()`   | Devuelve una vista de los valores del diccionario.                                         |
+| Función                | Definición                                                   |
+| ---------------------- | ------------------------------------------------------------ |
+| `diccionario.items()`  | Devuelve una vista de los pares clave-valor del diccionario. |
+| `diccionario.keys()`   | Devuelve una vista de las claves del diccionario.            |
+| `diccionario.values()` | Devuelve una vista de los valores del diccionario.           |
 
 #### 4.4.2. Casos prácticos
 
@@ -803,7 +804,7 @@ Para obtener una lista de todos los métodos disponibles para un tipo de objeto,
 
 ```python
 # Muestra todos los métodos disponibles para objetos de tipo str
-print(dir(str))  
+print(dir(str))
 ```
 
 #### 5.1.2. Obtener ayuda sobre un método específico
@@ -812,7 +813,7 @@ Puedes obtener información detallada sobre un método específico utilizando la
 
 ```python
 # Muestra la documentación para el método upper()
-help(str.upper)  
+help(str.upper)
 ```
 
 Esta función te proporcionará una descripción del método, su uso y posibles parámetros.
@@ -839,7 +840,7 @@ Las funciones pueden tomar cualquier número de parámetros, y estos parámetros
 
 ```python
 def saludo(nombre="Mundo"):
-    
+
     return f"Hola, {nombre}!"
 
 print(saludo())
@@ -891,7 +892,7 @@ comprobar_lista([1, 1, 1, 1, 1, 1, 23, 56, 87, 918, 23, 12, 3, 2, 4, 6, 5])
 ##### Función con tuplas
 
 Este ejemplo muestra una función que determina el trabajador con más horas trabajadas:
-                                                                                
+
 ```python
 horas_trabajadores = [("Daniel", 22), ("Kike", 20), ("Ricardo", 25)]
 
@@ -1006,7 +1007,7 @@ Estos ejemplos muestran cómo las funciones en Python pueden contener lógica co
 
 ### 5.3. Argumentos Arbitrarios, \*Args y \*\*Kwargs
 
-En Python, los términos **`*args`** y **`**kwargs`** se utilizan en la definición de funciones para permitir que estas acepten un número arbitrario de argumentos.
+En Python, los términos **`*args`** y **`**kwargs`\*\* se utilizan en la definición de funciones para permitir que estas acepten un número arbitrario de argumentos.
 
 En el siguiente ejemplo, `a` y `b` son argumentos posicionales. La función `mifuncion` toma estos dos argumentos, los suma y luego multiplica el resultado por 0.05:
 
@@ -1015,7 +1016,7 @@ def mifuncion(a, b):
 
     return sum((a, b)) * 0.05
 
-mifuncion(40,60) 
+mifuncion(40,60)
 ```
 
 Sin embargo, si quisiéramos que esta función pudiera manejar más de dos números, tendríamos que modificar la definición de la función para incluir más parámetros. Una opción sería asignar un valor predeterminado a estos parámetros adicionales:
@@ -1040,7 +1041,7 @@ En este caso, **`*args`** permite tratar la entrada como una tupla de parámetro
 
 #### 5.3.2. Funciones con \*\*Kwargs
 
-De manera similar, Python ofrece una forma de manejar un número arbitrario de argumentos de palabras clave. En lugar de crear una tupla, crea un diccionario. Para ello, usamos **`**kwargs`**:
+De manera similar, Python ofrece una forma de manejar un número arbitrario de argumentos de palabras clave. En lugar de crear una tupla, crea un diccionario. Para ello, usamos **`**kwargs`\*\*:
 
 ```python
 def mifuncion(**kwargs):
@@ -1052,7 +1053,7 @@ def mifuncion(**kwargs):
     else:
 
         print("No se encontró la fruta")
-    
+
     if 'verduras' in kwargs:
 
         print(f"Mi verdura favorita es la {kwargs['verduras']}")
@@ -1066,7 +1067,7 @@ mifuncion(fruta = 'manzana', verduras = 'zanahoria')
 
 #### 5.3.3. Combinando \*Args y \*\*Kwargs
 
-También podemos combinar **`*args`** y **`**kwargs`** en la misma función:
+También podemos combinar **`*args`** y **`**kwargs`\*\* en la misma función:
 
 ```python
 def mifuncion(*args, **kwargs):
@@ -1080,17 +1081,17 @@ En este caso, `args` es una tupla de los argumentos posicionales y `kwargs` es u
 
 ### 5.4. Funciones anónimas (Lambdas), Map y Filter
 
-Las **expresiones Lambda**, junto con las funciones **`map()`** y **`filter()`**, son herramientas poderosas en Python que permiten un procesamiento de datos avanzado. 
+Las **expresiones Lambda**, junto con las funciones **`map()`** y **`filter()`**, son herramientas poderosas en Python que permiten un procesamiento de datos avanzado.
 
-Las **expresiones Lambda** son una forma rápida de crear funciones anónimas, es decir, funciones que se utilizan una sola vez. 
+Las **expresiones Lambda** son una forma rápida de crear funciones anónimas, es decir, funciones que se utilizan una sola vez.
 
 ```python
 lambda num: pow(num,2)
 ```
 
-Esta expresión lambda toma un número, lo eleva al cuadrado y devuelve el resultado. 
+Esta expresión lambda toma un número, lo eleva al cuadrado y devuelve el resultado.
 
-La función **`map()`** aplica una función a cada elemento de una lista, devolviendo una nueva lista con los resultados. 
+La función **`map()`** aplica una función a cada elemento de una lista, devolviendo una nueva lista con los resultados.
 
 ```python
 mis_nums = [1,2,3,4,5]
@@ -1125,7 +1126,7 @@ Es importante recordar que las expresiones lambda pueden tomar múltiples argume
 
 Los decoradores en Python son una herramienta poderosa que permite "decorar" una función, es decir, modificar su comportamiento sin alterar su código fuente. Esto es útil cuando queremos añadir funcionalidades a una función existente sin modificar su definición.
 
-Los decoradores tienen muchas aplicaciones. Por ejemplo, se utilizan en el desarrollo web con frameworks como Flask para añadir comportamientos a las funciones de ruta, como requerir que un usuario esté autenticado para acceder a ciertas páginas. También se utilizan para crear *loggers*, que registran cuándo se llaman a ciertas funciones y con qué argumentos, lo cual es útil para depurar y entender el flujo de ejecución de un programa. En resumen, los decoradores ofrecen una forma elegante y potente de modificar el comportamiento de las funciones en Python.
+Los decoradores tienen muchas aplicaciones. Por ejemplo, se utilizan en el desarrollo web con frameworks como Flask para añadir comportamientos a las funciones de ruta, como requerir que un usuario esté autenticado para acceder a ciertas páginas. También se utilizan para crear _loggers_, que registran cuándo se llaman a ciertas funciones y con qué argumentos, lo cual es útil para depurar y entender el flujo de ejecución de un programa. En resumen, los decoradores ofrecen una forma elegante y potente de modificar el comportamiento de las funciones en Python.
 
 En Python, las funciones son objetos de primera clase. Esto significa que pueden ser asignadas a variables, almacenadas en estructuras de datos, pasadas como argumentos a otras funciones e incluso retornadas como valores de otras funciones. Aquí tienes un ejemplo:
 
@@ -1176,7 +1177,7 @@ def funcion_cubo_generador(n):
 
     for x in range(n):
 
-        yield pow(x,3) 
+        yield pow(x,3)
 
 print(list(funcion_cubo_generador(10)))  # Imprime: [0, 1, 8, 27, 64, 125, 216, 343, 512, 729]
 ```
@@ -1219,7 +1220,7 @@ end_time = time.time() - start_time
 print(end_time)
 ```
 
-En el código anterior, ambas funciones dan un resultado muy similar, por lo que es difícil ver una diferencia real. Sin embargo, podemos importar la biblioteca *timeit*, que permite realizar mediciones más precisas con un número de repeticiones y parámetros que podemos asignar. Por ejemplo:
+En el código anterior, ambas funciones dan un resultado muy similar, por lo que es difícil ver una diferencia real. Sin embargo, podemos importar la biblioteca _timeit_, que permite realizar mediciones más precisas con un número de repeticiones y parámetros que podemos asignar. Por ejemplo:
 
 ```python
 import timeit
@@ -1247,7 +1248,7 @@ stmt2 = 'func_dos(100)'
 print(timeit.timeit(stmt2, setup2, number=100000))
 ```
 
-Es importante mencionar que Jupyter permite utilizar **funciones mágicas** (las funciones mágicas de Jupyter se activan con dos signos de porcentaje al comienzo del bloque de código), una de ellas es la función *timeit*:
+Es importante mencionar que Jupyter permite utilizar **funciones mágicas** (las funciones mágicas de Jupyter se activan con dos signos de porcentaje al comienzo del bloque de código), una de ellas es la función _timeit_:
 
 ```python
 %%timeit
@@ -1274,10 +1275,10 @@ print(printer())  # Devuelve 50
 
 En este ejemplo, la reasignación de `x` dentro de la función `printer()` no afecta a la asignación global de `x`. Esto se debe a la regla de alcance (scope) en Python, que sigue la regla LEGB:
 
-* **L, Local** — Nombres asignados de alguna manera dentro de una función (`def` o `lambda`) y que no se declaran globales en esa función.
-* **E, Enclosing function locals** — Nombres en el ámbito local de cualquier y todas las funciones de encierro (`def` o `lambda`), de interior a exterior.
-* **G, Global (module)** — Nombres asignados en el nivel superior de un archivo de módulo, o declarados globales en un `def` dentro del archivo.
-* **B, Built-in (Python)** — Nombres preasignados en el módulo de nombres incorporado: `open`, `range`, `SyntaxError`, etc.
+- **L, Local** — Nombres asignados de alguna manera dentro de una función (`def` o `lambda`) y que no se declaran globales en esa función.
+- **E, Enclosing function locals** — Nombres en el ámbito local de cualquier y todas las funciones de encierro (`def` o `lambda`), de interior a exterior.
+- **G, Global (module)** — Nombres asignados en el nivel superior de un archivo de módulo, o declarados globales en un `def` dentro del archivo.
+- **B, Built-in (Python)** — Nombres preasignados en el módulo de nombres incorporado: `open`, `range`, `SyntaxError`, etc.
 
 Este es el orden en el que Python buscará las variables. Aquí hay un ejemplo de cómo funciona:
 
@@ -1348,7 +1349,7 @@ Cuando se define una función dentro de una clase, se le llama **método**. El m
 
 ```python
 class Coche():
-    
+
     def __init__(self, marca, modelo, mejorado, acceso_coche):
         self.marca = marca
         self.modelo = modelo
@@ -1390,7 +1391,7 @@ class Perro():
         print(f"Nombre: {self.nombre}, Raza: {self.raza}, Edad: {self.edad}, Especie: {self.especie}")
 
 if __name__ == '__main__':
-        
+
     mi_perro = Perro("Labrador", "Fido", 3)
     mi_perro.informacion()
 ```
@@ -1458,9 +1459,9 @@ mi_gato = Gato("Miau")
 
 # Llamada al mismo método con diferentes clases
 # Imprime: El perro Fido ladra
-mi_perro.sonido() 
-# Imprime: El gato Miau maulla 
-mi_gato.sonido()  
+mi_perro.sonido()
+# Imprime: El gato Miau maulla
+mi_gato.sonido()
 ```
 
 En este ejemplo, tanto la clase `Perro` como la clase `Gato` tienen el método `sonido`, pero el comportamiento es diferente según el tipo de objeto que lo invoque.
@@ -1489,7 +1490,7 @@ class Perro(Animal):
 mi_perro = Perro("Fido")
 
 # Imprime: Fido hace woof!
-print(mi_perro.sonido())  
+print(mi_perro.sonido())
 ```
 
 En este caso, `Animal` es una clase base abstracta, y la clase `Perro` debe implementar el método `sonido`. Si no se implementa el método en la subclase, se genera un error.
@@ -1684,19 +1685,19 @@ def limite(eleccion):
 def eleccion_usuario():
 
     eleccion = input("Numero de 1-10: ")
-    
+
     while not eleccion.isdigit() or not limite(eleccion):
 
         eleccion = input("Numero de 1-10: ")
-        
+
         if not eleccion.isdigit():
 
             print("El valor introducido no es un numero")
-        
+
         if eleccion.isdigit() and not limite(eleccion):
 
             print("El numero introducido supero el limite")
-    
+
     return int(eleccion)
 
 eleccion_usuario()
@@ -1718,9 +1719,9 @@ El manejo de errores es una estrategia que nos permite planificar y gestionar po
 
 Existen tres palabras clave para el manejo de errores en Python:
 
-* `try`: Este es el bloque de código que se intentará ejecutar (puede llevar a un error).
-* `except`: Bloque de código que se ejecutará en caso de que haya un error en el bloque de prueba (`try`).
-* `finally`: Un bloque final de código que se ejecutará independientemente de si hubo un error o no.
+- `try`: Este es el bloque de código que se intentará ejecutar (puede llevar a un error).
+- `except`: Bloque de código que se ejecutará en caso de que haya un error en el bloque de prueba (`try`).
+- `finally`: Un bloque final de código que se ejecutará independientemente de si hubo un error o no.
 
 Aquí tienes un ejemplo de cómo se utilizan estas palabras clave:
 
@@ -1734,7 +1735,7 @@ except TypeError:
 
     print("Hubo un problema con el tipo")
 
-except OSError: 
+except OSError:
 
     print("Hubo un error de OSError")
 
@@ -1774,7 +1775,7 @@ Python tiene más excepciones implementadas que puedes consultar en la documenta
 
 ### 8.3. Depurador de Python
 
-El depurador o **debugger** se emplea para identificar y corregir errores en el código. En lugar de utilizar `print()` para ver qué sucede a cada rato, podemos usar el depurador de Python, *pdb*. Por ejemplo:
+El depurador o **debugger** se emplea para identificar y corregir errores en el código. En lugar de utilizar `print()` para ver qué sucede a cada rato, podemos usar el depurador de Python, _pdb_. Por ejemplo:
 
 ```python
 import pdb
@@ -1785,10 +1786,10 @@ y = 1
 
 resultado1 = z + y
 
-# Al añadir este depurador, podemos introducir las variables que se hayan declarado 
+# Al añadir este depurador, podemos introducir las variables que se hayan declarado
 # con la intención de ver el tipo incluso podemos realizar operaciones en ella,
 # para ver si el resultado es el esperado o no.
-# Una vez que hemos visto posibles casos y los fallos, pulsamos "q" para salir 
+# Una vez que hemos visto posibles casos y los fallos, pulsamos "q" para salir
 # del depurador
 
 pdb.set_trace()
@@ -1802,8 +1803,8 @@ Las pruebas unitarias son esenciales a medida que expandimos nuestros proyectos 
 
 Existen diferentes herramientas para probar el código, pero nos centraremos en dos de ellas:
 
-* Pylint: Esta es una biblioteca que analiza el código e informa de posibles problemas.
-* Unittest: Esta biblioteca incorporada permite probar tus propios programas y comprobar que estás obteniendo los resultados deseados.
+- Pylint: Esta es una biblioteca que analiza el código e informa de posibles problemas.
+- Unittest: Esta biblioteca incorporada permite probar tus propios programas y comprobar que estás obteniendo los resultados deseados.
 
 Para usar Pylint, ejecuta el siguiente código en la terminal:
 
@@ -1842,7 +1843,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-En este ejemplo, `unittest` se utiliza para comprobar que la función `prueba` del archivo `cap85a.py` devuelve el resultado esperado. Si el resultado es el esperado, la prueba pasará. Si no, la prueba fallará y se mostrará un mensaje de error. 
+En este ejemplo, `unittest` se utiliza para comprobar que la función `prueba` del archivo `cap85a.py` devuelve el resultado esperado. Si el resultado es el esperado, la prueba pasará. Si no, la prueba fallará y se mostrará un mensaje de error.
 
 ## 9. Trabajo con archivos y directorios
 
@@ -1856,24 +1857,23 @@ file = open(dirección_del_fichero)
 
 Python permite asignar diferentes permisos (escritura/lectura/ambas...) al fichero, algunos de estos permisos son:
 
-| Permiso | Definición |
-| ------- | ---------- |
-| r       | Solo lectura. |
-| w       | Solo escritura, reescribirá los archivos existentes o creará uno nuevo. |
-| a       | Para añadir información al final del archivo. |
-| r+      | Lectura y escritura. |
+| Permiso | Definición                                                                   |
+| ------- | ---------------------------------------------------------------------------- |
+| r       | Solo lectura.                                                                |
+| w       | Solo escritura, reescribirá los archivos existentes o creará uno nuevo.      |
+| a       | Para añadir información al final del archivo.                                |
+| r+      | Lectura y escritura.                                                         |
 | w+      | Escritura y lectura, reescribirá los archivos existentes o creará uno nuevo. |
-| wb      | Modo archivo, escritura y binario. |
-
+| wb      | Modo archivo, escritura y binario.                                           |
 
 Para poder leer un fichero podemos utilizar algunas funciones como:
 
-| Función       | Definición |
-| ------------- | ---------- |
+| Función       | Definición                                                        |
+| ------------- | ----------------------------------------------------------------- |
 | `readable()`  | Devuelve un booleano para saber si se puede leer o no el fichero. |
-| `read()`      | Muestra toda la información del fichero. |
-| `readline()`  | Lee la primera línea del fichero. |
-| `readlines()` | Lee todas las líneas del fichero y las inserta en una lista. |
+| `read()`      | Muestra toda la información del fichero.                          |
+| `readline()`  | Lee la primera línea del fichero.                                 |
+| `readlines()` | Lee todas las líneas del fichero y las inserta en una lista.      |
 
 Por ejemplo:
 
@@ -1883,24 +1883,24 @@ nombre_fic = input("Nombre del fichero: ")
 fichero = open(nombre_fic,"r")
 
 if fichero.readable():
-    
+
     lista = fichero.readlines()
 ```
 
 Alternativa:
 
 ```python
-for empleado in empleado_fic: 
+for empleado in empleado_fic:
 
     print(empleado)
 
 # Es recomendado cerrar el fichero luego de tratar con el
-empleado_fic.close() 
+empleado_fic.close()
 ```
 
 Si leemos archivos directamente con métodos como `read()`, al leer de nuevo el fichero no aparecerá nada, para solucionarlo hay que usar:
 
-* `nombre_fichero.seek(0)` → Permite poner el cursor al principio del fichero.
+- `nombre_fichero.seek(0)` → Permite poner el cursor al principio del fichero.
 
 Otra forma de abrir un fichero y operar con él sería:
 
@@ -1929,11 +1929,10 @@ fichero.close()
 
 ### 9.2. Manejo de archivos y directorios
 
-
 En Python, se utilizan varios módulos para la apertura, lectura y manipulación de archivos y directorios en el sistema operativo. Los módulos principales son:
 
-* *shutil*
-* *os* (OS → Sistema Operativo)
+- _shutil_
+- _os_ (OS → Sistema Operativo)
 
 Estos módulos permiten realizar operaciones como abrir y leer archivos individuales, navegar por los directorios, mover y eliminar archivos, entre otras.
 
@@ -2035,7 +2034,7 @@ f = open('fichero_prueba.csv', mode = 'a', newline = '')
 csv_writer = csv.writer(f)
 
 csv_writer.writerow(['Nombre', 'Apellido', 'Correo'])
-csv_writer.writerows([['Daniel', 'BC', 'bsjhcjhs@gmail.com'], 
+csv_writer.writerows([['Daniel', 'BC', 'bsjhcjhs@gmail.com'],
                         ['Clara', 'RA', 'jsasdjb@gmail.com']])
 
 f.close()
@@ -2206,7 +2205,7 @@ El desarrollo de un proyecto debe realizarse bajo una estructura de código clar
 
 Un proyecto debe estar organizado en dos partes principales:
 
-1. **Directorio de la aplicación:** Contiene la lógica del código, la configuración de los modelos, los registros (*logs*), entre otros componentes.
+1. **Directorio de la aplicación:** Contiene la lógica del código, la configuración de los modelos, los registros (_logs_), entre otros componentes.
 2. **Ajustes y configuraciones:** Incluye configuraciones y dependencias del proyecto, como los archivos de gestión de dependencias (Poetry), Dockerfiles, archivos de configuración `.yml`, etc.
 
 Esta separación promueve un código modular, organizado y fácil de mantener. Facilita la colaboración entre miembros del equipo, simplifica el proceso de actualización y mejora la comprensión de la estructura del proyecto por parte de nuevos desarrolladores.

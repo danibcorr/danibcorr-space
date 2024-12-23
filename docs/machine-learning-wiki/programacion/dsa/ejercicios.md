@@ -9,8 +9,8 @@ toc_max_heading_level: 4
 
 ## Bibliografía
 
-* [Leetcode BLIND-75 Solutions](https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf)
-  
+- [Leetcode BLIND-75 Solutions](https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf)
+
 ## 1. Ejercicios fáciles
 
 ### Two sum
@@ -67,6 +67,7 @@ def funcion2(lista: list[int], target: int) -> list[int]:
 
             diccionario[valor] = i
 ```
+
 </details>
 
 ### Best time to buy and sell stock
@@ -129,9 +130,10 @@ def funcion2(lista: list[int]) -> list[int]:
         elif vali > tupla_max[-1] and i > tupla_min[0]:
 
             tupla_max = (i, vali)
-    
+
     return [tupla_max[0], tupla_min[0], tupla_max[-1] - tupla_min[-1]]
 ```
+
 </details>
 
 ### Contains duplicate
@@ -157,7 +159,7 @@ def funcion(lista: list[int]) -> bool:
     """
     O(N^2)
     """
-    
+
     for i, vali in enumerate(lista):
 
         for j, valj in enumerate(lista[i + 1:]):
@@ -188,6 +190,7 @@ def funcion2(lista: list[int]) -> bool:
 
     return False
 ```
+
 </details>
 
 ### Maximum subarray
@@ -227,8 +230,8 @@ def funcion(lista: list[int]) -> int:
 
     return suma_max
 ```
-</details>
 
+</details>
 
 ## 2. Ejercicios medios
 
@@ -255,7 +258,7 @@ def funcion(lista: list[int]) -> bool:
     """
     O(N^2), suponiendo que no tenemos las restricciones que nos imponen
     """
-    
+
     producto = 1
 
     for i, vali in enumerate(lista):
@@ -267,7 +270,7 @@ def funcion(lista: list[int]) -> bool:
     for i, vali in enumerate(lista):
 
         res.append(int(producto / vali))
-        
+
     return res
 
 def funcion2(lista: list[int]) -> bool:
@@ -277,7 +280,7 @@ def funcion2(lista: list[int]) -> bool:
     """
 
     res = []
-    
+
     for i, vali in enumerate(lista):
 
         if i == 0:
@@ -295,7 +298,7 @@ def funcion2(lista: list[int]) -> bool:
         else:
 
             der = lista[i + 1:]
-            
+
         new_lista = izq + der
         producto = 1
 
@@ -312,7 +315,7 @@ def funcion3(lista: list[int]) -> bool:
     """
     O(N)
     """
-    
+
     n = len(lista)
 
     ## Inicializar las listas de productos a la izquierda y a la derecha
@@ -331,7 +334,7 @@ def funcion3(lista: list[int]) -> bool:
     for i in reversed(range(n - 1)):
 
         der[i] = der[i + 1] * lista[i + 1]
-    
+
     ## Calcular el producto de los elementos excepto el mismo
     for i in range(n):
 
@@ -339,6 +342,7 @@ def funcion3(lista: list[int]) -> bool:
 
     return lista
 ```
+
 </details>
 
 ## 3. Ejercicios difíciles

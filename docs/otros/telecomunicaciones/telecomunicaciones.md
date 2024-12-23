@@ -7,12 +7,12 @@ title: Redes de Telecomunicaciones
 toc_max_heading_level: 4
 ---
 
-:::danger **Este contenido aún está en desarrollo**  
+:::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
-:::  
+:::
 
 ### Tema 1: Introducción a las Redes de Telecomunicaciones
 
@@ -202,12 +202,15 @@ El funcionamiento de un sistema de colas puede desglosarse en tres partes: el **
 #### Parte del Cliente
 
 1. **Número de clientes**:
+
    - Puede ser **finito** (cuando hay un número limitado de clientes potenciales) o **infinito** (cuando el número de clientes es ilimitado).
 
 2. **Peticiones**:
+
    - Pueden ser de naturaleza **determinista** (siguen un patrón predecible) o **aleatoria** (siguen una distribución de probabilidad, típicamente representada como una esperanza o media).
 
 3. **Tiempo entre llegadas de las solicitudes**:
+
    - El intervalo de tiempo transcurrido entre dos peticiones consecutivas. Este puede variar y es crucial para el análisis del sistema de colas.
 
 4. **Tasa media de llegada** (\(\lambda\)):
@@ -216,9 +219,11 @@ El funcionamiento de un sistema de colas puede desglosarse en tres partes: el **
 #### Parte de la Cola
 
 1. **Capacidad de la cola**:
+
    - Puede ser **finita** (cuando hay un límite en la cantidad de solicitudes que se pueden almacenar en la cola) o **infinita** (cuando no hay límite en el número de solicitudes en espera).
 
 2. **Tiempo de espera en la cola**:
+
    - El tiempo promedio que una solicitud permanece en la cola antes de ser procesada.
 
 3. **Número de solicitudes en cola**:
@@ -227,9 +232,11 @@ El funcionamiento de un sistema de colas puede desglosarse en tres partes: el **
 #### Parte del Servicio
 
 1. **Número de servidores**:
+
    - Puede haber uno o más servidores disponibles para procesar las solicitudes en cola. La configuración de los servidores puede variar dependiendo del diseño del sistema.
 
 2. **Tasa de servicio** (\(\mu\)):
+
    - Indica el número de solicitudes que un servidor puede procesar por unidad de tiempo. Junto con la tasa de llegada, es crucial para analizar el rendimiento del sistema de colas.
 
 3. **Tiempo de servicio**:
@@ -238,6 +245,7 @@ El funcionamiento de un sistema de colas puede desglosarse en tres partes: el **
 #### Parte del Sistema en su Conjunto
 
 1. **Número total de solicitudes en el sistema**:
+
    - Incluye tanto las solicitudes en cola como las que están siendo procesadas por el servidor en un momento dado.
 
 2. **Tiempo total en el sistema**:
@@ -267,12 +275,11 @@ La intensidad del tráfico representa el número promedio de solicitudes en el s
 
 ### 3.1. Introducción
 
-La **multiplexación** es una técnica que permite la compartición de recursos, lo que resulta en un uso más eficiente del medio de transmisión y, por lo tanto, en un ahorro de costes. Esta técnica permite transmitir simultáneamente múltiples flujos de información a través de un mismo medio físico. 
+La **multiplexación** es una técnica que permite la compartición de recursos, lo que resulta en un uso más eficiente del medio de transmisión y, por lo tanto, en un ahorro de costes. Esta técnica permite transmitir simultáneamente múltiples flujos de información a través de un mismo medio físico.
 
 La multiplexación se puede clasificar en dos formas principales:
 
 1. **Multiplexación mediante un dispositivo multiplexor**: Este método se utiliza cuando los usuarios generan señales que no son directamente compatibles para su combinación. Un ejemplo de este tipo es la tecnología **ADSL**.
-   
 2. **Multiplexación sin un dispositivo multiplexor**: En este caso, los usuarios generan información en un formato que permite su separación sin la necesidad de un multiplexor. Un ejemplo común es la transmisión de **radio FM**.
 
 La **duplexación** es una variante de la multiplexación que se refiere a la combinación de los flujos de transmisión y recepción de un mismo usuario en un canal o medio de comunicación.
@@ -286,11 +293,13 @@ Además, la **canalización o acceso múltiple** es una forma de multiplexación
 Se distinguen tres enfoques principales:
 
 1. **Multiplexación**:
+
    - **FDM** (Frequency Division Multiplexing): Multiplexación por División de Frecuencia.
    - **TDM** (Time Division Multiplexing): Multiplexación por División de Tiempo.
    - **CDM** (Code Division Multiplexing): Multiplexación por División de Código.
 
 2. **Canalización**:
+
    - **FDMA** (Frequency Division Multiple Access): Acceso Múltiple por División de Frecuencia.
    - **TDMA** (Time Division Multiple Access): Acceso Múltiple por División de Tiempo.
    - **CDMA** (Code Division Multiple Access): Acceso Múltiple por División de Código.
@@ -320,7 +329,7 @@ Cuando se aplica FDM a transmisiones en fibra óptica, se conoce como **multiple
 
 La **multiplexación por división de tiempo** (TDM) asigna a cada flujo de información el ancho de banda total del medio de transmisión durante una fracción de tiempo que se repite periódicamente. Es especialmente adecuada para señales digitales y permite un uso eficiente del ancho de banda del medio.
 
-En TDM, la información se organiza en tramas que contienen intervalos de tiempo, cada uno asociado a un canal físico. Esto permite que el canal físico transporte información de uno o más flujos de datos. 
+En TDM, la información se organiza en tramas que contienen intervalos de tiempo, cada uno asociado a un canal físico. Esto permite que el canal físico transporte información de uno o más flujos de datos.
 
 #### Tipos de TDM
 
@@ -333,12 +342,12 @@ En TDM, la información se organiza en tramas que contienen intervalos de tiempo
 
 1. **Entrelazado de palabra**: La información se organiza en palabras (conjunto de bits).
 
-    ![Entrelazado de palabra](imagenes/fundamentos4.png)
-    
+   ![Entrelazado de palabra](imagenes/fundamentos4.png)
+
 2. **Entrelazado de bit**: La información se entrelaza a nivel de bits.
 
-    ![Entrelazado de bit](imagenes/fundamentos5.png)
-    
+   ![Entrelazado de bit](imagenes/fundamentos5.png)
+
 El proceso de **demultiplexación** implica identificar los bits correspondientes a cada intervalo mediante una marca de alineación de trama (FAS, Frame Alignment Signal), que se puede implementar mediante un código de línea o una secuencia de bits.
 
 ### 3.4. Multiplexación por División en Código (CDM)
@@ -355,7 +364,7 @@ La multiplexación en tiempo y frecuencia son casos específicos de **ortogonali
 
 ### 4.1. ¿Qué es una colisión?
 
-En redes donde el medio de transmisión es compartido entre múltiples terminales, existe la posibilidad de que las señales de diferentes usuarios coincidan en el tiempo. Esto puede llevar a una **colisión**, un fenómeno que ocurre cuando las señales de dos o más terminales se superponen en el medio de transmisión al mismo tiempo, impidiendo su correcta interpretación. 
+En redes donde el medio de transmisión es compartido entre múltiples terminales, existe la posibilidad de que las señales de diferentes usuarios coincidan en el tiempo. Esto puede llevar a una **colisión**, un fenómeno que ocurre cuando las señales de dos o más terminales se superponen en el medio de transmisión al mismo tiempo, impidiendo su correcta interpretación.
 
 Cuando se produce una colisión, el receptor recibe señales simultáneas, resultando en un nivel de señal más alto de lo normal. En redes cableadas, esto se manifiesta como una señal con casi el doble de energía esperada. En redes inalámbricas, la señal recibida suele ser de baja energía debido a interferencias. El transmisor detecta la colisión gracias a la ausencia o al error en las señales de confirmación de recepción (ACK) enviadas por el receptor. En estos casos, los terminales deben gestionar las colisiones para minimizar la pérdida de datos y optimizar el rendimiento de la red.
 
@@ -389,12 +398,12 @@ Las técnicas de acceso aleatorio son métodos utilizados en redes compartidas p
 
 #### Comparación de las Técnicas de Acceso Aleatorio
 
-| Técnica | Ventajas | Desventajas | Uso Principal |
-|--------|----------|-------------|---------------|
-| **Aloha** | Simple, fácil de implementar | Alta tasa de colisiones | Redes primitivas, sistemas de baja capacidad |
-| **CSMA** | Reduce colisiones comparado con Aloha | Colisiones aún posibles por retardos | Redes de área local (LAN) |
-| **CSMA/CD** | Detecta y maneja colisiones eficientemente | Menos relevante en redes modernas | Ethernet cableada tradicional |
-| **CSMA/CA** | Evita colisiones en redes inalámbricas | Sobrecarga de control, menos eficiente en alta congestión | Redes Wi-Fi, redes inalámbricas |
+| Técnica     | Ventajas                                   | Desventajas                                               | Uso Principal                                |
+| ----------- | ------------------------------------------ | --------------------------------------------------------- | -------------------------------------------- |
+| **Aloha**   | Simple, fácil de implementar               | Alta tasa de colisiones                                   | Redes primitivas, sistemas de baja capacidad |
+| **CSMA**    | Reduce colisiones comparado con Aloha      | Colisiones aún posibles por retardos                      | Redes de área local (LAN)                    |
+| **CSMA/CD** | Detecta y maneja colisiones eficientemente | Menos relevante en redes modernas                         | Ethernet cableada tradicional                |
+| **CSMA/CA** | Evita colisiones en redes inalámbricas     | Sobrecarga de control, menos eficiente en alta congestión | Redes Wi-Fi, redes inalámbricas              |
 
 # Tema 5: Control de Errores
 
@@ -408,7 +417,6 @@ Para mitigar los errores introducidos por el canal de transmisión, se utilizan 
    - **Funcionamiento**: Los sistemas ARQ detectan errores en los paquetes de datos recibidos y solicitan la retransmisión del paquete cuando se encuentra un error. Utilizan mecanismos como el **ACK** (acknowledgment) para confirmar la recepción correcta y el **NAK** (negative acknowledgment) para señalar la recepción incorrecta.
    - **Ventajas**: Son simples y eficaces en redes con retardo de propagación moderado, donde la retransmisión no introduce un retraso significativo.
    - **Desventajas**: En situaciones donde el retardo de propagación es grande o la retransmisión introduce demoras considerables (como en redes satelitales o móviles), el método puede no ser eficiente.
-   
 2. **FEC (Forward Error Correction o Corrección de Errores Adelantada):**
    - **Funcionamiento**: Los sistemas FEC introducen redundancia adicional en los datos transmitidos de modo que el receptor pueda **detectar y corregir** errores sin la necesidad de solicitar una retransmisión. Esto es posible a través de códigos correctores de errores, como los códigos de Hamming, Reed-Solomon, o LDPC (Low-Density Parity-Check).
    - **Ventajas**: Es particularmente útil en escenarios donde no se dispone de un canal de retorno, la retransmisión no es factible (por ejemplo, en transmisiones unidireccionales como las transmisiones de TV satelital) o el tiempo de respuesta es crítico.
@@ -421,6 +429,7 @@ Es fundamental seleccionar el tipo de control de errores adecuado según el ento
 Los errores en las transmisiones de datos se pueden clasificar en dos tipos principales:
 
 1. **Errores Simples**:
+
    - Ocurren cuando un único bit se transmite incorrectamente, cambiando de un `0` a un `1` o viceversa.
    - Su probabilidad suele ser baja en comparación con los errores a ráfagas, pero su manejo es fundamental para sistemas con alta sensibilidad a la calidad de transmisión.
 
@@ -433,7 +442,6 @@ Los errores en las transmisiones de datos se pueden clasificar en dos tipos prin
 #### 1. **Detección de Errores**
 
 - **Bits de Paridad**: Un método sencillo en el que se añade un bit extra a los datos que se envían, para que el número total de bits `1` sea par (paridad par) o impar (paridad impar). Es eficaz para detectar errores simples, pero inadecuado para errores a ráfagas.
-  
 - **Checksum**: Un método en el que los datos se dividen en palabras de longitud fija y se suman. El resultado (checksum) se envía junto con los datos. El receptor recalcula el checksum y lo compara con el recibido. Este método es más robusto que el de bits de paridad.
 
 - **CRC (Cyclic Redundancy Check)**: Un método de detección muy robusto que utiliza divisiones polinómicas para detectar errores en grandes bloques de datos. Los CRC pueden detectar errores simples, múltiples, errores en ráfagas y errores aleatorios.
@@ -441,7 +449,6 @@ Los errores en las transmisiones de datos se pueden clasificar en dos tipos prin
 #### 2. **Corrección de Errores**
 
 - **Códigos de Hamming**: Permiten la corrección de errores simples y la detección de errores dobles mediante el uso de bits de paridad distribuidos en posiciones específicas. Son adecuados para situaciones donde los errores simples son comunes.
-  
 - **Códigos Reed-Solomon**: Muy eficaces para corregir errores a ráfagas. Son ampliamente utilizados en discos compactos (CD), DVDs, transmisión de datos espaciales y comunicaciones digitales debido a su capacidad para manejar errores de bits consecutivos.
 
 - **LDPC (Low-Density Parity-Check)**: Códigos de corrección de errores avanzados que ofrecen una alta eficiencia y rendimiento cerca del límite de Shannon. Se utilizan en sistemas de comunicaciones modernos como Wi-Fi, LTE y DVB-S2.
@@ -453,6 +460,7 @@ El **encaminamiento** es el proceso de dirigir un paquete de datos desde su orig
 ### Tipos de Tablas de Encaminamiento
 
 1. **Tablas Estáticas**:
+
    - Son configuradas manualmente por el administrador de la red.
    - Adecuadas para redes pequeñas y estables donde no se producen muchos cambios en la topología.
    - **Ventajas**: Simplicidad de configuración y ausencia de tráfico de actualización de tablas.
@@ -467,7 +475,6 @@ El **encaminamiento** es el proceso de dirigir un paquete de datos desde su orig
 ### 6.1. Forwarding y Routing
 
 - **Routing (Encaminamiento)**: Proceso que consiste en determinar la mejor ruta para transmitir datos desde el origen hasta el destino. Esto implica la actualización de las tablas de encaminamiento mediante protocolos específicos que calculan rutas óptimas.
-  
 - **Forwarding (Envío)**: Acción de enviar un paquete a su destino a través de la red. Los routers utilizan sus tablas de encaminamiento para decidir hacia dónde deben enviar los paquetes en cada paso del camino.
 
 #### 6.1.1. Métodos de Forwarding
@@ -493,6 +500,7 @@ Para que el protocolo de encaminamiento sea eficaz, debe cumplir con las siguien
 Existen diferentes tipos de protocolos de encaminamiento que pueden clasificarse según distintos criterios:
 
 1. **Por Tipo de Control de Ruta**:
+
    - **Hop-by-Hop (Salto a Salto)**: Cada nodo decide el siguiente salto basándose en su tabla de encaminamiento.
    - **Source Routing (Definición de Ruta en la Fuente)**: La fuente especifica toda la ruta que debe seguir el paquete.
 
@@ -505,6 +513,7 @@ Existen diferentes tipos de protocolos de encaminamiento que pueden clasificarse
 #### 6.1.4. Redes Orientadas a la Conexión vs. Redes No Orientadas a la Conexión
 
 - **Redes Orientadas a la Conexión**:
+
   - Se establece una ruta fija (circuito virtual) para toda la comunicación entre la fuente y el destino.
   - Utilizado en sistemas como ATM (Modo de Transferencia Asíncrona) o MPLS (Conmutación de Etiquetas Multiprotocolo).
 
@@ -573,7 +582,7 @@ Los principales elementos de una red son:
 3. **Router**: Opera en la capa de red y toma decisiones de enrutamiento basadas en la topología de la red.
 4. **Conmutador (Switch)**: Funciona en las capas de enlace y red, mapeando direcciones IP a puertos para reenviar mensajes eficientemente.
 5. **Pasarela (Gateway)**: Opera en capas superiores a la de red, traduciendo entre dominios de red diferentes.
-   
+
 ### 7.4. TCP/IP
 
 El modelo TCP/IP consta de cuatro capas:

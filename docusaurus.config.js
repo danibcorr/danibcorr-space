@@ -1,5 +1,5 @@
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const organizationName = "danibcorr";
@@ -9,7 +9,7 @@ const projectName = "web";
 const config = {
   title: "Web page",
   url: `https://${organizationName}.github.io`,
-  baseUrl: '/web/',
+  baseUrl: "/web/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   favicon: "img/logo.ico",
@@ -23,37 +23,37 @@ const config = {
     locales: ["es", "en"],
     localeConfigs: {
       es: {
-        label: 'Español',
-        direction: 'ltr',
+        label: "Español",
+        direction: "ltr",
       },
       en: {
-        label: 'English',
-        direction: 'ltr',
+        label: "English",
+        direction: "ltr",
       },
     },
   },
 
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: false,
         blog: {
-          path: 'blog',
-          routeBasePath: 'blog',
+          path: "blog",
+          routeBasePath: "blog",
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: ['./src/css/custom.css'],
+          customCss: ["./src/css/custom.css"],
         },
       },
     ],
@@ -61,22 +61,22 @@ const config = {
 
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
 
   plugins: [
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'machine-learning-wiki',
-        path: 'docs/machine-learning-wiki',
-        routeBasePath: 'docs/machine-learning-wiki',
-        sidebarPath: require.resolve('./sidebars.js'),
+        id: "machine-learning-wiki",
+        path: "docs/machine-learning-wiki",
+        routeBasePath: "docs/machine-learning-wiki",
+        sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
         showLastUpdateTime: true,
@@ -92,12 +92,12 @@ const config = {
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'otros',
-        path: 'docs/otros',
-        routeBasePath: 'docs/otros',
-        sidebarPath: require.resolve('./sidebars.js'),
+        id: "otros",
+        path: "docs/otros",
+        routeBasePath: "docs/otros",
+        sidebarPath: require.resolve("./sidebars.js"),
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
         showLastUpdateTime: true,
@@ -122,8 +122,8 @@ const config = {
       },
     },
     colorMode: {
-      disableSwitch: false, 
-      defaultMode: 'light', 
+      disableSwitch: false,
+      defaultMode: "light",
       respectPrefersColorScheme: true,
     },
     navbar: {
@@ -131,31 +131,31 @@ const config = {
       logo: {
         alt: "Logo",
         src: "img/logo motivo.svg",
-        srcDark: 'img/logo motivo dark.svg',
+        srcDark: "img/logo motivo dark.svg",
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
+          type: "doc",
+          docId: "intro",
           position: "left",
           label: "Wiki de Machine Learning",
           docsPluginId: "machine-learning-wiki",
         },
         {
-          type: 'doc',
-          docId: 'intro',
+          type: "doc",
+          docId: "intro",
           position: "left",
           label: "Recursos Adicionales",
           docsPluginId: "otros",
         },
         {
-          to: 'blog',
-          label: 'Blog',
-          position: 'left',
+          to: "blog",
+          label: "Blog",
+          position: "left",
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          type: "localeDropdown",
+          position: "right",
         },
         {
           href: `https://github.com/${organizationName}/${projectName}`,
@@ -175,7 +175,7 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme, // Add dark theme
-      additionalLanguages: ['bash', 'makefile'],
+      additionalLanguages: ["bash", "makefile"],
     },
   },
 };
