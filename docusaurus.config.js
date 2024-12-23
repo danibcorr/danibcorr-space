@@ -1,5 +1,6 @@
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const organizationName = "danibcorr";
 const projectName = "web";
@@ -121,14 +122,16 @@ const config = {
       },
     },
     colorMode: {
-      disableSwitch: true,
-      defaultMode: 'light',
+      disableSwitch: false, 
+      defaultMode: 'light', 
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Inicio",
       logo: {
         alt: "Logo",
         src: "img/logo motivo.svg",
+        srcDark: 'img/logo motivo dark.svg',
       },
       items: [
         {
@@ -170,7 +173,8 @@ const config = {
       `,
     },
     prism: {
-      theme: darkCodeTheme,
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme, // Add dark theme
       additionalLanguages: ['bash', 'makefile'],
     },
   },

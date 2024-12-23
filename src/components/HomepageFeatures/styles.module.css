@@ -17,6 +17,16 @@
     --marginTop: 40px;
 }
 
+/* Dark Mode Variables */
+[data-theme='dark'] {
+    --primaryColor: #313b4b;
+    --colorLinkSelection: #D6C0B3;
+    --accentColor: #E0E0E0;
+    --borderColor: #E0E0E0;
+    --colorTarjetas: #212529;
+    --shadowColor: #E0E0E0;
+}
+
 /* Sección de características */
 .features {
     padding: 40px 0;

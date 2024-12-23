@@ -10,10 +10,31 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --colorFondoDoc: #fdfdf7;
   --colorTarjetas: #ffffff;
+  --colorLetraFooter: #191919;
   --primaryColor: #D6C0B3;
   --colorLinkSelection: #AF8F6F;
   --accentColor: #171717;
   --borderColor: #e0e0e0;
+  --transitionTime: 0.3s;
+  --maxWidth: 100%;
+}
+
+/* Dark Mode Variables */
+[data-theme='dark'] {
+  --ifm-color-primary: #e0e0e0;
+  --ifm-color-primary-dark: #cacaca;
+  --ifm-color-primary-darker: #bebebe;
+  --ifm-color-primary-darkest: #9d9d9d;
+  --ifm-color-primary-light: #f6f6f6;
+  --ifm-color-primary-lighter: #ffffff;
+  --ifm-color-primary-lightest: #ffffff;
+  --colorFondoDoc: #15191d;
+  --colorTarjetas: #313b4b;
+  --colorLetraFooter: #E0E0E0;
+  --primaryColor: #E0E0E0;
+  --colorLinkSelection: #6f6f6f;
+  --accentColor: #E0E0E0;
+  --borderColor: #555555;
   --transitionTime: 0.3s;
   --maxWidth: 100%;
 }
@@ -28,7 +49,7 @@
   /* Cambiar el fondo del footer */
   background-color: var(--primaryColor);
   /* Cambiar el color del texto del footer */
-  color: var(--colorTarjetas);
+  color: var(--colorLetraFooter);
 }
 
 .navbar {
