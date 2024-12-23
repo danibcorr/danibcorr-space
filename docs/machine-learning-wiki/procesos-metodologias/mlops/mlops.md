@@ -7,6 +7,13 @@ title: MLOps
 toc_max_heading_level: 4
 ---
 
+:::danger **Este contenido aún está en desarrollo**  
+
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.  
+
+Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
+:::  
+
 ## Bibliografía
 
 - [ML in Production: From Data Scientist to ML Engineer](https://www.udemy.com/course/ml-in-production/?couponCode=SKILLS4SALEA)
@@ -15,7 +22,7 @@ toc_max_heading_level: 4
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../img/mlops-logo.png").default} width="500"/>
+  <img src={require("../../../img/mlops-logo.png").default} width="500"/>
   <br />
   <em>Ciclo de vide de un proyecto MLOps</em>
 </p>
@@ -421,11 +428,11 @@ Este decorador facilita la captura y el registro automático de errores en las f
 
 ### 3.5. Automatización de procesos mediante Bash y Makefiles
 
-El dominio de Bash es fundamental para la automatización de procesos. Para profundizar en su uso, se recomienda consultar los [apuntes sobre Bash](../programacion/bash.md) disponibles en esta Wiki. Asimismo, los [apuntes sobre Makefiles](../herramientas/makefile.md) ofrecen información relevante sobre la implementación y gestión de estos archivos para facilitar la automatización de tareas.
+El dominio de Bash es fundamental para la automatización de procesos. Para profundizar en su uso, se recomienda consultar los [apuntes sobre Bash](../../programacion/bash.md) disponibles en esta Wiki. Asimismo, los [apuntes sobre Makefiles](../../herramientas/makefile.md) ofrecen información relevante sobre la implementación y gestión de estos archivos para facilitar la automatización de tareas.
 
 ### 3.6. CI/CD con GitHub Actions
 
-GitHub es una plataforma que utiliza la herramienta Git y que incluye otras herramientas específicas de su plataforma que facilitan la gestión y despliegue de proyectos. Para profundizar en su uso, se recomienda consultar los [apuntes sobre GitHub](../herramientas/git/github.md) disponibles en esta Wiki.
+GitHub es una plataforma que utiliza la herramienta Git y que incluye otras herramientas específicas de su plataforma que facilitan la gestión y despliegue de proyectos. Para profundizar en su uso, se recomienda consultar los [apuntes sobre GitHub](../../procesos-metodologias/devops/github-actions.md) disponibles en esta Wiki.
 
 ### 3.7. Publicación de un paquete de Python en PyPI
 

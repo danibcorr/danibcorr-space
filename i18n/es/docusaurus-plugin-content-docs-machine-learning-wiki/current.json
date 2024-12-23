@@ -11,10 +11,6 @@
     "message": "Encuentra las herramientas esenciales para el día a día del desarrollo, automatización, gestión de código y más.",
     "description": "The generated-index page description for category Herramientas in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Git": {
-    "message": "Git",
-    "description": "The label for category Git in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.Programación": {
     "message": "Programación",
     "description": "The label for category Programación in sidebar tutorialSidebar"
@@ -51,32 +47,44 @@
     "message": "Descubre más sobre los sistemas operativos con los que trabajas y aprende los comandos más útiles para desarrollar con mayor eficiencia.",
     "description": "The generated-index page description for category Sistemas Operativos in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Inteligencia Artificial": {
-    "message": "Inteligencia Artificial",
-    "description": "The label for category Inteligencia Artificial in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Inteligencia Artificial.link.generated-index.description": {
-    "message": "Adquiere los conocimientos esenciales en el ámbito de la inteligencia artificial.",
-    "description": "The generated-index page description for category Inteligencia Artificial in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.inteligencia-artificial": {
+    "message": "inteligencia-artificial",
+    "description": "The label for category inteligencia-artificial in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Fundamentos de Deep Learning": {
     "message": "Fundamentos de Deep Learning",
     "description": "The label for category Fundamentos de Deep Learning in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Librerias": {
-    "message": "Librerias",
-    "description": "The label for category Librerias in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Librerias.link.generated-index.description": {
-    "message": "Encuentra las librerías más utilizadas en el ámbito de la Inteligencia Artificial.",
-    "description": "The generated-index page description for category Librerias in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.inteligencia-artificial": {
-    "message": "inteligencia-artificial",
-    "description": "The label for category inteligencia-artificial in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.librerias": {
     "message": "librerias",
     "description": "The label for category librerias in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Git": {
+    "message": "Git",
+    "description": "The label for category Git in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.dev-ops": {
+    "message": "dev-ops",
+    "description": "The label for category dev-ops in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ml-ops": {
+    "message": "ml-ops",
+    "description": "The label for category ml-ops in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Inteligencia Artificial": {
+    "message": "Inteligencia Artificial",
+    "description": "The label for category Inteligencia Artificial in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Librerías": {
+    "message": "Librerías",
+    "description": "The label for category Librerías in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Bases de Datos": {
+    "message": "Bases de Datos",
+    "description": "The label for category Bases de Datos in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.DevOps": {
+    "message": "DevOps",
+    "description": "The label for category DevOps in sidebar tutorialSidebar"
   }
 }

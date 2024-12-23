@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 authors:
   - name: Daniel Bazo Correa
 description: Controla versiones de tu código con Git.
@@ -14,7 +14,7 @@ toc_max_heading_level: 4
 ## 1. Introducción
 
 <p align="center">
-  <img src={require("../../../img/git-logo.png").default}/>
+  <img src={require("../../img/git-logo.png").default}/>
   <br />
   <em>Logo de Git</em>
 </p>
@@ -68,7 +68,7 @@ Git-Bash es una interfaz de línea de comandos que permite la interacción con G
 | **rm**    | Elimina el archivo o directorio especificado.       | `rm archivo.txt` - Elimina el archivo "archivo.txt". Para eliminar directorios, usar `rm -r directorio/`. |
 | **mv**    | Mueve o renombra un archivo o directorio.           | `mv archivo.txt nueva_ubicacion/` - Mueve "archivo.txt" a la carpeta "nueva_ubicacion". También puede usarse para renombrar archivos, por ejemplo: `mv archivo.txt archivo_nuevo.txt`. |
 
-Para obtener más información sobre Linux, se pueden [visitar los siguientes apuntes](../../sistemas-operativos/linux.md).
+Para obtener más información sobre Linux, se pueden [visitar los siguientes apuntes](../sistemas-operativos/linux.md).
 
 ### 3.2. Comandos para el control de versiones local
 
@@ -156,7 +156,7 @@ Tanto **Trunk-Based Development** como **Git Flow** son estrategias populares de
 ### 4.1. Trunk-Based Development
 
 <p align="center">
-  <img src={require("../../../img/trunk-based-git.png").default}/>
+  <img src={require("../../img/trunk-based-git.png").default}/>
   <br />
   <em>Esquema de desarrollo Trunk-Based</em>
 </p>
@@ -176,7 +176,7 @@ Sin embargo, presenta las siguientes desventajas:
 ### 4.2. Git Flow
 
 <p align="center">
-  <img src={require("../../../img/git-flow-git.png").default} width="500"/>
+  <img src={require("../../img/git-flow-git.png").default} width="500"/>
   <br />
   <em>Esquema de desarrollo Git Flow</em>
 </p>

@@ -4,7 +4,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const organizationName = "danibcorr";
 const projectName = "web";
 
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Web page",
@@ -21,6 +20,16 @@ const config = {
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
+    localeConfigs: {
+      es: {
+        label: 'Español',
+        direction: 'ltr',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+    },
   },
 
   presets: [
@@ -29,6 +38,8 @@ const config = {
       {
         docs: false,
         blog: {
+          path: 'blog',
+          routeBasePath: 'blog',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -70,7 +81,6 @@ const config = {
         showLastUpdateTime: true,
         showLastUpdateAuthor: true,
         breadcrumbs: true,
-        // Esto permite ordenar los documentos por el frontmatter
         sidebarItemsGenerator: async function ({
           defaultSidebarItemsGenerator,
           ...args
@@ -92,7 +102,6 @@ const config = {
         showLastUpdateTime: true,
         showLastUpdateAuthor: true,
         breadcrumbs: true,
-        // Configuración similar para la segunda wiki
         sidebarItemsGenerator: async function ({
           defaultSidebarItemsGenerator,
           ...args
@@ -104,9 +113,8 @@ const config = {
     ],
   ],
 
-  themeConfig:{
+  themeConfig: {
     colorMode: {
-      // Esta opción oculta el botón de cambio de tema
       disableSwitch: true,
       defaultMode: 'light',
     },
@@ -130,15 +138,15 @@ const config = {
           position: "left",
           label: "Recursos Adicionales",
           docsPluginId: "otros",
-        },        
-        {
-          to: '/blog', 
-          label: 'Blog', 
-          position: 'left'
         },
         {
-          type: 'localeDropdown', // Este es el ítem del selector de idioma
-          position: 'right', // Posición en la barra de navegación
+          to: 'blog',
+          label: 'Blog',
+          position: 'left',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
         {
           href: `https://github.com/${organizationName}/${projectName}`,
@@ -158,23 +166,6 @@ const config = {
     prism: {
       theme: darkCodeTheme,
       additionalLanguages: ['bash', 'makefile'],
-    },
-  },
-
-  i18n: {
-    // Idioma por defecto
-    defaultLocale: 'es', 
-    // Lista de idiomas disponibles
-    locales: ['es', 'en'], 
-    localeConfigs: {
-      es: {
-        label: 'Español',
-        direction: 'ltr',
-      },
-      en: {
-        label: 'English',
-        direction: 'ltr',
-      },
     },
   },
 };

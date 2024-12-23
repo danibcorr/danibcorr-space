@@ -55,6 +55,6 @@ Para hacerlo más claro y didáctico, encontrarás recuadros con diferentes colo
 
 ### Contribuye al proyecto  
 
-Este espacio está en constante crecimiento y mejora. Si encuentras algún error, tienes sugerencias o deseas contribuir, ¡tu ayuda es bienvenida! Puedes hacerlo mediante una pull request en el repositorio de GitHub de esta Wiki.  
+Este espacio está en constante crecimiento y mejora. Si encuentras algún error, faltan referencias, tienes sugerencias o deseas contribuir, ¡tu ayuda es bienvenida! Puedes hacerlo mediante una pull request en el repositorio de GitHub de esta Wiki.  
 
 Gracias por tu interés y por ser parte de este proyecto de conocimiento compartido. ¡Espero que disfrutes del aprendizaje y encuentres este contenido útil para tus objetivos!  

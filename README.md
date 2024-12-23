@@ -1,4 +1,4 @@
-[🇬🇧 README](README_EN.md)
+[🇬🇧 README](./README/README_EN.md)
 
 # Sobre mí y este repositorio
 

@@ -1,8 +1,4 @@
 {
   "label": "Procesos y Metodologías",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Conoce los procesos y metodologías que te ayudarán en el desarrollo e integración de proyectos en producción."
-  }
+  "position": 6
 }

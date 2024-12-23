@@ -1,8 +1,4 @@
 {
   "label": "Sistemas Operativos",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "description": "Descubre más sobre los sistemas operativos con los que trabajas y aprende los comandos más útiles para desarrollar con mayor eficiencia."
-  }
+  "position": 2
 }
