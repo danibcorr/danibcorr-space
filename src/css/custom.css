@@ -40,7 +40,7 @@
 }
 
 .main-wrapper {
-  /* Permite cambiar el color del fondo*/
+  /* Permite cambiar el color del fondo */
   background-color: var(--colorFondoDoc);
   color: var(--accentColor);
 }

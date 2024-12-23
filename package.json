@@ -53,7 +53,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=23.0"
   },
   "description": "[🇬🇧 README](./README/README_EN.md)",
   "main": "babel.config.js",

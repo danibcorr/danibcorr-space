@@ -94,7 +94,7 @@ h2 {
 .project {
   background-color: var(--colorTarjetas);
   color: var(--accentColor);
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--borderColor);
   border-radius: var(--border-radius);
   padding: 15px;
   margin: 0 15px;
@@ -116,7 +116,7 @@ h2 {
   outline: none;
   border-radius: var(--border-radius);
   text-decoration: none;
-  width: var(--maxWidth);
+  width: 100%;
   font-size: var(--fontSize);
   text-align: center;
   cursor: pointer;
@@ -161,7 +161,7 @@ h2 {
 .projectItem {
   background-color: var(--colorTarjetas);
   color: var(--accentColor);
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--borderColor);
   border-radius: var(--border-radius);
   font-size: var(--fontSize);
   margin: 10px 0;
@@ -237,7 +237,7 @@ h2 {
   font-size: 1.3rem;
   text-decoration: none;
   transition:
-    color var(--delay),
+    color var(--transitionTime),
     transform var(--transitionTime) ease-in-out;
 }
 
