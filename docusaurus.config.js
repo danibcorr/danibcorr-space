@@ -114,6 +114,12 @@ const config = {
   ],
 
   themeConfig: {
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     colorMode: {
       disableSwitch: true,
       defaultMode: 'light',
