@@ -86,5 +86,9 @@
   "sidebar.tutorialSidebar.category.DevOps": {
     "message": "DevOps",
     "description": "The label for category DevOps in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.MLOps": {
+    "message": "MLOps",
+    "description": "The label for category MLOps in sidebar tutorialSidebar"
   }
 }

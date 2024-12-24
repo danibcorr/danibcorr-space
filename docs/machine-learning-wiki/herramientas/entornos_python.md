@@ -7,6 +7,9 @@ title: Gestión de entornos en Python
 toc_max_heading_level: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## 1. Introducción
 
 <p align="center">
@@ -31,7 +34,8 @@ Este tutorial asume el uso de un sistema basado en Linux, particularmente una di
 
 ### 2.1. Creación de un entorno virtual
 
-#### 2.1.1. Utilizando VENV
+<Tabs>
+<TabItem value="js" label="VENV">
 
 Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
 
@@ -72,7 +76,8 @@ Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
    source nombre_del_entorno/bin/activate
    ```
 
-#### 2.1.2. Utilizando Anaconda
+</TabItem>
+<TabItem value="py" label="Anaconda">
 
 Si prefieres utilizar Anaconda, sigue estos pasos:
 
@@ -97,9 +102,13 @@ Si prefieres utilizar Anaconda, sigue estos pasos:
    pip install --upgrade pip
    ```
 
-### 2.2. Gestión de la caché de PIP
+</TabItem>
+</Tabs>
 
-#### 2.2.1. Utilizando PIP
+### 2.2. Gestión de la caché
+
+<Tabs>
+<TabItem value="js" label="PIP">
 
 Parar liberar espacio en el sistema o solucionar problemas con dependencias, podemos purgar la caché de PIP con el comando siguiente:
 
@@ -107,7 +116,8 @@ Parar liberar espacio en el sistema o solucionar problemas con dependencias, pod
 pip cache purge
 ```
 
-#### 2.2.2. Utilizando Anaconda
+</TabItem>
+<TabItem value="py" label="Anaconda">
 
 Del mismo modo, en el caso de estar utilizando Anaconda, podemos emplear el siguiente comando:
 
@@ -115,11 +125,15 @@ Del mismo modo, en el caso de estar utilizando Anaconda, podemos emplear el sigu
 conda clean --all
 ```
 
+</TabItem>
+</Tabs>
+
 ### 2.3. Actualización de paquetes
 
 Es importante mantener las dependencias de tu proyecto actualizadas. Aquí se explican los pasos para hacerlo:
 
-#### 2.3.1. Utilizando PIP
+<Tabs>
+<TabItem value="js" label="PIP">
 
 ##### Actualizar todos los paquetes
 
@@ -144,7 +158,8 @@ Para actualizar un paquete específico:
 pip install --upgrade nombre_del_paquete
 ```
 
-#### 2.3.2. Utilizando Anaconda
+</TabItem>
+<TabItem value="py" label="Anaconda">
 
 ##### Actualizar todos los paquetes
 
@@ -161,6 +176,9 @@ Para actualizar un paquete específico:
 ```bash
 conda update nombre_del_paquete
 ```
+
+</TabItem>
+</Tabs>
 
 ### 2.4. Instalación de paquetes desde un archivo de requisitos
 
@@ -182,7 +200,8 @@ Cuando un proyecto necesita dependencias específicas, es útil usar un archivo 
 
 ### 2.5. Eliminar un entorno
 
-#### 2.5.1. Utilizando VENV
+<Tabs>
+<TabItem value="js" label="VENV">
 
 Para eliminar un entorno creado con VENV, dirígete al directorio donde se creó y elimina la carpeta correspondiente:
 
@@ -190,7 +209,8 @@ Para eliminar un entorno creado con VENV, dirígete al directorio donde se creó
 rm -rf nombre_del_entorno
 ```
 
-#### 2.5.2. Utilizando Anaconda
+</TabItem>
+<TabItem value="py" label="Anaconda">
 
 1. **Listar los entornos disponibles**:
 
@@ -203,6 +223,9 @@ rm -rf nombre_del_entorno
    ```bash
    conda env remove --name nombre_del_entorno
    ```
+
+</TabItem>
+</Tabs>
 
 ### 2.6. Añadir el entorno en Jupyter
 
@@ -222,7 +245,8 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
 
 ### 2.7. Eliminar paquetes instalados de un entorno
 
-#### 2.7.1. Utilizando PIP
+<Tabs>
+<TabItem value="js" label="PIP">
 
 ##### Eliminar todos los paquetes
 
@@ -244,7 +268,8 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
    pip uninstall nombre_del_paquete
    ```
 
-#### 2.7.2. Utilizando Anaconda
+</TabItem>
+<TabItem value="py" label="Anaconda">
 
 ##### Eliminar todos los paquetes
 
@@ -274,3 +299,6 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
    ```bash
    conda remove nombre_del_paquete
    ```
+
+</TabItem>
+</Tabs>

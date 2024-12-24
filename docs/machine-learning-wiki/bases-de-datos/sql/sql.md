@@ -94,10 +94,10 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
 
   ```sql
   SELECT
-      job_title_short,
-      job_location
+    job_title_short,
+    job_location
   FROM
-      job_posting_fact
+    job_posting_fact
   ```
 
   Para recuperar todas las columnas, utiliza `*`:
@@ -105,7 +105,7 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
   ```sql
   SELECT *
   FROM
-      job_posting_fact
+    job_posting_fact
   ```
 
   :::
@@ -115,10 +115,10 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
 
   ```sql
   SELECT
-      job_title_short,
-      job_location
+    job_title_short,
+    job_location
   FROM
-      job_posting_fact
+    job_posting_fact
   ```
 
   :::
@@ -128,14 +128,14 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
 
   ```sql
   SELECT
-      job_title_short,
-      job_location,
-      job_via,
-      salary_year_avg
+    job_title_short,
+    job_location,
+    job_via,
+    salary_year_avg
   FROM
-      job_posting_fact
+    job_posting_fact
   WHERE
-      job_title_short = 'Machine Learning Engineer'
+    job_title_short = 'Machine Learning Engineer'
   ```
 
   :::
@@ -145,14 +145,14 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
 
   ```sql
   SELECT
-      job_title_short,
-      job_location,
-      job_via,
-      salary_year_avg
+    job_title_short,
+    job_location,
+    job_via,
+    salary_year_avg
   FROM
-      job_posting_fact
+    job_posting_fact
   ORDER BY
-      salary_year_avg DESC
+    salary_year_avg DESC
   ```
 
   :::
@@ -162,10 +162,10 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
 
   ```sql
   SELECT
-      job_title_short,
-      job_location
+    job_title_short,
+    job_location
   FROM
-      job_posting_fact
+    job_posting_fact
   LIMIT 5
   ```
 
@@ -175,9 +175,9 @@ Las consultas en SQL utilizan un conjunto de palabras clave que permiten selecci
   :::tip Ejemplo
   ```sql
   SELECT DISTINCT
-      salary_year_avg
+    salary_year_avg
   FROM
-      job_posting_fact
+    job_posting_fact
   ```
   :::
 
@@ -215,7 +215,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      condition1 AND condition2
+    condition1 AND condition2
   ```
 
   :::
@@ -225,7 +225,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      condition1 OR condition2
+    condition1 OR condition2
   ```
 
   :::
@@ -235,7 +235,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      NOT condition
+    NOT condition
   ```
 
   :::
@@ -245,7 +245,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      column BETWEEN value1 AND value2
+    column BETWEEN value1 AND value2
   ```
 
   :::
@@ -255,7 +255,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      column LIKE 'pattern%'
+    column LIKE 'pattern%'
   ```
 
   :::
@@ -265,7 +265,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      column IN (value1, value2, value3)
+    column IN (value1, value2, value3)
   ```
 
   :::
@@ -275,7 +275,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
 
   ```sql
   WHERE
-      column > value
+    column > value
   ```
 
   :::
@@ -284,7 +284,7 @@ En SQL, los operadores y comparadores se utilizan para realizar operaciones lóg
   :::tip Ejemplo
   ```sql
   WHERE
-      column >= value
+    column >= value
   ```
   :::
 
@@ -294,15 +294,15 @@ Por ejemplo, si se desea seleccionar los trabajos de 'Data Scientist' o 'Machine
 
 ```sql
 SELECT
-    job_title_short,
-    job_location,
-    job_via,
-    salary_year_avg
+  job_title_short,
+  job_location,
+  job_via,
+  salary_year_avg
 FROM
-    job_posting_fact
+  job_posting_fact
 WHERE
-    (job_title_short = 'Data Scientist' OR job_title_short = 'Machine Learning Engineer') AND
-    salary_year_avg BETWEEN 50000 AND 100000;
+  (job_title_short = 'Data Scientist' OR job_title_short = 'Machine Learning Engineer') AND
+  salary_year_avg BETWEEN 50000 AND 100000;
 ```
 
 :::
@@ -317,7 +317,7 @@ Los comodines son caracteres especiales que se utilizan en SQL para buscar patro
 
   ```sql
   WHERE
-      job_title LIKE '%Analyst%'
+    job_title LIKE '%Analyst%'
   ```
 
   :::
@@ -328,7 +328,7 @@ Los comodines son caracteres especiales que se utilizan en SQL para buscar patro
 
   ```sql
   WHERE
-      job_title LIKE '__________'
+    job_title LIKE '__________'
   ```
 
   En este caso, cada guión bajo `_` representa un carácter, y como hay 10 guiones bajos, se buscarán los títulos de trabajo que tengan exactamente 10 caracteres.
@@ -344,9 +344,9 @@ Los alias asignan nombres temporales a columnas o tablas, facilitando la lectura
 
 ```sql
 SELECT
-    job_title_short AS job_title
+  job_title_short AS job_title
 FROM
-    job_posting_fact
+  job_posting_fact
 ```
 
 :::
@@ -359,12 +359,12 @@ SQL permite realizar operaciones aritméticas como suma, resta, multiplicación,
 
 ```sql
 SELECT
-    hours_spent,
-    hours_rate +  5 AS rate_hike
+  hours_spent,
+  hours_rate +  5 AS rate_hike
 FROM
-    job_posting_fact
+  job_posting_fact
 WHERE
-    rate_hike * hours_spent > 1000
+  rate_hike * hours_spent > 1000
 ```
 
 En este caso, se está calculando un nuevo salario por hora (`rate_hike`) al sumar 5 al salario por hora actual (`hours_rate`). Luego, se filtran los resultados para mostrar sólo aquellos donde el producto de `rate_hike` y `hours_spent` sea mayor a 1000.
@@ -389,24 +389,24 @@ Estas funciones se pueden usar con las cláusulas `GROUP BY` y `HAVING`:
 
 ```sql
 SELECT
-    -- Realizar la suma de todos los salarios
-    SUM(job_posting_fact.salary_year_avg) AS salary_sum,
+  -- Realizar la suma de todos los salarios
+  SUM(job_posting_fact.salary_year_avg) AS salary_sum,
 
-    -- Contar el número de filas que hay en la base de datos
-    COUNT(*) AS count_rows,
+  -- Contar el número de filas que hay en la base de datos
+  COUNT(*) AS count_rows,
 
-    -- Contar el número de trabajos diferentes
-    COUNT(DISTINCT job_posting_fact.job_title_short) AS tipo_trabajos,
+  -- Contar el número de trabajos diferentes
+  COUNT(DISTINCT job_posting_fact.job_title_short) AS tipo_trabajos,
 
-    -- Promedio del salario
-    AVG(job_posting_fact.salary_year_avg) AS salario_promedio
+  -- Promedio del salario
+  AVG(job_posting_fact.salary_year_avg) AS salario_promedio
 FROM
-    job_posting_fact
+  job_posting_fact
 WHERE
-    -- Ahora podemos aplicar todos los filtros anteriores pero
-    -- solo en aquellos casos donde el título del trabajo contenga el
-    -- término Machine Learning
-    job_posting_fact.job_title LIKE '%Machine%Learning%'
+  -- Ahora podemos aplicar todos los filtros anteriores pero
+  -- solo en aquellos casos donde el título del trabajo contenga el
+  -- término Machine Learning
+  job_posting_fact.job_title LIKE '%Machine%Learning%'
 ```
 
 :::
@@ -416,33 +416,33 @@ Otro ejemplo que muestra cómo se pueden usar estas funciones y cláusulas para 
 
 ```sql
 SELECT
-    -- Nos quedamos con los tipos de trabajos
-    job_posting_fact.job_title_short as Trabajos,
+  -- Nos quedamos con los tipos de trabajos
+  job_posting_fact.job_title_short as Trabajos,
 
-    -- Obtenemos el salario mínimo para cada puesto
-    MIN(job_posting_fact.salary_year_avg) as MIN_SAL_YER,
+  -- Obtenemos el salario mínimo para cada puesto
+  MIN(job_posting_fact.salary_year_avg) as MIN_SAL_YER,
 
-    -- Obtenemos el salario máximo para cada puesto
-    MAX(job_posting_fact.salary_year_avg) as MAX_SAL_YER,
+  -- Obtenemos el salario máximo para cada puesto
+  MAX(job_posting_fact.salary_year_avg) as MAX_SAL_YER,
 
-    -- Obtenemos el salario promedio para cada puesto
-    AVG(job_posting_fact.salary_year_avg) as AVG_SAL_YER,
+  -- Obtenemos el salario promedio para cada puesto
+  AVG(job_posting_fact.salary_year_avg) as AVG_SAL_YER,
 
-    -- Contamos las veces que aparece un puesto de trabajo
-    COUNT(job_posting_fact.job_title_short) as JOB_COUNT
+  -- Contamos las veces que aparece un puesto de trabajo
+  COUNT(job_posting_fact.job_title_short) as JOB_COUNT
 FROM
-    job_posting_fact
+  job_posting_fact
 GROUP BY
-    -- Agrupamos los datos por el tipo de trabajo
-    Trabajos
+  -- Agrupamos los datos por el tipo de trabajo
+  Trabajos
 HAVING
-    -- Filtramos aquellos trabajos que no se repitan más de 100 veces
-    -- Es muy útil para en el caso de calcular media no haya grandes
-    -- desviaciones
-    JOB_COUNT > 100
+  -- Filtramos aquellos trabajos que no se repitan más de 100 veces
+  -- Es muy útil para en el caso de calcular media no haya grandes
+  -- desviaciones
+  JOB_COUNT > 100
 ORDER BY
-    -- Ordenamos las filas según el salario promedio anual
-    AVG_SAL_YER
+  -- Ordenamos las filas según el salario promedio anual
+  AVG_SAL_YER
 ```
 
 :::
@@ -455,7 +455,7 @@ Los valores `NULL` en SQL representan la ausencia de información. Podemos filtr
 
 ```sql
 WHERE
-    salary_year_avg IS NOT NULL
+  salary_year_avg IS NOT NULL
 ```
 
 :::
@@ -467,10 +467,10 @@ Otra estrategia es reemplazar los valores `NULL` con un valor calculado, como el
 ```sql
 UPDATE empleados
 SET salario = (
-    SELECT AVG(salario)
-    FROM empleados AS e2
-    WHERE e2.trabajo = empleados.trabajo
-    AND e2.salario IS NOT NULL
+  SELECT AVG(salario)
+  FROM empleados AS e2
+  WHERE e2.trabajo = empleados.trabajo
+  AND e2.salario IS NOT NULL
 )
 WHERE salario IS NULL;
 ```
@@ -492,10 +492,10 @@ Si dos tablas contienen un identificador común y queremos combinarlas para obte
 
 ```sql
 SELECT
-    job_postings_fact.job_id,
-    company_dim.name as Empresa
+  job_postings_fact.job_id,
+  company_dim.name as Empresa
 FROM
-    job_postings_fact
+  job_postings_fact
 LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
 ```
 
@@ -592,9 +592,9 @@ En SQL, se emplean diversos tipos de datos para definir las columnas en una base
 
   ```sql
   CREATE TABLE empleados (
-      id INT,
-      nombre VARCHAR(100),
-      edad INT
+    id INT,
+    nombre VARCHAR(100),
+    edad INT
   );
   ```
 
@@ -606,9 +606,9 @@ En SQL, se emplean diversos tipos de datos para definir las columnas en una base
 
   ```sql
   CREATE TABLE empleados (
-      id INT,
-      nombre VARCHAR(100),
-      edad INT
+    id INT,
+    nombre VARCHAR(100),
+    edad INT
   );
   ```
 
@@ -620,9 +620,9 @@ En SQL, se emplean diversos tipos de datos para definir las columnas en una base
 
   ```sql
   CREATE TABLE tareas (
-      id INT,
-      descripcion VARCHAR(255),
-      completada BOOLEAN
+    id INT,
+    descripcion VARCHAR(255),
+    completada BOOLEAN
   );
   ```
 
@@ -634,9 +634,9 @@ En SQL, se emplean diversos tipos de datos para definir las columnas en una base
 
   ```sql
   CREATE TABLE empleados (
-      id INT,
-      nombre VARCHAR(100),
-      fecha_de_contratacion TIMESTAMP
+    id INT,
+    nombre VARCHAR(100),
+    fecha_de_contratacion TIMESTAMP
   );
   ```
 
@@ -648,9 +648,9 @@ En SQL, se emplean diversos tipos de datos para definir las columnas en una base
 
   ```sql
   CREATE TABLE empleados (
-      id INT,
-      nombre VARCHAR(100),
-      salario NUMERIC(10, 2)
+    id INT,
+    nombre VARCHAR(100),
+    salario NUMERIC(10, 2)
   );
   ```
 
@@ -667,13 +667,13 @@ Para manipular tablas en SQL, se utilizan las siguientes instrucciones:
 
   ```sql
   CREATE TABLE job_applied(
-      job_id INT,
-      application_sent_date DATE,
-      custom_resume BOOLEAN,
-      resume_file_name VARCHAR(255),
-      cover_letter_sent BOOLEAN,
-      cover_letter_file_name VARCHAR(255),
-      status VARCHAR(50)
+    job_id INT,
+    application_sent_date DATE,
+    custom_resume BOOLEAN,
+    resume_file_name VARCHAR(255),
+    cover_letter_sent BOOLEAN,
+    cover_letter_file_name VARCHAR(255),
+    status VARCHAR(50)
   );
   ```
 
@@ -685,28 +685,28 @@ Para manipular tablas en SQL, se utilizan las siguientes instrucciones:
 
   ```sql
   INSERT INTO job_applied(
-      job_id,
-      application_sent_date,
-      custom_resume,
-      resume_file_name,
-      cover_letter_sent,
-      cover_letter_file_name,
-      status
+    job_id,
+    application_sent_date,
+    custom_resume,
+    resume_file_name,
+    cover_letter_sent,
+    cover_letter_file_name,
+    status
   )
   VALUES  (1,
-      '2024-02-01',
-      TRUE,
-      'CV_01.pdf',
-      true,
-      'cover_letter_01.pdf',
-      'submitted'),
-      (2,
-      '2024-03-01',
-      TRUE,
-      'CV_02.pdf',
-      true,
-      'cover_letter_02.pdf',
-      'submitted');
+    '2024-02-01',
+    TRUE,
+    'CV_01.pdf',
+    true,
+    'cover_letter_01.pdf',
+    'submitted'),
+    (2,
+    '2024-03-01',
+    TRUE,
+    'CV_02.pdf',
+    true,
+    'cover_letter_02.pdf',
+    'submitted');
   ```
 
   :::
@@ -866,11 +866,11 @@ Si se desea clasificar los trabajos en función del salario, se podría utilizar
 
 ```sql
 SELECT job_title,
-    CASE
-        WHEN salary_year_avg > 100000 THEN 'High'
-        WHEN salary_year_avg > 50000 THEN 'Medium'
-        ELSE 'Low'
-    END AS salary_category
+  CASE
+    WHEN salary_year_avg > 100000 THEN 'High'
+    WHEN salary_year_avg > 50000 THEN 'Medium'
+    ELSE 'Low'
+  END AS salary_category
 FROM job_posting_fact;
 ```
 
@@ -887,9 +887,9 @@ Si se desea obtener el salario promedio de los trabajos de 'Data Scientist', se 
 ```sql
 SELECT AVG(salary_year_avg)
 FROM (
-    SELECT salary_year_avg
-    FROM job_posting_fact
-    WHERE job_title = 'Data Scientist'
+  SELECT salary_year_avg
+  FROM job_posting_fact
+  WHERE job_title = 'Data Scientist'
 ) AS subquery;
 ```
 
@@ -902,9 +902,9 @@ Un CTE es similar a una subconsulta, pero se define antes de la consulta princip
 
 ```sql
 WITH data_scientist_jobs AS (
-    SELECT *
-    FROM job_posting_fact
-    WHERE job_title = 'Data Scientist'
+  SELECT *
+  FROM job_posting_fact
+  WHERE job_title = 'Data Scientist'
 )
 SELECT AVG(salary_year_avg)
 FROM data_scientist_jobs;
