@@ -9,7 +9,7 @@ const projectName = "web";
 const config = {
   title: "Web",
   url: `https://${organizationName}.github.io`,
-  baseUrl: "/",
+  baseUrl: "/web/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/logo.ico",
