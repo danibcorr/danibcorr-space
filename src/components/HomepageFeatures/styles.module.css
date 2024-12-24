@@ -25,6 +25,15 @@
   --borderColor: #e0e0e0;
   --colorTarjetas: #212529;
   --shadowColor: #e0e0e0;
+  --transitionTime: 0.3s;
+  --fontSize: 1rem;
+  --containerMaxWidth: 800px;
+  --maxWidth: 100%;
+  --border-radius: 8px;
+  --heightImage: 220px;
+  --widthImage: 220px;
+  --borderRadiusImage: 50%;
+  --marginTop: 40px;
 }
 
 /* Sección de características */

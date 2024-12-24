@@ -7,13 +7,13 @@ const projectName = "web";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Web page",
+  title: "Web",
   url: `https://${organizationName}.github.io`,
-  baseUrl: "/web/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
+  baseUrl: "/",
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
   favicon: "img/logo.ico",
-  trailingSlash: false,
+  trailingSlash: true,
 
   organizationName,
   projectName,
@@ -44,7 +44,6 @@ const config = {
           showReadingTime: true,
           feedOptions: {
             type: ["rss", "atom"],
-            xslt: true,
           },
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -53,7 +52,7 @@ const config = {
           rehypePlugins: [rehypeKatex],
         },
         theme: {
-          customCss: ["./src/css/custom.css"],
+          customCss: "./src/css/custom.css",
         },
       },
     ],
@@ -82,13 +81,6 @@ const config = {
         showLastUpdateTime: true,
         showLastUpdateAuthor: true,
         breadcrumbs: true,
-        sidebarItemsGenerator: async function ({
-          defaultSidebarItemsGenerator,
-          ...args
-        }) {
-          const sidebarItems = await defaultSidebarItemsGenerator(args);
-          return sidebarItems;
-        },
       },
     ],
     [
@@ -103,18 +95,17 @@ const config = {
         showLastUpdateTime: true,
         showLastUpdateAuthor: true,
         breadcrumbs: true,
-        sidebarItemsGenerator: async function ({
-          defaultSidebarItemsGenerator,
-          ...args
-        }) {
-          const sidebarItems = await defaultSidebarItemsGenerator(args);
-          return sidebarItems;
-        },
       },
     ],
   ],
 
   themeConfig: {
+    metadata: [
+      {
+        name: "description",
+        content: "Documentation and Blog on Web and Machine Learning.",
+      },
+    ],
     docs: {
       sidebar: {
         hideable: true,
@@ -124,7 +115,7 @@ const config = {
     colorMode: {
       disableSwitch: false,
       defaultMode: "light",
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: "Inicio",
@@ -165,16 +156,11 @@ const config = {
       ],
     },
     footer: {
-      copyright: `
-        <p>
-          Copyright © ${new Date().getFullYear()} Daniel Bazo Correa. 
-          Construido con Docusaurus con la ayuda de <a href="https://github.com/LayZeeDK/github-pages-docusaurus" target="_blank" rel="noopener noreferrer">LayZeeDK</a>.
-        </p>
-      `,
+      copyright: `Copyright © ${new Date().getFullYear()} Daniel Bazo Correa. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
-      darkTheme: darkCodeTheme, // Add dark theme
+      darkTheme: darkCodeTheme,
       additionalLanguages: ["bash", "makefile"],
     },
   },
