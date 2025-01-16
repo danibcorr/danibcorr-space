@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 authors:
   - name: Daniel Bazo Correa
 description: Gestiona los parámetros de tus proyectos en Python.
-title: Gestión de parámetros
+title: Gestión de parámetros con Pydantic
 toc_max_heading_level: 4
 ---
 
