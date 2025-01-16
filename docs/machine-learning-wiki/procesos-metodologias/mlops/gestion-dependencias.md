@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 authors:
   - name: Daniel Bazo Correa
 description: Aprender a gestionar las dependencias de tus proyectos en Python.

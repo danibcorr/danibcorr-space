@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 authors:
   - name: Daniel Bazo Correa
 description: Crea y almacena tus artefactos en repositorios.

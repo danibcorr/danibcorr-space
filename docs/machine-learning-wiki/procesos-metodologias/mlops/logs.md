@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 authors:
   - name: Daniel Bazo Correa
 description: Creación y uso de logs en Python.
