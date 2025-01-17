@@ -2,8 +2,7 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description:
-  Creación y gestión de entornos virtuales de Python con VENV, Anaconda y Poetry
+description: Creación y gestión de entornos virtuales de Python con VENV, Anaconda y Poetry
 title: Gestión de entornos en Python
 toc_max_heading_level: 3
 ---

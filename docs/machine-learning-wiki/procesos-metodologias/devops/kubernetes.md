@@ -7,6 +7,12 @@ title: Kubernetes
 toc_max_heading_level: 4
 ---
 
+## Bibliografía
+
+- [Minikube Docs](https://minikube.sigs.k8s.io/docs/)
+- [Kubernetes Tutorials](https://youtube.com/playlist?list=PLiMWaCMwGJXnHmccp2xlBENZ1xr4FpjXF&si=mxLcHpXxnZUhSGu3)
+- [Kubernetes: De novato a pro! (Curso completo en español)](https://youtu.be/DCoBcpOA7W4?si=KioSNJrOkZp-Dx5K)
+
 ### 1. Introducción
 
 <p align="center">

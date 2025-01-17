@@ -15,7 +15,7 @@ correctamente y para planificar cómo estructurar el contenido final.
 
 Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando
 en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial
-para ti!  
+para ti!
 
 :::
 
@@ -78,7 +78,7 @@ continuo.
 
 El mantenimiento de modelos basados en inteligencia artificial suele
 implicar su reentrenamiento con nuevos datos para evitar la degradación de las
-métricas establecidas y asegurar un rendimiento óptimo. 
+métricas establecidas y asegurar un rendimiento óptimo.
 
 :::
 

@@ -20,12 +20,7 @@ para ti!
 
 ## Bibliografía
 
-- [Aprende Docker ahora! Curso completo gratis desde cero](https://youtu.be/4Dko5W96WHg?si=pOAHHRxpPkqpQ2go)
-- [Docker Docs](https://docs.docker.com/)
-- [DevOps con Docker, Jenkins, Kubernetes, Git, GitFlow CI y CD](https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/)
-- [Minikube Docs](https://minikube.sigs.k8s.io/docs/)
-- [Kubernetes Tutorials](https://youtube.com/playlist?list=PLiMWaCMwGJXnHmccp2xlBENZ1xr4FpjXF&si=mxLcHpXxnZUhSGu3)
-- [Kubernetes: De novato a pro! (Curso completo en español)](https://youtu.be/DCoBcpOA7W4?si=KioSNJrOkZp-Dx5K)
+- [IBM DevOps and Software Engineering Professional Certificate](https://www.coursera.org/professional-certificates/devops-and-software-engineering)
 
 ## 1. Introducción
 
@@ -35,21 +30,21 @@ para ti!
   <em>Ciclo de vida de un proyecto DevOps</em>
 </p>
 
-DevOps es una filosofía que combina las prácticas de desarrollo de software
-(_Development_) y operaciones de IT (_Operations_) con el objetivo de mejorar la
-colaboración, la automatización y la entrega continua de software.
+DevOps es una filosofía que **combina las prácticas de desarrollo de software**
+(_Development_) **y operaciones de IT** (_Operations_) con el objetivo de
+mejorar la **colaboración, la automatización y la entrega continua** de
+software.
 
 La filosofía detrás de DevOps busca reducir los ciclos de desarrollo y ofrecer
 aplicaciones de alta calidad de manera más rápida y eficiente. Para lograrlo,
-DevOps se apoya en principios ágiles, y pone un fuerte énfasis en la medición y
-monitoreo de los procesos.
+DevOps se apoya en **principios ágiles**, y pone un fuerte **énfasis en la
+medición y monitoreo de los procesos**.
 
 El principio fundamental de DevOps es promover una cultura de colaboración y
 responsabilidad compartida entre los equipos de desarrollo y operaciones. Para
-ello, se fomentan prácticas como el uso y fomento de herramientas _open source_,
-la creación de repositorios públicos y la colaboración. Estos procesos permiten
-que cualquier miembro del equipo, ya sea interno o externo a la organización,
-pueda contribuir al desarrollo del software.
+ello, se fomentan prácticas como el uso y fomento de herramientas _open source_.
+Estos procesos permiten que cualquier miembro del equipo, ya sea interno o
+externo a la organización, pueda contribuir al desarrollo del software.
 
 DevOps también implica un cambio cultural dentro de las empresas, ya que obliga
 a rediseñar la forma en que se desarrollan y despliegan las aplicaciones. Esto
@@ -58,15 +53,15 @@ proyectos, estableciendo equipos estables con _ownership_ de cada producto y
 asegurando su mantenimiento a lo largo del tiempo.
 
 Una de las tareas clave de un profesional de DevOps es la automatización de los
-despliegues en los diferentes entornos, así como la creación de infraestructura
-efímera.
+despliegues en los diferentes entornos, así como la **creación de
+infraestructura efímera**.
 
-:::note 
+:::note
 
-Este concepto de infraestructura efímera se refiere a la creación y
+Este concepto de **infraestructura efímera** se refiere a la creación y
 destrucción dinámica de recursos para cada despliegue, garantizando que se
 eliminen los recursos innecesarios y se creen nuevos para cada nueva versión del
-software. 
+software.
 
 :::
 
@@ -78,22 +73,22 @@ trabajo, los SRE se enfocan en mejorar la confiabilidad y el rendimiento a
 través de la observabilidad del estado de los sistemas, los SLAs (_Service Level
 Agreements_) y los errores presupuestarios.
 
-:::note 
+:::note
 
-Los SLAs (Acuerdos de Nivel de Servicio) son compromisos formales entre
-un proveedor de servicios (en este caso, el equipo de operaciones) y sus
-clientes (los usuarios o las partes interesadas). En el contexto de SRE, los
-SLAs se utilizan para establecer expectativas claras sobre el rendimiento y la
-disponibilidad del sistema. 
+Los SLAs (Acuerdos de Nivel de Servicio) son compromisos formales entre un
+proveedor de servicios (en este caso, el equipo de operaciones) y sus clientes
+(los usuarios o las partes interesadas). En el contexto de SRE, los SLAs se
+utilizan para establecer expectativas claras sobre el rendimiento y la
+disponibilidad del sistema.
 
 :::
 
-:::note 
+:::note
 
-El error budget es un concepto clave dentro de la ingeniería de
-confiabilidad del sitio (SRE). Se refiere a la cantidad de "fallos" o "tiempo de
-inactividad" que se permite dentro de un determinado período mientras aún se
-cumple con los SLAs. 
+El error budget es un concepto clave dentro de la ingeniería de confiabilidad
+del sitio (SRE). Se refiere a la cantidad de "fallos" o "tiempo de inactividad"
+que se permite dentro de un determinado período mientras aún se cumple con los
+SLAs.
 
 :::
 
@@ -107,30 +102,30 @@ fundamentales:
    la infraestructura como código y la infraestructura inmutable.
 2. **Microservicios**: Implica el diseño de aplicaciones como un conjunto de
    servicios independientes y débilmente acoplados, que se comunican entre sí a
-   través de APIs REST y están diseñados para ser resistentes a fallos. 
-   
-    :::note
+   través de APIs REST y están diseñados para ser resistentes a fallos.
 
-    Las **APIs REST** (_Representational State Transfer_) son un conjunto de
-    principios de la arquitectura para la comunicación entre sistemas a través de
-    la web. Utilizan los estándares de HTTP y se basan en la transferencia de
-    recursos, que se identifican mediante **URLs**. Las principales
-    características de las APIs REST son:
+   :::note
 
-    1. **Cliente-Servidor**: La arquitectura se divide en dos roles: el cliente
+   Las **APIs REST** (_Representational State Transfer_) son un conjunto de
+   principios de la arquitectura para la comunicación entre sistemas a través de
+   la web. Utilizan los estándares de HTTP y se basan en la transferencia de
+   recursos, que se identifican mediante **URLs**. Las principales
+   características de las APIs REST son:
+
+   1. **Cliente-Servidor**: La arquitectura se divide en dos roles: el cliente
       solicita recursos y el servidor los provee.
-    2. **Sin Estado**: Cada solicitud es independiente y no depende de
+   2. **Sin Estado**: Cada solicitud es independiente y no depende de
       solicitudes anteriores.
-    3. **Interfaz Uniforme**: Las API siguen un conjunto de convenciones claras,
+   3. **Interfaz Uniforme**: Las API siguen un conjunto de convenciones claras,
       facilitando la interacción.
-    4. **Métodos HTTP**: Se utilizan los métodos estándar de HTTP: **GET**
+   4. **Métodos HTTP**: Se utilizan los métodos estándar de HTTP: **GET**
       (leer), **POST** (crear), **PUT** (actualizar), **DELETE** (eliminar).
-    5. **Representaciones de Recursos**: Los recursos se representan generalmente
+   5. **Representaciones de Recursos**: Los recursos se representan generalmente
       en formato JSON o XML, lo que permite al cliente procesarlos.
-    6. **Escalabilidad y Flexibilidad**: Las APIs REST son fáciles de escalar y
-      evolucionar sin que interfieran entre sí. 
-      
-    :::
+   6. **Escalabilidad y Flexibilidad**: Las APIs REST son fáciles de escalar y
+      evolucionar sin que interfieran entre sí.
+
+   :::
 
 3. **Contenedores**: Ofrecen portabilidad, escalabilidad y facilitan la creación
    de entornos de despliegue rápidos con infraestructura inmutable.

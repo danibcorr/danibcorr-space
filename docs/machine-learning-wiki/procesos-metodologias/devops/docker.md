@@ -7,6 +7,12 @@ title: Docker
 toc_max_heading_level: 4
 ---
 
+## Bibliografía
+
+- [Aprende Docker ahora! Curso completo gratis desde cero](https://youtu.be/4Dko5W96WHg?si=pOAHHRxpPkqpQ2go)
+- [Docker Docs](https://docs.docker.com/)
+- [DevOps con Docker, Jenkins, Kubernetes, Git, GitFlow CI y CD](https://www.udemy.com/course/devops-con-dockers-kubernetes-jenkins-y-gitflow-cicd/)
+
 ## 1. Introducción
 
 <p align="center">

@@ -81,7 +81,7 @@ def funcion():
 
 En este caso, la complejidad es $O\left(A \times B\right)$, ya que los bucles
 anidados operan sobre arrays diferentes. Es un error asumir $O\left(N^2\right)$
-sin considerar los tamaños de los arrays involucrados. 
+sin considerar los tamaños de los arrays involucrados.
 
 :::
 
