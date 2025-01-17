@@ -8,9 +8,13 @@ toc_max_heading_level: 4
 
 :::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está
+terminado. Estoy utilizando este espacio para probar que todo funciona
+correctamente y para planificar cómo estructurar el contenido final.
 
-Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
+Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando
+en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial
+para ti!  
 :::
 
 <div align="justify">
@@ -23,10 +27,18 @@ Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando 
 
 ## Anexo A: Terminología útil
 
-Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuenta a modo de recordatorio. No tiene ningún tipo de orden.
+Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuenta a
+modo de recordatorio. No tiene ningún tipo de orden.
 
-- **La letra ‘x’ se asocia a la variable independiente**, lo que usamos para hacer predicciones, por ejemplo imágenes. Mientras que la **letra ‘y’ se asocia a la variable dependiente**, lo que se denominan etiquetas y es nuestro objetivo obtener una predicción que tenga una alta probabilidad de parecerse a dicha ‘y’, un ejemplo de etiquetas pueden ser los nombres de las imágenes que permiten clasificar razas de perros.
-- **weigth** = pesos: valores aleatorios con los que se inicializan a las neuronas, estos parámetros son fundamentales para determinar el tipo de funcionamiento de una red.
+- **La letra ‘x’ se asocia a la variable independiente**, lo que usamos para
+  hacer predicciones, por ejemplo imágenes. Mientras que la **letra ‘y’ se
+  asocia a la variable dependiente**, lo que se denominan etiquetas y es nuestro
+  objetivo obtener una predicción que tenga una alta probabilidad de parecerse a
+  dicha ‘y’, un ejemplo de etiquetas pueden ser los nombres de las imágenes que
+  permiten clasificar razas de perros.
+- **weigth** = pesos: valores aleatorios con los que se inicializan a las
+  neuronas, estos parámetros son fundamentales para determinar el tipo de
+  funcionamiento de una red.
   - Forma (shape) → w(tamaño input, número de neuronas)
 - **bias** = sesgo:
   - Forma (shape) → b(1, número de neuronas)
@@ -34,18 +46,31 @@ Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuent
   - Set de entrenamiento (train set).
   - Set de desarrollo o validación (dev set o validation set).
   - Set de pruebas (test set)
-- Función de pérdida (**Loss function**): función que mide el rendimiento del modelo en uno de los ejemplos del set de entrenamiento.
-- Función de coste (**Cost function**): función que mide el rendimiento del modelo en todos los ejemplos del set de entrenamiento. Sería la media de cada una de las funciones de pérdidas de cada ejemplo del set de entrenamiento.
-- **Dataset**: una colección que devuelve un tuple de su variable independiente y dependiente para un solo elemento.
-- **DataLoader**: un iterador que proporciona un flujo de grupos reducidos (mini-batches), donde cada grupo reducido es un tuple de un lote de variables independientes y un lote de variables dependientes.
-- **one-hot encoding**: vectores de 0’s con el tamaño del número de clases que tenga el dataset, cada categoría representa una posición en el vector por lo que si la imagen contiene algún elemento de alguna clase el vector tendrá un 1 en la posición del vector que corresponderá a su clase.
-- Es importante saber que **una clasificación** pretende predecir una clase o categoría mientras que un modelo de **regresión** intenta predecir 1 o más cantidades numéricas.
+- Función de pérdida (**Loss function**): función que mide el rendimiento del
+  modelo en uno de los ejemplos del set de entrenamiento.
+- Función de coste (**Cost function**): función que mide el rendimiento del
+  modelo en todos los ejemplos del set de entrenamiento. Sería la media de cada
+  una de las funciones de pérdidas de cada ejemplo del set de entrenamiento.
+- **Dataset**: una colección que devuelve un tuple de su variable independiente
+  y dependiente para un solo elemento.
+- **DataLoader**: un iterador que proporciona un flujo de grupos reducidos
+  (mini-batches), donde cada grupo reducido es un tuple de un lote de variables
+  independientes y un lote de variables dependientes.
+- **one-hot encoding**: vectores de 0’s con el tamaño del número de clases que
+  tenga el dataset, cada categoría representa una posición en el vector por lo
+  que si la imagen contiene algún elemento de alguna clase el vector tendrá un 1
+  en la posición del vector que corresponderá a su clase.
+- Es importante saber que **una clasificación** pretende predecir una clase o
+  categoría mientras que un modelo de **regresión** intenta predecir 1 o más
+  cantidades numéricas.
 
 ## Capítulo 0: Útiles
 
 ### 0.1. Guardar y cargar un modelo
 
-Vamos a definir 2 funciones, una se encargará de guardar el estado del modelo y del optimizador pero podríamos guardar otros parámetros del modelo. Estas funciones son:
+Vamos a definir 2 funciones, una se encargará de guardar el estado del modelo y
+del optimizador pero podríamos guardar otros parámetros del modelo. Estas
+funciones son:
 
 ```python
 def guardar_checkpoint(checkpoint, filename = "checkpoint.pth.tar"):
@@ -60,9 +85,11 @@ def cargar_checkpoint(checkpoint, modelo, optimizador):
 	optimizador.load_state_dict(checkpoint['optimizador'])
 ```
 
-“checkpoint.pth.tar” sería el nombre del fichero en el que se encuentra almacenados los parámetros guardados.
+“checkpoint.pth.tar” sería el nombre del fichero en el que se encuentra
+almacenados los parámetros guardados.
 
-A la hora de definir los hiper-parámetros es recomendable declarar otra variable para indicar si queremos cargar un modelo o no:
+A la hora de definir los hiper-parámetros es recomendable declarar otra variable
+para indicar si queremos cargar un modelo o no:
 
 ```python
 # Hiperparámetros
@@ -147,7 +174,13 @@ for epoca in range(num_epocas):
 
 ### 0.2. Utilizar un scheduler para el learning rate
 
-En ocasiones durante el entrenamiento la función de pérdida se puede quedar estancada y el modelo, a pesar de seguir entrenando, no mejora. Realizando modificaciones en el learning rate podemos conseguir que el modelo mejore. En concreto, en algunos papers como el de VGG o GoogleLeNet utilizan un scheduler en el que reducen el learning rate en un factor de 10 **(learning_rate_actual = learning_rate_anterior \* 0.1)** al reducir el learning rate conforme se avanza en el aprendizaje podemos mejorar el accuracy y reducir la función de pérdida.
+En ocasiones durante el entrenamiento la función de pérdida se puede quedar
+estancada y el modelo, a pesar de seguir entrenando, no mejora. Realizando
+modificaciones en el learning rate podemos conseguir que el modelo mejore. En
+concreto, en algunos papers como el de VGG o GoogleLeNet utilizan un scheduler
+en el que reducen el learning rate en un factor de 10 **(learning_rate_actual =
+learning_rate_anterior \* 0.1)** al reducir el learning rate conforme se avanza
+en el aprendizaje podemos mejorar el accuracy y reducir la función de pérdida.
 
 Añadir el scheduler cuando definimos la función de pérdida y el optimizador
 
@@ -170,7 +203,9 @@ scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer = optimizador, mode =
 																									verbose = True)
 ```
 
-Podemos fijarnos del punto anterior “0.1. Guardar y cargar un modelo” en el bucle empleado para el entrenamiento que estamos utilizando un scheduler que da pasos para según la función de coste.
+Podemos fijarnos del punto anterior “0.1. Guardar y cargar un modelo” en el
+bucle empleado para el entrenamiento que estamos utilizando un scheduler que da
+pasos para según la función de coste.
 
 ### 0.3. Bucle básico de entrenamiento
 

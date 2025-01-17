@@ -15,7 +15,9 @@ toc_max_heading_level: 4
 
 ### Two sum
 
-Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Given an array of integers, return indices of the two numbers such that they add
+up to a specific target. You may assume that each input would have exactly one
+solution, and you may not use the same element twice.
 
 Example:
 
@@ -72,7 +74,10 @@ def funcion2(lista: list[int], target: int) -> list[int]:
 
 ### Best time to buy and sell stock
 
-Say you have an array for which the ith element is the price of a given stock on day i. If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit. Note that you cannot sell a stock before you buy one.
+Say you have an array for which the ith element is the price of a given stock on
+day i. If you were only permitted to complete at most one transaction (i.e., buy
+one and sell one share of the stock), design an algorithm to find the maximum
+profit. Note that you cannot sell a stock before you buy one.
 
 Example:
 
@@ -138,7 +143,8 @@ def funcion2(lista: list[int]) -> list[int]:
 
 ### Contains duplicate
 
-Given an integer array nums, return true of any value appears at least twice in the array, and return false if every element is distinct.
+Given an integer array nums, return true of any value appears at least twice in
+the array, and return false if every element is distinct.
 
 Example:
 
@@ -195,7 +201,8 @@ def funcion2(lista: list[int]) -> bool:
 
 ### Maximum subarray
 
-Given an integer array nums, fin the contiguous subarray (containing at least one number) which has the larges sum and return its sum
+Given an integer array nums, fin the contiguous subarray (containing at least
+one number) which has the larges sum and return its sum
 
 Example:
 
@@ -237,7 +244,11 @@ def funcion(lista: list[int]) -> int:
 
 ### Product of array except self
 
-Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must write an algorithm that runs in O(N) time and without using the division operation.
+Given an integer array nums, return an array answer such that answer[i] is equal
+to the product of all the elements of nums except nums[i]. The product of any
+prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must
+write an algorithm that runs in O(N) time and without using the division
+operation.
 
 Example:
 
