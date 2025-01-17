@@ -16,7 +16,8 @@ toc_max_heading_level: 4
 Ejemplo
 </summary>
 
-En este código mostraremos como ejecutar la función primero en la GPU, y luego en la CPU.
+En este código mostraremos como ejecutar la función primero en la GPU, y luego
+en la CPU.
 
 ```c
 #include <stdio.h>
@@ -89,7 +90,8 @@ int main()
 Ejemplo
 </summary>
 
-En este primer ejemplo, vamos a ejecutar 5 hilos en un único bloque para un Kernel.
+En este primer ejemplo, vamos a ejecutar 5 hilos en un único bloque para un
+Kernel.
 
 ```c
 #include <stdio.h>
@@ -115,7 +117,8 @@ int main()
 }
 ```
 
-En este otro ejemplo, vamos a ejecutar 5 hilos en 5 bloques diferentes de un mismo Kernel.
+En este otro ejemplo, vamos a ejecutar 5 hilos en 5 bloques diferentes de un
+mismo Kernel.
 
 ```c
 #include <stdio.h>
@@ -591,7 +594,9 @@ int main()
 
 El error obtenido es el siguiente: **invalid configuration argument**
 
-Y vemos que se trata de la configuración del Kernel donde el número de hebras por bloque supera el máximo de 1 Giga-Bloque. Por lo que hay que cambiar al máximo permitido:
+Y vemos que se trata de la configuración del Kernel donde el número de hebras
+por bloque supera el máximo de 1 Giga-Bloque. Por lo que hay que cambiar al
+máximo permitido:
 
 ```c
 size_t threads_per_block = 1024;
@@ -1012,11 +1017,18 @@ int main()
 
 ### Perfilar una aplicación con nsys
 
-Podemos utilizar el comando `!nsys profile --stats=true ./kernel` para obtener información sobre dicho kernel. Entre la información proporcionada, se encuentra el tiempo medio de ejecución del kernel po lo que sería muy útil para hacer evaluaciones del mejor reparto de bloques y hebras para el problema concreto.
+Podemos utilizar el comando `!nsys profile --stats=true ./kernel` para obtener
+información sobre dicho kernel. Entre la información proporcionada, se encuentra
+el tiempo medio de ejecución del kernel po lo que sería muy útil para hacer
+evaluaciones del mejor reparto de bloques y hebras para el problema concreto.
 
 ### Optimización
 
-Por ejemplo, si tenemos datos con tamaños de $$2^{24} = 2^{25} = 2^{10} \cdot 2^{10} \cdot 2^{5}$$, podemos tener como máximo 1024 hebras por bloque, quedando $$2^{15}$$ hebras que las repartiremos conformando $$2^{25}/1024 = 32768$$ bloques. En total tendríamos $$1024 \cdot 32768 = 33554432$$ hebras totales.
+Por ejemplo, si tenemos datos con tamaños de
+$$2^{24} = 2^{25} = 2^{10} \cdot 2^{10} \cdot 2^{5}$$, podemos tener como máximo
+1024 hebras por bloque, quedando $$2^{15}$$ hebras que las repartiremos
+conformando $$2^{25}/1024 = 32768$$ bloques. En total tendríamos
+$$1024 \cdot 32768 = 33554432$$ hebras totales.
 
 #### Consultar especificaciones de la GPU
 
@@ -1175,7 +1187,9 @@ int main()
 Ejemplo
 </summary>
 
-Al utilizar precarga de memoria, obtenemos menos transferencias de memoria pero con mayor contenido además de una reducción en el tiempo de ejecución del Kernel.
+Al utilizar precarga de memoria, obtenemos menos transferencias de memoria pero
+con mayor contenido además de una reducción en el tiempo de ejecución del
+Kernel.
 
 ```c
 #include <stdio.h>

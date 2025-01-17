@@ -7,6 +7,12 @@ title: Kubernetes
 toc_max_heading_level: 4
 ---
 
+## Bibliografía
+
+- [Minikube Docs](https://minikube.sigs.k8s.io/docs/)
+- [Kubernetes Tutorials](https://youtube.com/playlist?list=PLiMWaCMwGJXnHmccp2xlBENZ1xr4FpjXF&si=mxLcHpXxnZUhSGu3)
+- [Kubernetes: De novato a pro! (Curso completo en español)](https://youtu.be/DCoBcpOA7W4?si=KioSNJrOkZp-Dx5K)
+
 ### 1. Introducción
 
 <p align="center">
@@ -15,15 +21,32 @@ toc_max_heading_level: 4
   <em>Logo de Kubernetes</em>
 </p>
 
-La adopción de Kubernetes se motiva principalmente por la necesidad de administrar de manera eficiente y escalable múltiples contenedores de Docker distribuidos en diversos servidores. Kubernetes facilita la orquestación de estos contenedores a través de una infraestructura declarativa. En este enfoque, los usuarios definen la configuración deseada en un manifiesto, es decir, un archivo de configuración, que se procesa mediante la API de Kubernetes. Kubernetes asume la responsabilidad de distribuir la carga de trabajo entre los nodos disponibles y de administrar los recursos requeridos por los contenedores.
+La adopción de Kubernetes se motiva principalmente por la necesidad de
+administrar de manera eficiente y escalable múltiples contenedores de Docker
+distribuidos en diversos servidores. Kubernetes facilita la orquestación de
+estos contenedores a través de una infraestructura declarativa. En este enfoque,
+los usuarios definen la configuración deseada en un manifiesto, es decir, un
+archivo de configuración, que se procesa mediante la API de Kubernetes.
+Kubernetes asume la responsabilidad de distribuir la carga de trabajo entre los
+nodos disponibles y de administrar los recursos requeridos por los contenedores.
 
-Kubernetes también posibilita la construcción de pipelines ETL utilizando herramientas como Spark o Airflow, y se emplea extensamente en el entrenamiento de modelos de aprendizaje automático, como se evidencia en su uso en Kubeflow. Al gestionar la infraestructura de cómputo, redes y almacenamiento, Kubernetes simplifica la implementación y administración de aplicaciones en contenedores a gran escala.
+Kubernetes también posibilita la construcción de pipelines ETL utilizando
+herramientas como Spark o Airflow, y se emplea extensamente en el entrenamiento
+de modelos de aprendizaje automático, como se evidencia en su uso en Kubeflow.
+Al gestionar la infraestructura de cómputo, redes y almacenamiento, Kubernetes
+simplifica la implementación y administración de aplicaciones en contenedores a
+gran escala.
 
 ### 1.1. Componentes de Kubernetes
 
-**Kubectl** es una interfaz de línea de comandos que facilita la interacción con un clúster de Kubernetes, permitiendo la gestión de objetos como pods, servicios y despliegues.
+**Kubectl** es una interfaz de línea de comandos que facilita la interacción con
+un clúster de Kubernetes, permitiendo la gestión de objetos como pods, servicios
+y despliegues.
 
-Para la creación de un clúster de Kubernetes en un entorno local, se utiliza **Minikube**. Esta herramienta permite la ejecución de Kubernetes de manera local para fines de prueba o desarrollo, creando un clúster con uno o varios nodos virtualizados. Por defecto, Minikube crea un clúster que contiene un nodo.
+Para la creación de un clúster de Kubernetes en un entorno local, se utiliza
+**Minikube**. Esta herramienta permite la ejecución de Kubernetes de manera
+local para fines de prueba o desarrollo, creando un clúster con uno o varios
+nodos virtualizados. Por defecto, Minikube crea un clúster que contiene un nodo.
 
 Para inicializar el clúster de Minikube podemos utilizar el comando:
 
@@ -39,28 +62,51 @@ minikube status
 
 #### 1.1.1. Nodo
 
-Un nodo representa la unidad más pequeña dentro de un clúster de Kubernetes. Este puede ser una máquina física o una máquina virtual donde se ejecutan las aplicaciones. Kubernetes abstrae el hardware subyacente, permitiendo una gestión eficiente de los requisitos de recursos. Si un nodo no puede proporcionar más recursos o falla, Kubernetes redistribuye las cargas de trabajo a otros nodos disponibles.
+Un nodo representa la unidad más pequeña dentro de un clúster de Kubernetes.
+Este puede ser una máquina física o una máquina virtual donde se ejecutan las
+aplicaciones. Kubernetes abstrae el hardware subyacente, permitiendo una gestión
+eficiente de los requisitos de recursos. Si un nodo no puede proporcionar más
+recursos o falla, Kubernetes redistribuye las cargas de trabajo a otros nodos
+disponibles.
 
 Existen diferentes tipos de nodos:
 
-- **Nodos bajo demanda (On-Demand Nodes)**: Se crean cuando los recursos son elevados (CPU, GPU, RAM).
-- **Nodos al mejor precio (Spot Nodes)**: Son nodos más económicos que pueden ser retirados en cualquier momento.
+- **Nodos bajo demanda (On-Demand Nodes)**: Se crean cuando los recursos son
+  elevados (CPU, GPU, RAM).
+- **Nodos al mejor precio (Spot Nodes)**: Son nodos más económicos que pueden
+  ser retirados en cualquier momento.
 
 #### 1.1.2. Pod
 
-Un pod es la unidad mínima de ejecución en Kubernetes y puede contener uno o más contenedores que comparten los mismos recursos y red local. Todos los contenedores dentro del mismo pod pueden comunicarse entre sí y comparten el mismo entorno de red. Al escalar un pod, todos los contenedores dentro de él se escalan conjuntamente.
+Un pod es la unidad mínima de ejecución en Kubernetes y puede contener uno o más
+contenedores que comparten los mismos recursos y red local. Todos los
+contenedores dentro del mismo pod pueden comunicarse entre sí y comparten el
+mismo entorno de red. Al escalar un pod, todos los contenedores dentro de él se
+escalan conjuntamente.
 
 #### 1.1.3. Clúster
 
-Un clúster es un conjunto de nodos, también conocidos como workers, que se ejecutan en Kubernetes. La relación entre las aplicaciones que se están ejecutando en cada nodo es independiente. Por ejemplo, si se tiene un servidor de Proxmox donde existen dos máquinas virtuales, VM1 y VM2, a pesar de que cuenten con diferentes Pods, si todos están gestionados por Kubernetes, ambos formarán parte del mismo clúster.
+Un clúster es un conjunto de nodos, también conocidos como workers, que se
+ejecutan en Kubernetes. La relación entre las aplicaciones que se están
+ejecutando en cada nodo es independiente. Por ejemplo, si se tiene un servidor
+de Proxmox donde existen dos máquinas virtuales, VM1 y VM2, a pesar de que
+cuenten con diferentes Pods, si todos están gestionados por Kubernetes, ambos
+formarán parte del mismo clúster.
 
 ### 1.2. StatefulSet y volúmenes
 
-Dado que no se puede garantizar el lugar de ejecución de una aplicación, el uso del disco local para almacenar datos es inviable, siendo útil únicamente para almacenamiento temporal de datos, como caché.
+Dado que no se puede garantizar el lugar de ejecución de una aplicación, el uso
+del disco local para almacenar datos es inviable, siendo útil únicamente para
+almacenamiento temporal de datos, como caché.
 
-Kubernetes emplea volúmenes persistentes, que a diferencia de otros recursos como la CPU, GPU y RAM, que son gestionados por los clústeres de Kubernetes, deben ser adjuntados al propio clúster de Kubernetes desde unidades locales o en la nube. Estos volúmenes no se asocian a un nodo en particular.
+Kubernetes emplea volúmenes persistentes, que a diferencia de otros recursos
+como la CPU, GPU y RAM, que son gestionados por los clústeres de Kubernetes,
+deben ser adjuntados al propio clúster de Kubernetes desde unidades locales o en
+la nube. Estos volúmenes no se asocian a un nodo en particular.
 
-**StatefulSet** permite la creación de pods con volúmenes persistentes, garantizando la integridad de los datos incluso si el pod se reinicia o se elimina.
+**StatefulSet** permite la creación de pods con volúmenes persistentes,
+garantizando la integridad de los datos incluso si el pod se reinicia o se
+elimina.
 
 ```yaml
 # Versión de la API de Kubernetes que se está utilizando
@@ -120,7 +166,8 @@ spec:
             storage: 1Gi
 ```
 
-Para verificar el estado de los volúmenes y los StatefulSets, se pueden utilizar los siguientes comandos:
+Para verificar el estado de los volúmenes y los StatefulSets, se pueden utilizar
+los siguientes comandos:
 
 ```bash
 kubectl get pvc  # Para ver la asignación del volumen, capacidad, etc.
@@ -129,9 +176,15 @@ kubectl get sts  # Para ver los StatefulSets.
 
 ### 1.3. Manifiestos
 
-Un manifiesto es un archivo en formato YAML o JSON que especifica cómo desplegar una aplicación en un clúster de Kubernetes. Este archivo se conoce como un registro de intención, donde se le indica a Kubernetes el estado deseado del clúster.
+Un manifiesto es un archivo en formato YAML o JSON que especifica cómo desplegar
+una aplicación en un clúster de Kubernetes. Este archivo se conoce como un
+registro de intención, donde se le indica a Kubernetes el estado deseado del
+clúster.
 
-Además, es importante definir lo que es un namespace, que es la división lógica del clúster de Kubernetes, permitiendo separar la carga del clúster. Se pueden crear políticas para separar tráfico entre namespaces. Por defecto, los datos de un namespace se pueden ver desde otro namespace.
+Además, es importante definir lo que es un namespace, que es la división lógica
+del clúster de Kubernetes, permitiendo separar la carga del clúster. Se pueden
+crear políticas para separar tráfico entre namespaces. Por defecto, los datos de
+un namespace se pueden ver desde otro namespace.
 
 Para obtener el namespace del clúster podemos utilizar el comando:
 
@@ -139,7 +192,9 @@ Para obtener el namespace del clúster podemos utilizar el comando:
 kubectl get ns
 ```
 
-Para obtener los pods de ese namespace podemos utilizar el siguiente comando, que al añadir al final -o wide, obtenemos información de la IP del pod, nodo, etc.
+Para obtener los pods de ese namespace podemos utilizar el siguiente comando,
+que al añadir al final -o wide, obtenemos información de la IP del pod, nodo,
+etc.
 
 ```bash
 kubectl -n nombre_namespace get pods -o wide
@@ -182,7 +237,8 @@ kubectl get pods  # Ver el estado del pod
 
 Ejemplo de manifiesto para crear un Pod más complejo:
 
-El siguiente manifiesto contiene variables de entorno, así como solicitudes y límites de recursos, además de readiness probe y liveness probe.
+El siguiente manifiesto contiene variables de entorno, así como solicitudes y
+límites de recursos, además de readiness probe y liveness probe.
 
 ```yaml
 apiVersion: v1
@@ -238,7 +294,8 @@ spec:
 
 ### 1.4. Despliegue y gestión de réplicas
 
-Un despliegue permite declarar el número de réplicas, es decir, el número de Pods, y asegurar que el estado deseado se mantenga, monitorizándolos.
+Un despliegue permite declarar el número de réplicas, es decir, el número de
+Pods, y asegurar que el estado deseado se mantenga, monitorizándolos.
 
 ```yaml
 # Versión de la API del recurso de Kubernetes, está asociado al tipo
@@ -276,7 +333,10 @@ spec:
 
 ### 1.5. DaemonSet
 
-Un DaemonSet es una forma de hacer un despliegue de un Pod, pero este Pod va a estar en todos los nodos del clúster. Un solo Pod en cada nodo. No se especifica por tanto el número de réplicas, porque depende del número de nodos. Se suele utilizar mucho para servicios de monitoreo.
+Un DaemonSet es una forma de hacer un despliegue de un Pod, pero este Pod va a
+estar en todos los nodos del clúster. Un solo Pod en cada nodo. No se especifica
+por tanto el número de réplicas, porque depende del número de nodos. Se suele
+utilizar mucho para servicios de monitoreo.
 
 ```yaml
 # Versión de la API del recurso de Kubernetes, está asociado al tipo
@@ -311,7 +371,8 @@ spec:
 
 #### 1.6.1. Servicios en Kubernetes
 
-Los servicios en Kubernetes permiten acceder a los pods desde dentro y fuera del clúster. Un ejemplo de esto es el uso de un Load Balancer:
+Los servicios en Kubernetes permiten acceder a los pods desde dentro y fuera del
+clúster. Un ejemplo de esto es el uso de un Load Balancer:
 
 ```yaml
 apiVersion: v1
@@ -330,27 +391,37 @@ spec:
 
 #### 1.6.2. Ingress
 
-Ingress administra el acceso externo a los servicios del clúster, típicamente HTTP. Proporciona balanceo de carga y terminación SSL. Permite el acceso al servicio mediante paths, y suele requerirse Ingress-Nginx controller que se suele instalar por separado.
+Ingress administra el acceso externo a los servicios del clúster, típicamente
+HTTP. Proporciona balanceo de carga y terminación SSL. Permite el acceso al
+servicio mediante paths, y suele requerirse Ingress-Nginx controller que se
+suele instalar por separado.
 
 ### 1.7. Networking y almacenamiento
 
 #### 1.7.1. Pod Networking
 
-Cada pod tiene su propia IP, y para comunicar pods en diferentes nodos se utiliza el Cloud Cluster Networking Interface.
+Cada pod tiene su propia IP, y para comunicar pods en diferentes nodos se
+utiliza el Cloud Cluster Networking Interface.
 
 #### 1.7.2. Almacenamiento persistente
 
-**etcd** es un almacén de datos clave-valor distribuido utilizado para guardar datos de configuración, estado y metadatos.
+**etcd** es un almacén de datos clave-valor distribuido utilizado para guardar
+datos de configuración, estado y metadatos.
 
 ### 1.8. Tipos de servicios
 
 #### 1.8.1. Cluster IP
 
-Cluster IP proporciona una forma de exponer aplicaciones que se ejecutan en un conjunto de Pods a través de una dirección IP virtual única a nivel de clúster, facilitando la comunicación y balanceo de carga entre Pods.
+Cluster IP proporciona una forma de exponer aplicaciones que se ejecutan en un
+conjunto de Pods a través de una dirección IP virtual única a nivel de clúster,
+facilitando la comunicación y balanceo de carga entre Pods.
 
 #### 1.8.2. Node Port
 
-Node Port crea un puerto en cada nodo que va a recibir el tráfico y lo va a mandar a los servicios (Pods) necesarios²⁶. Esto permite que la aplicación sea accesible desde fuera del clúster. Suele utilizar puertos dentro del rango 30000-32767.
+Node Port crea un puerto en cada nodo que va a recibir el tráfico y lo va a
+mandar a los servicios (Pods) necesarios²⁶. Esto permite que la aplicación sea
+accesible desde fuera del clúster. Suele utilizar puertos dentro del rango
+30000-32767.
 
 ```yaml
 apiVersion: v1
@@ -369,7 +440,9 @@ spec:
 
 #### 1.8.3. Load Balancer
 
-Load Balancer está más enfocado a proveedores de la nube para redireccionar el tráfico en los Pods. Crea un balanceador de carga proporcionando una IP estable para el servidor, lo que facilita su acceso desde internet.
+Load Balancer está más enfocado a proveedores de la nube para redireccionar el
+tráfico en los Pods. Crea un balanceador de carga proporcionando una IP estable
+para el servidor, lo que facilita su acceso desde internet.
 
 ```yaml
 apiVersion: v1

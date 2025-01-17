@@ -8,9 +8,13 @@ toc_max_heading_level: 4
 
 :::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está
+terminado. Estoy utilizando este espacio para probar que todo funciona
+correctamente y para planificar cómo estructurar el contenido final.
 
-Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
+Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando
+en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial
+para ti!  
 :::
 
 <div align="justify">
@@ -25,10 +29,19 @@ Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando 
 
 ## Anexo A: Terminología útil
 
-Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuenta a modo de recordatorio. No tiene ningún tipo de orden, ni pretende ser el primer capítulo a visualizar.
+Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuenta a
+modo de recordatorio. No tiene ningún tipo de orden, ni pretende ser el primer
+capítulo a visualizar.
 
-- **La letra ‘x’ se asocia a la variable independiente**, lo que usamos para hacer predicciones, por ejemplo imágenes. Mientras que la **letra ‘y’ se asocia a la variable dependiente**, lo que se denominan etiquetas y es nuestro objetivo obtener una predicción que tenga una alta probabilidad de parecerse a dicha ‘y’, un ejemplo de etiquetas pueden ser los nombres de las imágenes que permiten clasificar razas de perros.
-- **weigth** = pesos: valores aleatorios con los que se inicializan a las neuronas, estos parámetros son fundamentales para determinar el tipo de funcionamiento de una red.
+- **La letra ‘x’ se asocia a la variable independiente**, lo que usamos para
+  hacer predicciones, por ejemplo imágenes. Mientras que la **letra ‘y’ se
+  asocia a la variable dependiente**, lo que se denominan etiquetas y es nuestro
+  objetivo obtener una predicción que tenga una alta probabilidad de parecerse a
+  dicha ‘y’, un ejemplo de etiquetas pueden ser los nombres de las imágenes que
+  permiten clasificar razas de perros.
+- **weigth** = pesos: valores aleatorios con los que se inicializan a las
+  neuronas, estos parámetros son fundamentales para determinar el tipo de
+  funcionamiento de una red.
   - Forma (shape) → w(tamaño input, número de neuronas)
 - **bias** = sesgo:
   - Forma (shape) → b(1, número de neuronas)
@@ -36,18 +49,30 @@ Aquí se reúnen las palabras, términos, conceptos etc. claves a tener en cuent
   - Set de entrenamiento (train set).
   - Set de desarrollo o validación (dev set o validation set).
   - Set de pruebas (test set)
-- Función de pérdida (**Loss function**): función que mide el rendimiento del modelo en uno de los ejemplos del set de entrenamiento.
-- Función de coste (**Cost function**): función que mide el rendimiento del modelo en todos los ejemplos del set de entrenamiento. Sería la media de cada una de las funciones de pérdidas de cada ejemplo del set de entrenamiento.
-- **Dataset**: una colección que devuelve un tuple de su variable independiente y dependiente para un solo elemento.
-- **DataLoader**: un iterador que proporciona un flujo de grupos reducidos (mini-batches), donde cada grupo reducido es un tuple de un lote de variables independientes y un lote de variables dependientes.
-- **one-hot encoding**: vectores de 0’s con el tamaño del número de clases que tenga el dataset, cada categoría representa una posición en el vector por lo que si la imagen contiene algún elemento de alguna clase el vector tendrá un 1 en la posición del vector que corresponderá a su clase.
-- Es importante saber que **una clasificación** pretende predecir una clase o categoría mientras que un modelo de **regresión** intenta predecir 1 o más cantidades numéricas.
+- Función de pérdida (**Loss function**): función que mide el rendimiento del
+  modelo en uno de los ejemplos del set de entrenamiento.
+- Función de coste (**Cost function**): función que mide el rendimiento del
+  modelo en todos los ejemplos del set de entrenamiento. Sería la media de cada
+  una de las funciones de pérdidas de cada ejemplo del set de entrenamiento.
+- **Dataset**: una colección que devuelve un tuple de su variable independiente
+  y dependiente para un solo elemento.
+- **DataLoader**: un iterador que proporciona un flujo de grupos reducidos
+  (mini-batches), donde cada grupo reducido es un tuple de un lote de variables
+  independientes y un lote de variables dependientes.
+- **one-hot encoding**: vectores de 0’s con el tamaño del número de clases que
+  tenga el dataset, cada categoría representa una posición en el vector por lo
+  que si la imagen contiene algún elemento de alguna clase el vector tendrá un 1
+  en la posición del vector que corresponderá a su clase.
+- Es importante saber que **una clasificación** pretende predecir una clase o
+  categoría mientras que un modelo de **regresión** intenta predecir 1 o más
+  cantidades numéricas.
 
 ## Capítulo 0: Útiles
 
 ### 0.1. Descomprimir ficheros
 
-Muchos de los datasets se encuentran comprimidos, si usamos Colab será pesado subir los ficheros a Drive además del tiempo requerido para ello.
+Muchos de los datasets se encuentran comprimidos, si usamos Colab será pesado
+subir los ficheros a Drive además del tiempo requerido para ello.
 
 ```python
 import zipfile
@@ -65,7 +90,9 @@ if os.path.exists(lugar_descomprimir) == False:
 
 ### 0.2. Utilizar Weights & Biases (wandb)
 
-Podemos utilizar WandB para el registro de la evolución de nuestro módulo. Utilizar WandB nos permite obtener un registro del aprendizaje del modelo, compartir información en tiempo real, etc.
+Podemos utilizar WandB para el registro de la evolución de nuestro módulo.
+Utilizar WandB nos permite obtener un registro del aprendizaje del modelo,
+compartir información en tiempo real, etc.
 
 ```python
 import wandb
@@ -91,9 +118,14 @@ config = wandb.config
 
 ### 0.3. Utilizar modelos pre-entrenados
 
-Al importar la librería de `Tensorflow`, podemos utilizar `tf.keras.applications.` para que aparezca la lista de modelos pre-entrenados disponibles.
+Al importar la librería de `Tensorflow`, podemos utilizar
+`tf.keras.applications.` para que aparezca la lista de modelos pre-entrenados
+disponibles.
 
-Tener en cuenta, que dependiendo del modelo pre-entrenado a utilizar deberemos seguir pasos específicos. Por ejemplo, por cómo ha sido entrenado ResNet no podemos utilizar ni `BatchNormalization()` ni tampoco realizar normalización en los datos ya que requiere realizar el procesado de la siguiente manera:
+Tener en cuenta, que dependiendo del modelo pre-entrenado a utilizar deberemos
+seguir pasos específicos. Por ejemplo, por cómo ha sido entrenado ResNet no
+podemos utilizar ni `BatchNormalization()` ni tampoco realizar normalización en
+los datos ya que requiere realizar el procesado de la siguiente manera:
 
 ```python
 train_datagen = ImageDataGenerator(
@@ -104,9 +136,11 @@ train_datagen = ImageDataGenerator(
 )
 ```
 
-El ejemplo anterior es uno de los múltiples casos que se puedan dar por lo que lo más recomendado es visitar siempre la documentación de `Tensorflow` .
+El ejemplo anterior es uno de los múltiples casos que se puedan dar por lo que
+lo más recomendado es visitar siempre la documentación de `Tensorflow` .
 
-Lo primero para poder hacer uso de los modelos pre-entrenados de `Tensorflow` es cargar el modelo con los ajustes deseados:
+Lo primero para poder hacer uso de los modelos pre-entrenados de `Tensorflow` es
+cargar el modelo con los ajustes deseados:
 
 ```python
 import tensorflow as tf
@@ -119,7 +153,8 @@ modelo_base = tf.keras.applications.ResNet50(
 )
 ```
 
-Posteriormente, debemos congelar los parámetros del modelo para no reentrenarlos.
+Posteriormente, debemos congelar los parámetros del modelo para no
+reentrenarlos.
 
 ```python
 for capa in modelo_base.layers:
@@ -127,7 +162,9 @@ for capa in modelo_base.layers:
   capa.trainable = False
 ```
 
-Para ajustar el modelo pre-entrenado a nuestro problema, debemos añadir nuevas capas al modelo. Estas serán las capas que entrenaremos en primera instancia para posteriormente descongelar el modelo y entrenarlo al completo.
+Para ajustar el modelo pre-entrenado a nuestro problema, debemos añadir nuevas
+capas al modelo. Estas serán las capas que entrenaremos en primera instancia
+para posteriormente descongelar el modelo y entrenarlo al completo.
 
 ```python
 def Modelo(modelo_base):
@@ -189,7 +226,9 @@ plt.show()
 
 ### 0.5. ImageDataGenerator
 
-Podemos utilizar generadores de datos para la manipulación de datos de nuestro dataset. Con ello, conseguimos realizar aumentación datos, divisiones de datos para entrenamiento, validación y pruebas, entre otras herramientras.
+Podemos utilizar generadores de datos para la manipulación de datos de nuestro
+dataset. Con ello, conseguimos realizar aumentación datos, divisiones de datos
+para entrenamiento, validación y pruebas, entre otras herramientras.
 
 Un posible uso sería el siguiente:
 
@@ -220,7 +259,8 @@ validation_generator =  train_datagen.flow_from_directory(
     )
 ```
 
-A la hora de utilizar generadores de datos tenemos que ajustar los parámetros de la función .fit:
+A la hora de utilizar generadores de datos tenemos que ajustar los parámetros de
+la función .fit:
 
 ```python
 history = modelo.fit(
@@ -577,31 +617,50 @@ plt.show()
 
 ### 1.3. Implementación YOLO
 
-Para hacer uso de las utilidades, modelo y demás herramientas, debemos descargar las herramientas del repositorio.
+Para hacer uso de las utilidades, modelo y demás herramientas, debemos descargar
+las herramientas del repositorio.
 
 #### 1.3.0. Teoría
 
 #### 1.3.1. Anotaciones
 
-El modelo YOLO ha sido entrenado con datos de entrada con tamaños de (m, 608, 608, 3). Cada salida resultante, consiste en un cuadro delimitador (_bounding boxes_) con la clase reconocida. A su vez, cada cuadro está representado por 6 números (𝑝𝑐, 𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤, 𝑐). Para este ejemplo de algoritmo de YOLO, usaremos **yad2k** (YAD2K: Yet Another Darknet 2 Keras) que cuenta con 80 clases.
+El modelo YOLO ha sido entrenado con datos de entrada con tamaños de (m, 608,
+608, 3). Cada salida resultante, consiste en un cuadro delimitador (_bounding
+boxes_) con la clase reconocida. A su vez, cada cuadro está representado por 6
+números (𝑝𝑐, 𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤, 𝑐). Para este ejemplo de algoritmo de YOLO,
+usaremos **yad2k** (YAD2K: Yet Another Darknet 2 Keras) que cuenta con 80
+clases.
 
-Las cajas de anclaje se eligen explorando los datos de entrenamiento para elegir proporciones razonables de altura y anchura que representen mejor a las diferentes clases. Para esta tarea, se han elegido 5 cajas de anclaje (para cubrir las 80 clases), almacenados en el archivo './model_data/yolo_anchors.txt'
+Las cajas de anclaje se eligen explorando los datos de entrenamiento para elegir
+proporciones razonables de altura y anchura que representen mejor a las
+diferentes clases. Para esta tarea, se han elegido 5 cajas de anclaje (para
+cubrir las 80 clases), almacenados en el archivo './model_data/yolo_anchors.txt'
 
-La dimensión para las cajas de anclaje es la penúltima dimensión en la codificación (𝑚, 𝑛𝐻, 𝑛𝑊, 𝑎𝑛𝑐ℎ𝑜𝑟𝑠, 𝑐𝑙𝑎𝑠𝑒𝑠) .
+La dimensión para las cajas de anclaje es la penúltima dimensión en la
+codificación (𝑚, 𝑛𝐻, 𝑛𝑊, 𝑎𝑛𝑐ℎ𝑜𝑟𝑠, 𝑐𝑙𝑎𝑠𝑒𝑠) .
 
 Por tanto, la arquitectura YOLO consiste en:
 
 - IMAGEN (m, 608, 608, 3) → CNN PROFUNDA → CODIFICACIÓN (m, 19, 19, 5, 85).
 
-Dado que estamos utilizando 5 cajas de anclaje, cada una de las 19 x19 celdas codifica información sobre 5 cajas. Las cajas de anclaje se definen únicamente por su anchura y altura.
+Dado que estamos utilizando 5 cajas de anclaje, cada una de las 19 x19 celdas
+codifica información sobre 5 cajas. Las cajas de anclaje se definen únicamente
+por su anchura y altura.
 
-Para simplificar, aplanaremos las dos últimas dimensiones de la codificación de la forma (19, 19, 5, 85), de modo que la salida de la CNN profunda es (19, 19, 425).
+Para simplificar, aplanaremos las dos últimas dimensiones de la codificación de
+la forma (19, 19, 5, 85), de modo que la salida de la CNN profunda es (19, 19,
+425).
 
-Ahora, para cada caja (de cada celda) se calculará un producto y se extraerá una probabilidad de que la caja contenga una determinada clase. La puntuación (_score_) de clase, calculado como 𝑖 = 𝑝𝑐 × 𝑐𝑖, consistiría en la probabilidad de que haya un objeto 𝑝𝑐 por la probabilidad de que el objeto sea de una determinada clase 𝑐𝑖 .
+Ahora, para cada caja (de cada celda) se calculará un producto y se extraerá una
+probabilidad de que la caja contenga una determinada clase. La puntuación
+(_score_) de clase, calculado como 𝑖 = 𝑝𝑐 × 𝑐𝑖, consistiría en la probabilidad
+de que haya un objeto 𝑝𝑐 por la probabilidad de que el objeto sea de una
+determinada clase 𝑐𝑖 .
 
 #### 1.3.2. Código
 
-Al tratarse de un código más complejo, iremos dividiéndolo en partes acompañados por una explicación.
+Al tratarse de un código más complejo, iremos dividiéndolo en partes acompañados
+por una explicación.
 
 Primero importamos las librerías necesarias.
 
@@ -624,11 +683,20 @@ from yad2k.models.keras_yolo import yolo_head
 from yad2k.utils.utils import draw_boxes, get_colors_for_classes, scale_boxes, read_classes, read_anchors, preprocess_image
 ```
 
-En primer lugar, vamos a aplicar un filtro para el umbral, lo que implica que eliminará cualquier casilla cuya puntuación de clase sea inferior a un umbral elegido. El modelo arrojará un total de 19x19x6x85 números, con cada caja descrita por 85 números. Es conveniente reordenar el tensor dimensional (19, 19, 5, 85) o (19, 19, 425) en las siguientes variables:
+En primer lugar, vamos a aplicar un filtro para el umbral, lo que implica que
+eliminará cualquier casilla cuya puntuación de clase sea inferior a un umbral
+elegido. El modelo arrojará un total de 19x19x6x85 números, con cada caja
+descrita por 85 números. Es conveniente reordenar el tensor dimensional (19, 19,
+5, 85) o (19, 19, 425) en las siguientes variables:
 
-- **box_confidence**: tensor de forma (19, 19, 5, 1) que contiene 𝑝𝑐 (probabilidad de confianza de que haya algún objeto) para cada una de las 5 cajas previstas en cada una de las 19x19 casillas.
-- **boxes**: tensor de forma (19, 19, 5, 4) que contiene el punto medio y las dimensiones (𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤) para cada una de las 5 cajas en cada celda.
-- **box_class_probs**: tensor de forma (19, 19, 5, 80) que contiene las "probabilidades de clase" (𝑐1, 𝑐2, ..., 𝑐80) para cada una de las 80 clases para cada una de las 5 cajas por celda.
+- **box_confidence**: tensor de forma (19, 19, 5, 1) que contiene 𝑝𝑐
+  (probabilidad de confianza de que haya algún objeto) para cada una de las 5
+  cajas previstas en cada una de las 19x19 casillas.
+- **boxes**: tensor de forma (19, 19, 5, 4) que contiene el punto medio y las
+  dimensiones (𝑏𝑥, 𝑏𝑦, 𝑏ℎ, 𝑏𝑤) para cada una de las 5 cajas en cada celda.
+- **box_class_probs**: tensor de forma (19, 19, 5, 80) que contiene las
+  "probabilidades de clase" (𝑐1, 𝑐2, ..., 𝑐80) para cada una de las 80 clases
+  para cada una de las 5 cajas por celda.
 
 ```python
 def yolo_filter_boxes(boxes, box_confidence, box_class_probs, threshold = .6):
@@ -656,7 +724,8 @@ def yolo_filter_boxes(boxes, box_confidence, box_class_probs, threshold = .6):
     return scores, boxes, classes
 ```
 
-Implementar IoU (_Intersection over Union_). No es necesario implementarlo pero para que veamos cómo se haría.
+Implementar IoU (_Intersection over Union_). No es necesario implementarlo pero
+para que veamos cómo se haría.
 
 ```python
 def iou(box1, box2):
@@ -684,7 +753,9 @@ def iou(box1, box2):
     return inter_area / union_area
 ```
 
-Implementar _Non-Max Suppression._ `Tensorflow` tiene dos funciones incorporadas que se utilizan para implementar la supresión de no-máximos (por lo que no es necesario utilizar la función iou()).
+Implementar _Non-Max Suppression._ `Tensorflow` tiene dos funciones incorporadas
+que se utilizan para implementar la supresión de no-máximos (por lo que no es
+necesario utilizar la función iou()).
 
 ```python
 def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5):
@@ -723,7 +794,8 @@ def yolo_boxes_to_corners(box_xy, box_wh):
     ])
 ```
 
-Convertimos la salida de la codificación YOLO (un montón de cajas) en sus cajas predichas junto con sus puntuaciones, coordenadas de caja y clases.
+Convertimos la salida de la codificación YOLO (un montón de cajas) en sus cajas
+predichas junto con sus puntuaciones, coordenadas de caja y clases.
 
 ```python
 def yolo_eval(yolo_outputs, image_shape = (720, 1280), max_boxes=10, score_threshold=.6, iou_threshold=.5):
@@ -748,7 +820,8 @@ def yolo_eval(yolo_outputs, image_shape = (720, 1280), max_boxes=10, score_thres
     return scores, boxes, classes
 ```
 
-Podemos probar un modelo pre-entrenado de YOLO. Dicho modelo ha sido entrenado en el dataset de COCO basado en un problema de conducción autónoma.
+Podemos probar un modelo pre-entrenado de YOLO. Dicho modelo ha sido entrenado
+en el dataset de COCO basado en un problema de conducción autónoma.
 
 ```python
 class_names = read_classes("model_data/coco_classes.txt")
@@ -807,7 +880,9 @@ Transformers:
 
 #### 3.1.2. Código
 
-Podemos utilizar la librería `librosa` de Python para el procesado de señales de audio. Para este caso, podemos convertir el sonido en espectrogramas para posteriormente tratar el problema como un clasificador por visión computacional.
+Podemos utilizar la librería `librosa` de Python para el procesado de señales de
+audio. Para este caso, podemos convertir el sonido en espectrogramas para
+posteriormente tratar el problema como un clasificador por visión computacional.
 
 Ejemplo de código para procesar señales de audio a espectrogramas:
 

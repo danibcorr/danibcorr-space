@@ -9,11 +9,17 @@ toc_max_heading_level: 4
 
 ## 1. Gestión de las dependencias con Poetry
 
-La gestión de dependencias de un proyecto puede realizarse mediante un archivo `requirements.txt`. Sin embargo, herramientas como Poetry ofrecen funcionalidades avanzadas.
+La gestión de dependencias de un proyecto puede realizarse mediante un archivo
+`requirements.txt`. Sin embargo, herramientas como Poetry ofrecen
+funcionalidades avanzadas.
 
-Poetry permite la instalación automática de todas las dependencias de una biblioteca, separa dependencias entre proyectos, favorece la reproducibilidad, gestiona entornos virtuales automáticamente y resuelve problemas de dependencias.
+Poetry permite la instalación automática de todas las dependencias de una
+biblioteca, separa dependencias entre proyectos, favorece la reproducibilidad,
+gestiona entornos virtuales automáticamente y resuelve problemas de
+dependencias.
 
-Para gestionar un proyecto con Poetry desde cero, se siguen los siguientes pasos:
+Para gestionar un proyecto con Poetry desde cero, se siguen los siguientes
+pasos:
 
 1. Instalar Poetry utilizando pip:
 
@@ -27,7 +33,8 @@ Para gestionar un proyecto con Poetry desde cero, se siguen los siguientes pasos
    poetry init
    ```
 
-   Esto genera un archivo `.toml` que almacena la configuración del entorno de Python y las dependencias del proyecto.
+   Esto genera un archivo `.toml` que almacena la configuración del entorno de
+   Python y las dependencias del proyecto.
 
 3. Añadir nuevas librerías al proyecto con el comando:
 
@@ -35,7 +42,8 @@ Para gestionar un proyecto con Poetry desde cero, se siguen los siguientes pasos
    poetry add nombre_libreria
    ```
 
-   Esto actualiza e instala la librería en un entorno virtual gestionado por Poetry.
+   Esto actualiza e instala la librería en un entorno virtual gestionado por
+   Poetry.
 
 4. Ejecutar el script del proyecto con el entorno configurado:
 

@@ -9,9 +9,13 @@ toc_max_heading_level: 4
 
 :::danger **Este contenido aún está en desarrollo**
 
-Actualmente, no es la mejor opción para tu aprendizaje, ya que no está terminado. Estoy utilizando este espacio para probar que todo funciona correctamente y para planificar cómo estructurar el contenido final.
+Actualmente, no es la mejor opción para tu aprendizaje, ya que no está
+terminado. Estoy utilizando este espacio para probar que todo funciona
+correctamente y para planificar cómo estructurar el contenido final.
 
-Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial para ti!  
+Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando
+en esto, y a veces no me da tiempo para todo. ¡Espero pronto tener algo genial
+para ti!  
 :::
 
 # Bibliografía
@@ -24,83 +28,187 @@ Te agradezco mucho tu paciencia y comprensión. Soy solo una persona trabajando 
 
 ## 1.1. Conceptos básicos
 
-El **aprendizaje automático** es una rama de la inteligencia artificial que se enfoca en desarrollar algoritmos y modelos capaces de aprender y mejorar a partir de datos. A diferencia de los enfoques tradicionales de programación, donde las reglas y comportamientos se codifican explícitamente, en el aprendizaje automático los modelos se entrenan para identificar patrones y hacer predicciones basadas en datos de entrenamiento. El proceso de aprendizaje implica la optimización de los parámetros del modelo para minimizar el error en las predicciones.
+El **aprendizaje automático** es una rama de la inteligencia artificial que se
+enfoca en desarrollar algoritmos y modelos capaces de aprender y mejorar a
+partir de datos. A diferencia de los enfoques tradicionales de programación,
+donde las reglas y comportamientos se codifican explícitamente, en el
+aprendizaje automático los modelos se entrenan para identificar patrones y hacer
+predicciones basadas en datos de entrenamiento. El proceso de aprendizaje
+implica la optimización de los parámetros del modelo para minimizar el error en
+las predicciones.
 
 ## 1.2. Tipos de algoritmos
 
 ### 1.2.1. Aprendizaje supervisado
 
-El **aprendizaje supervisado** se basa en un conjunto de datos etiquetados, como se muestra en la figura anterior. En este enfoque, el objetivo es entrenar un modelo que pueda predecir la salida correcta para datos que no ha visto previamente. El entrenamiento se realiza utilizando ejemplos de entrada junto con sus correspondientes etiquetas de salida. Los algoritmos de aprendizaje supervisado se dividen en dos principales categorías:
+El **aprendizaje supervisado** se basa en un conjunto de datos etiquetados, como
+se muestra en la figura anterior. En este enfoque, el objetivo es entrenar un
+modelo que pueda predecir la salida correcta para datos que no ha visto
+previamente. El entrenamiento se realiza utilizando ejemplos de entrada junto
+con sus correspondientes etiquetas de salida. Los algoritmos de aprendizaje
+supervisado se dividen en dos principales categorías:
 
-- **Algoritmos de clasificación**: Aquí, el modelo predice una clase o categoría para una entrada. Por ejemplo, en la clasificación de correos electrónicos como "spam" o "no spam", el modelo utiliza datos etiquetados para aprender a distinguir entre las diferentes categorías. Ejemplos de algoritmos de clasificación incluyen la regresión logística, las máquinas de vectores de soporte (SVM) y las redes neuronales.
+- **Algoritmos de clasificación**: Aquí, el modelo predice una clase o categoría
+  para una entrada. Por ejemplo, en la clasificación de correos electrónicos
+  como "spam" o "no spam", el modelo utiliza datos etiquetados para aprender a
+  distinguir entre las diferentes categorías. Ejemplos de algoritmos de
+  clasificación incluyen la regresión logística, las máquinas de vectores de
+  soporte (SVM) y las redes neuronales.
 
-- **Algoritmos de regresión**: En este caso, el modelo predice un valor numérico continuo. Por ejemplo, en la predicción del precio de una casa basado en características como el tamaño y la ubicación, el modelo utiliza datos históricos para aprender la relación entre las variables independientes (características de la casa) y la variable dependiente (precio de la casa). Ejemplos de algoritmos de regresión incluyen la regresión lineal.
+- **Algoritmos de regresión**: En este caso, el modelo predice un valor numérico
+  continuo. Por ejemplo, en la predicción del precio de una casa basado en
+  características como el tamaño y la ubicación, el modelo utiliza datos
+  históricos para aprender la relación entre las variables independientes
+  (características de la casa) y la variable dependiente (precio de la casa).
+  Ejemplos de algoritmos de regresión incluyen la regresión lineal.
 
 ### 1.2.2. Aprendizaje no supervisado
 
-En el **aprendizaje no supervisado**, como se muestra en la figura anterior, el modelo trabaja con datos que no tienen etiquetas predefinidas. El objetivo es identificar patrones, estructuras o relaciones ocultas en los datos sin una guía explícita. Este enfoque se utiliza para obtener información útil que no se conoce previamente. Los principales usos del aprendizaje no supervisado incluyen:
+En el **aprendizaje no supervisado**, como se muestra en la figura anterior, el
+modelo trabaja con datos que no tienen etiquetas predefinidas. El objetivo es
+identificar patrones, estructuras o relaciones ocultas en los datos sin una guía
+explícita. Este enfoque se utiliza para obtener información útil que no se
+conoce previamente. Los principales usos del aprendizaje no supervisado
+incluyen:
 
-- **Algoritmos de agrupamiento**: Estos algoritmos buscan agrupar datos similares en conjuntos o clusters. Un ejemplo común es el clustering K-means, que agrupa los datos en $$k$$ clusters basados en la similitud de características.
+- **Algoritmos de agrupamiento**: Estos algoritmos buscan agrupar datos
+  similares en conjuntos o clusters. Un ejemplo común es el clustering K-means,
+  que agrupa los datos en $$k$$ clusters basados en la similitud de
+  características.
 
-- **Auto Encoders**: Son redes neuronales que aprenden una representación comprimida de los datos, lo que ayuda a reducir la dimensionalidad y extraer características importantes.
+- **Auto Encoders**: Son redes neuronales que aprenden una representación
+  comprimida de los datos, lo que ayuda a reducir la dimensionalidad y extraer
+  características importantes.
 
-- **Análisis de Componentes Principales (_Principal Component Analysis_, PCA)**: Es una técnica de reducción de dimensionalidad que transforma los datos en un nuevo espacio de características, donde las dimensiones corresponden a las direcciones de mayor varianza en los datos originales.
+- **Análisis de Componentes Principales (_Principal Component Analysis_, PCA)**:
+  Es una técnica de reducción de dimensionalidad que transforma los datos en un
+  nuevo espacio de características, donde las dimensiones corresponden a las
+  direcciones de mayor varianza en los datos originales.
 
 ### 1.2.3. Aprendizaje por refuerzo
 
-El **aprendizaje por refuerzo**, ilustrado en la figura anterior, es un área del aprendizaje automático donde un **agente** aprende a tomar decisiones en un entorno para maximizar una recompensa acumulativa. Durante el entrenamiento, el agente interactúa con el entorno y recibe recompensas basadas en las acciones que toma. El objetivo es aprender una política de acción que maximice la recompensa a largo plazo. Los algoritmos comunes en aprendizaje por refuerzo incluyen:
+El **aprendizaje por refuerzo**, ilustrado en la figura anterior, es un área del
+aprendizaje automático donde un **agente** aprende a tomar decisiones en un
+entorno para maximizar una recompensa acumulativa. Durante el entrenamiento, el
+agente interactúa con el entorno y recibe recompensas basadas en las acciones
+que toma. El objetivo es aprender una política de acción que maximice la
+recompensa a largo plazo. Los algoritmos comunes en aprendizaje por refuerzo
+incluyen:
 
-- **Método de Monte Carlo**: Utiliza el promedio de recompensas obtenidas a lo largo de episodios para estimar la calidad de las acciones.
+- **Método de Monte Carlo**: Utiliza el promedio de recompensas obtenidas a lo
+  largo de episodios para estimar la calidad de las acciones.
 
-- **Q-learning**: Un algoritmo que actualiza una tabla de valores de acción basada en las recompensas recibidas y las estimaciones futuras de recompensa.
+- **Q-learning**: Un algoritmo que actualiza una tabla de valores de acción
+  basada en las recompensas recibidas y las estimaciones futuras de recompensa.
 
-- **Deep Q-Network (DQN)**: Combina Q-learning con redes neuronales profundas para manejar entornos de alta dimensionalidad.
+- **Deep Q-Network (DQN)**: Combina Q-learning con redes neuronales profundas
+  para manejar entornos de alta dimensionalidad.
 
 ### 1.2.4. Aprendizaje auto supervisado
 
-El **aprendizaje auto supervisado** es una técnica donde el modelo aprende a partir de datos sin etiquetas utilizando las propias características de los datos para generar pseudo etiquetas. Este enfoque es útil cuando hay una escasez de datos etiquetados y se desea aprovechar la estructura inherente de los datos. Algunos ejemplos de técnicas de aprendizaje auto supervisado incluyen:
+El **aprendizaje auto supervisado** es una técnica donde el modelo aprende a
+partir de datos sin etiquetas utilizando las propias características de los
+datos para generar pseudo etiquetas. Este enfoque es útil cuando hay una escasez
+de datos etiquetados y se desea aprovechar la estructura inherente de los datos.
+Algunos ejemplos de técnicas de aprendizaje auto supervisado incluyen:
 
-- **Predicción de partes de datos**: Donde se ocultan partes de los datos y el modelo debe predecir esas partes ocultas.
+- **Predicción de partes de datos**: Donde se ocultan partes de los datos y el
+  modelo debe predecir esas partes ocultas.
 
-- **Modelos de contraste**: Que aprenden a distinguir entre pares de datos similares y diferentes para aprender representaciones útiles.
+- **Modelos de contraste**: Que aprenden a distinguir entre pares de datos
+  similares y diferentes para aprender representaciones útiles.
 
 ## 1.3. Conceptos previos
 
 ### 1.3.1. Parámetros e hiperparámetros
 
-Los parámetros son variables internas de un modelo de Machine Learning que se ajustan automáticamente durante el proceso de entrenamiento a través de los datos. Estos determinan el comportamiento del modelo al hacer predicciones. En contraste, los hiperparámetros son configuraciones externas establecidas antes del entrenamiento y afectan el proceso de aprendizaje. Entre los hiperparámetros más comunes se incluyen el número de iteraciones, la tasa de aprendizaje, el tamaño de los lotes y el tipo de algoritmo de optimización.
+Los parámetros son variables internas de un modelo de Machine Learning que se
+ajustan automáticamente durante el proceso de entrenamiento a través de los
+datos. Estos determinan el comportamiento del modelo al hacer predicciones. En
+contraste, los hiperparámetros son configuraciones externas establecidas antes
+del entrenamiento y afectan el proceso de aprendizaje. Entre los hiperparámetros
+más comunes se incluyen el número de iteraciones, la tasa de aprendizaje, el
+tamaño de los lotes y el tipo de algoritmo de optimización.
 
-La elección adecuada de los hiperparámetros es crucial, ya que influye directamente en la capacidad del modelo para generalizar, es decir, en su desempeño al enfrentarse a nuevos datos. Estos valores no se ajustan automáticamente durante el entrenamiento, por lo que requieren pruebas y ajustes manuales mediante técnicas como la validación cruzada o la búsqueda en cuadrícula, entre otros métodos.
+La elección adecuada de los hiperparámetros es crucial, ya que influye
+directamente en la capacidad del modelo para generalizar, es decir, en su
+desempeño al enfrentarse a nuevos datos. Estos valores no se ajustan
+automáticamente durante el entrenamiento, por lo que requieren pruebas y ajustes
+manuales mediante técnicas como la validación cruzada o la búsqueda en
+cuadrícula, entre otros métodos.
 
 ### 1.3.2. División del conjunto de datos
 
-Para evaluar adecuadamente el rendimiento de un modelo, es habitual dividir los datos disponibles en tres subconjuntos:
+Para evaluar adecuadamente el rendimiento de un modelo, es habitual dividir los
+datos disponibles en tres subconjuntos:
 
-- **Conjunto de entrenamiento**: Se utiliza para ajustar los parámetros del modelo. A partir de estos datos, el modelo intenta identificar patrones.
-- **Conjunto de validación**: Permite evaluar el rendimiento del modelo con diferentes valores de hiperparámetros, con el objetivo de optimizarlos. El modelo no se entrena con estos datos.
-- **Conjunto de pruebas**: Evalúa el rendimiento final del modelo una vez entrenado y ajustado. Estos datos no han sido vistos por el modelo en ninguna etapa anterior.
+- **Conjunto de entrenamiento**: Se utiliza para ajustar los parámetros del
+  modelo. A partir de estos datos, el modelo intenta identificar patrones.
+- **Conjunto de validación**: Permite evaluar el rendimiento del modelo con
+  diferentes valores de hiperparámetros, con el objetivo de optimizarlos. El
+  modelo no se entrena con estos datos.
+- **Conjunto de pruebas**: Evalúa el rendimiento final del modelo una vez
+  entrenado y ajustado. Estos datos no han sido vistos por el modelo en ninguna
+  etapa anterior.
 
-Esta separación garantiza una evaluación objetiva de la capacidad del modelo para generalizar.
+Esta separación garantiza una evaluación objetiva de la capacidad del modelo
+para generalizar.
 
 ### 1.3.3. Funciones de coste y pérdida
 
-Las funciones de coste y pérdida son fundamentales para entrenar un modelo de Machine Learning. La **función de pérdida** mide el error por cada instancia, mientras que la **función de coste** calcula el promedio de la función de pérdida en todo el conjunto de datos. El objetivo del entrenamiento es minimizar estas funciones, ajustando los parámetros del modelo para mejorar su precisión en la predicción.
+Las funciones de coste y pérdida son fundamentales para entrenar un modelo de
+Machine Learning. La **función de pérdida** mide el error por cada instancia,
+mientras que la **función de coste** calcula el promedio de la función de
+pérdida en todo el conjunto de datos. El objetivo del entrenamiento es minimizar
+estas funciones, ajustando los parámetros del modelo para mejorar su precisión
+en la predicción.
 
-Para problemas de regresión, se utilizan comúnmente funciones de pérdida como el **Error Cuadrático Medio (_Mean Square Error_, MSE)** y el **Error Absoluto Medio (_Mean Absolute Error_, MAE)**. El MSE penaliza los errores grandes al calcular el promedio de los cuadrados de las diferencias entre las predicciones y los valores reales, mientras que el MAE calcula la media de las diferencias absolutas, siendo más robusto frente a valores atípicos.
+Para problemas de regresión, se utilizan comúnmente funciones de pérdida como el
+**Error Cuadrático Medio (_Mean Square Error_, MSE)** y el **Error Absoluto
+Medio (_Mean Absolute Error_, MAE)**. El MSE penaliza los errores grandes al
+calcular el promedio de los cuadrados de las diferencias entre las predicciones
+y los valores reales, mientras que el MAE calcula la media de las diferencias
+absolutas, siendo más robusto frente a valores atípicos.
 
-En problemas de clasificación, la **entropía cruzada** es una función de pérdida habitual. Mide la discrepancia entre la distribución de probabilidad real y la predicha, penalizando más las predicciones incorrectas con alta confianza.
+En problemas de clasificación, la **entropía cruzada** es una función de pérdida
+habitual. Mide la discrepancia entre la distribución de probabilidad real y la
+predicha, penalizando más las predicciones incorrectas con alta confianza.
 
 ### 1.3.X. Optimización
 
-Los métodos de optimización, entre los que se incluyen la regularización, la normalización de datos, la inicialización de pesos y el uso de lotes, son fundamentales para combatir el sobreajuste y acelerar el aprendizaje.
+Los métodos de optimización, entre los que se incluyen la regularización, la
+normalización de datos, la inicialización de pesos y el uso de lotes, son
+fundamentales para combatir el sobreajuste y acelerar el aprendizaje.
 
-La regularización, que tiene como objetivo reducir el valor global de los pesos, abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan respectivamente la suma de los valores absolutos y la suma de los cuadrados de los pesos. Otra técnica relevante es el Dropout, que durante el proceso de aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de sobreajuste.
+La regularización, que tiene como objetivo reducir el valor global de los pesos,
+abarca técnicas como la regularización $L_1$ y $L_2$. Estas penalizan
+respectivamente la suma de los valores absolutos y la suma de los cuadrados de
+los pesos. Otra técnica relevante es el Dropout, que durante el proceso de
+aprendizaje suprime aleatoriamente neuronas, lo que disminuye la posibilidad de
+sobreajuste.
 
-La normalización de los datos de entrada facilita la optimización de la función de coste. Esta práctica implica escalar las características de los datos para que tengan una media de $0$ y varianza $1$, o reescalar las características para que se encuentren en un rango específico, como $[0, 1]$. Este procedimiento mejora la convergencia de los algoritmos de optimización al reducir la dispersión de los datos.
+La normalización de los datos de entrada facilita la optimización de la función
+de coste. Esta práctica implica escalar las características de los datos para
+que tengan una media de $0$ y varianza $1$, o reescalar las características para
+que se encuentren en un rango específico, como $[0, 1]$. Este procedimiento
+mejora la convergencia de los algoritmos de optimización al reducir la
+dispersión de los datos.
 
-Una inicialización adecuada de los pesos es también esencial para un entrenamiento eficaz. Por ejemplo, la inicialización Glorot ajusta los pesos iniciales de tal manera que se mantenga la varianza de las activaciones a lo largo de las capas, evitando problemas de desvanecimiento o explosión de gradientes. Otra estrategia consiste en la inicialización de los pesos mediante el uso de modelos preentrenados, que emplea pesos de redes previamente entrenadas en grandes conjuntos de datos, acelerando el entrenamiento y mejorando el rendimiento en tareas específicas.
+Una inicialización adecuada de los pesos es también esencial para un
+entrenamiento eficaz. Por ejemplo, la inicialización Glorot ajusta los pesos
+iniciales de tal manera que se mantenga la varianza de las activaciones a lo
+largo de las capas, evitando problemas de desvanecimiento o explosión de
+gradientes. Otra estrategia consiste en la inicialización de los pesos mediante
+el uso de modelos preentrenados, que emplea pesos de redes previamente
+entrenadas en grandes conjuntos de datos, acelerando el entrenamiento y
+mejorando el rendimiento en tareas específicas.
 
-Además, la división de conjuntos de datos grandes en lotes permite avanzar antes de procesar la totalidad del conjunto de datos, lo que acelera el entrenamiento y reduce el uso de memoria. Los métodos de optimización basados en lotes, como el descenso de gradiente estocástico (SGD) y sus variantes (p. ej., Adam y RMSprop), se benefician de esta división, permitiendo actualizaciones de los pesos más frecuentes y estables.
+Además, la división de conjuntos de datos grandes en lotes permite avanzar antes
+de procesar la totalidad del conjunto de datos, lo que acelera el entrenamiento
+y reduce el uso de memoria. Los métodos de optimización basados en lotes, como
+el descenso de gradiente estocástico (SGD) y sus variantes (p. ej., Adam y
+RMSprop), se benefician de esta división, permitiendo actualizaciones de los
+pesos más frecuentes y estables.
 
 # 2. Algoritmos fundamentales
 
@@ -110,7 +218,10 @@ Además, la división de conjuntos de datos grandes en lotes permite avanzar ant
 
 #### Teoría
 
-La regresión lineal es una técnica de modelado que intenta encontrar la relación lineal entre una variable independiente, $X$, y una variable dependiente, $y$. El objetivo es ajustar una línea recta a los datos de manera que se minimice el error entre los valores reales y los valores predichos por la línea.
+La regresión lineal es una técnica de modelado que intenta encontrar la relación
+lineal entre una variable independiente, $X$, y una variable dependiente, $y$.
+El objetivo es ajustar una línea recta a los datos de manera que se minimice el
+error entre los valores reales y los valores predichos por la línea.
 
 Con la imagen anterior como ejemplo, la ecuación de la línea roja se define como
 
@@ -118,27 +229,49 @@ $$
 y = wx + b,
 $$
 
-donde $$w$$ es el peso (_*weights*_) y $$b$$ es el sesgo (_*bias*_). Estos son los parámetros que el modelo deberá de buscar para ajustarse a los puntos de datos con la intención de minimizar la función de coste.
+donde $$w$$ es el peso (_*weights*_) y $$b$$ es el sesgo (_*bias*_). Estos son
+los parámetros que el modelo deberá de buscar para ajustarse a los puntos de
+datos con la intención de minimizar la función de coste.
 
-> Tenemos que recordar que la función de pérdida se calcula para un solo punto de datos y mide la diferencia entre la predicción del modelo y el valor real. Por otro lado, la función de coste es la media de las pérdidas calculadas para todos los puntos de datos en el conjunto de entrenamiento. Esta función de coste se utiliza para evaluar el rendimiento general del modelo y guiar el proceso de entrenamiento para minimizar el error.
+> Tenemos que recordar que la función de pérdida se calcula para un solo punto
+> de datos y mide la diferencia entre la predicción del modelo y el valor real.
+> Por otro lado, la función de coste es la media de las pérdidas calculadas para
+> todos los puntos de datos en el conjunto de entrenamiento. Esta función de
+> coste se utiliza para evaluar el rendimiento general del modelo y guiar el
+> proceso de entrenamiento para minimizar el error.
 
-Para medir el ajuste de la línea a los datos, es decir, que tan bien se ajusta la línea a la distribución de los datos que tenemos, se suele utilizar el error cuadrático medio (_*Mean Square Error*_, MSE) como función de coste, definido como
+Para medir el ajuste de la línea a los datos, es decir, que tan bien se ajusta
+la línea a la distribución de los datos que tenemos, se suele utilizar el error
+cuadrático medio (_*Mean Square Error*_, MSE) como función de coste, definido
+como
 
 $$
 \text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2,
 $$
 
-donde $$y_i$$ es el valor real y $\hat{y}_i$ es el valor estimado por el modelo para el punto $$i$$, y $$N$$ es la cantidad de puntos de datos existentes en nuestro conjunto de datos.
+donde $$y_i$$ es el valor real y $\hat{y}_i$ es el valor estimado por el modelo
+para el punto $$i$$, y $$N$$ es la cantidad de puntos de datos existentes en
+nuestro conjunto de datos.
 
-Para encontrar los mejores valores de $$w$$ y $$b$$ que minimizan la función de coste se utiliza un proceso llamado descenso de gradiente.
+Para encontrar los mejores valores de $$w$$ y $$b$$ que minimizan la función de
+coste se utiliza un proceso llamado descenso de gradiente.
 
-> El descenso del gradiente es un algoritmo de optimización utilizado para minimizar funciones de coste en modelos de aprendizaje automático. Funciona ajustando los parámetros del modelo (los pesos y sesgos) en la dirección opuesta al gradiente de la función de coste con respecto a esos parámetros. Para ello, se siguen los pasos siguiente:
+> El descenso del gradiente es un algoritmo de optimización utilizado para
+> minimizar funciones de coste en modelos de aprendizaje automático. Funciona
+> ajustando los parámetros del modelo (los pesos y sesgos) en la dirección
+> opuesta al gradiente de la función de coste con respecto a esos parámetros.
+> Para ello, se siguen los pasos siguiente:
 >
-> 1. Se calcula la derivada de la función en un punto dado con el fin de determinar la pendiente de la función.
-> 2. Conocida la pendiente de la función se actualizan los parámetros del modelo en la dirección opuesta a la pendiente para reducir el error.
-> 3. El proceso se repite hasta que la función de coste alcanza un mínimo, lo que se conoce como la convergencia del modelo.
+> 1. Se calcula la derivada de la función en un punto dado con el fin de
+>    determinar la pendiente de la función.
+> 2. Conocida la pendiente de la función se actualizan los parámetros del modelo
+>    en la dirección opuesta a la pendiente para reducir el error.
+> 3. El proceso se repite hasta que la función de coste alcanza un mínimo, lo
+>    que se conoce como la convergencia del modelo.
 
-Utilizando la regla de la cadena (a recordar esas clases de cálculo de la universidad) la derivada de la función MSE con respecto a $$w$$ y $$b$$ se define respectivamente como
+Utilizando la regla de la cadena (a recordar esas clases de cálculo de la
+universidad) la derivada de la función MSE con respecto a $$w$$ y $$b$$ se
+define respectivamente como
 
 $$
 \frac{\partial \text{MSE}}{\partial w} = \frac{2}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) \cdot x_i,
@@ -158,14 +291,25 @@ $$
 b := b - \alpha \cdot \frac{\partial \text{MSE}}{\partial b},
 $$
 
-donde $\alpha$ es la tasa de aprendizaje (_*learning rate*_) y permite ajustar el tamaño de paso utilizado para actualizar los parámetros del modelo.
+donde $\alpha$ es la tasa de aprendizaje (_*learning rate*_) y permite ajustar
+el tamaño de paso utilizado para actualizar los parámetros del modelo.
 
-> La tasa de aprendizaje es un hiperparámetro, un parámetro que afecta a otros parámetros del modelo, crucial en el descenso del gradiente que determina el tamaño de los pasos que da el modelo al ajustar sus parámetros.
+> La tasa de aprendizaje es un hiperparámetro, un parámetro que afecta a otros
+> parámetros del modelo, crucial en el descenso del gradiente que determina el
+> tamaño de los pasos que da el modelo al ajustar sus parámetros.
 >
-> - Una tasa de aprendizaje alta puede provocar que el modelo de pasos muy grandes y saltarse el mínimo de la función de coste, lo que puede resultar en una convergencia inestable o en que nunca alcance el mínimo.
-> - Una tasa de aprendizaje baja puede provocar que el modelo de pasos muy pequeños, lo que puede hacer que el proceso de entrenamiento sea muy lento y que el modelo tarde mucho en converger, o incluso que se quede atrapado en un mínimo local.
+> - Una tasa de aprendizaje alta puede provocar que el modelo de pasos muy
+>   grandes y saltarse el mínimo de la función de coste, lo que puede resultar
+>   en una convergencia inestable o en que nunca alcance el mínimo.
+> - Una tasa de aprendizaje baja puede provocar que el modelo de pasos muy
+>   pequeños, lo que puede hacer que el proceso de entrenamiento sea muy lento y
+>   que el modelo tarde mucho en converger, o incluso que se quede atrapado en
+>   un mínimo local.
 >
-> La clave está en encontrar un balance adecuado para que el modelo converja de manera eficiente y efectiva. A menudo, se utiliza una técnica llamada decaimiento de la tasa de aprendizaje (_*learning rate decay*_), donde la tasa de aprendizaje se reduce gradualmente durante el entrenamiento.
+> La clave está en encontrar un balance adecuado para que el modelo converja de
+> manera eficiente y efectiva. A menudo, se utiliza una técnica llamada
+> decaimiento de la tasa de aprendizaje (_*learning rate decay*_), donde la tasa
+> de aprendizaje se reduce gradualmente durante el entrenamiento.
 
 #### Práctica
 
@@ -235,17 +379,24 @@ if __name__ == '__main__':
 
 #### Teoría
 
-La regresión logística es una técnica de modelado que se utiliza para predecir la probabilidad de una clase en función de las características de los datos. A diferencia de la regresión lineal, que predice valores continuos, la regresión logística genera probabilidades en el rango de 0 a 1.
+La regresión logística es una técnica de modelado que se utiliza para predecir
+la probabilidad de una clase en función de las características de los datos. A
+diferencia de la regresión lineal, que predice valores continuos, la regresión
+logística genera probabilidades en el rango de 0 a 1.
 
-El modelo de regresión logística se basa en la función sigmoide, que se define como
+El modelo de regresión logística se basa en la función sigmoide, que se define
+como
 
 $$
 \sigma(z) = \frac{1}{1 + e^{-z}},
 $$
 
-donde $$z$$ es el resultado de una combinación lineal de las características del modelo. La función sigmoide convierte cualquier valor real en una probabilidad entre 0 y 1, lo cual es útil para clasificación binaria.
+donde $$z$$ es el resultado de una combinación lineal de las características del
+modelo. La función sigmoide convierte cualquier valor real en una probabilidad
+entre 0 y 1, lo cual es útil para clasificación binaria.
 
-Para la regresión logística, utilizamos la **entropía cruzada** como función de costo, cuya fórmula se define como
+Para la regresión logística, utilizamos la **entropía cruzada** como función de
+costo, cuya fórmula se define como
 
 $$
 J(\theta) = -\frac{1}{N} \sum_{i=1}^{N} [y^{(i)} \log(h_{\theta}(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_{\theta}(x^{(i)}))],
@@ -257,13 +408,16 @@ $$
 h_{\theta}(x) = \sigma(\theta^T x).
 $$
 
-El objetivo es minimizar esta función de costo mediante el uso del descenso de gradiente. La actualización de los parámetros $\theta$ (pesos y sesgo) se realiza mediante
+El objetivo es minimizar esta función de costo mediante el uso del descenso de
+gradiente. La actualización de los parámetros $\theta$ (pesos y sesgo) se
+realiza mediante
 
 $$
 \theta := \theta - \alpha \cdot \frac{\partial J(\theta)}{\partial \theta}.
 $$
 
-En este caso, los gradientes para los pesos $$w$$ y el sesgo $$b$$ se calculan respectivamente como
+En este caso, los gradientes para los pesos $$w$$ y el sesgo $$b$$ se calculan
+respectivamente como
 
 $$
 \frac{\partial J(\theta)}{\partial w} = \frac{1}{N} \sum_{i=1}^{N} (h_{\theta}(x^{(i)}) - y^{(i)}) x^{(i)},
@@ -347,40 +501,68 @@ if __name__ == '__main__':
 
 ### Teoría
 
-Los árboles de decisión son una técnica común en el aprendizaje supervisado, aplicable tanto a clasificación como a regresión. Estos modelos organizan las reglas de predicción en una estructura de árbol, donde cada nodo interno representa una condición sobre una característica del conjunto de datos, cada rama refleja el resultado de una prueba, y cada nodo hoja representa una decisión o un valor de salida.
+Los árboles de decisión son una técnica común en el aprendizaje supervisado,
+aplicable tanto a clasificación como a regresión. Estos modelos organizan las
+reglas de predicción en una estructura de árbol, donde cada nodo interno
+representa una condición sobre una característica del conjunto de datos, cada
+rama refleja el resultado de una prueba, y cada nodo hoja representa una
+decisión o un valor de salida.
 
-La construcción de un árbol de decisión busca dividir los datos en grupos homogéneos en relación con la variable objetivo. Este proceso involucra **splitting** (división) y **pruning** (poda) para optimizar la clasificación o predicción de los datos.
+La construcción de un árbol de decisión busca dividir los datos en grupos
+homogéneos en relación con la variable objetivo. Este proceso involucra
+**splitting** (división) y **pruning** (poda) para optimizar la clasificación o
+predicción de los datos.
 
 Los componentes principales de un árbol de decisión son:
 
-1. **Nodo raíz (Root Node)**: Representa el conjunto completo de datos y es el punto de partida del árbol.
-2. **Nodos internos (Decision Nodes)**: Representan decisiones basadas en las características de los datos y se dividen en ramas que conducen a nodos hijos.
-3. **Nodos hoja (Leaf Nodes)**: Representan la predicción final o decisión, sin subdivisión adicional.
-4. **Splitting**: Proceso de dividir un nodo en sub-nodos basado en una condición sobre una característica.
-5. **Pruning**: Proceso de eliminar ramas del árbol para evitar el sobreajuste y mejorar la generalización del modelo.
+1. **Nodo raíz (Root Node)**: Representa el conjunto completo de datos y es el
+   punto de partida del árbol.
+2. **Nodos internos (Decision Nodes)**: Representan decisiones basadas en las
+   características de los datos y se dividen en ramas que conducen a nodos
+   hijos.
+3. **Nodos hoja (Leaf Nodes)**: Representan la predicción final o decisión, sin
+   subdivisión adicional.
+4. **Splitting**: Proceso de dividir un nodo en sub-nodos basado en una
+   condición sobre una característica.
+5. **Pruning**: Proceso de eliminar ramas del árbol para evitar el sobreajuste y
+   mejorar la generalización del modelo.
 
 Existen dos tipos principales de árboles de decisión:
 
-- **Árboles de clasificación**: Predicen categorías o clases. El objetivo es encontrar la mejor división de los datos para minimizar la impureza en cada nodo, usando métricas como el **índice de Gini** o **entropía**.
-- **Árboles de regresión**: Predicen valores numéricos. El objetivo es minimizar la varianza o el error cuadrático medio en cada nodo.
+- **Árboles de clasificación**: Predicen categorías o clases. El objetivo es
+  encontrar la mejor división de los datos para minimizar la impureza en cada
+  nodo, usando métricas como el **índice de Gini** o **entropía**.
+- **Árboles de regresión**: Predicen valores numéricos. El objetivo es minimizar
+  la varianza o el error cuadrático medio en cada nodo.
 
-Los árboles de decisión ofrecen ventajas como el manejo de datos categóricos y numéricos, y la facilidad de interpretación. Sin embargo, pueden sobreajustarse cuando son muy profundos. Técnicas como **pruning** y la limitación de la profundidad ayudan a mitigar el sobreajuste. Métodos de ensamblaje como **Random Forest** combinan múltiples árboles para mejorar la robustez y reducir el riesgo de sobreajuste.
+Los árboles de decisión ofrecen ventajas como el manejo de datos categóricos y
+numéricos, y la facilidad de interpretación. Sin embargo, pueden sobreajustarse
+cuando son muy profundos. Técnicas como **pruning** y la limitación de la
+profundidad ayudan a mitigar el sobreajuste. Métodos de ensamblaje como **Random
+Forest** combinan múltiples árboles para mejorar la robustez y reducir el riesgo
+de sobreajuste.
 
 #### Cálculo de Ganancia de Información
 
-El **índice de Gini** y la **entropía** son métodos para medir la pureza de un nodo. El índice de Gini se define como:
+El **índice de Gini** y la **entropía** son métodos para medir la pureza de un
+nodo. El índice de Gini se define como:
 
 $$
 \text{Gini}(D) = 1 - \sum_{i=1}^k p_i^2
 $$
 
-donde $$p_i$$ es la proporción de ejemplos de la clase $$i$$ en el nodo $$D$$. En un nodo puro, el índice de Gini es 0.
+donde $$p_i$$ es la proporción de ejemplos de la clase $$i$$ en el nodo $$D$$.
+En un nodo puro, el índice de Gini es 0.
 
-La **ganancia de información** mide la reducción de impureza después de un **splitting**. Se calcula como la diferencia entre la impureza del nodo original y la impureza ponderada de los nodos hijos.
+La **ganancia de información** mide la reducción de impureza después de un
+**splitting**. Se calcula como la diferencia entre la impureza del nodo original
+y la impureza ponderada de los nodos hijos.
 
 ### Práctica
 
-Para construir un árbol de decisión, se puede utilizar Python con la biblioteca `scikit-learn` para clasificar datos basados en características. A continuación, se muestra una implementación:
+Para construir un árbol de decisión, se puede utilizar Python con la biblioteca
+`scikit-learn` para clasificar datos basados en características. A continuación,
+se muestra una implementación:
 
 ```python
 from sklearn.datasets import load_iris
@@ -420,22 +602,37 @@ plt.show()
 
 #### Teoría
 
-El **algoritmo K-means** es una técnica de aprendizaje no supervisado utilizada para agrupar datos en $$k$$ grupos o _clusters_ basados en características similares. El objetivo del algoritmo es dividir un conjunto de datos en $$k$$ grupos, de manera que los puntos de datos dentro de cada grupo sean lo más similares posible entre sí y lo más diferentes posible de los puntos en otros grupos.
+El **algoritmo K-means** es una técnica de aprendizaje no supervisado utilizada
+para agrupar datos en $$k$$ grupos o _clusters_ basados en características
+similares. El objetivo del algoritmo es dividir un conjunto de datos en $$k$$
+grupos, de manera que los puntos de datos dentro de cada grupo sean lo más
+similares posible entre sí y lo más diferentes posible de los puntos en otros
+grupos.
 
 El proceso de K-means incluye los siguientes pasos:
 
-1. **Inicialización**: Seleccionar $$k$$ puntos al azar del conjunto de datos como los centros iniciales de los _clusters_.
-2. **Asignación**: Asignar cada punto de datos al _cluster_ cuyo centro esté más cercano. Esta asignación se realiza utilizando una métrica de distancia, generalmente la distancia euclidiana.
-3. **Actualización**: Calcular nuevos centros de _clusters_ como la media de todos los puntos asignados a cada _cluster_.
-4. **Repetición**: Repetir los pasos 2 y 3 hasta que los centros de los _clusters_ no cambien significativamente o se alcance un número máximo de iteraciones.
+1. **Inicialización**: Seleccionar $$k$$ puntos al azar del conjunto de datos
+   como los centros iniciales de los _clusters_.
+2. **Asignación**: Asignar cada punto de datos al _cluster_ cuyo centro esté más
+   cercano. Esta asignación se realiza utilizando una métrica de distancia,
+   generalmente la distancia euclidiana.
+3. **Actualización**: Calcular nuevos centros de _clusters_ como la media de
+   todos los puntos asignados a cada _cluster_.
+4. **Repetición**: Repetir los pasos 2 y 3 hasta que los centros de los
+   _clusters_ no cambien significativamente o se alcance un número máximo de
+   iteraciones.
 
-El objetivo del algoritmo es minimizar, como función de coste, la **suma de las distancias cuadradas** entre los puntos de datos y el centro de su _cluster_ correspondiente, representada como
+El objetivo del algoritmo es minimizar, como función de coste, la **suma de las
+distancias cuadradas** entre los puntos de datos y el centro de su _cluster_
+correspondiente, representada como
 
 $$
 J = \sum_{i=1}^{k} \sum_{x \in C_i} \|x - \mu_i\|^2,
 $$
 
-donde $$C_i$$ es el conjunto de puntos asignados al _cluster_ $$i$$, $$\mu_i$$ es el centro del _cluster_ $$i$$, y $$\|x - \mu_i\|^2$$ es la distancia cuadrada entre el punto $$x$$ y el centro del _cluster_ $$\mu_i$$.
+donde $$C_i$$ es el conjunto de puntos asignados al _cluster_ $$i$$, $$\mu_i$$
+es el centro del _cluster_ $$i$$, y $$\|x - \mu_i\|^2$$ es la distancia cuadrada
+entre el punto $$x$$ y el centro del _cluster_ $$\mu_i$$.
 
 #### Práctica
 
@@ -523,29 +720,49 @@ if __name__ == '__main__':
 
 #### Teoría
 
-El **clustering espectral** es una técnica avanzada de agrupamiento que se basa en el análisis espectral de matrices de similitud para identificar estructuras de _*clusters*_ en los datos que no son linealmente separables. A diferencia de métodos tradicionales como K-means, que asumen formas convexas de los _*clusters*_, el clustering espectral puede identificar _*clusters*_ en formas arbitrarias y complejas, incluso aquellos que están entrelazados.
+El **clustering espectral** es una técnica avanzada de agrupamiento que se basa
+en el análisis espectral de matrices de similitud para identificar estructuras
+de _*clusters*_ en los datos que no son linealmente separables. A diferencia de
+métodos tradicionales como K-means, que asumen formas convexas de los
+_*clusters*_, el clustering espectral puede identificar _*clusters*_ en formas
+arbitrarias y complejas, incluso aquellos que están entrelazados.
 
 El proceso de clustering espectral se realiza en los siguientes pasos:
 
-1. **Construcción de la Matriz de Similaridad**: Se construye una matriz de afinidad que refleja la relación entre cada par de puntos en el conjunto de datos. Comúnmente, se utiliza la matriz de adyacencia $$A$$, donde $$A_{ij}$$ representa la similitud entre los puntos $$i$$ y $$j$$. Esta matriz se puede construir usando métodos como _*K-nearest neighbors*_ (KNN) y la distancia euclidiana.
+1. **Construcción de la Matriz de Similaridad**: Se construye una matriz de
+   afinidad que refleja la relación entre cada par de puntos en el conjunto de
+   datos. Comúnmente, se utiliza la matriz de adyacencia $$A$$, donde $$A_{ij}$$
+   representa la similitud entre los puntos $$i$$ y $$j$$. Esta matriz se puede
+   construir usando métodos como _*K-nearest neighbors*_ (KNN) y la distancia
+   euclidiana.
 
-2. **Cálculo de la Matriz de Laplaciano**: A partir de la matriz de afinidad, se calcula el **Laplaciano del gráfico** $$L$$. Hay varias versiones del Laplaciano, siendo el Laplaciano Normalizado una de las más comunes:
+2. **Cálculo de la Matriz de Laplaciano**: A partir de la matriz de afinidad, se
+   calcula el **Laplaciano del gráfico** $$L$$. Hay varias versiones del
+   Laplaciano, siendo el Laplaciano Normalizado una de las más comunes:
 
    $$
    L_{sym} = I - D^{-1/2} A D^{-1/2},
    $$
 
-   donde $$D$$ es la matriz diagonal de grados, con $$D_{ii}$$ siendo la suma de las similitudes en la fila $$i$$ de $$A$$.
+   donde $$D$$ es la matriz diagonal de grados, con $$D_{ii}$$ siendo la suma de
+   las similitudes en la fila $$i$$ de $$A$$.
 
-3. **Cálculo de Valores Propios y Vectores Propios**: Se calculan los valores propios y vectores propios de la matriz Laplaciana. Se seleccionan los primeros $$k$$ vectores propios correspondientes a los $$k$$ valores propios más pequeños.
+3. **Cálculo de Valores Propios y Vectores Propios**: Se calculan los valores
+   propios y vectores propios de la matriz Laplaciana. Se seleccionan los
+   primeros $$k$$ vectores propios correspondientes a los $$k$$ valores propios
+   más pequeños.
 
-4. **Reducción de Dimensionalidad**: Los datos se proyectan en el espacio definido por estos $$k$$ vectores propios.
+4. **Reducción de Dimensionalidad**: Los datos se proyectan en el espacio
+   definido por estos $$k$$ vectores propios.
 
-5. **Clustering en el Espacio Reducido**: Finalmente, se aplica un algoritmo de clustering tradicional, como K-means, en el espacio reducido para encontrar los _*clusters*_.
+5. **Clustering en el Espacio Reducido**: Finalmente, se aplica un algoritmo de
+   clustering tradicional, como K-means, en el espacio reducido para encontrar
+   los _*clusters*_.
 
 #### Práctica
 
-A continuación, se presenta una implementación de clustering espectral desde cero en Python:
+A continuación, se presenta una implementación de clustering espectral desde
+cero en Python:
 
 ```python
 import numpy as np
@@ -626,26 +843,38 @@ if __name__ == '__main__':
 
 #### Teoría
 
-**DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** es un algoritmo de clustering basado en la densidad que identifica clusters agrupando puntos que están densamente conectados y tratando los puntos en regiones de baja densidad como ruido. A diferencia de métodos como K-means, DBSCAN no requiere que se especifique el número de clusters de antemano y puede identificar clusters de formas arbitrarias.
+**DBSCAN (Density-Based Spatial Clustering of Applications with Noise)** es un
+algoritmo de clustering basado en la densidad que identifica clusters agrupando
+puntos que están densamente conectados y tratando los puntos en regiones de baja
+densidad como ruido. A diferencia de métodos como K-means, DBSCAN no requiere
+que se especifique el número de clusters de antemano y puede identificar
+clusters de formas arbitrarias.
 
 El algoritmo DBSCAN se basa en dos parámetros principales:
 
-1. **ε (epsilon)**: La distancia máxima entre dos puntos para que se consideren vecinos. Define el radio dentro del cual se buscan puntos cercanos.
+1. **ε (epsilon)**: La distancia máxima entre dos puntos para que se consideren
+   vecinos. Define el radio dentro del cual se buscan puntos cercanos.
 
-2. **MinPts (Número Mínimo de Puntos)**: El número mínimo de puntos necesarios para formar un cluster, incluyendo el punto central y los puntos en su vecindad.
+2. **MinPts (Número Mínimo de Puntos)**: El número mínimo de puntos necesarios
+   para formar un cluster, incluyendo el punto central y los puntos en su
+   vecindad.
 
 **Proceso del Algoritmo DBSCAN:**
 
-1. **Identificación de Puntos de Núcleo**:
-   Un punto se considera un punto de núcleo si hay al menos `MinPts` puntos dentro de un radio `ε` alrededor de él.
+1. **Identificación de Puntos de Núcleo**: Un punto se considera un punto de
+   núcleo si hay al menos `MinPts` puntos dentro de un radio `ε` alrededor de
+   él.
 
-2. **Expansión de Clusters**:
-   Si un punto es un punto de núcleo, se forma un cluster expandiendo desde el punto y agregando todos los puntos densamente conectados.
+2. **Expansión de Clusters**: Si un punto es un punto de núcleo, se forma un
+   cluster expandiendo desde el punto y agregando todos los puntos densamente
+   conectados.
 
-3. **Asignación de Ruido**:
-   Los puntos que no pueden ser alcanzados por ningún punto de núcleo y que no cumplen con el criterio de densidad se etiquetan como ruido.
+3. **Asignación de Ruido**: Los puntos que no pueden ser alcanzados por ningún
+   punto de núcleo y que no cumplen con el criterio de densidad se etiquetan
+   como ruido.
 
-El algoritmo no utiliza una función de coste explícita sino que se basa en la densidad de puntos y la conectividad para definir los clusters.
+El algoritmo no utiliza una función de coste explícita sino que se basa en la
+densidad de puntos y la conectividad para definir los clusters.
 
 #### Práctica
 
@@ -737,27 +966,51 @@ if __name__ == '__main__':
 
 #### Teoría
 
-El **clustering K-Medoids** es una técnica de agrupamiento basada en particiones, que comparte similitudes con el algoritmo K-Means pero con una diferencia fundamental: en lugar de usar la media de los puntos en un cluster como el centroide, el algoritmo K-Medoids utiliza un punto real del conjunto de datos llamado medoid. Este enfoque hace que K-Medoids sea más robusto frente a outliers y al ruido, ya que el medoid es menos sensible a las diferencias extremas en los datos.
+El **clustering K-Medoids** es una técnica de agrupamiento basada en
+particiones, que comparte similitudes con el algoritmo K-Means pero con una
+diferencia fundamental: en lugar de usar la media de los puntos en un cluster
+como el centroide, el algoritmo K-Medoids utiliza un punto real del conjunto de
+datos llamado medoid. Este enfoque hace que K-Medoids sea más robusto frente a
+outliers y al ruido, ya que el medoid es menos sensible a las diferencias
+extremas en los datos.
 
 **Diferencias entre K-Medoids y K-Means**:
 
-- **K-Means**: Calcula el centroide del cluster como la media de todos los puntos en el cluster.
-- **K-Medoids**: Utiliza puntos reales del dataset como medoids para cada cluster, minimizando la suma de las distancias dentro del cluster.
+- **K-Means**: Calcula el centroide del cluster como la media de todos los
+  puntos en el cluster.
+- **K-Medoids**: Utiliza puntos reales del dataset como medoids para cada
+  cluster, minimizando la suma de las distancias dentro del cluster.
 
 **Proceso del algoritmo K-Medoids**:
 
-1. **Inicialización**: Se seleccionan aleatoriamente $$K$$ puntos del conjunto de datos como los medoids iniciales. Estos puntos se pueden elegir al azar o mediante algún criterio heurístico.
-2. **Asignación**: Cada punto en el conjunto de datos se asigna al medoid más cercano, utilizando una medida de distancia como la euclidiana.
+1. **Inicialización**: Se seleccionan aleatoriamente $$K$$ puntos del conjunto
+   de datos como los medoids iniciales. Estos puntos se pueden elegir al azar o
+   mediante algún criterio heurístico.
+2. **Asignación**: Cada punto en el conjunto de datos se asigna al medoid más
+   cercano, utilizando una medida de distancia como la euclidiana.
 
-3. **Actualización**: Se selecciona un nuevo medoid en el conjunto de datos que minimice la suma de las distancias dentro de su cluster. Este paso implica intercambiar el medoid actual con otro punto del conjunto de datos y recalcular la suma de las distancias para evaluar si el cambio es beneficioso.
+3. **Actualización**: Se selecciona un nuevo medoid en el conjunto de datos que
+   minimice la suma de las distancias dentro de su cluster. Este paso implica
+   intercambiar el medoid actual con otro punto del conjunto de datos y
+   recalcular la suma de las distancias para evaluar si el cambio es
+   beneficioso.
 
-4. **Iteración**: Los pasos de asignación y actualización se repiten hasta que los medoids no cambian significativamente entre iteraciones, o hasta que se alcanza un número máximo de iteraciones.
+4. **Iteración**: Los pasos de asignación y actualización se repiten hasta que
+   los medoids no cambian significativamente entre iteraciones, o hasta que se
+   alcanza un número máximo de iteraciones.
 
-Como ventajas, K-Medoids es menos sensible a los outliers en comparación con K-Means, es relativamente sencillo de implementar y entender, y suele converger en un número fijo de pasos, lo que puede ser más rápido que K-Means en algunos casos. Sin embargo, también presenta una serie de desventajas como el no ser adecuado para problemas de clustering con clusters no esféricos, y que la selección aleatoria inicial de medoids puede llevar a resultados diferentes en ejecuciones sucesivas del algoritmo.
+Como ventajas, K-Medoids es menos sensible a los outliers en comparación con
+K-Means, es relativamente sencillo de implementar y entender, y suele converger
+en un número fijo de pasos, lo que puede ser más rápido que K-Means en algunos
+casos. Sin embargo, también presenta una serie de desventajas como el no ser
+adecuado para problemas de clustering con clusters no esféricos, y que la
+selección aleatoria inicial de medoids puede llevar a resultados diferentes en
+ejecuciones sucesivas del algoritmo.
 
 #### Práctica
 
-A continuación, se presenta una implementación del algoritmo K-Medoids en Python desde cero:
+A continuación, se presenta una implementación del algoritmo K-Medoids en Python
+desde cero:
 
 ```python
 import numpy as np
@@ -821,23 +1074,41 @@ if __name__ == '__main__':
 
 #### Teoría
 
-El **clustering jerárquico aglomerativo** es una técnica de agrupamiento que construye una jerarquía de _*clusters*_ mediante un enfoque de "aglomeración". A diferencia de los métodos de clustering particional como K-means, el clustering jerárquico no requiere que el número de _*clusters*_ se especifique de antemano. En su lugar, el número de _*clusters*_ se puede determinar a partir de la estructura jerárquica construida.
+El **clustering jerárquico aglomerativo** es una técnica de agrupamiento que
+construye una jerarquía de _*clusters*_ mediante un enfoque de "aglomeración". A
+diferencia de los métodos de clustering particional como K-means, el clustering
+jerárquico no requiere que el número de _*clusters*_ se especifique de antemano.
+En su lugar, el número de _*clusters*_ se puede determinar a partir de la
+estructura jerárquica construida.
 
-El proceso de clustering jerárquico aglomerativo se realiza en los siguientes pasos:
+El proceso de clustering jerárquico aglomerativo se realiza en los siguientes
+pasos:
 
-1. **Inicialización**: Cada punto de datos se considera inicialmente como un cluster individual. Por lo tanto, al principio hay $$N$$ _*clusters*_, donde $$N$$ es el número de puntos de datos.
+1. **Inicialización**: Cada punto de datos se considera inicialmente como un
+   cluster individual. Por lo tanto, al principio hay $$N$$ _*clusters*_, donde
+   $$N$$ es el número de puntos de datos.
 
-2. **Fusión**: Se fusionan los dos _*clusters*_ más cercanos en uno solo. La cercanía entre _*clusters*_ puede ser medida de varias maneras, como la distancia mínima (enlace simple), la distancia máxima (enlace completo), o la distancia media (enlace promedio).
+2. **Fusión**: Se fusionan los dos _*clusters*_ más cercanos en uno solo. La
+   cercanía entre _*clusters*_ puede ser medida de varias maneras, como la
+   distancia mínima (enlace simple), la distancia máxima (enlace completo), o la
+   distancia media (enlace promedio).
 
-3. **Actualización**: Después de fusionar dos _*clusters*_, se actualiza la matriz de distancias para reflejar la distancia entre el nuevo cluster y los _*clusters*_ restantes.
+3. **Actualización**: Después de fusionar dos _*clusters*_, se actualiza la
+   matriz de distancias para reflejar la distancia entre el nuevo cluster y los
+   _*clusters*_ restantes.
 
-4. **Repetición**: Los pasos de fusión y actualización se repiten hasta que todos los puntos de datos estén en un solo cluster o se alcance el número deseado de _*clusters*_.
+4. **Repetición**: Los pasos de fusión y actualización se repiten hasta que
+   todos los puntos de datos estén en un solo cluster o se alcance el número
+   deseado de _*clusters*_.
 
-5. **Dendrograma**: El resultado del clustering jerárquico se puede visualizar utilizando un dendrograma, que muestra la jerarquía de las fusiones y permite seleccionar el número de _*clusters*_ a partir de la estructura.
+5. **Dendrograma**: El resultado del clustering jerárquico se puede visualizar
+   utilizando un dendrograma, que muestra la jerarquía de las fusiones y permite
+   seleccionar el número de _*clusters*_ a partir de la estructura.
 
 #### Práctica
 
-A continuación se presenta una implementación de clustering jerárquico aglomerativo en Python utilizando la librería `scikit-learn`:
+A continuación se presenta una implementación de clustering jerárquico
+aglomerativo en Python utilizando la librería `scikit-learn`:
 
 ```python
 import numpy as np
@@ -888,24 +1159,45 @@ if __name__ == '__main__':
 
 En esta implementación:
 
-1. **Inicialización**: Se crea un objeto de `AgglomerativeClustering` con el número deseado de _*clusters*_.
-2. **Ajuste**: Se ajusta el modelo a los datos utilizando el método `fit`, que asigna cada punto de datos a uno de los _*clusters*_.
-3. **Visualización de _*clusters*_**: El método `plot_clusters` muestra los _*clusters*_ formados en un gráfico de dispersión.
-4. **Visualización del Dendrograma**: El método `plot_dendrogram` calcula y muestra el dendrograma utilizando la función `linkage` de `scipy` y la función `dendrogram` para visualizar la jerarquía de _*clusters*_.
+1. **Inicialización**: Se crea un objeto de `AgglomerativeClustering` con el
+   número deseado de _*clusters*_.
+2. **Ajuste**: Se ajusta el modelo a los datos utilizando el método `fit`, que
+   asigna cada punto de datos a uno de los _*clusters*_.
+3. **Visualización de _*clusters*_**: El método `plot_clusters` muestra los
+   _*clusters*_ formados en un gráfico de dispersión.
+4. **Visualización del Dendrograma**: El método `plot_dendrogram` calcula y
+   muestra el dendrograma utilizando la función `linkage` de `scipy` y la
+   función `dendrogram` para visualizar la jerarquía de _*clusters*_.
 
-El dendrograma permite observar cómo se fusionan los _*clusters*_ a lo largo del tiempo y ayuda a decidir el número adecuado de _*clusters*_ cortando el dendrograma a una altura específica. Esta implementación ilustra cómo aplicar el clustering jerárquico aglomerativo y visualizar tanto los _*clusters*_ resultantes como la estructura jerárquica de las fusiones.
+El dendrograma permite observar cómo se fusionan los _*clusters*_ a lo largo del
+tiempo y ayuda a decidir el número adecuado de _*clusters*_ cortando el
+dendrograma a una altura específica. Esta implementación ilustra cómo aplicar el
+clustering jerárquico aglomerativo y visualizar tanto los _*clusters*_
+resultantes como la estructura jerárquica de las fusiones.
 
 ### 2.3.7. K-Nearest Neighbors (KNN)
 
 #### Teoría
 
-El algoritmo KNN (K-Nearest Neighbors) es un algoritmo de aprendizaje supervisado utilizado tanto para clasificación como para regresión. La idea principal es calcular la distancia entre un punto de datos nuevo y todos los puntos de datos en el conjunto de entrenamiento. Luego, se seleccionan los $$K$$ puntos más cercanos y, dependiendo del tipo de problema, se realiza la predicción.
+El algoritmo KNN (K-Nearest Neighbors) es un algoritmo de aprendizaje
+supervisado utilizado tanto para clasificación como para regresión. La idea
+principal es calcular la distancia entre un punto de datos nuevo y todos los
+puntos de datos en el conjunto de entrenamiento. Luego, se seleccionan los $$K$$
+puntos más cercanos y, dependiendo del tipo de problema, se realiza la
+predicción.
 
-En el caso de problemas de clasificación se toma la clase mayoritaria entre los $$K$$ vecinos más cercanos, mientras que para problemas de regresión se calcula el promedio de los valores de los $$K$$ vecinos más cercanos.
+En el caso de problemas de clasificación se toma la clase mayoritaria entre los
+$$K$$ vecinos más cercanos, mientras que para problemas de regresión se calcula
+el promedio de los valores de los $$K$$ vecinos más cercanos.
 
-De la imagen anterior, se observa un conjunto de datos donde los valores verdes pertenecen a un grupo y los valores rojos a otro grupo. Tenemos un nuevo punto de datos, que es amarillo. Calculamos la distancia del punto amarillo a todos los puntos en el conjunto de datos, seleccionamos los 3 vecinos más cercanos ($$K=3$$). Si todos ellos son verdes, clasificamos el nuevo punto como verde.
+De la imagen anterior, se observa un conjunto de datos donde los valores verdes
+pertenecen a un grupo y los valores rojos a otro grupo. Tenemos un nuevo punto
+de datos, que es amarillo. Calculamos la distancia del punto amarillo a todos
+los puntos en el conjunto de datos, seleccionamos los 3 vecinos más cercanos
+($$K=3$$). Si todos ellos son verdes, clasificamos el nuevo punto como verde.
 
-La distancia que se usa comúnmente en KNN es la distancia Euclidiana, que se define como:
+La distancia que se usa comúnmente en KNN es la distancia Euclidiana, que se
+define como:
 
 $$
 d(x_1, x_2) = \sqrt{\sum_{i=1}^{n} (x_{1i} - x_{2i})^2}
@@ -990,7 +1282,10 @@ if __name__ == '__main__':
 
 ### 3.1.1. Métodos de re-muestreo, Bootstrap
 
-El método de bootstrap consiste en generar múltiples muestras de entrenamiento a partir del conjunto de datos original mediante el muestreo con reemplazo. Esto permite estimar la variabilidad del modelo y obtener una medida de la precisión y robustez del mismo.
+El método de bootstrap consiste en generar múltiples muestras de entrenamiento a
+partir del conjunto de datos original mediante el muestreo con reemplazo. Esto
+permite estimar la variabilidad del modelo y obtener una medida de la precisión
+y robustez del mismo.
 
 **Ejemplo de Implementación**:
 
@@ -1031,7 +1326,9 @@ print(f'Accuracy promedio en Bootstrap: {np.mean(scores)}')
 
 ### 3.1.2. División aleatoria (Random Split)
 
-Este método divide el conjunto de datos en dos subconjuntos aleatorios: uno para entrenamiento y otro para prueba. Es una técnica simple y rápida para evaluar el rendimiento del modelo.
+Este método divide el conjunto de datos en dos subconjuntos aleatorios: uno para
+entrenamiento y otro para prueba. Es una técnica simple y rápida para evaluar el
+rendimiento del modelo.
 
 **Ejemplo de Implementación**:
 
@@ -1059,7 +1356,9 @@ print(f'Accuracy en Random Split: {accuracy_score(y_test, y_pred)}')
 
 ### 3.1.3. División basada en el tiempo (Time-Based Split)
 
-La división basada en el tiempo es útil cuando se trabaja con datos temporales. Se divide el conjunto de datos en conjuntos de entrenamiento y prueba basados en una fecha o intervalo de tiempo específico.
+La división basada en el tiempo es útil cuando se trabaja con datos temporales.
+Se divide el conjunto de datos en conjuntos de entrenamiento y prueba basados en
+una fecha o intervalo de tiempo específico.
 
 **Ejemplo de Implementación**:
 
@@ -1098,7 +1397,9 @@ print(f'Accuracy en Time-Based Split: {accuracy_score(y_test, y_pred)}')
 
 ### 3.1.4. Validación cruzada K-Fold (K-Fold Cross-Validation)
 
-La validación cruzada K-Fold divide el conjunto de datos en K subconjuntos (o folds) y entrena el modelo K veces, utilizando cada fold como conjunto de prueba una vez y el resto como conjunto de entrenamiento.
+La validación cruzada K-Fold divide el conjunto de datos en K subconjuntos (o
+folds) y entrena el modelo K veces, utilizando cada fold como conjunto de prueba
+una vez y el resto como conjunto de entrenamiento.
 
 **Ejemplo de Implementación**:
 
@@ -1121,7 +1422,9 @@ print(f'Accuracy promedio en K-Fold Cross-Validation: {np.mean(scores)}')
 
 ### 3.1.5. Validación cruzada estratificada K-Fold (Stratified K-Fold)
 
-La validación cruzada estratificada K-Fold asegura que cada fold tiene una proporción representativa de cada clase del conjunto de datos, lo que es especialmente útil para problemas de clasificación con clases desbalanceadas.
+La validación cruzada estratificada K-Fold asegura que cada fold tiene una
+proporción representativa de cada clase del conjunto de datos, lo que es
+especialmente útil para problemas de clasificación con clases desbalanceadas.
 
 **Ejemplo de Implementación**:
 
@@ -1147,11 +1450,17 @@ print(f'Accuracy promedio en Stratified K-Fold Cross-Validation: {np.mean(scores
 
 # 4. Preprocesado de datos
 
-El preprocesamiento de datos es una etapa crucial en el flujo de trabajo de ciencia de datos que prepara los datos para el análisis y el modelado. Incluye varias actividades esenciales para asegurar que los datos sean limpios, consistentes y adecuados para los modelos que se utilizarán. Aquí se describen algunas de las técnicas comunes de preprocesamiento:
+El preprocesamiento de datos es una etapa crucial en el flujo de trabajo de
+ciencia de datos que prepara los datos para el análisis y el modelado. Incluye
+varias actividades esenciales para asegurar que los datos sean limpios,
+consistentes y adecuados para los modelos que se utilizarán. Aquí se describen
+algunas de las técnicas comunes de preprocesamiento:
 
 ## 4.1. Limpieza de datos
 
-La limpieza de datos implica identificar y corregir errores o inconsistencias en el conjunto de datos. Esto puede incluir la eliminación de duplicados, la corrección de errores tipográficos y la normalización de valores.
+La limpieza de datos implica identificar y corregir errores o inconsistencias en
+el conjunto de datos. Esto puede incluir la eliminación de duplicados, la
+corrección de errores tipográficos y la normalización de valores.
 
 **Ejemplo de Implementación**:
 
@@ -1182,7 +1491,11 @@ print(data_cleaned)
 
 ## 4.2. Normalización y estandarización
 
-La normalización y la estandarización son técnicas para ajustar la escala de las características numéricas. La normalización (o escalado) transforma los datos para que estén en un rango específico, generalmente [0, 1]. La estandarización transforma los datos para que tengan una media de 0 y una desviación estándar de 1.
+La normalización y la estandarización son técnicas para ajustar la escala de las
+características numéricas. La normalización (o escalado) transforma los datos
+para que estén en un rango específico, generalmente [0, 1]. La estandarización
+transforma los datos para que tengan una media de 0 y una desviación estándar
+de 1.
 
 **Ejemplo de Implementación**:
 
@@ -1208,7 +1521,10 @@ print(data_standardized)
 
 ## 4.3. Manejo de datos faltantes
 
-El manejo de datos faltantes es esencial para preparar un conjunto de datos para el análisis. Las técnicas incluyen eliminar filas o columnas con datos faltantes o rellenar los valores faltantes con estadísticas como la media, la mediana o valores de moda.
+El manejo de datos faltantes es esencial para preparar un conjunto de datos para
+el análisis. Las técnicas incluyen eliminar filas o columnas con datos faltantes
+o rellenar los valores faltantes con estadísticas como la media, la mediana o
+valores de moda.
 
 **Ejemplo de Implementación**:
 
@@ -1236,7 +1552,9 @@ print(data_filled)
 
 ## 4.4. Selección de características (Feature Selection)
 
-La selección de características implica elegir las características más relevantes para el modelo y eliminar las irrelevantes o redundantes. Esto puede mejorar la precisión del modelo y reducir el tiempo de entrenamiento.
+La selección de características implica elegir las características más
+relevantes para el modelo y eliminar las irrelevantes o redundantes. Esto puede
+mejorar la precisión del modelo y reducir el tiempo de entrenamiento.
 
 **Ejemplo de Implementación**:
 
@@ -1261,11 +1579,17 @@ print(X_new[:5])
 
 # 5. Sistemas de reducción de dimensionalidad
 
-La reducción de dimensionalidad es una técnica fundamental en el procesamiento de datos que ayuda a simplificar modelos, visualizar datos y mejorar la eficiencia computacional. Aquí se presentan tres métodos populares de reducción de dimensionalidad: PCA, t-SNE y Autoencoders.
+La reducción de dimensionalidad es una técnica fundamental en el procesamiento
+de datos que ayuda a simplificar modelos, visualizar datos y mejorar la
+eficiencia computacional. Aquí se presentan tres métodos populares de reducción
+de dimensionalidad: PCA, t-SNE y Autoencoders.
 
 ## 5.1. PCA (Análisis de Componentes Principales)
 
-PCA es una técnica estadística que transforma un conjunto de datos con muchas variables en un conjunto de datos con menos variables, llamadas componentes principales. Estas componentes son combinaciones lineales de las variables originales y capturan la mayor parte de la varianza en los datos.
+PCA es una técnica estadística que transforma un conjunto de datos con muchas
+variables en un conjunto de datos con menos variables, llamadas componentes
+principales. Estas componentes son combinaciones lineales de las variables
+originales y capturan la mayor parte de la varianza en los datos.
 
 **Ejemplo de Implementación**:
 
@@ -1327,7 +1651,10 @@ plt.show()
 
 ## 5.2. t-SNE (t-Distributed Stochastic Neighbor Embedding)
 
-t-SNE es una técnica de reducción de dimensionalidad que se utiliza principalmente para la visualización. Reduce la dimensionalidad de los datos de alta dimensión en 2 o 3 dimensiones, preservando las relaciones de proximidad en el espacio de alta dimensión.
+t-SNE es una técnica de reducción de dimensionalidad que se utiliza
+principalmente para la visualización. Reduce la dimensionalidad de los datos de
+alta dimensión en 2 o 3 dimensiones, preservando las relaciones de proximidad en
+el espacio de alta dimensión.
 
 **Ejemplo de Implementación**:
 
@@ -1358,7 +1685,10 @@ plt.show()
 
 ## 5.3. Auto Encoders
 
-Los _*Auto Encoders*_ son redes neuronales utilizadas para la reducción de dimensionalidad mediante el aprendizaje no supervisado. Se componen de un codificador que reduce la dimensión de los datos y un decodificador que reconstruye los datos a partir de la representación reducida.
+Los _*Auto Encoders*_ son redes neuronales utilizadas para la reducción de
+dimensionalidad mediante el aprendizaje no supervisado. Se componen de un
+codificador que reduce la dimensión de los datos y un decodificador que
+reconstruye los datos a partir de la representación reducida.
 
 **Ejemplo de Implementación**:
 
@@ -1404,15 +1734,19 @@ plt.show()
 
 # 6. Evaluación de modelos
 
-La evaluación de modelos es crucial para entender la eficacia y eficiencia de los modelos de aprendizaje automático. Esta sección cubre las métricas de rendimiento utilizadas para clasificación, regresión y clustering.
+La evaluación de modelos es crucial para entender la eficacia y eficiencia de
+los modelos de aprendizaje automático. Esta sección cubre las métricas de
+rendimiento utilizadas para clasificación, regresión y clustering.
 
 ## 6.1. Métricas de rendimiento para la clasificación
 
-Las métricas de rendimiento en clasificación permiten evaluar la precisión y eficacia de los modelos al hacer predicciones categóricas.
+Las métricas de rendimiento en clasificación permiten evaluar la precisión y
+eficacia de los modelos al hacer predicciones categóricas.
 
 ### 6.1.1. Accuracy
 
-La precisión (accuracy) es la proporción de predicciones correctas respecto al total de predicciones realizadas.
+La precisión (accuracy) es la proporción de predicciones correctas respecto al
+total de predicciones realizadas.
 
 **Ejemplo de Implementación**:
 
@@ -1444,7 +1778,8 @@ print(f'Accuracy: {accuracy:.2f}')
 
 ### 6.1.2. Precisión
 
-La precisión mide la proporción de verdaderos positivos entre los positivos predichos. Es útil en contextos donde el costo de un falso positivo es alto.
+La precisión mide la proporción de verdaderos positivos entre los positivos
+predichos. Es útil en contextos donde el costo de un falso positivo es alto.
 
 **Ejemplo de Implementación**:
 
@@ -1458,7 +1793,8 @@ print(f'Precisión: {precision:.2f}')
 
 ### 6.1.3. Recall
 
-El recall mide la proporción de verdaderos positivos entre los positivos reales. Es útil en contextos donde el costo de un falso negativo es alto.
+El recall mide la proporción de verdaderos positivos entre los positivos reales.
+Es útil en contextos donde el costo de un falso negativo es alto.
 
 **Ejemplo de Implementación**:
 
@@ -1472,7 +1808,8 @@ print(f'Recall: {recall:.2f}')
 
 ### 6.1.4. F1 Score
 
-El F1 Score es la media armónica entre precisión y recall. Es una métrica balanceada que considera tanto los falsos positivos como los falsos negativos.
+El F1 Score es la media armónica entre precisión y recall. Es una métrica
+balanceada que considera tanto los falsos positivos como los falsos negativos.
 
 **Ejemplo de Implementación**:
 
@@ -1486,7 +1823,9 @@ print(f'F1 Score: {f1:.2f}')
 
 ### 6.1.5. AUC-ROC
 
-El AUC-ROC (Área bajo la Curva de la Característica Operativa del Receptor) mide la capacidad del modelo para distinguir entre clases. Un valor más alto indica una mejor capacidad discriminativa.
+El AUC-ROC (Área bajo la Curva de la Característica Operativa del Receptor) mide
+la capacidad del modelo para distinguir entre clases. Un valor más alto indica
+una mejor capacidad discriminativa.
 
 **Ejemplo de Implementación**:
 
@@ -1505,11 +1844,13 @@ print(f'AUC-ROC: {auc_roc:.2f}')
 
 ## 6.2. Métricas de rendimiento para la regresión
 
-Las métricas de rendimiento en regresión evalúan la calidad de las predicciones continuas de un modelo.
+Las métricas de rendimiento en regresión evalúan la calidad de las predicciones
+continuas de un modelo.
 
 ### 6.2.1. Mean Squared Error (MSE)
 
-El MSE mide el promedio de los cuadrados de los errores, es decir, la diferencia entre los valores predichos y los valores reales.
+El MSE mide el promedio de los cuadrados de los errores, es decir, la diferencia
+entre los valores predichos y los valores reales.
 
 **Ejemplo de Implementación**:
 
@@ -1523,7 +1864,8 @@ print(f'Mean Squared Error (MSE): {mse:.2f}')
 
 ### 6.2.2. Root Mean Squared Error (RMSE)
 
-El RMSE es la raíz cuadrada del MSE y proporciona una medida en las mismas unidades que la variable objetivo, lo que facilita la interpretación.
+El RMSE es la raíz cuadrada del MSE y proporciona una medida en las mismas
+unidades que la variable objetivo, lo que facilita la interpretación.
 
 **Ejemplo de Implementación**:
 
@@ -1537,7 +1879,8 @@ print(f'Root Mean Squared Error (RMSE): {rmse:.2f}')
 
 ### 6.2.3. Mean Absolute Error (MAE)
 
-El MAE mide el promedio de los errores absolutos entre las predicciones y los valores reales.
+El MAE mide el promedio de los errores absolutos entre las predicciones y los
+valores reales.
 
 **Ejemplo de Implementación**:
 
@@ -1551,7 +1894,9 @@ print(f'Mean Absolute Error (MAE): {mae:.2f}')
 
 ### 6.2.4. Root Mean Squared Log Error (RMSLE)
 
-El RMSLE mide la raíz cuadrada del error cuadrático medio de los logaritmos de las predicciones y los valores reales. Es útil cuando se desea penalizar las diferencias relativas más que las absolutas.
+El RMSLE mide la raíz cuadrada del error cuadrático medio de los logaritmos de
+las predicciones y los valores reales. Es útil cuando se desea penalizar las
+diferencias relativas más que las absolutas.
 
 **Ejemplo de Implementación**:
 
@@ -1565,7 +1910,9 @@ print(f'Root Mean Squared Log Error (RMSLE): {rmsle:.2f}')
 
 ### 6.2.5. R-Squared
 
-El R-Squared indica la proporción de la varianza en la variable dependiente que es explicada por el modelo. Un valor de 1 indica una explicación perfecta, mientras que un valor de 0 indica que el modelo no explica nada de la varianza.
+El R-Squared indica la proporción de la varianza en la variable dependiente que
+es explicada por el modelo. Un valor de 1 indica una explicación perfecta,
+mientras que un valor de 0 indica que el modelo no explica nada de la varianza.
 
 **Ejemplo de Implementación**:
 
@@ -1579,7 +1926,9 @@ print(f'R-Squared: {r_squared:.2f}')
 
 ### 6.2.6. Adjusted R-Squared
 
-El Adjusted R-Squared ajusta el R-Squared para tener en cuenta el número de predictores en el modelo. Es útil para comparar modelos con diferentes números de predictores.
+El Adjusted R-Squared ajusta el R-Squared para tener en cuenta el número de
+predictores en el modelo. Es útil para comparar modelos con diferentes números
+de predictores.
 
 **Ejemplo de Implementación**:
 
@@ -1595,11 +1944,14 @@ print(f'Adjusted R-Squared: {adj_r_squared:.2f}')
 
 ## 6.3. Métricas de rendimiento para algoritmos de clustering
 
-Las métricas de rendimiento en clustering ayudan a evaluar la calidad de la agrupación sin la necesidad de etiquetas verdaderas.
+Las métricas de rendimiento en clustering ayudan a evaluar la calidad de la
+agrupación sin la necesidad de etiquetas verdaderas.
 
 ### 6.3.1. Método del codo (Elbow Method)
 
-El método del codo ayuda a determinar el número óptimo de clusters. Se basa en la suma de errores cuadráticos dentro del cluster (inertia) y busca el punto donde la disminución de la inertia se estabiliza.
+El método del codo ayuda a determinar el número óptimo de clusters. Se basa en
+la suma de errores cuadráticos dentro del cluster (inertia) y busca el punto
+donde la disminución de la inertia se estabiliza.
 
 **Ejemplo de Implementación**:
 
@@ -1630,7 +1982,9 @@ plt.show()
 
 ### 6.3.2. Puntuación de silueta (Silhouette Score)
 
-La puntuación de silueta mide la calidad de los clusters formados, considerando tanto la cohesión interna como la separación entre clusters. Los valores cercanos a 1 indican clusters bien formados.
+La puntuación de silueta mide la calidad de los clusters formados, considerando
+tanto la cohesión interna como la separación entre clusters. Los valores
+cercanos a 1 indican clusters bien formados.
 
 **Ejemplo de Implementación**:
 
@@ -1647,7 +2001,9 @@ print(f'Puntuación de la Silueta: {silhouette_avg:.2f}')
 
 ### 6.3.3. Índice CH (Caliński-Harabasz Index)
 
-El índice de Caliński-Harabasz mide la dispersión entre clusters en comparación con la dispersión dentro de los clusters. Valores más altos indican una mejor separación de los clusters.
+El índice de Caliński-Harabasz mide la dispersión entre clusters en comparación
+con la dispersión dentro de los clusters. Valores más altos indican una mejor
+separación de los clusters.
 
 **Ejemplo de Implementación**:
 
@@ -1666,7 +2022,9 @@ print(f'Índice CH: {ch_score:.2f}')
 
 ### 6.3.4. Dunn Index
 
-El Dunn Index mide la separación entre los clusters en comparación con la dispersión dentro de los clusters. Valores más altos indican una mejor separación entre clusters.
+El Dunn Index mide la separación entre los clusters en comparación con la
+dispersión dentro de los clusters. Valores más altos indican una mejor
+separación entre clusters.
 
 **Ejemplo de Implementación**:
 

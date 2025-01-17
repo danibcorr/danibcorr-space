@@ -51,7 +51,10 @@ toc_max_heading_level: 4
 
 ### Enunciado
 
-Obtener detalles de trabajos para las posiciones de 'Data Analyst' o 'Business Analyst'. Para 'Data Analyst', solo quiero trabajos con salario > \$100k, y para 'Business Analyst', solo quiero trabajos con salario > \$70k. Incluir solo trabajos ubicados en 'Boston, MA' o 'Anywhere'.
+Obtener detalles de trabajos para las posiciones de 'Data Analyst' o 'Business
+Analyst'. Para 'Data Analyst', solo quiero trabajos con salario > \$100k, y para
+'Business Analyst', solo quiero trabajos con salario > \$70k. Incluir solo
+trabajos ubicados en 'Boston, MA' o 'Anywhere'.
 
 <details>
 <summary>Solución</summary>
@@ -77,7 +80,8 @@ WHERE
 
 ### Enunciado
 
-Buscar roles de 'Data Analyst' o 'Business Analyst' que no sean senior. Obtener el título del trabajo, la ubicación y el salario promedio anual.
+Buscar roles de 'Data Analyst' o 'Business Analyst' que no sean senior. Obtener
+el título del trabajo, la ubicación y el salario promedio anual.
 
 <details>
 <summary>Solución</summary>
@@ -101,7 +105,8 @@ WHERE
 
 ### Enunciado
 
-Calcular las ganancias totales del mes actual por proyecto. Calcular un escenario donde la tarifa por hora aumenta en \$5.
+Calcular las ganancias totales del mes actual por proyecto. Calcular un
+escenario donde la tarifa por hora aumenta en \$5.
 
 <details>
 <summary>Solución</summary>
@@ -125,7 +130,8 @@ ORDER BY
 
 ### Enunciado
 
-Encontrar el salario promedio y el número de ofertas de trabajo para cada habilidad.
+Encontrar el salario promedio y el número de ofertas de trabajo para cada
+habilidad.
 
 <details>
 <summary>Solución</summary>

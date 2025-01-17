@@ -2,13 +2,18 @@
 sidebar_position: 1
 authors:
   - name: Daniel Bazo Correa
-description: Creación y gestión de entornos virtuales de Python con VENV y Anaconda.
+description: Creación y gestión de entornos virtuales de Python con VENV, Anaconda y Poetry
 title: Gestión de entornos en Python
 toc_max_heading_level: 3
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
+## Bibliografía
+
+- [VENV Docs](https://docs.python.org/3/library/venv.html)
+- [Poetry Docs](https://python-poetry.org/)
+- [Anaconda Docs](https://docs.anaconda.com/)
 
 ## 1. Introducción
 
@@ -18,16 +23,41 @@ import TabItem from '@theme/TabItem';
   <em>Logo de Anaconda</em>
 </p>
 
-**Anaconda** es una plataforma de código abierto que facilita la creación y gestión de entornos virtuales de Python, diseñada especialmente para proyectos de ciencia de datos y aprendizaje automático.
+**Anaconda** es una plataforma de código abierto diseñada para la creación y
+gestión de entornos virtuales en Python, enfocada en proyectos de ciencia de
+datos y aprendizaje automático.
 
-Proporciona una distribución de Python con numerosas bibliotecas preinstaladas, un gestor de paquetes eficiente y herramientas avanzadas para trabajar con cuadernos [Jupyter](https://jupyter.org/).
+Proporciona una distribución de Python con numerosas bibliotecas preinstaladas,
+un gestor de paquetes eficiente y herramientas avanzadas, como los cuadernos
+[_Jupyter_](https://jupyter.org/).
 
-La gestión de paquetes se realiza mediante el gestor de paquetes de [**Conda**](https://anaconda.org/anaconda/repo), aunque también se puede utilizar el gestor de paquetes de [**PIP**](https://pypi.org/).
+La gestión de paquetes en Anaconda se realiza mediante el gestor
+[_Conda_](https://anaconda.org/anaconda/repo), aunque también es posible
+utilizar [_PIP_](https://pypi.org/).
 
-Por otra parte, [**VENV**](https://docs.python.org/3/library/venv.html) es una opción más ligera que permite crear entornos virtuales sin las dependencias adicionales de Anaconda. La gestión de paquetes se realiza mediante el gestor de paquetes de [**PIP**](https://pypi.org/).
+Por otro lado, [_VENV_](https://docs.python.org/3/library/venv.html) es una
+alternativa más ligera para la creación de entornos virtuales sin las
+dependencias adicionales de Anaconda. En este caso, la gestión de paquetes se
+lleva a cabo con [_PIP_](https://pypi.org/).
 
-:::warning
-Este tutorial asume el uso de un sistema basado en Linux, particularmente una distribución derivada de Debian. Ten en cuenta que algunos comandos podrían variar según la distribución o el sistema operativo utilizado.
+<p align="center">
+  <img src="https://python-poetry.org/images/logo-origami.svg" width="100"/>
+  <br />
+  <em>Logo de Poetry</em>
+</p>
+
+[_Poetry_](https://python-poetry.org/) es otra herramienta de gestión de
+dependencias en proyectos de Python. Permite, entre otras cosas:
+
+- Administrar dependencias por grupos (_producción_, _pruebas_, _documentación_,
+  etc.).
+- Crear y manejar entornos virtuales automáticamente.
+- Facilitar la creación de _wheels_ para empaquetar proyectos y publicarlos en
+  [_PyPI_](https://pypi.org/).
+
+:::warning Este tutorial asume el uso de un sistema basado en Linux,
+específicamente una distribución derivada de Debian. Ten en cuenta que algunos
+comandos pueden variar según la distribución o el sistema operativo utilizado.
 :::
 
 ## 2. Utilidades para la gestión de entornos
@@ -35,156 +65,180 @@ Este tutorial asume el uso de un sistema basado en Linux, particularmente una di
 ### 2.1. Creación de un entorno virtual
 
 <Tabs>
-<TabItem value="js" label="VENV">
+   <TabItem value="venv" label="VENV">
 
-Sigue estos pasos para configurar un entorno virtual utilizando **VENV**:
+      1. **Actualizar el sistema operativo**:
 
-1. **Actualizar el sistema operativo**:
+         ```bash
+         sudo apt update && sudo apt upgrade -y
+         ```
 
-   ```bash
-   sudo apt update && sudo apt upgrade -y
-   ```
+      2. **Agregar el repositorio de Python más reciente**:
 
-2. **Agregar el repositorio de Python más reciente**:
+         ```bash
+         sudo add-apt-repository ppa:deadsnakes/ppa
+         sudo apt update
+         ```
 
-   ```bash
-   sudo add-apt-repository ppa:deadsnakes/ppa
-   sudo apt update
-   ```
+      3. **Instalar una versión específica de Python** (por ejemplo, Python 3.10):
 
-3. **Instalar una versión específica de Python** (por ejemplo, Python 3.10):
+         ```bash
+         sudo apt install python3.10
+         ```
 
-   ```bash
-   sudo apt install python3.10
-   ```
+      4. **Instalar _VENV_, _PIP_ y herramientas de desarrollo**:
 
-4. **Instalar VENV, PIP y herramientas de desarrollo**:
+         ```bash
+         sudo apt install python3.10-venv python3.10-dev python3-pip
+         ```
 
-   ```bash
-   sudo apt install python3.10-venv python3.10-dev python3-pip
-   ```
+      5. **Crear el entorno virtual**:
 
-5. **Crear el entorno virtual**:
+         ```bash
+         python -m venv nombre_del_entorno
+         ```
 
-   ```bash
-   python -m venv nombre_del_entorno
-   ```
+      6. **Activar el entorno**:
 
-6. **Activar el entorno**:
+         ```bash
+         source nombre_del_entorno/bin/activate
+         ```
 
-   ```bash
-   source nombre_del_entorno/bin/activate
-   ```
+   </TabItem>
 
-</TabItem>
-<TabItem value="py" label="Anaconda">
+   <TabItem value="anaconda" label="Anaconda">
 
-Si prefieres utilizar Anaconda, sigue estos pasos:
+      1. **Abrir la terminal de Anaconda Prompt**.
 
-1. **Abrir Anaconda Prompt**.
+      2. **Crear un nuevo entorno**:
 
-2. **Crear un nuevo entorno**:
+         ```bash
+         conda create --name nombre_del_entorno
+         ```
 
-   ```bash
-   conda create --name nombre_del_entorno
-   ```
+      3. **Activar el entorno**:
 
-3. **Activar el entorno**:
+         ```bash
+         conda activate nombre_del_entorno
+         ```
 
-   ```bash
-   conda activate nombre_del_entorno
-   ```
+      4. **(Opcional) Instalar y actualizar _PIP_ con Anaconda**:
 
-4. **(Opcional) Instalar y actualizar PIP con Anaconda**: En el caso de que queramos utilizar Anaconda pero con los paquetes gestionados por PIP:
+         Es posible usar _PIP_ dentro de Anaconda, aunque no se recomienda
+         mezclar paquetes de ambos gestores, ya que esto puede generar
+         conflictos de versiones.
 
-   ```bash
-   conda install anaconda::pip
-   pip install --upgrade pip
-   ```
+         ```bash
+         conda install anaconda::pip
+         pip install --upgrade pip
+         ```
 
-</TabItem>
+   </TabItem>
 </Tabs>
 
 ### 2.2. Gestión de la caché
 
+Para liberar espacio o solucionar problemas con dependencias, se puede purgar la
+caché con los siguientes comandos:
+
 <Tabs>
-<TabItem value="js" label="PIP">
-
-Parar liberar espacio en el sistema o solucionar problemas con dependencias, podemos purgar la caché de PIP con el comando siguiente:
-
-```bash
-pip cache purge
-```
-
-</TabItem>
-<TabItem value="py" label="Anaconda">
-
-Del mismo modo, en el caso de estar utilizando Anaconda, podemos emplear el siguiente comando:
-
-```bash
-conda clean --all
-```
-
-</TabItem>
+   <TabItem value="pip" label="PIP">
+      ```bash
+      pip cache purge
+      ```
+   </TabItem>
+   <TabItem value="anaconda" label="Anaconda">
+      ```bash
+      conda clean --all
+      ```
+   </TabItem>
+   <TabItem value="poetry" label="Poetry">
+      ```bash
+      poetry cache clear --all .
+      ```
+   </TabItem>
 </Tabs>
 
 ### 2.3. Actualización de paquetes
 
-Es importante mantener las dependencias de tu proyecto actualizadas. Aquí se explican los pasos para hacerlo:
+Mantener las dependencias actualizadas es clave para el correcto funcionamiento
+del proyecto.
 
 <Tabs>
-<TabItem value="js" label="PIP">
+   <TabItem value="pip" label="PIP">
 
-##### Actualizar todos los paquetes
+      ##### Actualizar todos los paquetes
 
-Puedes utilizar el siguiente comando para actualizar todos los paquetes:
+      Puedes utilizar el siguiente comando para actualizar todos los paquetes:
 
-```bash
-pip freeze | grep -v "^\-e" | cut -d = -f 1 | xargs -n1 pip install -U
-```
+      ```bash
+      pip freeze | grep -v "^\-e" | cut -d = -f 1 | xargs -n1 pip install -U
+      ```
 
-Donde:
+      Donde:
 
-- `pip freeze`: Genera una lista de los paquetes instalados.
-- `grep -v "^\-e"`: Excluye las instalaciones en modo editable.
-- `cut -d = -f 1`: Extrae solo los nombres de los paquetes, sin las versiones.
-- `xargs -n1 pip install -U`: Actualiza cada paquete.
+      - `pip freeze`: Genera una lista de los paquetes instalados.
+      - `grep -v "^\-e"`: Excluye las instalaciones en modo editable.
+      - `cut -d = -f 1`: Extrae solo los nombres de los paquetes, sin las versiones.
+      - `xargs -n1 pip install -U`: Actualiza cada paquete.
 
-##### Actualizar un paquete específico
+      ##### Actualizar un paquete específico
 
-Para actualizar un paquete específico:
+      Para actualizar un paquete específico:
 
-```bash
-pip install --upgrade nombre_del_paquete
-```
+      ```bash
+      pip install --upgrade nombre_del_paquete
+      ```
 
-</TabItem>
-<TabItem value="py" label="Anaconda">
+   </TabItem>
+   <TabItem value="anaconda" label="Anaconda">
 
-##### Actualizar todos los paquetes
+      ##### Actualizar todos los paquetes
 
-Aunque Anaconda permite la instalación de paquetes con PIP, se recomienda evitar mezclar paquetes del repositorio de Anaconda y PIP, ya que esto podría causar conflictos. Si decides usar paquetes de Anaconda, puedes actualizar todos los paquetes con:
+      Aunque Anaconda permite la instalación de paquetes con PIP, se recomienda evitar
+      mezclar paquetes del repositorio de Anaconda y PIP, ya que esto podría causar
+      conflictos. Si decides usar paquetes de Anaconda, puedes actualizar todos los
+      paquetes con:
 
-```bash
-conda update --all
-```
+      ```bash
+      conda update --all
+      ```
 
-##### Actualizar un paquete específico
+      ##### Actualizar un paquete específico
 
-Para actualizar un paquete específico:
+      Para actualizar un paquete específico:
 
-```bash
-conda update nombre_del_paquete
-```
+      ```bash
+      conda update nombre_del_paquete
+      ```
 
-</TabItem>
+   </TabItem>
+   <TabItem value="poetry" label="Poetry">
+
+      ##### Actualizar todos los paquetes
+
+      ```bash
+      poetry update
+      ```
+
+      ##### Actualizar un paquete específico
+
+      Para actualizar un paquete específico:
+
+      ```bash
+      poetry update nombre_del_paquete
+      ```
+
+   </TabItem>
 </Tabs>
 
 ### 2.4. Instalación de paquetes desde un archivo de requisitos
 
-Cuando un proyecto necesita dependencias específicas, es útil usar un archivo `requirements.txt`:
+Cuando un proyecto necesita dependencias específicas, es útil usar un archivo
+`requirements.txt`:
 
-1. **Crear un archivo `requirements.txt`** con los paquetes y versiones deseadas:
+1. **Crear un archivo `requirements.txt`** con los paquetes y versiones
+   deseadas:
 
    ```plaintext
    numpy==1.21.0
@@ -201,35 +255,33 @@ Cuando un proyecto necesita dependencias específicas, es útil usar un archivo 
 ### 2.5. Eliminar un entorno
 
 <Tabs>
-<TabItem value="js" label="VENV">
+   <TabItem value="venv" label="VENV">
 
-Para eliminar un entorno creado con VENV, dirígete al directorio donde se creó y elimina la carpeta correspondiente:
+      ```bash
+      rm -rf nombre_del_entorno
+      ```
 
-```bash
-rm -rf nombre_del_entorno
-```
+   </TabItem>
+   <TabItem value="anaconda" label="Anaconda">
 
-</TabItem>
-<TabItem value="py" label="Anaconda">
+      1. **Listar los entornos disponibles**:
 
-1. **Listar los entornos disponibles**:
+         ```bash
+         conda env list
+         ```
 
-   ```bash
-   conda env list
-   ```
+      2. **Eliminar un entorno**:
 
-2. **Eliminar un entorno**:
+         ```bash
+         conda env remove --name nombre_del_entorno
+         ```
 
-   ```bash
-   conda env remove --name nombre_del_entorno
-   ```
-
-</TabItem>
+   </TabItem>
 </Tabs>
 
-### 2.6. Añadir el entorno en Jupyter
+### 2.6. Integración del entorno con Jupyter
 
-Para añadir el entorno virtual creado, independientemente de si se trata de Anaconda o VENV, podemos seguir los pasos siguientes:
+Para añadir el entorno virtual creado podemos seguir los pasos siguientes:
 
 1. **Instalar `ipykernel` para la integración con Jupyter**:
 
@@ -243,62 +295,39 @@ Para añadir el entorno virtual creado, independientemente de si se trata de Ana
    python -m ipykernel install --user --name=nombre_del_entorno
    ```
 
-### 2.7. Eliminar paquetes instalados de un entorno
+### 2.7. Eliminación de paquetes instalados
 
 <Tabs>
-<TabItem value="js" label="PIP">
+   <TabItem value="pip" label="PIP">
 
-##### Eliminar todos los paquetes
+      ##### Eliminar todos los paquetes
 
-1. **Listar todos los paquetes instalados**:
+      ```bash
+      pip list --format=freeze > installed.txt
+      pip uninstall -r installed.txt -y
+      ```
 
-   ```bash
-   pip list --format=freeze > installed.txt
-   ```
+      ##### Eliminar un paquete específico
 
-2. **Eliminar todos los paquetes listados**:
-   ```bash
-   pip uninstall -r installed.txt -y
-   ```
+      ```bash
+      pip uninstall nombre_del_paquete
+      ```
 
-##### Eliminar un paquete en concreto
+   </TabItem>
+   <TabItem value="anaconda" label="Anaconda">
 
-1. **Eliminar un paquete específico**:
-   ```bash
-   pip uninstall nombre_del_paquete
-   ```
+      ##### Eliminar un paquete específico
 
-</TabItem>
-<TabItem value="py" label="Anaconda">
+      ```bash
+      conda remove nombre_del_paquete
+      ```
 
-##### Eliminar todos los paquetes
+   </TabItem>
+   <TabItem value="poetry" label="Poetry">
 
-1. **Eliminar un entorno de Anaconda completo**:
-   Si tienes entornos específicos que quieres eliminar, puedes hacerlo con:
+      ```bash
+      poetry remove nombre_del_paquete
+      ```
 
-   ```bash
-   conda remove --name nombre_entorno --all
-   ```
-
-2. **Eliminar paquetes de un entorno específico sin eliminar el entorno**:
-   Primero, activa el entorno:
-
-   ```bash
-   conda activate nombre_entorno
-   ```
-
-3. **Eliminar todos los paquetes del entorno activo**:
-   ```bash
-   conda list --export > installed_conda.txt
-   conda remove --yes --file installed_conda.txt
-   ```
-
-##### Eliminar un paquete en concreto
-
-1. **Eliminar un paquete específico**:
-   ```bash
-   conda remove nombre_del_paquete
-   ```
-
-</TabItem>
+   </TabItem>
 </Tabs>
